@@ -32,3 +32,8 @@
     font-family: FreeSerif;
     src: url(/fonts/FreeSerif-small.woff);
 }
+
+@font-face {
+    font-family: FreeSansOblique;
+    src: url(/fonts/FreeSansOblique.woff);
+}

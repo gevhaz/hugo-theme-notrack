@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+    {{ if eq .Data.Singular "category" }}
+    <h1>Category: {{ .Title }}</h1>
+    {{ else if eq .Data.Singular "tag" }}
+    <h1>Tag: {{ .Title }}</h1>
+    {{ end }}
+    {{ with (where (where .Pages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
+        {{ range . }}
+            {{- partial "blog-entry-summary" . -}}
+        {{ end }}
+    {{ end }}
+</main>
+{{ end }}

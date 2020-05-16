@@ -198,6 +198,9 @@ a.blog-taxonomy-info {
   background-color: #eee;
   padding: 0.1em; }
 
+em.taxonomy-emph {
+  font-family: FreeSansOblique; }
+
 .blog-post-content h1, .blog-post-content h2, .blog-post-content h3, .blog-post-content h4, .blog-post-content h5 {
   font-family: FreeSans, sans-serif; }
 
