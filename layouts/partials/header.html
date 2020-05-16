@@ -15,14 +15,20 @@
                                 <span>{{ .Name }}</span>
                             </a>
                         <div class=sub-menu>
-                            {{ range .Children }}
+                        {{ range .Children }}
                                 <a class="{{ if $currentPage.IsMenuCurrent "navbar" . }}activetab{{ end }}"
                                                   href="{{ .URL }}">{{ .Name }}</a>
                             {{ end }}
                         </div>
                     </li>
                 {{ else }}
-                    <li class="{{ if $currentPage.IsMenuCurrent "navbar" . }}activetab{{ end }}">
+                    {{ if $currentPage.IsMenuCurrent "navbar" . }}
+                    <li class="activetab">
+                    {{ else if (and (eq $currentPage.Section "blog") (eq .Name "Blog")) }}
+                    <li class="activetab">
+                    {{ else }}
+                    <li>
+                    {{ end }}
                         <a href="{{ .URL }}">
                             {{ .Pre }}
                             <span>{{ .Name }}</span>
