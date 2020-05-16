@@ -1,21 +1,12 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
 name = "Notrack"
 license = "GPLv3"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
-min_version = "0.41"
+licenselink = "https://github.com/gevhaz/hugo-theme-notrack/blob/master/LICENSE"
+description = "A libre hugo personal webpage theme without reliance on third parties and no tracking."
+homepage = "https://github.com/gevhaz/hugo-theme-notrack"
+tags = ["minimal", "personal", "responsive", "libre", "flexbox"]
+features = ["gallery", "blog", "resume"]
+min_version = "0.70.0"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Simon Bengtsson"
+  homepage = "https://github.com/gevhaz"
