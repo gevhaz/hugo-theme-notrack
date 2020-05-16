@@ -1,0 +1,15 @@
+{{ with .Params.Categories }}
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        {{ range . }}
+            <a class="blog-taxonomy-info" href="/categories/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </span>
+{{ end }}
+
+{{ with .Params.Tags }}
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        {{ range . }}
+            <a class="blog-taxonomy-info" href="/tags/{{ . | urlize }}">{{ . }}</a>
+    {{ end }}
+    </span>
+{{ end }}

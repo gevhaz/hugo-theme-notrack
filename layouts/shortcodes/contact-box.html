@@ -1,0 +1,31 @@
+<div id=contactinformation>
+    <div id="contactdescription" class="contactbox">
+        <p>
+        {{ .Inner }}
+        <p>
+    </div>
+
+    <!-- If any parameters are given -->
+    {{ if gt .Params 0 }}
+    <div id="contactlinks" class="contactbox">
+        <ul>
+
+            {{ with .Get "linkedin" }}
+            <li> <img src="/img/linkedin.svg"><a href="linkedin.com/in/{{ . }}">LinkedIn</a>
+            </li>
+            {{ end }}
+
+            {{ with .Get "github" }}
+            <li> <img src="/img/github.svg"><a href="https://github.com/{{ . }}">GitHub</a>
+            </li>
+            {{ end }}
+
+            <li><p></p></li>
+            <li><a  id="icon-licence"
+                    href="http://www.onlinewebfonts.com"
+                    title="Icons are made with Icon Fonts and licensed under CC BY 3.0">*</a>
+            </li>
+        </ul>
+    </div>
+    {{ end }}
+</div>

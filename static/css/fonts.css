@@ -1,0 +1,34 @@
+@font-face {
+    font-family: FreeSans;
+    src: url(/fonts/FreeSans-small.woff);
+}
+
+@font-face {
+    font-family: FreeSansBoldOblique;
+    src: url(/fonts/FreeSansBoldOblique.woff);
+}
+
+@font-face {
+    font-family: FreeSerifItalic;
+    src: url(/fonts/FreeSerifItalic-small.woff);
+}
+
+@font-face {
+    font-family: FreeSerifBoldItalic;
+    src: url(/fonts/FreeSerifBoldItalic-small.woff);
+}
+
+@font-face {
+    font-family: FreeSansBold;
+    src: url(/fonts/FreeSansBold-small.woff);
+}
+
+@font-face {
+    font-family: FreeSerifBold;
+    src: url(/fonts/FreeSerifBold-small.woff);
+}
+
+@font-face {
+    font-family: FreeSerif;
+    src: url(/fonts/FreeSerif-small.woff);
+}

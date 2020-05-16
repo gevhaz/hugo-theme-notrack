@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main>
+    {{ with (where (where .Site.RegularPages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
+        {{ range . }}
+            {{- partial "blog-entry-summary" . -}}
+        {{ end }}
+    {{ end }}
+</main>
+{{ end }}

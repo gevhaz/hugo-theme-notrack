@@ -1,0 +1,35 @@
+<header class="page-header">
+    <!-- Name in large letters -->
+    <div class="myname"> 
+        <h2><a href="/">{{ .Site.Params.AuthorName }}</a></h2> 
+    </div>
+    <!-- Links to the tabs -->
+    <nav>
+        <ul class="navbar">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.navbar }}
+                {{ if .HasChildren }}
+                    <li class="dropdown {{ if $currentPage.HasMenuCurrent "navbar" . }}activetab{{ end }}">
+                            <a href ="#">
+                                {{ .Pre }}
+                                <span>{{ .Name }}</span>
+                            </a>
+                        <div class=sub-menu>
+                            {{ range .Children }}
+                                <a class="{{ if $currentPage.IsMenuCurrent "navbar" . }}activetab{{ end }}"
+                                                  href="{{ .URL }}">{{ .Name }}</a>
+                            {{ end }}
+                        </div>
+                    </li>
+                {{ else }}
+                    <li class="{{ if $currentPage.IsMenuCurrent "navbar" . }}activetab{{ end }}">
+                        <a href="{{ .URL }}">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </nav>
+</header>

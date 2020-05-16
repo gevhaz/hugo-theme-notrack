@@ -1,0 +1,11 @@
+<div class="blog-post-summary">
+    <h3 class="blog-post-title"><a href="{{ .Permalink }}">{{.Title}}</a></h3>
+    <p class="blog-post-date">{{ .Date.Format "2006-01-02"}}
+    {{ partial "blog-taxonomy-info" . }}</p>
+
+    <p>
+        {{ .Summary }}
+        <span><a href="{{ .Permalink }}">Read more...</a></span>
+    </p>
+
+</div>
