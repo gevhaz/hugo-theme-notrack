@@ -12,12 +12,12 @@
     {{- end -}}
 
     {{- range $pages.Pages -}}
-        <article class="archive-item">
+        <article>
             {{ partial "blog-entry-summary.html" . }}
         </article>
     {{- end -}}
 
-    {{ template "_internal/pagination.html" . }}
+    {{ partial "pagination.html" . }}
 {{- end -}}
 
 </main>
