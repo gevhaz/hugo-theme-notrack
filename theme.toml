@@ -4,7 +4,7 @@ licenselink = "https://github.com/gevhaz/hugo-theme-notrack/blob/master/LICENSE"
 description = "A libre hugo personal webpage theme without reliance on third parties and no tracking."
 homepage = "https://github.com/gevhaz/hugo-theme-notrack"
 tags = ["minimal", "personal", "responsive", "libre", "flexbox"]
-features = ["gallery", "blog", "resume"]
+features = ["gallery", "blog", "resume", "drop-down menu"]
 min_version = "0.70.0"
 
 [author]
