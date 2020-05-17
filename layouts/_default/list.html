@@ -1,9 +1,24 @@
 {{ define "main" }}
 <main>
-    {{ with (where (where .Site.RegularPages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
-        {{ range . }}
-            {{- partial "blog-entry-summary" . -}}
-        {{ end }}
-    {{ end }}
+
+{{- if .Pages -}}
+    {{- $pages := .Pages -}}
+
+    {{- /* Use site config params for posts per page if available, otherwise default */ -}}
+    {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+        {{- $pages = $.Paginate $pages . -}}
+    {{- else -}}
+        {{- $pages = .Paginate $pages -}}
+    {{- end -}}
+
+    {{- range $pages.Pages -}}
+        <article class="archive-item">
+            {{ partial "blog-entry-summary.html" . }}
+        </article>
+    {{- end -}}
+
+    {{ template "_internal/pagination.html" . }}
+{{- end -}}
+
 </main>
 {{ end }}

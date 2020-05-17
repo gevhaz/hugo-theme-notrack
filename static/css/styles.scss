@@ -275,6 +275,7 @@ nav li:hover {
     margin-left: 0.4em;
     font-size: 0.8em;
     color: $light-text;
+    text-align: left;
 }
 
 span.blog-taxonomy-info {
@@ -289,7 +290,7 @@ a.blog-taxonomy-info {
     color: $midnight-blue;
     text-transform: capitalize;
     //background-color: $contactlinks-color;
-    padding: 0.1em;
+    padding: 0;
 }
 
 em.taxonomy-emph {
@@ -307,6 +308,34 @@ em.taxonomy-emph {
     h2 { font-size: 1.5em; }
     h3 { font-size: 1.35em; }
     h4 { font-size: 1.1em; }
+}
+
+.pagination {
+    list-style-type: none;
+    font-family: FreeSans sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    padding: 0;
+}
+
+.page-item {
+    color: $text-color;
+    display: inline-block;
+    padding: .2em .6em;
+
+    a {
+        color: $text-color;
+    }
+}
+
+.page-item.active {
+    background-color: $tab-active-color;
+    
+    a {
+        background-color: $tab-active-color;
+        color: white;
+    }
 }
 
 // RESUME

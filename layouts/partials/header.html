@@ -22,9 +22,11 @@
                         </div>
                     </li>
                 {{ else }}
+                {{- /* Blog should be the active tab when viewing tags, categories or blog pages */ -}}
+                    {{ $blogPage := or (in $currentPage.Section "blog") (in $currentPage.Section "categories") (in $currentPage.Section "tags") }}
                     {{ if $currentPage.IsMenuCurrent "navbar" . }}
                     <li class="activetab">
-                    {{ else if (and (eq $currentPage.Section "blog") (eq .Name "Blog")) }}
+                    {{ else if (and $blogPage (eq .Name "Blog")) }}
                     <li class="activetab">
                     {{ else }}
                     <li>

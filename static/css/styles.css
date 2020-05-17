@@ -184,7 +184,8 @@ nav li:hover {
   margin-top: 0;
   margin-left: 0.4em;
   font-size: 0.8em;
-  color: #5f5a6f; }
+  color: #5f5a6f;
+  text-align: left; }
 
 span.blog-taxonomy-info {
   font-size: 1.0em;
@@ -195,7 +196,7 @@ a.blog-taxonomy-info {
   font-size: 1em;
   color: #07608f;
   text-transform: capitalize;
-  padding: 0.1em; }
+  padding: 0; }
 
 em.taxonomy-emph {
   font-family: FreeSansOblique; }
@@ -214,6 +215,27 @@ em.taxonomy-emph {
 
 .blog-post-content h4 {
   font-size: 1.1em; }
+
+.pagination {
+  list-style-type: none;
+  font-family: FreeSans sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  padding: 0; }
+
+.page-item {
+  color: #444;
+  display: inline-block;
+  padding: .2em .6em; }
+  .page-item a {
+    color: #444; }
+
+.page-item.active {
+  background-color: #474a4f; }
+  .page-item.active a {
+    background-color: #474a4f;
+    color: white; }
 
 .category-title {
   text-align: left;

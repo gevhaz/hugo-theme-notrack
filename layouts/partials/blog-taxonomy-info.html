@@ -1,15 +1,19 @@
 {{ with .Params.Categories }}
     <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
-        {{ range . }}
-            <a class="blog-taxonomy-info" href="/categories/{{ . | urlize }}">{{ . }}</a>
-        {{ end }}
+        {{ $sort := sort . }}
+        {{ $links := apply $sort "partial" "post-category-link" "." }}
+        {{ $clean := apply $links "chomp" "." }}
+        {{ delimit $clean ", " }}
+        <!-- {{ range . }} <a class="blog-taxonomy-info" href="/categories/{{ . | urlize }}">{{ . }}</a> {{ end }} -->
     </span>
 {{ end }}
 
 {{ with .Params.Tags }}
     <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
-        {{ range . }}
-            <a class="blog-taxonomy-info" href="/tags/{{ . | urlize }}">{{ . }}</a>
-    {{ end }}
+        {{ $sort := sort . }}
+        {{ $links := apply $sort "partial" "post-tag-link" "." }}
+        {{ $clean := apply $links "chomp" "." }}
+        {{ delimit $clean ", " }}
+        <!-- {{ range . }} <a class="blog-taxonomy-info" href="/tags/{{ . | urlize }}">{{ . }}</a> {{ end }} -->
     </span>
 {{ end }}

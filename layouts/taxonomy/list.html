@@ -5,10 +5,24 @@
     {{ else if eq .Data.Singular "tag" }}
     <h1>Tag: {{ .Title }}</h1>
     {{ end }}
-    {{ with (where (where .Pages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
-        {{ range . }}
-            {{- partial "blog-entry-summary" . -}}
-        {{ end }}
-    {{ end }}
-</main>
+
+    {{- if .Pages -}}
+        {{- $pages := .Pages -}}
+
+        {{- /* Use site config params for posts per page if available, otherwise default */ -}}
+        {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+            {{- $pages = $.Paginate $pages . -}}
+        {{- else -}}
+            {{- $pages = .Paginate $pages -}}
+        {{- end -}}
+
+        {{- range $pages.Pages -}}
+            <article class="archive-item">
+                {{ partial "blog-entry-summary.html" . }}
+            </article>
+        {{- end -}}
+
+        {{ template "_internal/pagination.html" . }}
+    {{- end -}}
+    </main>
 {{ end }}
