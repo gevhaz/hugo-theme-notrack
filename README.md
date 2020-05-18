@@ -11,6 +11,9 @@ usage:
 alt="Picture of me" >}}
 ```
 
+There is also a raw html shortcode called `rawhtml` which you can use if 
+you don't like the frame.
+
 At this point you should also set the title for the web site, your name 
 and the text in the header, if you want it to be different from your 
 name. Example entries in `config.yaml`:
