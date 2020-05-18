@@ -3,39 +3,46 @@
     <div class="myname"> 
         <h2><a href="/">{{ .Site.Params.AuthorName }}</a></h2> 
     </div>
-    <!-- Links to the tabs -->
+
+    {{- /* Links to the tabs */ -}}
     <nav>
         <ul class="navbar">
             {{ $currentPage := . }}
-            {{ range .Site.Menus.navbar }}
-                {{ if .HasChildren }}
+            {{- range .Site.Menus.navbar -}}
+                {{- if .HasChildren -}}
                     <li class="dropdown {{ if $currentPage.HasMenuCurrent "navbar" . }}activetab{{ end }}">
                             <a href ="#">
                                 {{ .Pre }}
                                 <span>{{ .Name }}</span>
                             </a>
                         <div class=sub-menu>
-                        {{ range .Children }}
+                        {{- range .Children -}}
                                 <a class="{{ if $currentPage.IsMenuCurrent "navbar" . }}activetab{{ end }}"
                                                   href="{{ .URL }}">{{ .Name }}</a>
-                            {{ end }}
+                            {{- end -}}
                         </div>
                     </li>
-                {{ else }}
+                {{- else -}}
+
                 {{- /* Blog should be the active tab when viewing tags, categories or blog pages */ -}}
-                    {{ $blogPage := or (in site.Params.mainSections $currentPage.Section) (in $currentPage.Section "categories") (in $currentPage.Section "tags") }}
-                    {{ if $currentPage.IsMenuCurrent "navbar" . }}
-                    <li class="activetab">
-                    {{ else if (and $blogPage (eq .Name "Blog")) }}
-                    <li class="activetab">
-                    {{ else }}
-                    <li>
-                    {{ end }}
-                        <a href="{{ .URL }}">
-                            {{ .Pre }}
-                            <span>{{ .Name }}</span>
-                        </a>
-                    </li>
+                {{- $inTags := eq $currentPage.Section "tags" -}}
+                {{- $inCats := eq $currentPage.Section "categories" -}}
+                {{- $inMainSections := in site.Params.mainSections $currentPage.Section -}}
+                {{- $isBlogPage := or $inTags $inCats $inMainSections -}}
+                {{- $blogTabName := default "Blog" site.Params.blogTabName -}}
+                {{- $inBlogMenu := and $isBlogPage (eq .Title $blogTabName) -}}
+
+                {{- /* Two scenarios: the page is a menu in the navbar or it is a blog-related page. */ -}}
+                <li class="
+                {{- if or ($currentPage.IsMenuCurrent "navbar" .) $inBlogMenu -}}
+                    activetab
+                {{- end -}}
+                ">
+                    <a href="{{ .URL }}">
+                        {{ .Pre }}
+                        <span>{{ .Name }}</span>
+                    </a>
+                </li>
                 {{ end }}
             {{ end }}
         </ul>
