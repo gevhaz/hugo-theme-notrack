@@ -20,11 +20,8 @@
             </li>
             {{ end }}
 
-            <li><p></p></li>
-            <li><a  id="icon-licence"
-                    href="http://www.onlinewebfonts.com"
-                    title="Icons are made with Icon Fonts and licensed under CC BY 3.0">*</a>
-            </li>
+            {{ printf "<!-- Icons are made with Icon Fonts (http://www.onlinewebfonts.com) and licensed under CC BY 3.0 -->" | safeHTML }}
+
         </ul>
     </div>
     {{ end }}
