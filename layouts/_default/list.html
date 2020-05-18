@@ -2,7 +2,7 @@
 <main>
 
 {{- if .Pages -}}
-    {{- $pages := .Pages -}}
+    {{- $pages := (where .Pages ".Draft" false) -}}
 
     {{- /* Use site config params for posts per page if available, otherwise default */ -}}
     {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}

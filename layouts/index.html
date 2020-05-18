@@ -2,17 +2,19 @@
     <main>
         {{ .Content }}
 
+        {{- /* By default, don't show latest from the blog */ -}}
+        {{ if default false site.Params.showBlogLatest }}
             {{ with (where (where .Site.RegularPages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
-            {{- /* <p class="delimiter">※  ※  ※</p> */ -}}
             <p class="delimiter">&diams; &diams; &diams;</p>
 
+            {{ $blogLatest := default "Latest from the blog" site.Params.blogLatestHeading }}
+            <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
 
-                <h2 id="latest-blog-home">Latest from the blog</h2>
-
-                {{ range first 3 . }}
+                {{ range first (default 3 site.Params.nBlogLatest) . }}
                     {{- partial "blog-entry-summary" . -}}
                 {{ end }}
             {{ end }}
+        {{ end }}
 
     </main>
 {{ end }}

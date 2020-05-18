@@ -24,7 +24,8 @@
                     </li>
                 {{- else -}}
 
-                {{- /* Blog should be the active tab when viewing tags, categories or blog pages */ -}}
+                {{- /* Find out if active tab is in the tags or categories
+                sections, or a blog page. */ -}}
                 {{- $inTags := eq $currentPage.Section "tags" -}}
                 {{- $inCats := eq $currentPage.Section "categories" -}}
                 {{- $inMainSections := in site.Params.mainSections $currentPage.Section -}}
@@ -32,7 +33,7 @@
                 {{- $blogTabName := default "Blog" site.Params.blogTabName -}}
                 {{- $inBlogMenu := and $isBlogPage (eq .Title $blogTabName) -}}
 
-                {{- /* Two scenarios: the page is a menu in the navbar or it is a blog-related page. */ -}}
+                {{- /* Two scenarios: the active tab is a menu in the navbar or it is a blog-related page. */ -}}
                 <li class="
                 {{- if or ($currentPage.IsMenuCurrent "navbar" .) $inBlogMenu -}}
                     activetab
