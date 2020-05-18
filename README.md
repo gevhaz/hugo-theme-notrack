@@ -40,52 +40,47 @@ params:
 
 # How to make a blog
 
-Blog posts will go in `content/blog/` but you will also need a list page 
-to show all the posts when clicking the blog tab.
+1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
-Start with creating `blog/_index.html` with something like the following 
-front matter:
+2.  Create the menus in your site `config`, as follows:
 
-```
-title: "My Blog"
-menu:
-  navbar:
-    title: "Blog"
-    weight: 30
-```
+     ```
+     menu:
+      navbar:
+      - identifier: "blog"
+        name: "Blog"
+        url: "/blog/"
+        weight: 30
+      - identifier: "categories"
+        name: "All Categories"
+        parent: "blog"
+        url: "/categories/"
+      - identifier: "tags"
+        name: "All Tags"
+        parent: "blog"
+        url: "/tags/"
+    sectionPagesMenu: "navbar"
+    ```
 
-That's all you need for this file – the page itself is constructed by 
-the the layout files for the theme. If you use another title than "Blog" 
-for the menu, set "blogTabName" to the same thing in `params:` in your 
-site config. However, it is unlikely that you need to use a different 
-name since the title of the page is what determines what it says on the 
-blog tab.
+Menus in Hugo are really tricky but this should work. For menus where 
+you actually want to have all of the pages of a section in the drop-down 
+menu, see the next section. You will have to add them to menus in their 
+front matter.
 
-Now you can start adding posts by doing:
-
-```
-hugo new blog/my-first-post.md
-```
-
-If you add categories or tags to your post, you can list all posts of 
-that tag or category by clicking the links in a blog post.
-
-There is currently no way to list all tags or categories but I will 
-likely add this feature later on.
-
-The blog should be a main section. Hugo makes the sections with the most 
-pages main sections by default, but if for some reason it isn't, add it 
-to the main sections manually in your site config:
-
-```
-params:
-  mainSections = ["blog"]
-```
+If you don't want a drop-down menu for listing categories or tags, just 
+remove those parts. You can also list all posts with a specific category 
+or tag by clicking on that category or tag in any post.
 
 # How to add a page to drop down menu
 
+Quick instruction: Set it's `parent` parameter to one of the menus in 
+navbar.
+
+Instructions with example:
+
 1.  Create the top-level menu in config.yaml or your equivalent. An 
-    example:
+    example where the top-level menu doesn't correspond to a real page 
+    (url is #) and is just there to hold the drop-down menu:
 
     ```
     menu:
