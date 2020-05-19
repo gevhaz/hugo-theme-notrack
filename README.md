@@ -71,21 +71,6 @@ If you don't want a drop-down menu for listing categories or tags, just
 remove those parts. You can also list all posts with a specific category 
 or tag by clicking on that category or tag in any post.
 
-# Navigation bar
-
-## How to add a page to the navigation bar
-
-Add it to navbar in the page's front matter:
-
-```
----
-menu:
-  navbar:
-    title: "Contact"
-    weight: 100
----
-```
-
 # How to greate a gallery
 
 There are four shortcodes for creating a gallery:
@@ -126,6 +111,68 @@ covering the full space of a web browser. One way to resize images is
 with graphicsmagick: `gm mogrify -resize 1920x1920 *.jpg`, which will 
 resize all images in the current folder to a maximum width/height of 
 1920 pixels (while maintaining the aspect ratio).
+
+# How to create a resume
+
+There are some shortcodes that can help you create a resume. These are:
+
+* container
+* resume-section
+* resume-entry
+
+Container just creates a div with a specified class (call it 
+"resume-content" in order for the css to work. `resume-section` needs a 
+title which will be shown to the left of it's content (if it can fit on 
+the screen, otherwise it's on top). Within this, you put one or more 
+`resume-entry` shortcodes. First of all, this shortcode takes the three 
+parameters `what` `where` and `when` (see example usage below). It also 
+takes raw HTML within the shortcode tags. There is styling for `<p>`s 
+and unordered and ordered lists. Apart from that, site-wide CSS is used. 
+Example usage:
+
+```
+{{< container >}}
+    {{< resume-section title="About Me" >}}
+        {{< resume-entry >}}
+            <p>
+            Some info about you.
+            </p>
+        {{< /resume-entry >}}
+    {{< /resume-section >}}
+
+    {{< resume-section title="Education" >}}
+        {{< resume-entry what="Bachelor's program of Computer Science"
+                         where="Sidney University"
+                         when="2010–2013">}}
+            <ol>
+                <li> Some comment on what skills you learned</li>
+                <li> Some other comment </li>
+            </ol>
+        {{< /resume-entry >}}
+    {{< /resume-section >}}
+{{< /container >}}
+```
+
+# How to create a contact box
+
+There is a shortcode for creating a framed area with links to your 
+profiles called `contact-box`.
+
+
+# Navigation bar
+
+## How to add a page to the navigation bar
+
+Add it to navbar in the page's front matter:
+
+```
+---
+menu:
+  navbar:
+    title: "Contact"
+    weight: 100
+---
+```
 
 ## How to add a page to drop down menu
 

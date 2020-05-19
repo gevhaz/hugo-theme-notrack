@@ -370,12 +370,6 @@ em.taxonomy-emph {
     }
 }
 
-.resume-list {
-    font-family: FreeSerif, serif;
-    font-size: 1em;
-    color: $text-color;
-}
-
 .resume-entry {
     margin: 0 0 1em 0;
 
@@ -397,10 +391,18 @@ em.taxonomy-emph {
     padding: 0 0 .3em 0;
 }
 
-#aboutme {
-    font-family: FreeSerif, serif;
-    font-size: 0.9em;
-    text-align: justify;
+.resume-inner {
+    p {
+        font-family: FreeSerif, serif;
+        font-size: 0.9em;
+        text-align: justify;
+    }
+
+    ul, ol {
+        font-family: FreeSerif, serif;
+        font-size: .8em;
+        color: $text-color;
+    }
 }
 
 // CONTACT

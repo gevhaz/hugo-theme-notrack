@@ -259,11 +259,6 @@ em.taxonomy-emph {
     font-family: FreeSerif, serif;
     margin-top: 0; }
 
-.resume-list {
-  font-family: FreeSerif, serif;
-  font-size: 1em;
-  color: #444; }
-
 .resume-entry {
   margin: 0 0 1em 0; }
   .resume-entry .what {
@@ -279,10 +274,15 @@ em.taxonomy-emph {
   text-decoration: underline;
   padding: 0 0 .3em 0; }
 
-#aboutme {
+.resume-inner p {
   font-family: FreeSerif, serif;
   font-size: 0.9em;
   text-align: justify; }
+
+.resume-inner ul, .resume-inner ol {
+  font-family: FreeSerif, serif;
+  font-size: .8em;
+  color: #444; }
 
 #contactinformation {
   display: flex;

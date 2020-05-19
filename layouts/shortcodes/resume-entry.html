@@ -16,6 +16,8 @@
 
     <!-- additional HTML under or as the entry -->
     {{ if gt (len .Inner) 0 }}
+    <div class="resume-inner">
         {{ .Inner }}
+    </div>
     {{ end }}
 </div>
