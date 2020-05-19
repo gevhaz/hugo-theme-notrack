@@ -71,7 +71,63 @@ If you don't want a drop-down menu for listing categories or tags, just
 remove those parts. You can also list all posts with a specific category 
 or tag by clicking on that category or tag in any post.
 
-# How to add a page to drop down menu
+# Navigation bar
+
+## How to add a page to the navigation bar
+
+Add it to navbar in the page's front matter:
+
+```
+---
+menu:
+  navbar:
+    title: "Contact"
+    weight: 100
+---
+```
+
+# How to greate a gallery
+
+There are four shortcodes for creating a gallery:
+
+* gallery-category
+* gallery-photo
+* gallery-modal
+* gallery-script
+
+The first two are used in combination to create the actual gallery. Do 
+something like the following in one of your pages:
+
+```
+{{< gallery-category >}}
+    {{< gallery-photo fn="<filename of first picture>" caption="<your caption>">}}
+    {{< gallery-photo fn="<filename of second picture>" caption="<your caption>">}}
+    {{< gallery-photo fn="<filename of third picture>" caption="<your caption>">}}
+    {{< gallery-photo fn="<filename of fourth picture>" caption="<your caption>">}}
+{{< /gallery-category >}}
+```
+
+The pictures should be under `static/img/thumbnails` in your project.
+
+If you want a modal to pop up with a zoomed in version, add the other 
+two shortcodes at the bottom of your page:
+
+```
+{{< gallery-modal >}}
+{{< gallery-script >}}
+```
+
+And have corresponding full-size images under `static/img/fullsize`. The 
+file names need to be the same as for the thumbnails.
+
+Thumbnails should of course be small so that your page loads fast and 
+fullsize should be large enough that they don't look pixelated when 
+covering the full space of a web browser. One way to resize images is 
+with graphicsmagick: `gm mogrify -resize 1920x1920 *.jpg`, which will 
+resize all images in the current folder to a maximum width/height of 
+1920 pixels (while maintaining the aspect ratio).
+
+## How to add a page to drop down menu
 
 Quick instruction: Set it's `parent` parameter to one of the menus in 
 navbar.
