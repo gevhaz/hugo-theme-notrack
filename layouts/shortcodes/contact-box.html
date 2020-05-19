@@ -5,24 +5,18 @@
         <p>
     </div>
 
-    <!-- If any parameters are given -->
-    {{ if gt .Params 0 }}
-    <div id="contactlinks" class="contactbox">
-        <ul>
+    {{ $socialMap := .Site.Data.notrack.social }}
 
-            {{ with .Get "linkedin" }}
-            <li> <img src="/img/linkedin.svg"><a href="linkedin.com/in/{{ . }}">LinkedIn</a>
-            </li>
-            {{ end }}
-
-            {{ with .Get "github" }}
-            <li> <img src="/img/github.svg"><a href="https://github.com/{{ . }}">GitHub</a>
-            </li>
-            {{ end }}
-
-            {{ printf "<!-- Icons are made with Icon Fonts (http://www.onlinewebfonts.com) and licensed under CC BY 3.0 -->" | safeHTML }}
-
-        </ul>
-    </div>
+    {{ with $.Site.Params.social }}
+        <div id="contactlinks" class="contactbox">
+            <ul>
+                {{ range $website, $user := . }}
+                    {{- $data := index $socialMap $website -}}
+                    <li><a href="{{- $data.prefix -}}{{ $user }}"><i class="{{- $data.icon.class -}}"></i>{{ $data.title }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
     {{ end }}
+
+            {{ printf "<!-- Icons are from Awesome Font, licenced under SIL OFL 1.1 (https://scripts.sil.org/OFL) -->" | safeHTML }}
 </div>

@@ -314,6 +314,8 @@ em.taxonomy-emph {
     padding: 10%;
     margin: auto;
     height: 80%; }
+  #contactlinks i {
+    padding-right: 0.3em; }
   #contactlinks a {
     font-family: FreeSansBold, sans-serif;
     font-size: 1em;
