@@ -156,8 +156,27 @@ Example usage:
 # How to create a contact box
 
 There is a shortcode for creating a framed area with links to your 
-profiles called `contact-box`.
+profiles called `contact-box`. The thing it does is to put a frame with 
+links to your social media on the rights side of the page, and, if you 
+want, some text on the left side of the box, outside the frame. Put this 
+text within the shortcode tags.
 
+You decide what social media to include in your site `config` under 
+social under params, like this:
+
+```
+params:
+  social:
+    github: <your github username>
+```
+
+Then, to use the shortcode in a page, do:
+
+```
+{{< contact-box >}}
+Some text you want to include
+{{< /contact-box >}}
+```
 
 # Navigation bar
 
@@ -218,7 +237,8 @@ under GPLv3 or later (you decide). Licenses should also be included in
 the .woff files themselves. Some of the fonts are edited by me to take 
 up less space by including fewer characters.
 
-The icons used for the `contact-box` shortcode are from the *Icon Fonts* 
-of [onlinewebfonts.com](https://www.onlinewebfonts.com/) and licenced 
-under CC BY 3.0. A HTML comment is included in the contact-box shortcode 
-to show the licence and source.
+The icons used for the `contact-box` shortcode are from *Font Awesome* 
+project. Specifically, the project's font file `fa-brands-400.woff2` is 
+used. It's licence is SIL OFL 1.1 (https://scripts.sil.org/OFL). A HTML 
+comment is included in the contact-box shortcode to show the licence and 
+source.
