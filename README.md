@@ -100,3 +100,22 @@ Instructions with example:
         parent: "about-me"
         weight: <Lower numbers will appear further to the left>
     ```
+
+# Other projects used in this theme
+
+The theme does not secretely download any resources from other websites 
+or CDNs. It does, however, make use of two other projects where the 
+files are included in this theme.
+
+## GNU FreeFont
+
+The fonts under static/fonts are parts of the project [GNU 
+FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
+under GPLv3 or later (you decide). Licenses should also be included in 
+the .woff files themselves. Some of the fonts are edited by me to take 
+up less space by including fewer characters.
+
+The icons used for the `contact-box` shortcode are from the *Icon Fonts* 
+of [onlinewebfonts.com](https://www.onlinewebfonts.com/) and licenced 
+under CC BY 3.0. A HTML comment is included in the contact-box shortcode 
+to show the licence and source.
