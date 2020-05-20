@@ -328,3 +328,8 @@ project. Specifically, the project's font file `fa-brands-400.woff2` is
 used. It's licence is SIL OFL 1.1 (https://scripts.sil.org/OFL). A HTML 
 comment is included in the contact-box shortcode to show the licence and 
 source.
+
+For matching the icons from Font Awesome with names for various social 
+networking services, I use the 
+[social.yml](https://github.com/dillonzq/LoveIt/blob/master/assets/data/social.yml) 
+file from the LoveIt theme, which uses the MIT license.
