@@ -7,6 +7,9 @@
 
         <div class="blog-post-content">
             {{ .Content }}
+            {{- if and .Site.Params.disqus (ne .Params.disqus false) -}}
+                {{ partial "disqus-blogpost-script" . }}
+            {{- end -}}
         </div>
 
     </main>

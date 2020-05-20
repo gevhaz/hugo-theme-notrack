@@ -13,6 +13,7 @@ params:
   showBlogLatest: true
   blogLatestHeading: "Recent posts"
   nBlogLatest: 3
+  disqus: false
   social:
     linkedin: "john.doe"
     github: "jdoe"
@@ -181,6 +182,22 @@ or tag by clicking on that category or tag in any post.
 Want images in your post? Use Hugo's built in short code 
 [figure](https://gohugo.io/content-management/shortcodes/#figure) (an 
 example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
+
+### Adding comments
+
+This theme supports disqus comments. It goes against the philosophy of 
+the theme in some sense because it relies on external resources but you 
+can enable it if you want. Comments will be added to all blog posts if 
+you add `disqus: true` in your site `config` and create 
+`layout/partials/disqus-head-script.html` and 
+`layout/partials/disqus-blogpost-script.html`, where the content should 
+match the code you get from following the *Universal Code install 
+instructions* from the disqus webpage after having created an account. 
+The long block of code goes in the disqus-blogpost-script.html partial 
+and the short one in the other.
+
+If you want to disable comments for individual posts you can set 
+`discus:false` in the front matter.
 
 ## How to create a gallery
 
