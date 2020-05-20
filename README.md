@@ -1,4 +1,9 @@
-# Description
+# Notrack
+
+An original, minimal theme with a focus on self-sufficiency. By default, 
+Notrack does not rely on any third parties to serve your website. The 
+only exception is Disqus comments, which are not used by default (see 
+"Adding comments" below).
 
 # Example site `config`
 

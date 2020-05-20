@@ -1,9 +1,9 @@
 <head>
     <title>{{ .Site.Title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontawesome.css">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <link rel="icon" href="/img/icon.png">
+    <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | absURL }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | absURL }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | absURL }}">
+    <link rel="icon" href={{ "img/icon.png" | absURL }}>
     <meta charset="UTF-8">
     <meta name="author" content="{{ .Site.Params.AuthorName }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
