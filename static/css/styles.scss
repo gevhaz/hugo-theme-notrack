@@ -108,12 +108,16 @@ p, li {
 
 strong {
     font-style: normal;
-    font-family: FreeSerifBold;
+    font-family: FreeSerifBold serif;
 }
 
 em {
     font-style: normal;
-    font-family: FreeSerifItalic;
+    font-family: FreeSerifItalic serif;
+}
+
+code {
+    font-family: FreeMono monospace;
 }
 
 .footnotes ol li {

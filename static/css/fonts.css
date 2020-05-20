@@ -46,6 +46,12 @@
     src: url(/fonts/FreeSansOblique.woff);
 }
 
+@font-face 
+{
+    font-family: FreeMono;
+    src: url(/fonts/FreeMono.woff);
+}
+
 /* Copied from Font Awesome and modified for filepath and filetype*/
 
 /*!
