@@ -13,8 +13,8 @@ Here is a working `config.yaml`:
 baseURL: "/"
 title: "My Personal Webpage"
 params:
-  headerTitle: "John Doe's Page"
-  AuthorName: "John Doe"
+  siteHeading: "John Doe's Page"
+  author: "John Doe"
   showBlogLatest: true
   blogLatestHeading: "Recent posts"
   nBlogLatest: 3
@@ -134,8 +134,8 @@ name. Example entries in `config.yaml`:
 ```
 title: "My New Hugo Site"
 params:
-  AuthorName: "John Doe"
-  headerTitle: "a header title"
+  author: "John Doe"
+  siteHeading: "a header title"
 ```
 
 If you want to show the latest posts from your blog at the bottom of the 

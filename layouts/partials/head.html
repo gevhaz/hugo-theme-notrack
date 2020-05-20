@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | absURL }}">
     <link rel="icon" href={{ "img/icon.png" | absURL }}>
     <meta charset="UTF-8">
-    <meta name="author" content="{{ .Site.Params.AuthorName }}">
+    <meta name="author" content="{{ .Site.Params.Author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ if .Site.Params.disqus }}
     {{- partial "disqus-head-script" . }}
