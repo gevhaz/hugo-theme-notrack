@@ -1,4 +1,66 @@
-# Creating a home page
+# Description
+
+# Example site `config`
+
+Here is a working `config.yaml`:
+
+```
+baseURL: "/"
+title: "My Personal Webpage"
+params:
+  headerTitle: "John Doe's Page"
+  AuthorName: "John Doe"
+  showBlogLatest: true
+  blogLatestHeading: "Recent posts"
+  nBlogLatest: 3
+  social:
+    linkedin: "john.doe"
+    github: "jdoe"
+newContentEditor: "vim"
+languageCode: "en-us"
+lang: "en-us"
+theme: "notrack"
+menu:
+  navbar:
+  - identifier: "about-me"
+    name: "About Me"
+    url: "#"
+    weight: 50
+  - identifier: "blog"
+    name: "Blog"
+    url: "/blog/"
+    weight: 30
+  - identifier: "categories"
+    name: "All Categories"
+    parent: "blog"
+    url: "/categories/"
+  - identifier: "tags"
+    name: "All Tags"
+    parent: "blog"
+    url: "/tags/"
+sectionPagesMenu: "navbar"
+Paginate: 5
+PaginatePath: "page"
+```
+
+# Shortcodes
+
+*   contact-box
+*   container
+*   gallery-category
+*   gallery-modal
+*   gallery-photo
+*   gallery-script
+*   ofvideo
+*   p5js
+*   rawhtml
+*   resume-entry
+*   resume-section
+*   resume-subcategory
+
+# How to's
+
+## Creating a home page
 
 The first thing you will want to do is set up the home page of the 
 website. Create `/content/_index.md`. This could contain a short 
@@ -38,7 +100,7 @@ params:
   nBlogLatest: 6
 ```
 
-# How to make a blog
+## How to make a blog
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
@@ -71,7 +133,11 @@ If you don't want a drop-down menu for listing categories or tags, just
 remove those parts. You can also list all posts with a specific category 
 or tag by clicking on that category or tag in any post.
 
-# How to greate a gallery
+Want images in your post? Use Hugo's built in short code 
+[figure](https://gohugo.io/content-management/shortcodes/#figure) (an 
+example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
+
+## How to create a gallery
 
 There are four shortcodes for creating a gallery:
 
@@ -112,7 +178,7 @@ with graphicsmagick: `gm mogrify -resize 1920x1920 *.jpg`, which will
 resize all images in the current folder to a maximum width/height of 
 1920 pixels (while maintaining the aspect ratio).
 
-# How to create a resume
+## How to create a resume
 
 There are some shortcodes that can help you create a resume. These are:
 
@@ -153,7 +219,7 @@ Example usage:
 {{< /container >}}
 ```
 
-# How to create a contact box
+## How to create a contact box
 
 There is a shortcode for creating a framed area with links to your 
 profiles called `contact-box`. The thing it does is to put a frame with 
@@ -178,9 +244,9 @@ Some text you want to include
 {{< /contact-box >}}
 ```
 
-# Navigation bar
+## Navigation bar
 
-## How to add a page to the navigation bar
+### How to add a page to the navigation bar
 
 Add it to navbar in the page's front matter:
 
@@ -193,7 +259,7 @@ menu:
 ---
 ```
 
-## How to add a page to drop down menu
+### How to add a page to drop down menu
 
 Quick instruction: Set it's `parent` parameter to one of the menus in 
 navbar.
@@ -223,13 +289,11 @@ Instructions with example:
         weight: <Lower numbers will appear further to the left>
     ```
 
-# Other projects used in this theme
+## Other projects used in this theme
 
 The theme does not secretely download any resources from other websites 
 or CDNs. It does, however, make use of two other projects where the 
 files are included in this theme.
-
-## GNU FreeFont
 
 The fonts under static/fonts are parts of the project [GNU 
 FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
