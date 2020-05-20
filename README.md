@@ -58,6 +58,51 @@ PaginatePath: "page"
 *   resume-section
 *   resume-subcategory
 
+## Navigation bar
+
+### How to add a page to the navigation bar
+
+Add it to navbar in the page's front matter:
+
+```
+---
+menu:
+  navbar:
+    title: "Contact"
+    weight: 100
+---
+```
+
+### How to add a page to drop down menu
+
+Quick instruction: Set it's `parent` parameter to one of the menus in 
+navbar.
+
+Instructions with example:
+
+1.  Create the top-level menu in config.yaml or your equivalent. An 
+    example where the top-level menu doesn't correspond to a real page 
+    (url is #) and is just there to hold the drop-down menu:
+
+    ```
+    menu:
+      navbar:
+      - identifier: "about-me"
+        name: "About Me"
+        url: "#"
+        weight: 50
+    ```
+
+2.  In the front matter of the page you want to add, put the following:
+
+    ```
+    menu:
+      navbar:
+        title: <What you want the name of the menu to be>
+        parent: "about-me"
+        weight: <Lower numbers will appear further to the left>
+    ```
+
 # How to's
 
 ## Creating a home page
@@ -243,51 +288,6 @@ Then, to use the shortcode in a page, do:
 Some text you want to include
 {{< /contact-box >}}
 ```
-
-## Navigation bar
-
-### How to add a page to the navigation bar
-
-Add it to navbar in the page's front matter:
-
-```
----
-menu:
-  navbar:
-    title: "Contact"
-    weight: 100
----
-```
-
-### How to add a page to drop down menu
-
-Quick instruction: Set it's `parent` parameter to one of the menus in 
-navbar.
-
-Instructions with example:
-
-1.  Create the top-level menu in config.yaml or your equivalent. An 
-    example where the top-level menu doesn't correspond to a real page 
-    (url is #) and is just there to hold the drop-down menu:
-
-    ```
-    menu:
-      navbar:
-      - identifier: "about-me"
-        name: "About Me"
-        url: "#"
-        weight: 50
-    ```
-
-2.  In the front matter of the page you want to add, put the following:
-
-    ```
-    menu:
-      navbar:
-        title: <What you want the name of the menu to be>
-        parent: "about-me"
-        weight: <Lower numbers will appear further to the left>
-    ```
 
 ## Other projects used in this theme
 
