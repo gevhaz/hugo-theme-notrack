@@ -104,7 +104,7 @@ Instructions with example:
         weight: <Lower numbers will appear further to the left>
     ```
 
-# How to's
+# How tos
 
 ## Creating a home page
 
@@ -134,7 +134,7 @@ params:
 ```
 
 If you want to show the latest posts from your blog at the bottom of the 
-home page, set `showBlogLatest` to true in your site config. You may 
+home page, set `showBlogLatest` to true in your site `config`. You may 
 also want to change the number of posts shown (default: 3) and the 
 heading above it (default "Latest from the blog") In config.yaml, it 
 would look like this:
@@ -185,19 +185,19 @@ example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
 
 ### Adding comments
 
-This theme supports disqus comments. It goes against the philosophy of 
+This theme supports Disqus comments. It goes against the philosophy of 
 the theme in some sense because it relies on external resources but you 
 can enable it if you want. Comments will be added to all blog posts if 
-you add `disqus: true` in your site `config` and create 
+you add `disqus: true` under `params:` in your site `config` and create 
 `layout/partials/disqus-head-script.html` and 
 `layout/partials/disqus-blogpost-script.html`, where the content should 
 match the code you get from following the *Universal Code install 
-instructions* from the disqus webpage after having created an account. 
+instructions* from the Disqus web page after having created an account. 
 The long block of code goes in the disqus-blogpost-script.html partial 
 and the short one in the other.
 
 If you want to disable comments for individual posts you can set 
-`discus:false` in the front matter.
+`disqus:false` in the front matter.
 
 ## How to create a gallery
 
@@ -249,7 +249,7 @@ There are some shortcodes that can help you create a resume. These are:
 * resume-entry
 
 Container just creates a div with a specified class (call it 
-"resume-content" in order for the css to work. `resume-section` needs a 
+"resume-content" in order for the CSS to work. `resume-section` needs a 
 title which will be shown to the left of it's content (if it can fit on 
 the screen, otherwise it's on top). Within this, you put one or more 
 `resume-entry` shortcodes. First of all, this shortcode takes the three 
@@ -308,7 +308,7 @@ Some text you want to include
 
 ## Other projects used in this theme
 
-The theme does not secretely download any resources from other websites 
+The theme does not secretly download any resources from other websites 
 or CDNs. It does, however, make use of two other projects where the 
 files are included in this theme.
 
