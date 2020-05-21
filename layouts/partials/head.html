@@ -1,5 +1,5 @@
 <head>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }} | {{ .Title }}</title>
     <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | absURL }}">
     <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | absURL }}">
     <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | absURL }}">
@@ -10,4 +10,8 @@
     {{ if .Site.Params.disqus }}
     {{- partial "disqus-head-script" . }}
     {{- end -}}
+
+    {{ range .AlternativeOutputFormats -}}
+        {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
 </head>
