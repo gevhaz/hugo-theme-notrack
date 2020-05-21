@@ -1,15 +1,23 @@
 {{ define "main" }}
     <main>
-        {{ .Content }}
+        {{ $contentExists := gt (len .Content) 0 }}
+        {{ $blogPages := where .Site.RegularPages.ByDate.Reverse ".Type" "in" .Site.Params.mainSections }}
+        {{ $blogPages = where $blogPages ".Params.draft" "!=" true }}
+        {{ $showLatest := and (default true site.Params.showBlogLatest) $blogPages }}
 
-        {{- /* By default, don't show latest from the blog */ -}}
-        {{ if default false site.Params.showBlogLatest }}
-            {{ with (where (where .Site.RegularPages.ByDate.Reverse ".Section" "eq" "blog") ".Params.draft" "!=" true) }}
+        {{ if $contentExists }}
+            {{ .Content }}
+        {{ end }}
+
+        {{ if and $contentExists $showLatest }}
             <p class="delimiter">&diams; &diams; &diams;</p>
 
             {{ $blogLatest := default "Latest from the blog" site.Params.blogLatestHeading }}
             <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
+        {{ end }}
 
+        {{ if $showLatest }}
+            {{ with $blogPages }}
                 {{ range first (default 3 site.Params.nBlogLatest) . }}
                     {{- partial "blog-entry-summary" . -}}
                 {{ end }}

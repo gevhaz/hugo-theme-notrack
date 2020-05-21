@@ -15,7 +15,7 @@ title: "My Personal Webpage"
 params:
   siteHeading: "John Doe's Page"
   author: "John Doe"
-  showBlogLatest: true
+  showBlogLatest: false
   blogLatestHeading: "Recent posts"
   nBlogLatest: 3
   disqus: false
@@ -138,10 +138,10 @@ params:
   siteHeading: "a header title"
 ```
 
-If you want to show the latest posts from your blog at the bottom of the 
-home page, set `showBlogLatest` to true in your site `config`. You may 
-also want to change the number of posts shown (default: 3) and the 
-heading above it (default "Latest from the blog") In config.yaml, it 
+If you don't want to show the latest posts from your blog at the bottom 
+of the home page, set `showBlogLatest` to false in your site `config`. 
+You may also want to change the number of posts shown (default: 3) and 
+the heading above it (default "Latest from the blog") In config.yaml, it 
 would look like this:
 
 ```

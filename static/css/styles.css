@@ -227,6 +227,25 @@ em.taxonomy-emph {
 .blog-post-content h4 {
   font-size: 1.1em; }
 
+.taxonomy-links ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #444; }
+  .taxonomy-links ul li {
+    flex-grow: 1;
+    margin: 1em; }
+  .taxonomy-links ul li a {
+    display: inline-block;
+    background-color: #ddd;
+    font-size: 1.5em;
+    text-align: center;
+    color: #444;
+    padding: .5em;
+    width: 90%; }
+
 .pagination {
   list-style-type: none;
   font-family: FreeSans sans-serif;

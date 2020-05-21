@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main>
+
+    <div class="taxonomy-links">
+        <ul>
+            <li><a href="{{ "categories" | absURL }}">Categories</a></li>
+            <li><a href="{{ "tags" | absURL }}">Tags</a></li>
+        </ul>
+    </div>
+
+{{- if .Pages -}}
+    {{- $pages := (where .Pages ".Draft" false) -}}
+
+    {{- /* Use site config params for posts per page if available, otherwise default */ -}}
+    {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+        {{- $pages = $.Paginate $pages . -}}
+    {{- else -}}
+        {{- $pages = .Paginate $pages -}}
+    {{- end -}}
+
+    {{- range $pages.Pages -}}
+        <article>
+            {{ partial "blog-entry-summary.html" . }}
+        </article>
+    {{- end -}}
+
+    {{ partial "pagination.html" . }}
+{{- end -}}
+
+</main>
+{{ end }}
