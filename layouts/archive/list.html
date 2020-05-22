@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main>
+
+{{ with .Site.GetPage "section" "post" }}
+    {{- $byyear := (where .Pages ".Draft" false).GroupByDate "2006" -}}
+
+    {{- range $byyear -}}
+        <h2>{{ .Key }}</h2>
+
+        <ul>
+            {{ range.Pages }}
+                <li> <time>{{ .Date.Format "01/02" }}</time>
+                    <span> - </span>
+                    <a href="{{ .Permalink }}">
+                        <span>{{ .Title }}</span>
+                    </a>
+                </li>
+            {{ end }}
+        </ul>
+    {{- end -}}
+{{ end }}
+
+</main>
+{{ end }}
