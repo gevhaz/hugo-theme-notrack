@@ -250,7 +250,9 @@ em.taxonomy-emph {
   border-bottom: 2px solid #444; }
   .taxonomy-links ul li {
     flex-grow: 1;
-    margin: 1em; }
+    margin: 1em 0.5em;
+    width: 100%;
+    display: flex; }
   .taxonomy-links ul li a {
     display: inline-block;
     background-color: #ddd;
@@ -258,7 +260,7 @@ em.taxonomy-emph {
     text-align: center;
     color: #444;
     padding: .5em;
-    width: 90%; }
+    flex-grow: 1; }
 
 .pagination {
   list-style-type: none;

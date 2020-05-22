@@ -350,7 +350,9 @@ em.taxonomy-emph {
 
         li {
             flex-grow: 1;
-            margin: 1em;
+            margin: 1em 0.5em;
+            width: 100%;
+            display: flex;
         }
 
         li a {
@@ -360,7 +362,7 @@ em.taxonomy-emph {
             text-align: center;
             color: $text-color;
             padding: .5em;
-            width: 90%;
+            flex-grow: 1;
         }
 }
 
