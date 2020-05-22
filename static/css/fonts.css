@@ -6,32 +6,24 @@
 
 @font-face 
 {
-    font-family: FreeSansBoldOblique;
+    font-family: FreeSans;
     src: url(/fonts/FreeSansBoldOblique.woff);
+    font-weight: bold;
+    font-style: oblique;
 }
 
 @font-face 
 {
-    font-family: FreeSerifItalic;
-    src: url(/fonts/FreeSerifItalic-small.woff);
-}
-
-@font-face 
-{
-    font-family: FreeSerifBoldItalic;
-    src: url(/fonts/FreeSerifBoldItalic-small.woff);
-}
-
-@font-face 
-{
-    font-family: FreeSansBold;
+    font-family: FreeSans;
     src: url(/fonts/FreeSansBold-small.woff);
+    font-weight: bold;
 }
 
 @font-face 
 {
-    font-family: FreeSerifBold;
-    src: url(/fonts/FreeSerifBold-small.woff);
+    font-family: FreeSans;
+    src: url(/fonts/FreeSansOblique.woff);
+    font-style: oblique;
 }
 
 @font-face 
@@ -42,14 +34,30 @@
 
 @font-face 
 {
-    font-family: FreeSansOblique;
-    src: url(/fonts/FreeSansOblique.woff);
+    font-family: FreeSerif;
+    src: url(/fonts/FreeSerifItalic-small.woff);
+    font-style: italic;
 }
 
 @font-face 
 {
-    font-family: FreeMono;
-    src: url(/fonts/FreeMono.woff);
+    font-family: FreeSerif;
+    src: url(/fonts/FreeSerifBoldItalic-small.woff);
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face 
+{
+    font-family: FreeSerif;
+    src: url(/fonts/FreeSerifBold-small.woff);
+    font-weight: bold;
+}
+
+@font-face 
+{
+    font-family: Mononoki;
+    src: url(/fonts/mononoki-Regular.woff2);
 }
 
 /* Copied from Font Awesome and modified for filepath and filetype*/

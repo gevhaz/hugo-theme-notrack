@@ -317,15 +317,22 @@ The theme does not secretly download any resources from other websites
 or CDNs. It does, however, make use of two other projects where the 
 files are included in this theme.
 
-The fonts under static/fonts are parts of the project [GNU 
+Some of the fonts under static/fonts are parts of the project [GNU 
 FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
-under GPLv3 or later (you decide). Licenses should also be included in 
-the .woff files themselves. Some of the fonts are edited by me to take 
-up less space by including fewer characters.
+under GPLv3 or later (you decide). Licenses are also supposed to be 
+included in the .woff files themselves. Some of the fonts are edited by 
+me to take up less space by including fewer characters.
 
-The icons used for the `contact-box` shortcode are from *Font Awesome* 
-project. Specifically, the project's font file `fa-brands-400.woff2` is 
-used. It's licence is SIL OFL 1.1 (https://scripts.sil.org/OFL). A HTML 
+The monospace font in the same directory, used for code in the theme, is 
+[Mononoki](https://github.com/madmalik/mononoki). It is licensed under 
+SIL OFL 1.1 
+([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
+
+The icons used for the `contact-box` shortcode are from [Font 
+Awesome](https://github.com/FortAwesome/Font-Awesome) project. 
+Specifically, the project's font file `fa-brands-400.woff2` is used. 
+It's licence is SIL OFL 1.1 
+([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML 
 comment is included in the contact-box shortcode to show the licence and 
 source.
 

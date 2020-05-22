@@ -44,6 +44,8 @@ a {
 
 h1, h2, h3, h4 {
   font-family: FreeSans, sans-serif;
+  font-weight: bold;
+  font-style: normal;
   color: #333; }
 
 p, li {
@@ -53,18 +55,30 @@ p, li {
 
 strong {
   font-style: normal;
-  font-family: FreeSerifBold serif; }
+  font-family: FreeSerif, serif;
+  font-weight: bold; }
 
 em {
   font-style: normal;
-  font-family: FreeSerifItalic serif; }
+  font-family: FreeSerif, serif;
+  font-style: italic; }
 
-code {
-  font-family: FreeMono;
+kbd, code {
+  font-family: Mononoki, monospace;
+  color: #444;
   font-size: 0.9em; }
 
+th {
+  font-family: FreeSerif, serif;
+  font-weight: bold;
+  color: #444; }
+
+td {
+  font-family: FreeSerif, serif;
+  color: #444; }
+
 .footnotes ol li {
-  font-family: FreeSerif serif;
+  font-family: FreeSerif, serif;
   font-size: 0.8em; }
 
 figcaption {
@@ -154,7 +168,9 @@ nav li:hover {
 .myname a {
   color: black;
   text-decoration: none;
-  font-family: FreeSerifBoldItalic, serif; }
+  font-family: FreeSerif, serif;
+  font-style: italic;
+  font-weight: bold; }
 
 .myname h2 {
   margin: 0; }
@@ -210,10 +226,8 @@ a.blog-taxonomy-info {
   padding: 0; }
 
 em.taxonomy-emph {
-  font-family: FreeSansOblique; }
-
-.blog-post-content h1, .blog-post-content h2, .blog-post-content h3, .blog-post-content h4, .blog-post-content h5 {
-  font-family: FreeSans, sans-serif; }
+  font-family: FreeSans, sans-serif;
+  font-style: oblique; }
 
 .blog-post-content h1 {
   font-size: 1.7em; }
@@ -248,7 +262,7 @@ em.taxonomy-emph {
 
 .pagination {
   list-style-type: none;
-  font-family: FreeSans sans-serif;
+  font-family: FreeSans, sans-serif;
   display: flex;
   justify-content: center;
   margin: 1em;
@@ -292,7 +306,8 @@ em.taxonomy-emph {
 .resume-entry {
   margin: 0 0 1em 0; }
   .resume-entry .what {
-    font-family: FreeSerifItalic, serif;
+    font-family: FreeSerif, serif;
+    font-style: italic;
     font-size: 1.0em; }
   .resume-entry .where, .resume-entry .when {
     font-family: FreeSerif, serif;
@@ -347,7 +362,8 @@ em.taxonomy-emph {
   #contactlinks i {
     padding-right: 0.3em; }
   #contactlinks a {
-    font-family: FreeSansBold, sans-serif;
+    font-family: FreeSans, sans-serif;
+    font-weight: bold;
     font-size: 1em;
     color: #524e59; }
   #contactlinks img {
@@ -372,13 +388,13 @@ em.taxonomy-emph {
   text-align: justify; }
 
 blockquote {
-  font-family: FreeSerif serif;
+  font-family: FreeSerif, serif;
   font-size: .9em;
-  /*
-    border-left: 0.2em solid $cv-red;
-    padding-left: 0.8em;
-    margin: 1em;
-    */ }
+  color: #444; }
+
+cite {
+  font-family: FreeSerif, serif;
+  font-style: italic; }
 
 #gallery h3 {
   font-size: 1.7em; }

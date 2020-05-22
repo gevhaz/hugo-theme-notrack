@@ -1,4 +1,4 @@
 ---
 title: '{{ replace .Name "-" " " | title }}'
-menu: "navbar"
+menu: "main"
 ---
