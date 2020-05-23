@@ -154,6 +154,10 @@ figcaption {
     }
 }
 
+.page-title {
+    text-align: center;
+}
+
 // NAVBAR
 
 nav {
@@ -297,7 +301,7 @@ nav li:hover {
 .blog-post-title {
     margin-bottom: 0.2em;
     padding-bottom: 0;
-    font-size: 2em;
+    font-size: 1.5em;
 
     a {
         color: $heading-gray;

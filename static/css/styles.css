@@ -88,6 +88,9 @@ figcaption {
   figcaption h4 {
     margin: 0.3em 0; }
 
+.page-title {
+  text-align: center; }
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -202,7 +205,7 @@ nav li:hover {
 .blog-post-title {
   margin-bottom: 0.2em;
   padding-bottom: 0;
-  font-size: 2em; }
+  font-size: 1.5em; }
   .blog-post-title a {
     color: #333;
     font-family: FreeSans, sans-serif; }
