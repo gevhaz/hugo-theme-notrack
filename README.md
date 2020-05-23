@@ -26,24 +26,6 @@ newContentEditor: "vim"
 languageCode: "en-us"
 lang: "en-us"
 theme: "notrack"
-menu:
-  navbar:
-  - identifier: "about-me"
-    name: "About Me"
-    url: "#"
-    weight: 50
-  - identifier: "blog"
-    name: "Blog"
-    url: "/blog/"
-    weight: 30
-  - identifier: "categories"
-    name: "All Categories"
-    parent: "blog"
-    url: "/categories/"
-  - identifier: "tags"
-    name: "All Tags"
-    parent: "blog"
-    url: "/tags/"
 sectionPagesMenu: "navbar"
 Paginate: 5
 PaginatePath: "page"
@@ -78,6 +60,9 @@ menu:
     weight: 100
 ---
 ```
+
+Don't use the site `config` to add menus because then the highlighting 
+of active tabs won't work.
 
 ### How to add a page to drop down menu
 

@@ -53,10 +53,15 @@
                 {{- else -}}
                     {{ $currentMenusPage := .Page }}
                     {{ $currentPageIsTaxonomy := or (eq $currentPage.Kind "taxonomyTerm") (eq $currentPage.Kind "taxonomy") }}
-                    {{ $currentMenuInMainSections := in site.Params.mainSections $currentMenusPage.Type }}
+                    {{ $currentMenuInMainSections := false }}
+                    {{ with $currentMenusPage }}
+                        {{ $currentMenuInMainSections = in site.Params.mainSections .Type }}
+                    {{ end }}
 
                     {{ $active := eq $currentMenusPage $currentPagesParent }}
-                    {{ $active = and $active (ne $currentMenusPage.IsHome true) }}
+                    {{ with $currentMenusPage }}
+                        {{ $active = and $active (ne $currentMenusPage.IsHome true) }}
+                    {{ end }}
                     {{ $active = or $active (and $currentPageIsTaxonomy $currentMenuInMainSections) }}
                     {{ $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
                     <li class="{{- if $active -}} activetab {{- end -}}">
