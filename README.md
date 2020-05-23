@@ -68,7 +68,7 @@ PaginatePath: "page"
 
 ### How to add a page to the navigation bar
 
-Add it to navbar in the page's front matter:
+Add it to navbar in the page's front matter of the page:
 
 ```
 ---
@@ -155,34 +155,58 @@ params:
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
-2.  Create the menus in your site `config`, as follows:
+2. `hugo new blog/_index.md` and create the blog menu in front matter:
 
-     ```
-     menu:
-      navbar:
-      - identifier: "blog"
+    ```
+    ---
+    menu:
+      main:
+        identifier: "blog"
         name: "Blog"
-        url: "/blog/"
-        weight: 30
-      - identifier: "categories"
-        name: "All Categories"
-        parent: "blog"
-        url: "/categories/"
-      - identifier: "tags"
-        name: "All Tags"
-        parent: "blog"
-        url: "/tags/"
-    sectionPagesMenu: "navbar"
+        weight: <lower number than your other menus for more leftward 
+        placement>
+    ---
     ```
 
-Menus in Hugo are really tricky but this should work. For menus where 
-you actually want to have all of the pages of a section in the drop-down 
-menu, see the next section. You will have to add them to menus in their 
-front matter.
+3.  (Optional) Create a drop-down menu with links to tags, categories 
+    and archive by creating pages in the style of `hugo new 
+    tags/_index.md`. It doesn't need any content at all, just create a 
+    front matter where you add it to the main menu with the `identifier` 
+    of your blog menu entry as parent:
+
+    ```
+    ---
+    menu:
+      main:
+        name: "All Tags"
+        parent: "blog"
+        weight: <lower number than your other menus for more upward 
+        placement>
+    ---
+    ```
+
+For those of you who do the third step, there is an option available to 
+remove the buttons with links to the archive, tags and category pages 
+from the top of the blog list page. Just set the follwing in your site 
+`config`:
+
+```
+params:
+  showTaxonomyLinks: false
+```
+
+Menus in Hugo are a mess to program for a theme but this should work. 
+It's the method that gives you, the user, the most freedom to choose the 
+structure of your content folder. There are [other 
+methods](https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029) 
+but they force you to put all of your posts in a folder with a specific 
+name.
 
 If you don't want a drop-down menu for listing categories or tags, just 
-remove those parts. You can also list all posts with a specific category 
-or tag by clicking on that category or tag in any post.
+skip step 3. You can still disable the links to the taxonomy pages. Your 
+readers can list all posts from a specific category or a tag by clicking 
+on that category or tag in any post instead, and you can link to 
+`yourpage.com/categories` from other places too.
 
 Want images in your post? Use Hugo's built in short code 
 [figure](https://gohugo.io/content-management/shortcodes/#figure) (an 

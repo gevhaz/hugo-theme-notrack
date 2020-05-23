@@ -1,8 +1,9 @@
 {{ define "main" }}
 <main>
-    {{ if eq .Data.Singular "category" }}
+    {{- /* Hardcoded values for identifying whether we're looking at a tag or category */ -}}
+    {{ if or (eq .Data.Plural "categories") (eq .Data.Singular "category") }}
     <h1>Category: {{ .Title }}</h1>
-    {{ else if eq .Data.Singular "tag" }}
+    {{ else if or (eq .Data.Plural "tags") (eq .Data.Singular "tag") }}
     <h1>Tag: {{ .Title }}</h1>
     {{ end }}
 
