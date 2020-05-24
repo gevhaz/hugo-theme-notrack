@@ -58,7 +58,7 @@
                 {{- with $currentMenusPage }}
                     {{- $active = and $active (ne $currentMenusPage.IsHome true) }}
                 {{- end }}
-                {{- $active = and $active (ne $currentPage.Dir "/" ) }}
+                {{- $active = and $active (ne $currentPage.File.Dir "/" ) }}
                 {{- $active = or $active (and $currentPageIsTaxonomy $currentMenuInMainSections) }}
                 {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
             <li class="{{- if $active -}} activetab {{- end -}}">
