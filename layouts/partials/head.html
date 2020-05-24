@@ -1,3 +1,4 @@
+
 <head>
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
     <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | absURL }}">
@@ -11,7 +12,7 @@
     {{- partial "disqus-head-script" . }}
     {{- end -}}
 
-    {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
+    {{ range .AlternativeOutputFormats }}
+        {{- printf `    <link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 </head>
