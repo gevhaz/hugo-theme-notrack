@@ -58,9 +58,11 @@
                 {{- with $currentMenusPage }}
                     {{- $active = and $active (ne $currentMenusPage.IsHome true) }}
                 {{- end }}
-                {{- $active = and $active (ne $currentPage.File.Dir "/" ) }}
+                {{ with $currentPage.File }}
+                    {{- $active = and $active (ne .Dir "/" ) }}
+                {{ end }}
                 {{- $active = or $active (eq $currentPage.Title .Name ) }}
-                {{- $active = or $active (eq $currentPage.URL .URL ) }}
+                {{- $active = or $active (eq $currentPage.RelPermalink .URL ) }}
                 {{- $active = or $active (and $currentPageIsTaxonomy $currentMenuInMainSections) }}
                 {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
             <li class="{{- if $active -}} activetab {{- end -}}">

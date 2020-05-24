@@ -14,9 +14,9 @@
     {{- end -}}
 
     {{- range $pages.Pages -}}
-        <article>
-            {{ partial "blog-entry-summary.html" . }}
-        </article>
+    <article>
+        {{ partial "blog-entry-summary.html" . }}
+    </article>
     {{- end -}}
 
     {{ partial "pagination.html" . }}
