@@ -8,10 +8,6 @@
     <meta charset="UTF-8">
     <meta name="author" content="{{ .Site.Params.Author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ if .Site.Params.disqus }}
-    {{- partial "disqus-head-script" . }}
-    {{- end -}}
-
     {{ range .AlternativeOutputFormats }}
         {{- printf `    <link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML -}}
   {{ end }}

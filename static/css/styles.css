@@ -205,41 +205,31 @@ nav li:hover {
 .blog-post-title {
   margin-bottom: 0.2em;
   padding-bottom: 0;
-  font-size: 1.5em; }
+  font-size: 1.6em; }
   .blog-post-title a {
     color: #333;
     font-family: FreeSans, sans-serif; }
 
-.blog-post-date {
-  margin-top: 0;
-  margin-left: 0.4em;
+.blog-post-info {
+  margin: 0.2em 0;
   font-size: 0.8em;
   color: #5f5a6f;
-  text-align: left; }
-
-span.blog-taxonomy-info {
-  font-size: 1.0em;
-  color: #5f5a6f;
-  text-transform: capitalize; }
-
-a.blog-taxonomy-info {
-  font-size: 1em;
-  color: #07608f;
-  text-transform: capitalize;
-  padding: 0; }
+  margin-left: 1em; }
+  .blog-post-info a {
+    text-transform: capitalize; }
 
 em.taxonomy-emph {
   font-family: FreeSans, sans-serif;
   font-style: oblique; }
 
 .blog-post-content h1 {
-  font-size: 1.7em; }
+  font-size: 1.4em; }
 
 .blog-post-content h2 {
-  font-size: 1.5em; }
+  font-size: 1.3em; }
 
 .blog-post-content h3 {
-  font-size: 1.35em; }
+  font-size: 1.2em; }
 
 .blog-post-content h4 {
   font-size: 1.1em; }

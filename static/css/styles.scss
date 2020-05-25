@@ -301,7 +301,7 @@ nav li:hover {
 .blog-post-title {
     margin-bottom: 0.2em;
     padding-bottom: 0;
-    font-size: 1.5em;
+    font-size: 1.6em;
 
     a {
         color: $heading-gray;
@@ -309,27 +309,13 @@ nav li:hover {
     }
 }
 
-.blog-post-date {
-    margin-top: 0;
-    margin-left: 0.4em;
+.blog-post-info {
+    margin: 0.2em 0;
     font-size: 0.8em;
     color: $light-text;
-    text-align: left;
-}
+    margin-left: 1em;
 
-span.blog-taxonomy-info {
-    font-size: 1.0em;
-    color: $light-text;
-    text-transform: capitalize;
-}
-
-a.blog-taxonomy-info {
-    font-size: 1em;
-    //color: $light-text;
-    color: $midnight-blue;
-    text-transform: capitalize;
-    //background-color: $contactlinks-color;
-    padding: 0;
+    a { text-transform: capitalize; }
 }
 
 em.taxonomy-emph {
@@ -338,9 +324,9 @@ em.taxonomy-emph {
 }
 
 .blog-post-content {
-    h1 { font-size: 1.7em; }
-    h2 { font-size: 1.5em; }
-    h3 { font-size: 1.35em; }
+    h1 { font-size: 1.4em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.2em; }
     h4 { font-size: 1.1em; }
 }
 
