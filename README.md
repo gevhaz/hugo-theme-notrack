@@ -1,9 +1,10 @@
 # Notrack
 
-An original, minimal theme with a focus on self-sufficiency. By default, 
-Notrack does not rely on any third parties to serve your website. The 
-only exception is Disqus comments, which are not used by default (see 
-"Adding comments" below).
+An original, minimal theme with a focus on self-sufficiency and 
+decentralization. By default, Notrack does not rely on any third parties 
+to serve your website. The only exception is Disqus comments, which are 
+not used by default (see [Adding 
+comments](#user-content-adding-comments) below).
 
 # Example site `config`
 
@@ -12,13 +13,13 @@ Here is a working `config.yaml`:
 ```
 baseURL: "/"
 title: "My Personal Webpage"
+disqusShortname: "example-com"
 params:
   siteHeading: "John Doe's Page"
   author: "John Doe"
   showBlogLatest: false
   blogLatestHeading: "Recent posts"
   nBlogLatest: 3
-  disqus: false
   social:
     linkedin: "john.doe"
     github: "jdoe"
@@ -26,7 +27,6 @@ newContentEditor: "vim"
 languageCode: "en-us"
 lang: "en-us"
 theme: "notrack"
-sectionPagesMenu: "navbar"
 Paginate: 5
 PaginatePath: "page"
 ```
@@ -50,12 +50,12 @@ PaginatePath: "page"
 
 ### How to add a page to the navigation bar
 
-Add it to navbar in the page's front matter of the page:
+Add it to `main` menu in the page's front matter of the page:
 
 ```
 ---
 menu:
-  navbar:
+  main:
     title: "Contact"
     weight: 100
 ---
@@ -67,7 +67,7 @@ of active tabs won't work.
 ### How to add a page to drop down menu
 
 Quick instruction: Set it's `parent` parameter to one of the menus in 
-navbar.
+`main`.
 
 Instructions with example:
 
@@ -77,7 +77,7 @@ Instructions with example:
 
     ```
     menu:
-      navbar:
+      main:
       - identifier: "about-me"
         name: "About Me"
         url: "#"
@@ -88,7 +88,7 @@ Instructions with example:
 
     ```
     menu:
-      navbar:
+      main:
         title: <What you want the name of the menu to be>
         parent: "about-me"
         weight: <Lower numbers will appear further to the left>
@@ -201,17 +201,12 @@ example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
 
 This theme supports Disqus comments. It goes against the philosophy of 
 the theme in some sense because it relies on external resources but you 
-can enable it if you want. Comments will be added to all blog posts if 
-you add `disqus: true` under `params:` in your site `config` and create 
-`layout/partials/disqus-head-script.html` and 
-`layout/partials/disqus-blogpost-script.html`, where the content should 
-match the code you get from following the *Universal Code install 
-instructions* from the Disqus web page after having created an account. 
-The long block of code goes in the disqus-blogpost-script.html partial 
-and the short one in the other.
+can enable it if you want. 
 
-If you want to disable comments for individual posts you can set 
-`disqus:false` in the front matter.
+Disqus is implemented the [default Hugo 
+way](https://gohugo.io/content-management/comments/#add-disqus) so just 
+add your Disqus Shortname in the site `config` and all blog posts will 
+have a comments section.
 
 ## How to create a gallery
 
@@ -323,8 +318,9 @@ Some text you want to include
 ## Other projects used in this theme
 
 The theme does not secretly download any resources from other websites 
-or CDNs. It does, however, make use of two other projects where the 
-files are included in this theme.
+or CDNs. It does, however, make use of a few other projects. These are 
+included in the theme, so you'll homepage will be responsible for 
+serving the resources.
 
 Some of the fonts under static/fonts are parts of the project [GNU 
 FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
