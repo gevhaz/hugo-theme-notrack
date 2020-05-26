@@ -170,6 +170,9 @@ params:
     ---
     ```
 
+    In the case of archive, you may also need to set the layout to 
+    archive in `_index.md`'s front matter: `layout: archives`.
+
 For those of you who do the third step, there is an option available to 
 remove the buttons with links to the archive, tags and category pages 
 from the top of the blog list page. Just set the follwing in your site 
