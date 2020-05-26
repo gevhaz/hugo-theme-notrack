@@ -1,26 +1,47 @@
 {{ define "main" }}
 <main>
 
-<h1 class="page-title">{{ .Title }}</h1>
+    <h1 class="page-title">{{ .Title }}</h1>
 
-{{- if .Pages -}}
-    {{- $pages := (where .Pages ".Draft" false) -}}
+    {{ if default true .Site.Params.showTaxonomyLinks }}
+    <div class="taxonomy-links">
+        <ul>
+            {{ $archivesExists := false }}
+            {{ $archivesPageTitle := "" }}
+            {{ $archivesPagePermalink := "" }}
+            {{ range .Site.AllPages }}
+                {{ if eq .Layout "archives" }}
+                    {{ $archivesExists = true }}
+                    {{ $archivesPagePermalink = .Permalink }}
+                    {{ with .Title }}
+                        {{ $archivesPageTitle = . }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ if $archivesExists }}
+            <li><a href="{{ $archivesPagePermalink }}">{{ default "Archives" $archivesPageTitle }}</a></li>
+            {{ end }}
+            <li><a href="{{ "categories" | absURL }}">Categories</a></li>
+            <li><a href="{{ "tags" | absURL }}">Tags</a></li>
+        </ul>
+    </div>
+    {{ end }}
 
-    {{- /* Use site config params for posts per page if available, otherwise default */ -}}
-    {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
-        {{- $pages = $.Paginate $pages . -}}
-    {{- else -}}
-        {{- $pages = .Paginate $pages -}}
+    {{- if .Pages -}}
+        {{- $pages := (where .Pages ".Draft" false) -}}
+
+        {{- /* Use site config params for posts per page if available, otherwise default */ -}}
+        {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
+            {{- $pages = $.Paginate $pages . -}}
+        {{- else -}}
+            {{- $pages = .Paginate $pages -}}
+        {{- end -}}
+
+        {{- range $pages.Pages -}}
+            {{ partial "blog-entry-summary.html" . }}
+        {{- end -}}
+
+        {{ partial "pagination.html" . }}
     {{- end -}}
-
-    {{- range $pages.Pages -}}
-    <article>
-        {{ partial "blog-entry-summary.html" . }}
-    </article>
-    {{- end -}}
-
-    {{ partial "pagination.html" . }}
-{{- end -}}
-
 </main>
 {{ end }}

@@ -1,0 +1,6 @@
+{{ range .Pages }}
+<article>
+    <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    {{ .Content }}
+</article>
+{{ end }}
