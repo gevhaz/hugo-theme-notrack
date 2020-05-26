@@ -4,7 +4,6 @@
         {{ $links := apply $sort "partial" "post-category-link" "." }}
         {{ $clean := apply $links "chomp" "." }}
         {{ delimit $clean ", " }}
-        <!-- {{ range . }} <a class="blog-taxonomy-info" href="/categories/{{ . | urlize }}">{{ . }}</a> {{ end }} -->
     </span>
 {{ end }}
 
@@ -14,6 +13,5 @@
         {{ $links := apply $sort "partial" "post-tag-link" "." }}
         {{ $clean := apply $links "chomp" "." }}
         {{ delimit $clean ", " }}
-        <!-- {{ range . }} <a class="blog-taxonomy-info" href="/tags/{{ . | urlize }}">{{ . }}</a> {{ end }} -->
     </span>
 {{ end }}

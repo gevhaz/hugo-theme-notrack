@@ -215,7 +215,8 @@ nav li:hover {
   margin: 0.2em 0;
   font-size: 0.8em;
   color: #5f5a6f;
-  margin-left: 1em; }
+  margin-left: 1em;
+  text-align: left; }
   .blog-post-info a {
     text-transform: capitalize; }
 
