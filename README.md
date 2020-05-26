@@ -6,6 +6,24 @@ to serve your website. The only exception is Disqus comments, which are
 not used by default (see [Adding 
 comments](#user-content-adding-comments) below).
 
+# Table of contents
+
+* [Notrack](#user-content-notrack)
+* [Table of contents](#user-content-table-of-contents)
+* [Example site `config`](#user-content-example-site-config)
+* [Shortcodes](#user-content-shortcodes)
+* [Navigation bar](#user-content-navigation-bar)
+  * [How to add a page to the navigation bar](#user-content-how-to-add-a-page-to-the-navigation-bar)
+  * [How to add a page to drop down menu](#user-content-how-to-add-a-page-to-drop-down-menu)
+* [How tos](#user-content-how-tos)
+  * [Creating a home page](#user-content-creating-a-home-page)
+  * [How to make a blog](#user-content-how-to-make-a-blog)
+    * [Adding comments](#user-content-adding-comments)
+  * [How to create a gallery](#user-content-how-to-create-a-gallery)
+  * [How to create a resume](#user-content-how-to-create-a-resume)
+  * [How to create a contact box](#user-content-how-to-create-a-contact-box)
+  * [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
+
 # Example site `config`
 
 Here is a working `config.yaml`:
