@@ -354,6 +354,7 @@ em.taxonomy-emph {
             color: $text-color;
             padding: .5em;
             flex-grow: 1;
+            text-transform: capitalize;
         }
 }
 

@@ -254,7 +254,8 @@ em.taxonomy-emph {
     text-align: center;
     color: #444;
     padding: .5em;
-    flex-grow: 1; }
+    flex-grow: 1;
+    text-transform: capitalize; }
 
 .pagination {
   list-style-type: none;
