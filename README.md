@@ -38,6 +38,7 @@ params:
   showBlogLatest: false
   blogLatestHeading: "Recent posts"
   nBlogLatest: 3
+  showTaxonomyLinks: false
   social:
     linkedin: "john.doe"
     github: "jdoe"
@@ -192,9 +193,9 @@ params:
     archive in `_index.md`'s front matter: `layout: archives`.
 
 For those of you who do the third step, there is an option available to 
-remove the buttons with links to the archive, tags and category pages 
-from the top of the blog list page. Just set the follwing in your site 
-`config`:
+remove the buttons with links to the archive (if it is defined, see step 
+3), tags and category pages from the top of the blog list page. Just set 
+the follwing in your site `config`:
 
 ```
 params:
