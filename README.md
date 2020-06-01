@@ -120,8 +120,8 @@ Instructions with example:
 The first thing you will want to do is set up the home page of the 
 website. Create `/content/_index.md`. This could contain a short 
 introduction of what is on the website or of you. A shortcode that can 
-be useful here is `figure`, which adds an image with a frame. Example 
-usage:
+be useful here is `figure`, which adds an image with a frame and an appropriate
+width if you set the class to "profile-picture". Example usage:
 
 ```
 {{< figure class="profile-picture" src="/img/profile-picture.jpg" 
