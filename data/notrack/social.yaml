@@ -499,7 +499,7 @@ email:
   template: mailto:%v
   title: Email
   icon:
-    class: far fa-envelope fa-fw
+    class: fas fa-envelope fa-fw
 
 # 064: RSS
 rss:
