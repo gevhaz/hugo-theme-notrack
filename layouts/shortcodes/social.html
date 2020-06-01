@@ -1,0 +1,14 @@
+{{ $socialMap := .Site.Data.notrack.social }}
+
+{{ with $.Site.Params.social }}
+    <div class="social">
+        <ul>
+            {{ range $website, $user := . }}
+                {{- $data := index $socialMap $website -}}
+                <li><a href="{{- $data.prefix -}}{{ $user }}"><i class="{{- $data.icon.class -}}"></i><span>{{ $user }}</span></a></li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}
+
+{{ printf "<!-- Icons are from Awesome Font, licenced under SIL OFL 1.1 (https://scripts.sil.org/OFL) -->" | safeHTML }}

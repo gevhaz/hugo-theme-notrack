@@ -3,7 +3,11 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
+        {{ if .Site.Params.enableBackground }}
         <div id="content">
+        {{ else }}
+        <div id="content">
+        {{ end }}
         {{- block "main" . }}{{- end }}
         </div>
     </body>

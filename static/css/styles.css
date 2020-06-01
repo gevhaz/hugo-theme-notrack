@@ -21,7 +21,8 @@ body {
 main {
   display: block;
   margin: 0;
-  padding: 0 1em; }
+  padding: 1em 1em;
+  background-color: white; }
   @media (min-width: 48em) {
     main {
       margin: 0 15%; } }
@@ -162,7 +163,7 @@ nav li:hover {
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-  margin: 1em; }
+  margin: 1em 1em 0 1em; }
 
 .myname {
   margin: 0 auto 0 0;
@@ -197,7 +198,8 @@ nav li:hover {
   margin: 2em; }
 
 #latest-blog-home {
-  text-align: center; }
+  text-align: center;
+  font-size: 2em; }
 
 .delimiter {
   font-size: 2em;
@@ -341,6 +343,28 @@ em.taxonomy-emph {
   margin: 0; }
   #contactdescription p {
     margin: 0; }
+
+.social {
+  display: flex;
+  justify-content: center; }
+  .social ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0; }
+    .social ul li {
+      display: inline-block;
+      padding: 0.5em; }
+      .social ul li a {
+        white-space: nowrap;
+        color: #3f444d;
+        font-size: 1em;
+        font-family: FreeSans, sans-serif; }
+        .social ul li a i {
+          font-size: 2em;
+          vertical-align: middle; }
 
 #contactlinks {
   flex: 1 1 7.5em;

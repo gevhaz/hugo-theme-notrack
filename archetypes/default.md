@@ -1,4 +1,8 @@
 ---
 title: '{{ replace .Name "-" " " | title }}'
-menu: "main"
+date: {{ .Date }}
+menu: 
+  main:
+    name:
+    weight:
 ---

@@ -312,11 +312,11 @@ Example usage:
 {{< /container >}}
 ```
 
-## How to create a contact box
+## How to create social links
 
 There is a shortcode for creating a framed area with links to your 
 profiles called `contact-box`. The thing it does is to put a frame with 
-links to your social media on the rights side of the page, and, if you 
+links to your social media or other contact info on the rights side of the page, and, if you 
 want, some text on the left side of the box, outside the frame. Put this 
 text within the shortcode tags.
 
@@ -327,15 +327,21 @@ social under params, like this:
 params:
   social:
     github: <your github username>
+    email: <email address>
 ```
 
-Then, to use the shortcode in a page, do:
+For all available social icons, see the `data/notrack/social.yaml` file. There
+are 64 of them. Then, to use the shortcode in a page, do:
 
 ```
 {{< contact-box >}}
 Some text you want to include
 {{< /contact-box >}}
 ```
+
+Or, for an alternative design,
+
+{{< social >}}
 
 ## Other projects used in this theme
 
@@ -366,4 +372,7 @@ source.
 For matching the icons from Font Awesome with names for various social 
 networking services, I use the 
 [social.yml](https://github.com/dillonzq/LoveIt/blob/master/assets/data/social.yml) 
-file from the LoveIt theme, which uses the MIT license.
+file from the LoveIt theme, which uses the MIT license. I modified it to use the
+Font Awesome Solid font for the email icon, because the one in the original file was
+using the Font Awesome Regular font, which it seems only Pro users of Font
+Awesome [can use](https://fontawesome.com/plans). The solid one also looks better.
