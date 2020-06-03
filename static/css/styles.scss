@@ -24,6 +24,7 @@ $bp-xxlarge: 160em; // 2560px
 
 // Media Queries
 $mq-mini: "(min-width: #{$bp-mini})";
+$mq-mini-reverse: "(max-width: #{$bp-mini})";
 $mq-small: "(min-width: #{$bp-small})";
 $mq-medium: "(min-width: #{$bp-medium})";
 $mq-large: "(min-width: #{$bp-large})";
@@ -43,8 +44,8 @@ $header-line-height: 1.25;
 body {
     margin: 0;
     overflow-y: scroll;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: $base-font-size * 1.1;
+    line-height: $base-line-height * 1.1;
 
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
@@ -150,6 +151,10 @@ figure.image-shortcode {
     img {
         width: 100%;
     }
+    @media #{$mq-mini-reverse} {
+        width: 100% !important;
+    }
+
 }
 
 figure.wide {
@@ -172,51 +177,24 @@ figure.left {
     margin: 0 1em 0 0;
 }
 
-.profile-picture {
-    margin: 1em 0 0 0;
-    float: right;
-    background-color: #eee;
+figure.frame {
+    background-color: #f7f7f7;
+    border: 1px solid #bbb;
     border-radius: 0.2em;
     padding: 0.5em;
-    border: 1px solid #999;
+    box-sizing: border-box;
 
-    @media #{$mq-mini} {
-        width: 11em;
-        margin: 1em 0 0 1em;
-    }
+    img { border: 1px solid #bbb; }
 
-    img {
-        border: 1px solid #999;
-        width: 100%;
-        padding: 0;
-        height: auto;
-        //border: 0.1em solid #474a4f;
-        margin: 0;
-    }
+    figcaption { border: none; }
 
-    figcaption {
-        border: none;
-    }
-
-    // figcaption {
-    //     font-size: 0.8em;
-    //     padding: 5%;
-    //     width: 90%;
-    //     margin: 0;
-    //     p {
-    //         margin-top: 0.0em;
-    //     }
-    //     h4 {
-    //         margin: 0.3em 0;
-    //     }
-    // }
 }
 
 figcaption {
     font-size: 0.8em;
-    padding: 0%;
+    padding: 0;
     width: 100%;
-    margin: 0;
+    margin: 0 0 0.5em 0;
     border-bottom: 1px solid #666674;
     p {
         margin-top: 0em;
@@ -347,7 +325,10 @@ nav li:hover {
 // HOME
 
 .blog-post-summary {
-    margin: 2em;
+    margin: 0;
+    @media #{$mq-mini} {
+        margin: 2em;
+    }
 }
 
 #latest-blog-home {
