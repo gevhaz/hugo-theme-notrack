@@ -1,7 +1,7 @@
 {{ define "main" }}
     <main>
         <article>
-            <h1 class="page-title">{{ .Title }}</h1>
+            <h1 class="page-title blog">{{ .Title }}</h1>
 
             {{- /* Show post information if it's a post, otherwise just the content */ -}}
             {{ if in site.Params.mainSections .Page.Section }}
