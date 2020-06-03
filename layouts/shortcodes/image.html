@@ -1,7 +1,9 @@
-<figure class="image-shortcode{{ with .Get "class" }} {{ . }}{{ end }}" style="
-         {{- with .Get "width" }} width: {{ . }};{{ end -}}
-         {{- with .Get "height" }} height: {{ . }};{{ end -}}
-         {{- with .Get "float" }} display: inline-block; float: {{ . }}; clear: {{ . }};{{ end -}}">
+<figure class="image-shortcode{{ with .Get "class" }} {{ . }}{{ end }}
+         {{- if .Get "wide" }} wide{{ end -}}
+         {{- with .Get "float" }} {{ . }}{{ end -}}" 
+         style="
+         {{- with .Get "width" }}width: {{ . }};{{ end -}}
+         {{- with .Get "height" }}height: {{ . }};{{ end -}}">
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end }}

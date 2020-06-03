@@ -87,8 +87,41 @@ figure.image-shortcode {
   figure.image-shortcode img {
     width: 100%; }
 
-.profile-picture figcaption {
-  border: none; }
+figure.wide {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  figure.wide img {
+    width: 90vw;
+    padding-bottom: 0.5em; }
+
+figure.right {
+  float: right;
+  margin: 0 0 0 1em; }
+
+figure.left {
+  float: left;
+  margin: 0 1em 0 0; }
+
+.profile-picture {
+  margin: 1em 0 0 0;
+  float: right;
+  background-color: #eee;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  border: 1px solid #999; }
+  @media (min-width: 28em) {
+    .profile-picture {
+      width: 11em;
+      margin: 1em 0 0 1em; } }
+  .profile-picture img {
+    border: 1px solid #999;
+    width: 100%;
+    padding: 0;
+    height: auto;
+    margin: 0; }
+  .profile-picture figcaption {
+    border: none; }
 
 figcaption {
   font-size: 0.8em;
@@ -199,26 +232,6 @@ nav li:hover {
 
 .myname h2 {
   margin: 0; }
-
-.profile-picture {
-  margin: 1em 0 0 0;
-  position: relative;
-  right: 0;
-  float: right;
-  background-color: #eee;
-  border-radius: 0.2em;
-  padding: 0.5em;
-  border: 1px solid #999; }
-  @media (min-width: 28em) {
-    .profile-picture {
-      width: 11em;
-      margin: 1em 0 0 1em; } }
-  .profile-picture img {
-    border: 1px solid #999;
-    width: 100%;
-    padding: 0;
-    height: auto;
-    margin: 0; }
 
 .blog-post-summary {
   margin: 2em; }
