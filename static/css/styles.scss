@@ -517,6 +517,9 @@ em.taxonomy-emph {
 
 .contactbox.contactlinks {
     margin-bottom: 0.4em;
+    a {
+        white-space: nowrap;
+    }
 }
 
 .social {

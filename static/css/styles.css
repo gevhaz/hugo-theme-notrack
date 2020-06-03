@@ -377,6 +377,8 @@ em.taxonomy-emph {
 
 .contactbox.contactlinks {
   margin-bottom: 0.4em; }
+  .contactbox.contactlinks a {
+    white-space: nowrap; }
 
 .social {
   display: flex;

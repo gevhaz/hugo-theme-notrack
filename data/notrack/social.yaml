@@ -34,7 +34,7 @@ instagram:
 facebook:
   weight: 5
   prefix: https://facebook.com/
-  title: facebook
+  title: Facebook
   icon:
     class: fab fa-facebook fa-fw
 
