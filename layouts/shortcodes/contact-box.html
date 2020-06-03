@@ -1,5 +1,5 @@
 <div id=contactinformation>
-    <div id="contactdescription" class="contactbox">
+    <div class="contactbox contactdescription">
         <p>
         {{ .Inner }}
         <p>
@@ -8,7 +8,7 @@
     {{ $socialMap := .Site.Data.notrack.social }}
 
     {{ with $.Site.Params.social }}
-        <div id="contactlinks" class="contactbox">
+        <div class="contactbox contactlinks">
             <ul>
                 {{ range $website, $user := . }}
                     {{- $data := index $socialMap $website -}}

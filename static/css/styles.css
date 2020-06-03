@@ -368,15 +368,15 @@ em.taxonomy-emph {
   flex-direction: row;
   flex-wrap: wrap; }
 
-.contactbox {
-  padding: 0 1em; }
-
-#contactdescription {
+.contactdescription.contactbox {
   flex: 3 1 15em;
   padding: 0 .5em .5em 0;
   margin: 0; }
-  #contactdescription p {
+  .contactdescription.contactbox p {
     margin: 0; }
+
+.contactbox.contactlinks {
+  margin-bottom: 0.4em; }
 
 .social {
   display: flex;
@@ -400,29 +400,28 @@ em.taxonomy-emph {
           font-size: 2em;
           vertical-align: middle; }
 
-#contactlinks {
+.contactbox {
   flex: 1 1 7.5em;
   justify-content: center;
   align-content: center;
   padding: 0 1em 0 .5em;
   margin: 0; }
-  #contactlinks ul {
+  .contactbox ul {
     list-style-type: none;
     background-color: #eee;
     border-radius: 0.5em;
     box-shadow: 0.025em 0.1em 0.2em 0.1em #333;
     box-shadow: 0.025em 0.1em 0.2em 0.1em rgba(0, 0, 0, 0.3);
     padding: 10%;
-    margin: auto;
-    height: 80%; }
-  #contactlinks i {
+    margin: auto; }
+  .contactbox i {
     padding-right: 0.3em; }
-  #contactlinks a {
+  .contactbox a {
     font-family: FreeSans, sans-serif;
     font-weight: bold;
     font-size: 1em;
     color: #524e59; }
-  #contactlinks img {
+  .contactbox img {
     height: .7em;
     padding-right: .5em;
     filter: opacity(80%); }

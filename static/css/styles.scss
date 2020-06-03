@@ -507,16 +507,16 @@ em.taxonomy-emph {
     flex-wrap: wrap;
 }
 
-.contactbox {
-    padding: 0 1em;
-}
-
-#contactdescription {
+.contactdescription.contactbox {
     flex: 3 1 15em;
     padding: 0 .5em .5em 0;
     margin: 0;
 
     p { margin: 0; }
+}
+
+.contactbox.contactlinks {
+    margin-bottom: 0.4em;
 }
 
 .social {
@@ -550,7 +550,7 @@ em.taxonomy-emph {
     }
 }
 
-#contactlinks {
+.contactbox {
     flex: 1 1 7.5em;
     justify-content: center;
     align-content: center;
@@ -565,7 +565,6 @@ em.taxonomy-emph {
         box-shadow: 0.025em 0.1em 0.2em 0.1em rgba(0, 0, 0, 0.3);
         padding: 10%;
         margin: auto;
-        height: 80%;
     }
 
     i {
