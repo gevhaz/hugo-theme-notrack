@@ -333,11 +333,15 @@ em.taxonomy-emph {
 .category-content {
   flex: 2 1 65%;
   padding: .5em; }
+  .category-content a {
+    color: #4c7e99; }
   .category-content p {
-    margin: 0; }
+    margin: 0;
+    font-size: 0.9em;
+    color: #5f5a6f; }
   .category-content ul {
     list-style-type: "– ";
-    font-family: FreeSerif, serif;
+    font-family: FreeSans, sans-serif;
     margin-top: 0; }
   .category-content ol {
     margin-top: 0; }
@@ -345,28 +349,31 @@ em.taxonomy-emph {
 .resume-entry {
   margin: 0 0 1em 0; }
   .resume-entry .what {
+    font-family: FreeSans, serif;
+    text-align: left;
+    font-size: 1.0em;
+    color: #444; }
+  .resume-entry .resume-entry-data {
+    font-family: FreeSans, serif;
+    text-align: left;
+    font-size: 0.8em;
+    color: #767676;
+    margin-left: 0.9rem; }
+  .resume-entry .resume-inner {
+    line-height: 1;
+    margin-top: 0.2em;
+    margin-left: 0.9rem; }
+  .resume-entry p, .resume-entry ul, .resume-entry ol, .resume-entry li {
     font-family: FreeSerif, serif;
-    font-style: italic;
-    font-size: 1.0em; }
-  .resume-entry .where, .resume-entry .when {
-    font-family: FreeSerif, serif;
+    color: #5f5a6f;
+    text-align: left;
     font-size: 0.9em; }
 
-.resume-subcategory {
-  font-family: FreeSerif, serif;
-  font-size: 1.3em;
+p.resume-subcategory {
+  font-family: FreeSans, sans-serif;
+  font-size: 1.4em;
   text-decoration: underline;
   padding: 0 0 .3em 0; }
-
-.resume-inner p {
-  font-family: FreeSerif, serif;
-  font-size: 0.9em;
-  text-align: justify; }
-
-.resume-inner ul, .resume-inner ol {
-  font-family: FreeSerif, serif;
-  font-size: .8em;
-  color: #444; }
 
 #contactinformation {
   display: flex;

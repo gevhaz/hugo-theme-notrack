@@ -1,5 +1,6 @@
 // Colors
 $midnight-blue: #07608f;
+$midnight-matte: #4c7e99;
 $text-color: #444;
 $tab-border-color: #ddd;
 $tab-active-color: #474a4f;
@@ -11,6 +12,8 @@ $contactlinks-color: #eee;
 $contactlinks-text-color: #524e59;
 $cv-red: #b25347;
 $light-text: #5f5a6f;
+$very-light-text: #767676;
+$medium-light-text: #4f4a5f;
 $code-background: #272822;
 $code-text: #f8f8f2;
 
@@ -458,11 +461,19 @@ em.taxonomy-emph {
     flex: 2 1 65%;
     padding: .5em;
 
-    p { margin: 0; }
+    a {
+        color: $midnight-matte;
+    }
+
+    p { 
+        margin: 0; 
+        font-size: 0.9em;
+        color: $light-text;
+    }
 
     ul {
         list-style-type: "– ";
-        font-family: FreeSerif, serif;
+        font-family: FreeSans, sans-serif;
         margin-top: 0;
     }
 
@@ -473,36 +484,39 @@ em.taxonomy-emph {
     margin: 0 0 1em 0;
 
     .what {
-        font-family: FreeSerif, serif;
-        font-style: italic;
+        font-family: FreeSans, serif;
+        text-align: left;
         font-size: 1.0em;
-    }
-
-    .where, .when {
-        font-family: FreeSerif, serif;
-        font-size: 0.9em;
-    }
-}
-
-.resume-subcategory {
-    font-family: FreeSerif, serif;
-    font-size: 1.3em;
-    text-decoration: underline;
-    padding: 0 0 .3em 0;
-}
-
-.resume-inner {
-    p {
-        font-family: FreeSerif, serif;
-        font-size: 0.9em;
-        text-align: justify;
-    }
-
-    ul, ol {
-        font-family: FreeSerif, serif;
-        font-size: .8em;
         color: $text-color;
     }
+
+    .resume-entry-data {
+        font-family: FreeSans, serif;
+        text-align: left;
+        font-size: 0.8em;
+        color: $very-light-text;
+        margin-left: 0.9rem;
+    }
+
+    .resume-inner {
+        line-height: 1;
+        margin-top: 0.2em;
+        margin-left: 0.9rem;
+    }
+
+        p, ul, ol, li {
+            font-family: FreeSerif, serif;
+            color: $light-text;
+            text-align: left;
+            font-size: 0.9em;
+        }
+}
+
+p.resume-subcategory {
+    font-family: FreeSans, sans-serif;
+    font-size: 1.4em;
+    text-decoration: underline;
+    padding: 0 0 .3em 0;
 }
 
 // CONTACT
