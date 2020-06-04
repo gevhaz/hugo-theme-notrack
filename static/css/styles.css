@@ -344,7 +344,8 @@ em.taxonomy-emph {
     list-style-type: "– "; }
   .category-content ul, .category-content ol {
     font-family: FreeSans, sans-serif;
-    margin-top: 0;
+    margin-top: 0; }
+  .category-content li {
     font-size: 0.9em;
     color: #5f5a6f; }
 
