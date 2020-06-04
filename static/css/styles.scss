@@ -473,11 +473,14 @@ em.taxonomy-emph {
 
     ul {
         list-style-type: "– ";
-        font-family: FreeSans, sans-serif;
-        margin-top: 0;
     }
 
-    ol { margin-top: 0; }
+    ul, ol {
+        font-family: FreeSans, sans-serif;
+        margin-top: 0;
+        font-size: 0.9em;
+        color: $light-text;
+    }
 }
 
 .resume-entry {

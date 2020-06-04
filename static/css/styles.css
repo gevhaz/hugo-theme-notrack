@@ -341,11 +341,12 @@ em.taxonomy-emph {
     font-size: 0.9em;
     color: #5f5a6f; }
   .category-content ul {
-    list-style-type: "– ";
+    list-style-type: "– "; }
+  .category-content ul, .category-content ol {
     font-family: FreeSans, sans-serif;
-    margin-top: 0; }
-  .category-content ol {
-    margin-top: 0; }
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #5f5a6f; }
 
 .resume-entry {
   margin: 0 0 1em 0; }
