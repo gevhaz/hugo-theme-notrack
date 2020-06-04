@@ -1,6 +1,6 @@
 <figure class="image-shortcode{{ with .Get "class" }} {{ . }}{{ end }}
-         {{- if .Get "wide" }} wide{{ end -}}
-         {{- if .Get "frame" }} frame{{ end -}}
+         {{- with .Get "wide" }}{{- if eq . "true" }} wide{{ end -}}{{ end -}}
+         {{- with .Get "frame" }}{{- if eq . "true" }} frame{{ end -}}{{ end -}}
          {{- with .Get "float" }} {{ . }}{{ end -}}" 
          style="
          {{- with .Get "width" }}width: {{ . }};{{ end -}}
