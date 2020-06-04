@@ -440,21 +440,21 @@ em.taxonomy-emph {
 
 // RESUME
 
+.resume-content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .category-title {
     text-align: left;
     width: 8em;
     padding: .5em;
+    flex: 1 3 auto;
     
     h4 {
         margin: 0 0.5em 0 0;
         font-size: 1.3em;
     }
-}
-
-
-.resume-content {
-    display: flex;
-    flex-flow: row wrap;
 }
 
 .category-content {
@@ -504,12 +504,12 @@ em.taxonomy-emph {
         margin-left: 0.9rem;
     }
 
-        p, ul, ol, li {
-            font-family: FreeSerif, serif;
-            color: $light-text;
-            text-align: left;
-            font-size: 0.9em;
-        }
+    p, ul, ol, li {
+        font-family: FreeSerif, serif;
+        color: $light-text;
+        text-align: left;
+        font-size: 0.9em;
+    }
 }
 
 p.resume-subcategory {

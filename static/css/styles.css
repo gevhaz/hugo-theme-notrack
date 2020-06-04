@@ -318,17 +318,18 @@ em.taxonomy-emph {
     background-color: #474a4f;
     color: white; }
 
-.category-title {
-  text-align: left;
-  width: 8em;
-  padding: .5em; }
-  .category-title h4 {
-    margin: 0 0.5em 0 0;
-    font-size: 1.3em; }
-
 .resume-content {
   display: flex;
   flex-flow: row wrap; }
+
+.category-title {
+  text-align: left;
+  width: 8em;
+  padding: .5em;
+  flex: 1 3 auto; }
+  .category-title h4 {
+    margin: 0 0.5em 0 0;
+    font-size: 1.3em; }
 
 .category-content {
   flex: 2 1 65%;
