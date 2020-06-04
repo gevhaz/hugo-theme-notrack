@@ -339,6 +339,8 @@ em.taxonomy-emph {
     list-style-type: "– ";
     font-family: FreeSerif, serif;
     margin-top: 0; }
+  .category-content ol {
+    margin-top: 0; }
 
 .resume-entry {
   margin: 0 0 1em 0; }
