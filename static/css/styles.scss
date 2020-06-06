@@ -49,6 +49,7 @@ body {
     overflow-y: scroll;
     font-size: $base-font-size * 1.1;
     line-height: $base-line-height * 1.1;
+    font-family: FreeSerif, serif;
 
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
@@ -102,7 +103,7 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     font-family: FreeSans, sans-serif;
     font-weight: bold;
     font-style: normal;

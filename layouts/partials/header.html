@@ -1,7 +1,7 @@
 
 <header class="page-header">
     <div class="myname"> 
-        <h2><a href="/">{{ default .Site.Params.Author .Site.Params.siteHeading }}</a></h2> 
+        <h2><a href="{{ default .Site.Home .Site.BaseURL }}">{{ default .Site.Params.Author .Site.Params.siteHeading }}</a></h2> 
     </div>
     <nav>
         <ul class="navbar">
@@ -59,7 +59,7 @@
                     {{- $active = and $active (ne $currentMenusPage.IsHome true) }}
                 {{- end }}
                 {{ with $currentPage.File }}
-                    {{- $active = and $active (ne .Dir "/" ) }}
+                {{- $active = and $active (ne .Dir "{{ .Site.BaseURL }}" ) }}
                 {{ end }}
                 {{- $active = or $active (eq $currentPage.Title .Name ) }}
                 {{- $active = or $active (eq $currentPage.RelPermalink .URL ) }}

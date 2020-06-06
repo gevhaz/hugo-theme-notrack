@@ -3,7 +3,8 @@ body {
   margin: 0;
   overflow-y: scroll;
   font-size: 1.21em;
-  line-height: 1.21; }
+  line-height: 1.21;
+  font-family: FreeSerif, serif; }
   @media (min-width: 64em) {
     body {
       font-size: 1.32em;
@@ -43,7 +44,7 @@ a {
   color: #07608f;
   text-decoration: none; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: FreeSans, sans-serif;
   font-weight: bold;
   font-style: normal;

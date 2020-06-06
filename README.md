@@ -12,6 +12,7 @@ comments](#user-content-adding-comments) below).
 * [Table of contents](#user-content-table-of-contents)
 * [Example site `config`](#user-content-example-site-config)
 * [Shortcodes](#user-content-shortcodes)
+* [User CSS](#user-content-user-css)
 * [Navigation bar](#user-content-navigation-bar)
   * [How to add a page to the navigation bar](#user-content-how-to-add-a-page-to-the-navigation-bar)
   * [How to add a page to drop down menu](#user-content-how-to-add-a-page-to-drop-down-menu)
@@ -58,12 +59,18 @@ PaginatePath: "page"
 *   gallery-modal
 *   gallery-photo
 *   gallery-script
+*   image
 *   ofvideo
 *   p5js
 *   rawhtml
 *   resume-entry
 *   resume-section
 *   resume-subcategory
+
+## User CSS
+
+You can add your own CSS by creating a file `assets/css/userstyles.css`. The
+theme will automatically pick it up.
 
 ## Navigation bar
 
@@ -120,16 +127,13 @@ Instructions with example:
 The first thing you will want to do is set up the home page of the 
 website. Create `/content/_index.md`. This could contain a short 
 introduction of what is on the website or of you. A shortcode that can 
-be useful here is `figure`, which adds an image with a frame and an appropriate
-width if you set the class to "profile-picture". Example usage:
+be useful here is `image`, which adds an image with an optional frame. You can
+set the width with the `width` option. Example usage:
 
 ```
-{{< figure class="profile-picture" src="/img/profile-picture.jpg" 
+{{< image frame="true" width="11em" src="/img/profile-picture.jpg" 
 alt="Picture of me" >}}
 ```
-
-There is also a raw html shortcode called `rawhtml` which you can use if 
-you don't like the frame.
 
 At this point you should also set the title for the web site, your name 
 and the text in the header, if you want it to be different from your 
@@ -215,7 +219,22 @@ readers can list all posts from a specific category or a tag by clicking
 on that category or tag in any post instead, and you can link to 
 `yourpage.com/categories` from other places too.
 
-Want images in your post? Use Hugo's built in short code 
+You can add images just as for the home page. Available options are those of the
+built in `figure` shortcode of Hugo, and additionally: 
+
+| Parameter name   | Allowed Values         |
+| :---             | :---                   |
+| `float`          | right/left             |
+| `frame`          | true/false/leave out   |
+| `wide`           | true/false             |
+| `width`          | e.g. 10em, 50%, 70px   |
+| `height`         | e.g. 10em, 50%, 70px   |
+
+A difference from the built in shortcode is that width and height are for the
+outer `<figure>` element. This allows text to wrap around the picture if you set
+the float parameter.
+
+You can also use Hugo's built in short code 
 [figure](https://gohugo.io/content-management/shortcodes/#figure) (an 
 example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
 
