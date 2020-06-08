@@ -30,42 +30,60 @@ comments](#user-content-adding-comments) below).
 Here is a working `config.yaml`:
 
 ```
-baseURL: "/"
-title: "My Personal Webpage"
-disqusShortname: "example-com"
-params:
-  siteHeading: "John Doe's Page"
-  author: "John Doe"
-  showBlogLatest: false
-  blogLatestHeading: "Recent posts"
-  nBlogLatest: 3
-  showTaxonomyLinks: false
-  social:
-    linkedin: "john.doe"
-    github: "jdoe"
-newContentEditor: "vim"
-languageCode: "en-us"
-lang: "en-us"
-theme: "notrack"
-Paginate: 5
-PaginatePath: "page"
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Lawyer Hugo Grotius"
+theme = "notrack"
+newContentEditor = "nvim"
+mainSections = ["blog"]
+# disqusShortname = "example"
+paginate = 4
+
+[params]
+  author = "Hugo de Groot"
+  siteHeading = "Hugo Grotius" # defaults to author
+  showBlogLatest = true
+  mainSections = ["blog"]
+  showTaxonomyLinks = false
+  nBlogLatest = 4 # number of blog post om the home page
+  blogLatestHeading = "My writing"
+
+  [params.social]
+    github = "example"
+    linkedin = "example"
+    email = "example@example.com"
+    mastodon = "example"
+    medium = "example"
+    keybase = "example"
+
+[taxonomies]
+  year = "year"
+  month = "month"
+  tags = "tags"
+  categories = "categories"
+
+[permalinks]
+  blog = "/blog/:year/:month/:slug"
 ```
 
 # Shortcodes
 
-*   contact-box
-*   container
-*   gallery-category
-*   gallery-modal
-*   gallery-photo
-*   gallery-script
-*   image
-*   ofvideo
-*   p5js
-*   rawhtml
-*   resume-entry
-*   resume-section
-*   resume-subcategory
+| Category      | Shortcode             | Description |
+| :---          | :---                  | :---        |
+| Contact-info  | contact-box           | Displays contact info set in params.social |
+|               | social                | Displays contact info set in params.social |
+| Photo Gallery | gallery-category      | Container for gallery-photo shortcodes |
+|               | gallery-modal         | HTML to allow for full page view of gallery photos | 
+|               | gallery-photo         | Include a photo in a gallery |
+|               | gallery-script        | Script to allow for full page view of gallery photos |
+| General       | image                 | Image for use in any page. See example in [How to make a blog](#user-content-how-to-make-a-blog) |
+|               | video                 | Similar to an ordinary <video> html tag but with a CSS class to make it look good in posts       |
+|               | p5js                  | For including [p5.js](https://p5js.org/) sketches                                                |
+|               | rawhtml               | For including raw html without the global unsafe option for Goldmark |
+| Resume        | container             | Container for resume shortcodes |
+|               | resume-entry          | One entry in a resume (e.g. a university degree) |
+|               | resume-section        | One section in resume (e.g. "Education" |
+|               | resume-subcategory    | Creates a heading within a section of the resume |
 
 ## User CSS
 
