@@ -48,22 +48,14 @@
             </li>
             {{- else -}}
                 {{- $currentMenusPage := .Page }}
-                {{- $currentPageIsTaxonomy := or (eq $currentPage.Kind "taxonomyTerm") (eq $currentPage.Kind "taxonomy") }}
                 {{- $currentMenuInMainSections := false }}
                 {{- with $currentMenusPage }}
                     {{- $currentMenuInMainSections = in site.Params.mainSections .Type }}
                 {{- end }}
 
                 {{- $active := eq $currentMenusPage $currentPagesParent }}
-                {{- with $currentMenusPage }}
-                    {{- $active = and $active (ne $currentMenusPage.IsHome true) }}
-                {{- end }}
-                {{ with $currentPage.File }}
-                {{- $active = and $active (ne .Dir "{{ .Site.BaseURL }}" ) }}
-                {{ end }}
+                {{- $active = and $active (eq $currentPage.RelPermalink .URL ) }}
                 {{- $active = or $active (eq $currentPage.Title .Name ) }}
-                {{- $active = or $active (eq $currentPage.RelPermalink .URL ) }}
-                {{- $active = or $active (and $currentPageIsTaxonomy $currentMenuInMainSections) }}
                 {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
             <li class="{{- if $active -}} activetab {{- end -}}">
                 <a href="{{ .URL }}">
