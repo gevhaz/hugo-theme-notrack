@@ -429,7 +429,7 @@ are 64 of them. Then, to display the links somewhere on your page, use either
 at the bottom:
 
 ![example of social links 
-shortcodes](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png)
+shortcodes](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png | width=20em)
 
 For `contact-box`, there are three optional parameters, `float`, `width` 
 and `height`. This is similar to the `image` shortcode. `Float` makes 
