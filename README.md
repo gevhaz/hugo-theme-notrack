@@ -23,7 +23,7 @@ comments](#user-content-adding-comments) below).
     * [Adding comments](#user-content-adding-comments)
   * [How to create a gallery](#user-content-how-to-create-a-gallery)
   * [How to create a resume](#user-content-how-to-create-a-resume)
-  * [How to create display social links](#user-content-how-to-display-social-links)
+  * [How to display social links](#user-content-how-to-display-social-links)
   * [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
 * [Contribution](#user-content-contribution)
 
@@ -102,9 +102,9 @@ sections below. I explain the other two here.
 
 This allows you to use html to create elements that you can't create 
 with just markdown without allowing unsafe html in the site `config`. 
-I'm not a security expert, and there might be a reason why unsafe HTML 
+I'm not a security expert, and there might be a good reason why unsafe HTML 
 is disabled by default. If you think this shortcode shouldn't be part of 
-the theme, feel free to open an issue.
+the theme, feel free to open an issue and say why.
 
 The `video` shortcode basically just creates a HTML `<video>` tag with a 
 class that I've added some styling for. Use it like this:
@@ -126,7 +126,7 @@ theme will automatically pick it up.
 
 ### How to add a page to the navigation bar
 
-Add it to `main` menu in the page's front matter of the page:
+Add it to `main` menu in the front matter of the page:
 
 ```
 ---
@@ -138,7 +138,7 @@ menu:
 ```
 
 Don't use the site `config` to add menus because then the highlighting 
-of active tabs won't work.
+of active tabs might not work (at least not if drop-down menus are involved).
 
 ### How to add a page to drop down menu
 
@@ -160,6 +160,9 @@ Instructions with example:
         weight: 50
     ```
 
+    If you want to add pages to an already existing menu item, you can skip this
+    step and just use that page as a parent in step 2.
+
 2.  In the front matter of the page you want to add, put the following:
 
     ```
@@ -167,23 +170,27 @@ Instructions with example:
       main:
         title: <What you want the name of the menu to be>
         parent: "about-me"
-        weight: <Lower numbers will appear further to the left>
+        weight: <Lower numbers will appear higher up>
     ```
 
 # How tos
 
 ## How to create a home page
 
-The first thing you will want to do is set up the home page of the 
-website. Create `/content/_index.md`. This could contain a short 
-introduction of what is on the website or of you. A shortcode that can 
-be useful here is `image`, which adds an image with an optional frame. You can
-set the width with the `width` option. Example usage:
+The first thing you will want to do is set up the home page of the website.
+Create `/content/_index.md` (`hugo new _index.md`). This could contain a short
+introduction of what is on the website or of yourself. A shortcode that can be
+useful here is `image`, which adds an image with an optional frame. You can set
+the width with the `width` option. Example usage:
 
 ```
 {{< image frame="true" width="11em" src="/img/profile-picture.jpg" 
 alt="Picture of me" >}}
 ```
+
+`frame="true"` adds a frame around the picture. You can also add a caption. See
+further instructions in [How to create a
+blog](#user-content-how-to-create-a-blog).
 
 At this point you should also set the title for the web site, your name 
 and the text in the header, if you want it to be different from your 
@@ -205,7 +212,7 @@ would look like this:
 ```
 params:
   showBlogLatest: true
-  blogLatestHeading: "The latests posts"
+  blogLatestHeading: "Latests posts"
   nBlogLatest: 6
 ```
 
@@ -213,7 +220,8 @@ params:
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
-2. `hugo new blog/_index.md` and create the blog menu in front matter:
+2. `hugo new blog/_index.md` and create the blog menu item in the front 
+   matter:
 
     ```
     ---
@@ -244,12 +252,12 @@ params:
     ```
 
     In the case of archive, you may also need to set the layout to 
-    archive in `_index.md`'s front matter: `layout: archives`.
+    archives in `_index.md`'s front matter: `layout: archives`.
 
 For those of you who do the third step, there is an option available to 
-remove the buttons with links to the archive (if it is defined, see step 
-3), tags and category pages from the top of the blog list page. Just set 
-the follwing in your site `config`:
+remove the buttons with links to the archive (if you have an archives 
+page, see step 3), tags and category pages from the top of the blog list 
+page. Just set the following in your site `config`:
 
 ```
 params:
@@ -260,8 +268,8 @@ Menus in Hugo are a mess to program for a theme but this should work.
 It's the method that gives you, the user, the most freedom to choose the 
 structure of your content folder. There are [other 
 methods](https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029) 
-but they force you to put all of your posts in a folder with a specific 
-name.
+for theme developers but they would force the user to put all posts in a 
+folder with a specific name.
 
 If you don't want a drop-down menu for listing categories or tags, just 
 skip step 3. You can still disable the links to the taxonomy pages. Your 
@@ -303,10 +311,10 @@ have a comments section.
 
 There are four shortcodes for creating a gallery:
 
-* gallery-category
-* gallery-photo
-* gallery-modal
-* gallery-script
+* `gallery-category`
+* `gallery-photo`
+* `gallery-modal`
+* `gallery-script`
 
 The first two are used in combination to create the actual gallery. Do 
 something like the following in one of your pages:
@@ -330,33 +338,34 @@ two shortcodes at the bottom of your page:
 {{< gallery-script >}}
 ```
 
-And have corresponding full-size images under `static/img/fullsize`. The 
-file names need to be the same as for the thumbnails.
+And place corresponding full-size images under `static/img/fullsize`. 
+The file names need to be the same as for the thumbnails.
 
 Thumbnails should of course be small so that your page loads fast and 
 fullsize should be large enough that they don't look pixelated when 
 covering the full space of a web browser. One way to resize images is 
-with graphicsmagick: `gm mogrify -resize 1920x1920 *.jpg`, which will 
-resize all images in the current folder to a maximum width/height of 
-1920 pixels (while maintaining the aspect ratio).
+with (graphicsmagick)[http://www.graphicsmagick.org/]: `gm mogrify 
+-resize 1920x1920 *.jpg`, which will resize all images in the current 
+folder to a maximum width/height of 1920 pixels (while maintaining the 
+aspect ratio).
 
 ## How to create a resume
 
 There are some shortcodes that can help you create a resume. These are:
 
-* container
-* resume-section
-* resume-entry
+* `container`
+* `resume-section`
+* `resume-category`
+* `resume-entry`
 
-Container just creates a div with a specified class (call it 
-"resume-content" in order for the CSS to work. `resume-section` needs a 
-title which will be shown to the left of it's content (if it can fit on 
-the screen, otherwise it's on top). Within this, you put one or more 
-`resume-entry` shortcodes. First of all, this shortcode takes the three 
-parameters `what` `where` and `when` (see example usage below). It also 
-takes raw HTML within the shortcode tags. There is styling for `<p>`s 
-and unordered and ordered lists. Apart from that, site-wide CSS is used. 
-Example usage:
+`Container` just creates a <div> element with a specific class. 
+`resume-section` needs a title which will be shown to the left of it's 
+content (if it can fit on the screen, otherwise it's on top). Within 
+this, you put one or more `resume-entry` shortcodes. This
+shortcode takes the three parameters `what`, `where` and `when` (see 
+example usage below). It also takes raw HTML within the shortcode tags. 
+There is styling for `<p>`s, links, and unordered and ordered lists. 
+Apart from that, site-wide CSS is used. Example usage:
 
 ```
 {{< container >}}
@@ -381,7 +390,21 @@ Example usage:
 {{< /container >}}
 ```
 
-## How to create social links
+A tip is that you can also use the `resume-entry` shortcode with 
+markdown. Just switch use % instead of < and make sure that your 
+markdown doesn't have any white space in front of it (or all of it will 
+be interpreted as code):
+
+```
+        {{% resume-entry what="Bachelor's program of Computer Science"
+                         where="Sidney University"
+                         when="2010–2013" %}}
+* Some comment on what skills you learned
+* Some other comment
+        {{% /resume-entry %}}
+```
+
+## How to display social links
 
 There is a shortcode for creating a framed area with links to your 
 profiles called `contact-box`. The thing it does is to put a frame with 
@@ -401,58 +424,64 @@ params:
 
 For all available social icons, see the `data/notrack/social.yaml` file. There
 are 64 of them. Then, to display the links somewhere on your page, use either
-`{{< contact-box >}}` or, for an alternative design, use `{{< social >}}`.
+`{{< contact-box >}}` or, for an alternative design, use `{{< social 
+>}}`. Here is a screenshot with `contact-box` to the right and `social` 
+at the bottom:
+
+![example of social links 
+shortcodes](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png)
 
 For `contact-box`, there are three optional parameters, `float`, `width` 
-and `height`. This is similar to the `image` shortcode. Float makes text 
-wrap around the box (can be `right` or `left`), and the other two 
+and `height`. This is similar to the `image` shortcode. `Float` makes 
+text wrap around the box (can be `right` or `left`), and the other two 
 naturally set the dimensions of the `<div>`, using inline CSS. The 
 parameters defaults to floating to the right, the width defaults to 
-`12em`, and the height defaults to auto.
+`12em`, and the height defaults to `auto`.
 
 ## Other projects used in this theme
 
 The theme does not secretly download any resources from other websites 
 or CDNs. It does, however, make use of a few other projects. These are 
-included in the theme, so you'll homepage will be responsible for 
-serving the resources.
+included in the theme files, so you'll homepage will serve the 
+resources.
 
-Some of the fonts under static/fonts are parts of the project [GNU 
+Some of the fonts under `static/fonts` are parts of the project [GNU 
 FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
-under GPLv3 or later (you decide). Licenses are also supposed to be 
-included in the .woff files themselves. Some of the fonts are edited by 
-me to take up less space by including fewer characters.
+under "GPLv3 or later". Licenses are also supposed to be included in the 
+.woff files themselves. Some of the fonts are edited by me to take up 
+less space by including fewer characters.
 
 The monospace font in the same directory, used for code in the theme, is 
 [Mononoki](https://github.com/madmalik/mononoki). It is licensed under 
 SIL OFL 1.1 
 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
 
-The icons used for the `contact-box` shortcode are from [Font 
-Awesome](https://github.com/FortAwesome/Font-Awesome) project. 
-Specifically, the project's font file `fa-brands-400.woff2` is used. 
+The icons used for the `contact-box` and `social` shortcodes are from 
+[Font Awesome](https://github.com/FortAwesome/Font-Awesome) project. 
 It's licence is SIL OFL 1.1 
 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML 
 comment is included in the contact-box shortcode to show the licence and 
 source.
 
-For matching the icons from Font Awesome with names for various social 
-networking services, I use the 
-[social.yml](https://github.com/dillonzq/LoveIt/blob/master/assets/data/social.yml) 
-file from the LoveIt theme, which uses the MIT license. I modified it to use the
-Font Awesome Solid font for the email icon, because the one in the original file was
-using the Font Awesome Regular font, which it seems only Pro users of Font
-Awesome [can use](https://fontawesome.com/plans). The solid one also looks better.
+For matching the icons from Font Awesome with names for various social
+networking services, I use the
+[`social.yml`](https://github.com/dillonzq/LoveIt/blob/master/assets/data/social.yml)
+file from the (LoveIt)[https://github.com/dillonzq/LoveIt] theme, which
+uses the MIT license. I modified it to use the *Font Awesome Solid* font
+for the email icon, because the one in the original file was using the
+*Font Awesome Regular* font, which it seems only Pro users of Font
+Awesome [can use](https://fontawesome.com/plans). The solid one also
+looks better.
 
 # Contribution
 
 I have tried to test the theme on mobile as well as different screen 
-sizes. If you find a situation where fonts don't have an apprioriate 
+sizes. If you find a situation where fonts don't have an appropriate 
 size or something else looks off, such as styles completely missing or a 
 page that seems to have the wrong layout, please open an issue. It's 
-difficult to support every possible sceniario, but I will see what I can 
+difficult to support every possible scenario, but I will see what I can 
 do.
 
 If some change could be made or something could be added that is in line 
-with the style and philosophy of the theme, and not breaking anything, 
+with the style and philosophy of the theme, and it doesn't break anything, 
 feel free to make a pull request.
