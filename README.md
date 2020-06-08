@@ -85,7 +85,6 @@ paginate = 4
 |                   | gallery-script        | Script to allow for full page view of gallery photos |
 | **General**       | image                 | Image for use in any page. See example in [How to make a blog](#user-content-how-to-make-a-blog) |
 |                   | video                 | Similar to an ordinary <video> html tag but with a CSS class to make it look good in posts       |
-|                   | p5js                  | For including [p5.js](https://p5js.org/) sketches                                                |
 |                   | rawhtml               | For including raw html without the global unsafe option for Goldmark |
 | **Resume**        | container             | Container for resume shortcodes |
 |                   | resume-entry          | One entry in a resume (e.g. a university degree) |
