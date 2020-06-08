@@ -1,8 +1,9 @@
 {{ with $.Page.Site.Params.social }}
 {{ $socialMap := $.Page.Site.Data.notrack.social }}
-<div class="contactbox {{- with $.Get "float" }} {{ . }}{{ end -}}" style="
-    {{- with $.Get "width" }}width: {{ . }};{{ end -}}
-    {{- with $.Get "height" }}height: {{ . }};{{ end -}}">
+{{ $width := default "12em" (.Get "width") }}
+{{ $height := default "auto" (.Get "height") }}
+{{ $float := default "right" (.Get "float") }}
+<div class="contactbox {{ $float }}" style="width: {{ $width }}; height: {{ $height }}">
     <ul>
     {{- $socialArray := slice -}}
     {{ range $website, $user := $.Site.Params.social }}

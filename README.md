@@ -10,6 +10,7 @@ comments](#user-content-adding-comments) below).
 
 * [Notrack](#user-content-notrack)
 * [Table of contents](#user-content-table-of-contents)
+* [Screenshot](#user-content-screenshot)
 * [Example site `config`](#user-content-example-site-config)
 * [Shortcodes](#user-content-shortcodes)
 * [User CSS](#user-content-user-css)
@@ -17,13 +18,18 @@ comments](#user-content-adding-comments) below).
   * [How to add a page to the navigation bar](#user-content-how-to-add-a-page-to-the-navigation-bar)
   * [How to add a page to drop down menu](#user-content-how-to-add-a-page-to-drop-down-menu)
 * [How tos](#user-content-how-tos)
-  * [Creating a home page](#user-content-creating-a-home-page)
-  * [How to make a blog](#user-content-how-to-make-a-blog)
+  * [How to create a home page](#user-content-how-to-create-a-home-page)
+  * [How to create a blog](#user-content-how-to-create-a-blog)
     * [Adding comments](#user-content-adding-comments)
   * [How to create a gallery](#user-content-how-to-create-a-gallery)
   * [How to create a resume](#user-content-how-to-create-a-resume)
-  * [How to create a contact box](#user-content-how-to-create-a-contact-box)
+  * [How to create display social links](#user-content-how-to-display-social-links)
   * [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
+
+# Screenshot
+
+![Screenshot of the
+theme](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/screenshot.png)
 
 # Example site `config`
 
@@ -68,22 +74,22 @@ paginate = 4
 
 # Shortcodes
 
-| Category      | Shortcode             | Description |
-| :---          | :---                  | :---        |
-| Contact-info  | contact-box           | Displays contact info set in params.social |
-|               | social                | Displays contact info set in params.social |
-| Photo Gallery | gallery-category      | Container for gallery-photo shortcodes |
-|               | gallery-modal         | HTML to allow for full page view of gallery photos | 
-|               | gallery-photo         | Include a photo in a gallery |
-|               | gallery-script        | Script to allow for full page view of gallery photos |
-| General       | image                 | Image for use in any page. See example in [How to make a blog](#user-content-how-to-make-a-blog) |
-|               | video                 | Similar to an ordinary <video> html tag but with a CSS class to make it look good in posts       |
-|               | p5js                  | For including [p5.js](https://p5js.org/) sketches                                                |
-|               | rawhtml               | For including raw html without the global unsafe option for Goldmark |
-| Resume        | container             | Container for resume shortcodes |
-|               | resume-entry          | One entry in a resume (e.g. a university degree) |
-|               | resume-section        | One section in resume (e.g. "Education" |
-|               | resume-subcategory    | Creates a heading within a section of the resume |
+| Category          | Shortcode             | Description |
+| :---              | :---                  | :---        |
+| **Contact-info**  | contact-box           | Displays contact info set in params.social |
+|                   | social                | Displays contact info set in params.social |
+| **Photo Gallery** | gallery-category      | Container for gallery-photo shortcodes |
+|                   | gallery-modal         | HTML to allow for full page view of gallery photos | 
+|                   | gallery-photo         | Include a photo in a gallery |
+|                   | gallery-script        | Script to allow for full page view of gallery photos |
+| **General**       | image                 | Image for use in any page. See example in [How to make a blog](#user-content-how-to-make-a-blog) |
+|                   | video                 | Similar to an ordinary <video> html tag but with a CSS class to make it look good in posts       |
+|                   | p5js                  | For including [p5.js](https://p5js.org/) sketches                                                |
+|                   | rawhtml               | For including raw html without the global unsafe option for Goldmark |
+| **Resume**        | container             | Container for resume shortcodes |
+|                   | resume-entry          | One entry in a resume (e.g. a university degree) |
+|                   | resume-section        | One section in resume (e.g. "Education") |
+|                   | resume-subcategory    | Creates a heading within a section of the resume |
 
 ## User CSS
 
@@ -140,7 +146,7 @@ Instructions with example:
 
 # How tos
 
-## Creating a home page
+## How to create a home page
 
 The first thing you will want to do is set up the home page of the 
 website. Create `/content/_index.md`. This could contain a short 
@@ -177,7 +183,7 @@ params:
   nBlogLatest: 6
 ```
 
-## How to make a blog
+## How to create a blog
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
@@ -368,17 +374,15 @@ params:
 ```
 
 For all available social icons, see the `data/notrack/social.yaml` file. There
-are 64 of them. Then, to use the shortcode in a page, do:
+are 64 of them. Then, to display the links somewhere on your page, use either
+`{{< contact-box >}}` or, for an alternative design, use `{{< social >}}`.
 
-```
-{{< contact-box >}}
-Some text you want to include
-{{< /contact-box >}}
-```
-
-Or, for an alternative design,
-
-{{< social >}}
+For `contact-box`, there are three optional parameters, `float`, `width` 
+and `height`. This is similar to the `image` shortcode. Float makes text 
+wrap around the box (can be `right` or `left`), and the other two 
+naturally set the dimensions of the `<div>`, using inline CSS. The 
+parameters defaults to floating to the right, the width defaults to 
+`12em`, and the height defaults to auto.
 
 ## Other projects used in this theme
 
