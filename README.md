@@ -25,6 +25,7 @@ comments](#user-content-adding-comments) below).
   * [How to create a resume](#user-content-how-to-create-a-resume)
   * [How to create display social links](#user-content-how-to-display-social-links)
   * [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
+* [Contribution](#user-content-contribution)
 
 # Screenshot
 
@@ -76,7 +77,7 @@ paginate = 4
 
 | Category          | Shortcode             | Description |
 | :---              | :---                  | :---        |
-| **Contact-info**  | contact-box           | Displays contact info set in params.social |
+| **Contact info**  | contact-box           | Displays contact info set in params.social |
 |                   | social                | Displays contact info set in params.social |
 | **Photo Gallery** | gallery-category      | Container for gallery-photo shortcodes |
 |                   | gallery-modal         | HTML to allow for full page view of gallery photos | 
@@ -90,6 +91,32 @@ paginate = 4
 |                   | resume-entry          | One entry in a resume (e.g. a university degree) |
 |                   | resume-section        | One section in resume (e.g. "Education") |
 |                   | resume-subcategory    | Creates a heading within a section of the resume |
+
+Most of the shortcodes are explained in more detail in their respective 
+sections below. I explain the other two here.
+
+`rawhtml` can be used like this:
+
+```
+{{< rawhtml >}}<p>A paragraph</p>{{< /rawhtml >}}
+```
+
+This allows you to use html to create elements that you can't create 
+with just markdown without allowing unsafe html in the site `config`. 
+I'm not a security expert, and there might be a reason why unsafe HTML 
+is disabled by default. If you think this shortcode shouldn't be part of 
+the theme, feel free to open an issue.
+
+The `video` shortcode basically just creates a HTML `<video>` tag with a 
+class that I've added some styling for. Use it like this:
+
+```
+{{< video src="your_video.mp4" type="video/mp4" preload="auto" >}}
+```
+
+Your video needs to be in the `static` folder or a subfolder of it such 
+as "video" (in which case you'd add the subfolder in the `src` 
+parameter.
 
 ## User CSS
 
@@ -417,3 +444,16 @@ file from the LoveIt theme, which uses the MIT license. I modified it to use the
 Font Awesome Solid font for the email icon, because the one in the original file was
 using the Font Awesome Regular font, which it seems only Pro users of Font
 Awesome [can use](https://fontawesome.com/plans). The solid one also looks better.
+
+# Contribution
+
+I have tried to test the theme on mobile as well as different screen 
+sizes. If you find a situation where fonts don't have an apprioriate 
+size or something else looks off, such as styles completely missing or a 
+page that seems to have the wrong layout, please open an issue. It's 
+difficult to support every possible sceniario, but I will see what I can 
+do.
+
+If some change could be made or something could be added that is in line 
+with the style and philosophy of the theme, and not breaking anything, 
+feel free to make a pull request.
