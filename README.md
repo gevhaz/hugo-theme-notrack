@@ -424,11 +424,11 @@ params:
 
 For all available social icons, see the `data/notrack/social.yaml` file. There
 are 64 of them. Then, to display the links somewhere on your page, use either
-`{{< contact-box >}}` or, for an alternative design, use `{{< social 
->}}`. Here is a screenshot with `contact-box` to the right and `social` 
+`{{< contact-box >}}` or, for an alternative design, use `{{< social }}`. 
+Here is a screenshot with `contact-box` to the right and `social` 
 at the bottom:
 
-<img src="https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png" width="20em" alt="Example of social link shortcodes">
+<img src="https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png" width="40%" alt="Example of social link shortcodes">
 
 For `contact-box`, there are three optional parameters, `float`, `width` 
 and `height`. This is similar to the `image` shortcode. `Float` makes 
