@@ -14,7 +14,8 @@ $cv-red: #b25347;
 $light-text: #5f5a6f;
 $very-light-text: #767676;
 $medium-light-text: #4f4a5f;
-$code-background: #272822;
+$code-background: #f3f3f3;
+$codeblock-background: #f6f8fa;
 $code-text: #f8f8f2;
 
 // Breakpoints
@@ -131,7 +132,16 @@ em {
 kbd, code {
     font-family: Mononoki, monospace;
     color: $text-color;
+    background-color: $code-background;
     font-size: 0.9em;
+}
+
+pre {
+    background-color: $codeblock-background;
+    padding: 0.5em;
+    code {
+        background-color: transparent;
+    }
 }
 
 th {

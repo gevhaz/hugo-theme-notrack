@@ -68,7 +68,14 @@ em {
 kbd, code {
   font-family: Mononoki, monospace;
   color: #444;
+  background-color: #f3f3f3;
   font-size: 0.9em; }
+
+pre {
+  background-color: #f6f8fa;
+  padding: 0.5em; }
+  pre code {
+    background-color: transparent; }
 
 th {
   font-family: FreeSerif, serif;
