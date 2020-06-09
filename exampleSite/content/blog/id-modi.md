@@ -13,14 +13,14 @@ voluptates ducimus voluptatibus. Quia sunt molestiae id ut. Necessitatibus
 itaque sed unde sit repellendus sit. Error pariatur deserunt dignissimos saepe
 cupiditate beatae.
 
-{{< image frame="true" float="left" width="7em" caption="Nemo animi" src="/img/thumbnails/hugo5.jpg" >}}
+{{< image frame="true" float="left" width="7em" caption="Nemo animi" src="img/thumbnails/hugo5.jpg" >}}
 
 Illum quae laudantium quia vel facere aliquid earum. Inventore culpa
 perspiciatis et veniam et amet distinctio. Facilis expedita doloremque
 voluptates nihil et sint commodi et. Et totam iste doloribus et quisquam.
 Quaerat veritatis repellendus vel est.
 
-{{< image frame="true" float="right" width="9em" src="/img/thumbnails/hugo2.jpg" >}}
+{{< image frame="true" float="right" width="9em" src="img/thumbnails/hugo2.jpg" >}}
 
 Nemo animi expedita voluptas ut. Similique dolores animi aut similique vel ullam
 aut. Numquam doloribus temporibus error cupiditate et et quia. Accusamus sunt et
@@ -48,7 +48,7 @@ Et odio asperiores et. Nesciunt adipisci quod distinctio perspiciatis. Enim
 dignissimos error omnis cum rerum. Architecto est cumque sed. Optio et
 perferendis et voluptatem et neque.
 
-{{< image wide="true" caption="Vero necessitatibus" src="/img/fullsize/hugo4.jpg" >}}
+{{< image wide="true" caption="Vero necessitatibus" src="img/fullsize/hugo4.jpg" >}}
 
 Adipisci repellat recusandae dolorem quam dolores quae dolor porro. Soluta sint
 inventore dolores aut delectus quae. Eius est veniam vel nihil.
