@@ -24,7 +24,7 @@ comments](#user-content-adding-comments) below).
   * [How to create a gallery](#user-content-how-to-create-a-gallery)
   * [How to create a resume](#user-content-how-to-create-a-resume)
   * [How to display social links](#user-content-how-to-display-social-links)
-  * [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
+* [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
 * [Contribution](#user-content-contribution)
 
 # Screenshot
@@ -437,7 +437,7 @@ naturally set the dimensions of the `<div>`, using inline CSS. The
 parameters defaults to floating to the right, the width defaults to 
 `12em`, and the height defaults to `auto`.
 
-## Other projects used in this theme
+# Other projects used in this theme
 
 The theme does not secretly download any resources from other websites 
 or CDNs. It does, however, make use of a few other projects. These are 
