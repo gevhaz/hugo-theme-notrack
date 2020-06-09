@@ -1,0 +1,34 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Lawyer Hugo Grotius"
+theme = "notrack"
+newContentEditor = "nvim"
+mainSections = ["blog"]
+# disqusShortname = "example"
+paginate = 4
+
+[params]
+  author = "Hugo de Groot"
+  siteHeading = "Hugo Grotius" # defaults to author
+  showBlogLatest = true
+  mainSections = ["blog"]
+  showTaxonomyLinks = false
+  nBlogLatest = 4 # number of blog post om the home page
+  blogLatestHeading = "My writing"
+
+  [params.social]
+    github = "example"
+    linkedin = "example"
+    email = "example@example.com"
+    mastodon = "example"
+    medium = "example"
+    keybase = "example"
+
+[taxonomies]
+  year = "year"
+  month = "month"
+  tags = "tags"
+  categories = "categories"
+
+[permalinks]
+  blog = "/blog/:year/:month/:slug"

@@ -1,0 +1,24 @@
+{{ define "main" }}
+    <main>
+        <article>
+            {{ if in site.Params.mainSections .Page.Section }}
+            <h1 class="page-title blog">{{ .Title }}</h1>
+            {{ else }}
+            <h1 class="page-title">{{ .Title }}</h1>
+            {{ end }}
+
+            {{- /* Show post information if it's a post, otherwise just the content */ -}}
+            {{ if in site.Params.mainSections .Page.Section }}
+                <p class="blog-post-info">Posted: <time>{{ .Date.Format "2006-01-02" }}</time>
+                {{ partial "blog-taxonomy-info" . }}</p>
+
+                <div class="blog-post-content">
+                {{ .Content }}
+                </div>
+                {{ template "_internal/disqus.html" . }}
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </article>
+    </main>
+{{ end }}

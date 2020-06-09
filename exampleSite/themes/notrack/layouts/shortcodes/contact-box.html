@@ -1,0 +1,25 @@
+{{ with $.Page.Site.Params.social }}
+{{ $socialMap := $.Page.Site.Data.notrack.social }}
+{{ $width := default "12em" (.Get "width") }}
+{{ $height := default "auto" (.Get "height") }}
+{{ $float := default "right" (.Get "float") }}
+<div class="contactbox {{ $float }}" style="width: {{ $width }}; height: {{ $height }}">
+    <ul>
+    {{- $socialArray := slice -}}
+    {{ range $website, $user := $.Site.Params.social }}
+        {{- $social := $website | lower | index $socialMap | default dict -}}
+        {{- $social := dict "user" $user | merge $social -}}
+        {{- $socialArray = $socialArray | append $social -}}
+    {{ end }}
+
+    {{ range sort $socialArray "weight" -}}
+        {{- if .prefix -}}
+        <li><a href="{{- .prefix -}}{{ .user }}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+        {{- else if .template -}}
+        <li><a href="{{- printf .template .user -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+        {{- end -}}
+    {{- end -}}
+    </ul>
+    {{ printf "<!-- Icons are from Awesome Font, licenced under SIL OFL 1.1 (https://scripts.sil.org/OFL) -->" | safeHTML }}
+</div>
+{{ end }}

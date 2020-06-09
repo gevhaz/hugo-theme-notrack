@@ -1,0 +1,17 @@
+{{ with .Params.Categories }}
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+        {{ $sort := sort . }}
+        {{ $links := apply $sort "partial" "post-category-link" "." }}
+        {{ $clean := apply $links "chomp" "." }}
+        {{ delimit $clean ", " }}
+    </span>
+{{ end }}
+
+{{ with .Params.Tags }}
+    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+        {{ $sort := sort . }}
+        {{ $links := apply $sort "partial" "post-tag-link" "." }}
+        {{ $clean := apply $links "chomp" "." }}
+        {{ delimit $clean ", " }}
+    </span>
+{{ end }}

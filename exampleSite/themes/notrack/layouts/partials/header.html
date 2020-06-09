@@ -1,0 +1,78 @@
+
+<header class="page-header">
+    <div class="myname"> 
+        <h2><a href="{{ default .Site.Home .Site.BaseURL }}">{{ default .Site.Params.Author .Site.Params.siteHeading }}</a></h2> 
+    </div>
+    <nav>
+        <ul class="navbar">
+        {{- /* info about current page */ -}}
+            {{- $currentPage := . -}}
+            {{- $currentPagesParent := $currentPage.Parent -}}
+            {{- $currentPageInTags := eq $currentPage.Section "tags" -}}
+            {{- $currentPageInCategories := eq $currentPage.Section "categories" -}}
+            {{- $currentPageNotHome := ne $currentPage.IsHome true -}}
+
+        {{- range .Site.Menus.main -}}
+            {{- if .HasChildren -}}
+
+            {{- /* info about current menu */ -}}
+                {{- $currentMenusPage := .Page -}}
+
+                {{- $currentMenuHasTags := false -}}
+                {{- $currentMenuHasCategories := false -}}
+                {{- range .Children -}}
+                    {{- $childMenuSection := .Page.Section -}}
+                    {{- if eq $childMenuSection "categories" -}}{{- $currentMenuHasCategories = true -}}{{- end -}}
+                    {{- if eq $childMenuSection "tags" -}}{{- $currentMenuHasTags = true -}}{{- end -}}
+                {{- end -}}
+
+            {{- /* comparison of current menu and current page */ -}}
+                {{- $active := eq $currentMenusPage $currentPagesParent -}}
+                {{- $active = and $active $currentPageNotHome -}}
+                {{- $active = or $active (and $currentMenuHasTags $currentPageInTags) -}}
+                {{- $active = or $active (and $currentMenuHasCategories $currentPageInCategories) }}
+            <li class="dropdown {{ if or $active ($currentPage.IsMenuCurrent "main" . ) ($currentPage.HasMenuCurrent "main" .)}}activetab{{ end }}">
+                <a href ="{{ .URL }}">
+                    {{- .Pre }}
+                    <span>{{ .Name }}</span>
+                </a>
+                <div class=sub-menu>
+                {{- range .Children }}
+                    {{- $currentMenuSection := .Page.Section }}
+                    {{- $active := and $currentPageInTags (eq $currentMenuSection "tags") }}
+                    {{- $active = or $active (and $currentPageInCategories (eq $currentMenuSection "categories") ) }}
+                    {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
+                    <a class="{{- if $active -}}activetab{{- end -}}" href="{{- .URL -}}">{{ .Name }}</a>
+                {{- end }}
+                </div>
+            </li>
+            {{- else -}}
+                {{- $currentMenusPage := .Page }}
+                {{- $currentPageIsTaxonomy := or (eq $currentPage.Kind "taxonomyTerm") (eq $currentPage.Kind "taxonomy") }}
+                {{- $currentMenuInMainSections := false }}
+                {{- with $currentMenusPage }}
+                    {{- $currentMenuInMainSections = in site.Params.mainSections .Type }}
+                {{- end }}
+
+                {{- $active := eq $currentMenusPage $currentPagesParent }}
+                {{- with $currentMenusPage }}
+                    {{- $active = and $active (ne $currentMenusPage.IsHome true) }}
+                {{- end }}
+                {{ with $currentPage.File }}
+                {{- $active = and $active (ne .Dir "{{ .Site.BaseURL }}" ) }}
+                {{ end }}
+                {{- $active = or $active (eq $currentPage.Title .Name ) }}
+                {{- $active = or $active (eq $currentPage.RelPermalink .URL ) }}
+                {{- $active = or $active (and $currentPageIsTaxonomy $currentMenuInMainSections) }}
+                {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
+            <li class="{{- if $active -}} activetab {{- end -}}">
+                <a href="{{ .URL }}">
+                    {{- .Pre }}
+                    <span>{{ .Name }}</span>
+                </a>
+            </li>
+            {{- end }}
+        {{- end }}
+        </ul>
+    </nav>
+</header>

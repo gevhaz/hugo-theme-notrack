@@ -1,0 +1,26 @@
+{{ $socialMap := .Site.Data.notrack.social }}
+
+{{ with $.Site.Params.social }}
+    <div class="social">
+        <ul>
+            {{- $socialArray := slice -}}
+            {{ range $website, $user := $.Site.Params.social }}
+                {{- $social := $website | lower | index $socialMap | default dict -}}
+                {{- $social := dict "user" $user | merge $social -}}
+
+                {{- $data := index $socialMap $website -}}
+
+                {{- $socialArray = $socialArray | append $social -}}
+            {{ end }}
+            {{ range sort $socialArray "weight" -}}
+                {{- if .prefix -}}
+                <li><a href="{{- .prefix -}}{{ .user }}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+                {{- else if .template -}}
+                <li><a href="{{- printf .template .user -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+                {{- end -}}
+            {{- end -}}
+        </ul>
+    </div>
+{{ end }}
+
+{{ printf "<!-- Icons are from Awesome Font, licenced under SIL OFL 1.1 (https://scripts.sil.org/OFL) -->" | safeHTML }}
