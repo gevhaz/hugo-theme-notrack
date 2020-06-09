@@ -472,6 +472,8 @@ for the email icon, because the one in the original file was using the
 Awesome [can use](https://fontawesome.com/plans). The solid one also
 looks better.
 
+All of the images in the example site are in the public domain.
+
 # Contribution
 
 I have tried to test the theme on mobile as well as different screen 
