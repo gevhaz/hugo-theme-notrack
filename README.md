@@ -216,6 +216,10 @@ params:
   nBlogLatest: 6
 ```
 
+An alternative way to create the content for the homepage is to have a headless
+bundle `content/homepage`. The content of the files in this directory will be
+populate the the top of the homepage, like in the Hugo Basic Example.
+
 ## How to create a blog
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
