@@ -49,6 +49,7 @@ paginate = 4
 [params]
   author = "Hugo de Groot"
   siteHeading = "Hugo Grotius" # defaults to author
+  # favicon = "favicon-gnu.png" # add favorite/URL/tab/shortcut icon
   showBlogLatest = true
   mainSections = ["blog"]
   showTaxonomyLinks = false

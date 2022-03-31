@@ -3,10 +3,6 @@
     <div class="myname"> 
         <h2><a href="{{ default .Site.Home .Site.BaseURL }}">{{ default .Site.Params.Author .Site.Params.siteHeading }}</a></h2> 
     </div>
-    {{ with .Site.Params.favicon }}
-        <link rel="icon" type="image/ico" href="{{ . | absURL }}">
-    {{ end }}
-
     <nav>
         <ul class="navbar">
         {{- /* info about current page */ -}}
