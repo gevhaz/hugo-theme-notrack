@@ -49,7 +49,7 @@ paginate = 4
 [params]
   author = "Hugo de Groot"
   siteHeading = "Hugo Grotius" # defaults to author
-  # favicon = "favicon-gnu.png" # add favorite/URL/tab/shortcut icon
+  favicon = "hugo_grotius.png" # Adds a small icon next to the page title in a tab
   showBlogLatest = true
   mainSections = ["blog"]
   showTaxonomyLinks = false
