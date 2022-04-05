@@ -470,7 +470,7 @@ source.
 For matching the icons from Font Awesome with names for various social
 networking services, I use the
 [`social.yml`](https://github.com/dillonzq/LoveIt/blob/master/assets/data/social.yml)
-file from the (LoveIt)[https://github.com/dillonzq/LoveIt] theme, which
+file from the [LoveIt](https://github.com/dillonzq/LoveIt) theme, which
 uses the MIT license. I modified it to use the *Font Awesome Solid* font
 for the email icon, because the one in the original file was using the
 *Font Awesome Regular* font, which it seems only Pro users of Font
