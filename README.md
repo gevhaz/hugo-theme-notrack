@@ -1,9 +1,9 @@
 # Notrack
 
-An original, minimal theme with a focus on self-sufficiency and 
-decentralization. By default, Notrack does not rely on any third parties 
-to serve your website. The only exception is Disqus comments, which are 
-not used by default (see [Adding 
+An original, minimal theme with a focus on self-sufficiency and
+decentralization. By default, Notrack does not rely on any third parties
+to serve your website. The only exception is Disqus comments, which are
+not used by default (see [Adding
 comments](#user-content-adding-comments) below).
 
 # Table of contents
@@ -81,7 +81,7 @@ paginate = 4
 | **Contact info**  | contact-box           | Displays contact info set in params.social |
 |                   | social                | Displays contact info set in params.social |
 | **Photo Gallery** | gallery-category      | Container for gallery-photo shortcodes |
-|                   | gallery-modal         | HTML to allow for full page view of gallery photos | 
+|                   | gallery-modal         | HTML to allow for full page view of gallery photos |
 |                   | gallery-photo         | Include a photo in a gallery |
 |                   | gallery-script        | Script to allow for full page view of gallery photos |
 | **General**       | image                 | Image for use in any page. See example in [How to create a blog](#user-content-how-to-create-a-blog) |
@@ -92,7 +92,7 @@ paginate = 4
 |                   | resume-section        | One section in resume (e.g. "Education") |
 |                   | resume-subcategory    | Creates a heading within a section of the resume |
 
-Most of the shortcodes are explained in more detail in their respective 
+Most of the shortcodes are explained in more detail in their respective
 sections below. I explain the other two here.
 
 `rawhtml` can be used like this:
@@ -101,21 +101,21 @@ sections below. I explain the other two here.
 {{< rawhtml >}}<p>A paragraph</p>{{< /rawhtml >}}
 ```
 
-This allows you to use html to create elements that you can't create 
-with just markdown without allowing unsafe html in the site `config`. 
-I'm not a security expert, and there might be a good reason why unsafe HTML 
-is disabled by default. If you think this shortcode shouldn't be part of 
+This allows you to use html to create elements that you can't create
+with just markdown without allowing unsafe html in the site `config`.
+I'm not a security expert, and there might be a good reason why unsafe HTML
+is disabled by default. If you think this shortcode shouldn't be part of
 the theme, feel free to open an issue and say why.
 
-The `video` shortcode basically just creates a HTML `<video>` tag with a 
+The `video` shortcode basically just creates a HTML `<video>` tag with a
 class that I've added some styling for. Use it like this:
 
 ```
 {{< video src="your_video.mp4" type="video/mp4" preload="auto" >}}
 ```
 
-Your video needs to be in the `static` folder or a subfolder of it such 
-as "video" (in which case you'd add the subfolder in the `src` 
+Your video needs to be in the `static` folder or a subfolder of it such
+as "video" (in which case you'd add the subfolder in the `src`
 parameter.
 
 ## User CSS
@@ -138,18 +138,18 @@ menu:
 ---
 ```
 
-Don't use the site `config` to add menus because then the highlighting 
+Don't use the site `config` to add menus because then the highlighting
 of active tabs might not work (at least not if drop-down menus are involved).
 
 ### How to add a page to drop down menu
 
-Quick instruction: Set it's `parent` parameter to one of the menus in 
+Quick instruction: Set it's `parent` parameter to one of the menus in
 `main`.
 
 Instructions with example:
 
-1.  Create the top-level menu in config.yaml or your equivalent. An 
-    example where the top-level menu doesn't correspond to a real page 
+1.  Create the top-level menu in config.yaml or your equivalent. An
+    example where the top-level menu doesn't correspond to a real page
     (url is #) and is just there to hold the drop-down menu:
 
     ```
@@ -185,7 +185,7 @@ useful here is `image`, which adds an image with an optional frame. You can set
 the width with the `width` option. Example usage:
 
 ```
-{{< image frame="true" width="11em" src="/img/profile-picture.jpg" 
+{{< image frame="true" width="11em" src="/img/profile-picture.jpg"
 alt="Picture of me" >}}
 ```
 
@@ -193,8 +193,8 @@ alt="Picture of me" >}}
 further instructions in [How to create a
 blog](#user-content-how-to-create-a-blog).
 
-At this point you should also set the title for the web site, your name 
-and the text in the header, if you want it to be different from your 
+At this point you should also set the title for the web site, your name
+and the text in the header, if you want it to be different from your
 name. Example entries in `config.yaml`:
 
 ```
@@ -204,10 +204,10 @@ params:
   siteHeading: "a header title"
 ```
 
-If you don't want to show the latest posts from your blog at the bottom 
-of the home page, set `showBlogLatest` to false in your site `config`. 
-You may also want to change the number of posts shown (default: 3) and 
-the heading above it (default "Latest from the blog") In config.yaml, it 
+If you don't want to show the latest posts from your blog at the bottom
+of the home page, set `showBlogLatest` to false in your site `config`.
+You may also want to change the number of posts shown (default: 3) and
+the heading above it (default "Latest from the blog") In config.yaml, it
 would look like this:
 
 ```
@@ -225,7 +225,7 @@ populate the the top of the homepage, like in the Hugo Basic Example.
 
 1.  Add some posts with e.g. `hugo new blog/post-1.md` etc.
 
-2. `hugo new blog/_index.md` and create the blog menu item in the front 
+2. `hugo new blog/_index.md` and create the blog menu item in the front
    matter:
 
     ```
@@ -234,15 +234,15 @@ populate the the top of the homepage, like in the Hugo Basic Example.
       main:
         identifier: "blog"
         name: "Blog"
-        weight: <lower number than your other menus for more leftward 
+        weight: <lower number than your other menus for more leftward
         placement>
     ---
     ```
 
-3.  (Optional) Create a drop-down menu with links to tags, categories 
-    and archive by creating pages in the style of `hugo new 
-    tags/_index.md`. It doesn't need any content at all, just create a 
-    front matter where you add it to the main menu with the `identifier` 
+3.  (Optional) Create a drop-down menu with links to tags, categories
+    and archive by creating pages in the style of `hugo new
+    tags/_index.md`. It doesn't need any content at all, just create a
+    front matter where you add it to the main menu with the `identifier`
     of your blog menu entry as parent:
 
     ```
@@ -251,17 +251,17 @@ populate the the top of the homepage, like in the Hugo Basic Example.
       main:
         name: "All Tags"
         parent: "blog"
-        weight: <lower number than your other menus for more upward 
+        weight: <lower number than your other menus for more upward
         placement>
     ---
     ```
 
-    In the case of archive, you may also need to set the layout to 
+    In the case of archive, you may also need to set the layout to
     archives in `_index.md`'s front matter: `layout: archives`.
 
-For those of you who do the third step, there is an option available to 
-remove the buttons with links to the archive (if you have an archives 
-page, see step 3), tags and category pages from the top of the blog list 
+For those of you who do the third step, there is an option available to
+remove the buttons with links to the archive (if you have an archives
+page, see step 3), tags and category pages from the top of the blog list
 page. Just set the following in your site `config`:
 
 ```
@@ -269,21 +269,21 @@ params:
   showTaxonomyLinks: false
 ```
 
-Menus in Hugo are a mess to program for a theme but this should work. 
-It's the method that gives you, the user, the most freedom to choose the 
-structure of your content folder. There are [other 
-methods](https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029) 
-for theme developers but they would force the user to put all posts in a 
+Menus in Hugo are a mess to program for a theme but this should work.
+It's the method that gives you, the user, the most freedom to choose the
+structure of your content folder. There are [other
+methods](https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029)
+for theme developers but they would force the user to put all posts in a
 folder with a specific name.
 
-If you don't want a drop-down menu for listing categories or tags, just 
-skip step 3. You can still disable the links to the taxonomy pages. Your 
-readers can list all posts from a specific category or a tag by clicking 
-on that category or tag in any post instead, and you can link to 
+If you don't want a drop-down menu for listing categories or tags, just
+skip step 3. You can still disable the links to the taxonomy pages. Your
+readers can list all posts from a specific category or a tag by clicking
+on that category or tag in any post instead, and you can link to
 `yourpage.com/categories` from other places too.
 
 You can add images just as for the home page. Available options are those of the
-built in `figure` shortcode of Hugo, and additionally: 
+built in `figure` shortcode of Hugo, and additionally:
 
 | Parameter name   | Allowed Values         |
 | :---             | :---                   |
@@ -297,19 +297,19 @@ A difference from the built in shortcode is that width and height are for the
 outer `<figure>` element. This allows text to wrap around the picture if you set
 the float parameter.
 
-You can also use Hugo's built in short code 
-[figure](https://gohugo.io/content-management/shortcodes/#figure) (an 
+You can also use Hugo's built in short code
+[figure](https://gohugo.io/content-management/shortcodes/#figure) (an
 example: `{{< figure src="/img/picture.jpg" width="100%" >}}`)
 
 ### Adding comments
 
-This theme supports Disqus comments. It goes against the philosophy of 
-the theme in some sense because it relies on external resources but you 
-can enable it if you want. 
+This theme supports Disqus comments. It goes against the philosophy of
+the theme in some sense because it relies on external resources but you
+can enable it if you want.
 
-Disqus is implemented the [default Hugo 
-way](https://gohugo.io/content-management/comments/#add-disqus) so just 
-add your Disqus Shortname in the site `config` and all blog posts will 
+Disqus is implemented the [default Hugo
+way](https://gohugo.io/content-management/comments/#add-disqus) so just
+add your Disqus Shortname in the site `config` and all blog posts will
 have a comments section.
 
 ## How to create a gallery
@@ -321,7 +321,7 @@ There are four shortcodes for creating a gallery:
 * `gallery-modal`
 * `gallery-script`
 
-The first two are used in combination to create the actual gallery. Do 
+The first two are used in combination to create the actual gallery. Do
 something like the following in one of your pages:
 
 ```
@@ -335,7 +335,7 @@ something like the following in one of your pages:
 
 The pictures should be under `static/img/thumbnails` in your project.
 
-If you want a modal to pop up with a zoomed in version, add the other 
+If you want a modal to pop up with a zoomed in version, add the other
 two shortcodes at the bottom of your page:
 
 ```
@@ -343,15 +343,15 @@ two shortcodes at the bottom of your page:
 {{< gallery-script >}}
 ```
 
-And place corresponding full-size images under `static/img/fullsize`. 
+And place corresponding full-size images under `static/img/fullsize`.
 The file names need to be the same as for the thumbnails.
 
-Thumbnails should of course be small so that your page loads fast and 
-fullsize should be large enough that they don't look pixelated when 
-covering the full space of a web browser. One way to resize images is 
-with (graphicsmagick)[http://www.graphicsmagick.org/]: `gm mogrify 
--resize 1920x1920 *.jpg`, which will resize all images in the current 
-folder to a maximum width/height of 1920 pixels (while maintaining the 
+Thumbnails should of course be small so that your page loads fast and
+fullsize should be large enough that they don't look pixelated when
+covering the full space of a web browser. One way to resize images is
+with (graphicsmagick)[http://www.graphicsmagick.org/]: `gm mogrify
+-resize 1920x1920 *.jpg`, which will resize all images in the current
+folder to a maximum width/height of 1920 pixels (while maintaining the
 aspect ratio).
 
 ## How to create a resume
@@ -363,13 +363,13 @@ There are some shortcodes that can help you create a resume. These are:
 * `resume-category`
 * `resume-entry`
 
-`Container` just creates a <div> element with a specific class. 
-`resume-section` needs a title which will be shown to the left of it's 
-content (if it can fit on the screen, otherwise it's on top). Within 
+`Container` just creates a <div> element with a specific class.
+`resume-section` needs a title which will be shown to the left of it's
+content (if it can fit on the screen, otherwise it's on top). Within
 this, you put one or more `resume-entry` shortcodes. This
-shortcode takes the three parameters `what`, `where` and `when` (see 
-example usage below). It also takes raw HTML within the shortcode tags. 
-There is styling for `<p>`s, links, and unordered and ordered lists. 
+shortcode takes the three parameters `what`, `where` and `when` (see
+example usage below). It also takes raw HTML within the shortcode tags.
+There is styling for `<p>`s, links, and unordered and ordered lists.
 Apart from that, site-wide CSS is used. Example usage:
 
 ```
@@ -395,9 +395,9 @@ Apart from that, site-wide CSS is used. Example usage:
 {{< /container >}}
 ```
 
-A tip is that you can also use the `resume-entry` shortcode with 
-markdown. Just switch use % instead of < and make sure that your 
-markdown doesn't have any white space in front of it (or all of it will 
+A tip is that you can also use the `resume-entry` shortcode with
+markdown. Just switch use % instead of < and make sure that your
+markdown doesn't have any white space in front of it (or all of it will
 be interpreted as code):
 
 ```
@@ -411,13 +411,13 @@ be interpreted as code):
 
 ## How to display social links
 
-There is a shortcode for creating a framed area with links to your 
-profiles called `contact-box`. The thing it does is to put a frame with 
-links to your social media or other contact info on the rights side of the page, and, if you 
-want, some text on the left side of the box, outside the frame. Put this 
+There is a shortcode for creating a framed area with links to your
+profiles called `contact-box`. The thing it does is to put a frame with
+links to your social media or other contact info on the rights side of the page, and, if you
+want, some text on the left side of the box, outside the frame. Put this
 text within the shortcode tags.
 
-You decide what social media to include in your site `config` under 
+You decide what social media to include in your site `config` under
 social under params, like this:
 
 ```
@@ -429,42 +429,42 @@ params:
 
 For all available social icons, see the `data/notrack/social.yaml` file. There
 are 64 of them. Then, to display the links somewhere on your page, use either
-`{{< contact-box >}}` or, for an alternative design, use `{{< social >}}`. 
-Here is a screenshot with `contact-box` to the right and `social` 
+`{{< contact-box >}}` or, for an alternative design, use `{{< social >}}`.
+Here is a screenshot with `contact-box` to the right and `social`
 at the bottom:
 
 <img src="https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png" width="40%" alt="Example of social link shortcodes">
 
-For `contact-box`, there are three optional parameters, `float`, `width` 
-and `height`. This is similar to the `image` shortcode. `Float` makes 
-text wrap around the box (can be `right` or `left`), and the other two 
-naturally set the dimensions of the `<div>`, using inline CSS. The 
-parameters defaults to floating to the right, the width defaults to 
+For `contact-box`, there are three optional parameters, `float`, `width`
+and `height`. This is similar to the `image` shortcode. `Float` makes
+text wrap around the box (can be `right` or `left`), and the other two
+naturally set the dimensions of the `<div>`, using inline CSS. The
+parameters defaults to floating to the right, the width defaults to
 `12em`, and the height defaults to `auto`.
 
 # Other projects used in this theme
 
-The theme does not secretly download any resources from other websites 
-or CDNs. It does, however, make use of a few other projects. These are 
-included in the theme files, so you'll homepage will serve the 
+The theme does not secretly download any resources from other websites
+or CDNs. It does, however, make use of a few other projects. These are
+included in the theme files, so you'll homepage will serve the
 resources.
 
-Some of the fonts under `static/fonts` are parts of the project [GNU 
-FreeFont](https://www.gnu.org/software/freefont/). They are licenced 
-under "GPLv3 or later". Licenses are also supposed to be included in the 
-.woff files themselves. Some of the fonts are edited by me to take up 
+Some of the fonts under `static/fonts` are parts of the project [GNU
+FreeFont](https://www.gnu.org/software/freefont/). They are licenced
+under "GPLv3 or later". Licenses are also supposed to be included in the
+.woff files themselves. Some of the fonts are edited by me to take up
 less space by including fewer characters.
 
-The monospace font in the same directory, used for code in the theme, is 
-[Mononoki](https://github.com/madmalik/mononoki). It is licensed under 
-SIL OFL 1.1 
+The monospace font in the same directory, used for code in the theme, is
+[Mononoki](https://github.com/madmalik/mononoki). It is licensed under
+SIL OFL 1.1
 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
 
-The icons used for the `contact-box` and `social` shortcodes are from 
-[Font Awesome](https://github.com/FortAwesome/Font-Awesome) project. 
-It's licence is SIL OFL 1.1 
-([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML 
-comment is included in the contact-box shortcode to show the licence and 
+The icons used for the `contact-box` and `social` shortcodes are from
+[Font Awesome](https://github.com/FortAwesome/Font-Awesome) project.
+It's licence is SIL OFL 1.1
+([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML
+comment is included in the contact-box shortcode to show the licence and
 source.
 
 For matching the icons from Font Awesome with names for various social
@@ -481,13 +481,13 @@ All of the images in the example site are in the public domain.
 
 # Contribution
 
-I have tried to test the theme on mobile as well as different screen 
-sizes. If you find a situation where fonts don't have an appropriate 
-size or something else looks off, such as styles completely missing or a 
-page that seems to have the wrong layout, please open an issue. It's 
-difficult to support every possible scenario, but I will see what I can 
+I have tried to test the theme on mobile as well as different screen
+sizes. If you find a situation where fonts don't have an appropriate
+size or something else looks off, such as styles completely missing or a
+page that seems to have the wrong layout, please open an issue. It's
+difficult to support every possible scenario, but I will see what I can
 do.
 
-If some change could be made or something could be added that is in line 
-with the style and philosophy of the theme, and it doesn't break anything, 
+If some change could be made or something could be added that is in line
+with the style and philosophy of the theme, and it doesn't break anything,
 feel free to make a pull request.
