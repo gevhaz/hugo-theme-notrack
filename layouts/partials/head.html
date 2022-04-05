@@ -7,7 +7,9 @@
     {{ with resources.Get "css/userstyles.css" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}">
     {{ end }}
-    <link rel="icon" href={{ "img/icon.png" | absURL }}>
+    {{ with .Site.Params.favicon }}
+    <link rel="icon" href="{{ . | absURL }}">
+    {{ end }}
     <meta charset="UTF-8">
     <meta name="author" content="{{ .Site.Params.Author }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
