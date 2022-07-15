@@ -36,7 +36,7 @@ theme](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images
 
 Here is a working `config.yaml`:
 
-```
+```yaml
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Lawyer Hugo Grotius"
@@ -98,7 +98,7 @@ sections below. I explain the other two here.
 
 `rawhtml` can be used like this:
 
-```
+```go
 {{< rawhtml >}}<p>A paragraph</p>{{< /rawhtml >}}
 ```
 
@@ -111,7 +111,7 @@ the theme, feel free to open an issue and say why.
 The `video` shortcode basically just creates a HTML `<video>` tag with a
 class that I've added some styling for. Use it like this:
 
-```
+```go
 {{< video src="your_video.mp4" type="video/mp4" preload="auto" >}}
 ```
 
@@ -130,7 +130,7 @@ theme will automatically pick it up.
 
 Add it to `main` menu in the front matter of the page:
 
-```
+```yaml
 ---
 menu:
   main:
@@ -153,7 +153,7 @@ Instructions with example:
     example where the top-level menu doesn't correspond to a real page
     (url is #) and is just there to hold the drop-down menu:
 
-    ```
+    ```yaml
     menu:
       main:
       - identifier: "about-me"
@@ -167,7 +167,7 @@ Instructions with example:
 
 2.  In the front matter of the page you want to add, put the following:
 
-    ```
+    ```yaml
     menu:
       main:
         title: <What you want the name of the menu to be>
@@ -185,7 +185,7 @@ introduction of what is on the website or of yourself. A shortcode that can be
 useful here is `image`, which adds an image with an optional frame. You can set
 the width with the `width` option. Example usage:
 
-```
+```go
 {{< image frame="true" width="11em" src="/img/profile-picture.jpg"
 alt="Picture of me" >}}
 ```
@@ -198,7 +198,7 @@ At this point you should also set the title for the web site, your name
 and the text in the header, if you want it to be different from your
 name. Example entries in `config.yaml`:
 
-```
+```yaml
 title: "My New Hugo Site"
 params:
   author: "John Doe"
@@ -211,7 +211,7 @@ You may also want to change the number of posts shown (default: 3) and
 the heading above it (default "Latest from the blog") In config.yaml, it
 would look like this:
 
-```
+```yaml
 params:
   showBlogLatest: true
   blogLatestHeading: "Latests posts"
@@ -229,7 +229,7 @@ populate the the top of the homepage, like in the Hugo Basic Example.
 2. `hugo new blog/_index.md` and create the blog menu item in the front
    matter:
 
-    ```
+    ```yaml
     ---
     menu:
       main:
@@ -246,7 +246,7 @@ populate the the top of the homepage, like in the Hugo Basic Example.
     front matter where you add it to the main menu with the `identifier`
     of your blog menu entry as parent:
 
-    ```
+    ```yaml
     ---
     menu:
       main:
@@ -265,7 +265,7 @@ remove the buttons with links to the archive (if you have an archives
 page, see step 3), tags and category pages from the top of the blog list
 page. Just set the following in your site `config`:
 
-```
+```yaml
 params:
   showTaxonomyLinks: false
 ```
@@ -325,7 +325,7 @@ There are four shortcodes for creating a gallery:
 The first two are used in combination to create the actual gallery. Do
 something like the following in one of your pages:
 
-```
+```go
 {{< gallery-category >}}
     {{< gallery-photo fn="<filename of first picture>" caption="<your caption>">}}
     {{< gallery-photo fn="<filename of second picture>" caption="<your caption>">}}
@@ -339,7 +339,7 @@ The pictures should be under `static/img/thumbnails` in your project.
 If you want a modal to pop up with a zoomed in version, add the other
 two shortcodes at the bottom of your page:
 
-```
+```go
 {{< gallery-modal >}}
 {{< gallery-script >}}
 ```
@@ -373,7 +373,7 @@ example usage below). It also takes raw HTML within the shortcode tags.
 There is styling for `<p>`s, links, and unordered and ordered lists.
 Apart from that, site-wide CSS is used. Example usage:
 
-```
+```go
 {{< container >}}
     {{< resume-section title="About Me" >}}
         {{< resume-entry >}}
@@ -401,7 +401,7 @@ markdown. Just switch use % instead of < and make sure that your
 markdown doesn't have any white space in front of it (or all of it will
 be interpreted as code):
 
-```
+```go
         {{% resume-entry what="Bachelor's program of Computer Science"
                          where="Sidney University"
                          when="2010–2013" %}}
@@ -421,7 +421,7 @@ text within the shortcode tags.
 You decide what social media to include in your site `config` under
 social under params, like this:
 
-```
+```yaml
 params:
   social:
     github: <your github username>
