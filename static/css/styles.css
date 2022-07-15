@@ -1,6 +1,12 @@
 @charset "UTF-8";
+html {
+  margin: 0;
+  height: 100vh;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
   overflow-y: scroll;
   font-size: 1.21em;
   line-height: 1.21;
@@ -636,26 +642,17 @@ cite {
 
 /* The Modal (background) */
 .modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  padding-top: 5vh;
-  /* Location of the box */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 5vh; /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/ opacity */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
@@ -763,6 +760,19 @@ cite {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  width: 100vw;
+  color: #444;
+  font-size: 0.8em;
+  padding-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.1em;
+  bottom: 0;
+  left: 0;
+  background-color: #f7f7f7;
 }
 
 /*# sourceMappingURL=styles.css.map */

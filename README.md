@@ -55,6 +55,7 @@ paginate = 4
   showTaxonomyLinks = false
   nBlogLatest = 4 # number of blog post om the home page
   blogLatestHeading = "My writing"
+  footer = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 
   [params.social]
     github = "example"
@@ -441,6 +442,19 @@ text wrap around the box (can be `right` or `left`), and the other two
 naturally set the dimensions of the `<div>`, using inline CSS. The
 parameters defaults to floating to the right, the width defaults to
 `12em`, and the height defaults to `auto`.
+
+# How to set a footer
+
+If you want to add a footer to your webpage, you can use the `footer`
+key in your configuration, e.g:
+
+```yaml
+params:
+  footer: "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+```
+
+This will add a HTML <footer> element with a <span> element with your
+text in it.
 
 # Other projects used in this theme
 
