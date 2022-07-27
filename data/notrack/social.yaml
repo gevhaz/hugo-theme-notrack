@@ -506,6 +506,5 @@ rss:
   weight: 64
   url: /index.xml
   title: RSS
-  newtab: true
   icon:
     class: fas fa-rss fa-fw
