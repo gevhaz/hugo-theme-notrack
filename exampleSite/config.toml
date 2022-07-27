@@ -22,7 +22,7 @@ paginate = 4
     linkedin = "example"
     email = "example@example.com"
     mastodon = "example"
-    medium = "example"
+    rss = "rss won't use the value you give it so you can put anything here"
     keybase = "example"
 
 [taxonomies]
