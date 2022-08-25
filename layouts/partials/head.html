@@ -16,4 +16,7 @@
     {{ range .AlternativeOutputFormats -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
+    {{ if eq .Params.math true }}
+        {{ partial "mathjax-support.html" . }}
+    {{ end }}
 </head>
