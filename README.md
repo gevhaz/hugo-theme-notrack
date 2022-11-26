@@ -32,6 +32,20 @@ comments](#user-content-adding-comments) below).
 ![Screenshot of the
 theme](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/screenshot.png)
 
+# Try it out yourself
+
+If you want to try out the theme with an example page, do the following:
+
+```shell
+$ git clone https://github.com/gevhaz/hugo-theme-notrack
+$ mv hugo-theme-notrack notrack
+$ cd notrack/exampleSite/
+$ hugo server -D --themesDir ../..
+```
+
+You can now see the example website in your browser and interact with it. Hugo
+will print instructions for what address to use. Usually it is `http://localhost:1313/`.
+
 # Example site `config`
 
 Here is a working `config.yaml`:
