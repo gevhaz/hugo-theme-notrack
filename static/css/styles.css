@@ -260,6 +260,13 @@ nav li:hover {
   border-color: #ddd;
 }
 
+.lang {
+  background-color: #f9f9f9;
+  color: #444;
+  cursor: pointer;
+  font-size: 0.6em;
+}
+
 .dropdown .sub-menu {
   display: none;
   position: absolute;
@@ -273,7 +280,7 @@ nav li:hover {
   z-index: 1;
 }
 
-.dropdown:hover .sub-menu {
+.dropdown:hover .lang:hover .sub-menu {
   display: block;
 }
 

@@ -5,6 +5,24 @@
     </div>
     <nav>
         <ul class="navbar">
+
+        {{- /* language switching button(s) */ -}}
+        {{ if .Site.IsMultiLingual }}
+            {{ if .IsTranslated }}
+                {{ range .Translations }}
+                    <li class="lang">
+                        <a href="{{ .RelPermalink }}">{{ .Language.Params.code }}</a>
+                    </li>
+                {{ end -}}
+            {{ else -}}
+                {{ range .Site.Languages }}
+                    <li class="lang">
+                        <a href="{{ .Lang | relURL }}">{{ .Params.code }}</a>
+                    </li>
+                {{ end -}}
+            {{ end -}}
+        {{ end -}}
+
         {{- /* info about current page */ -}}
             {{- $currentPage := . -}}
             {{- $currentPagesParent := $currentPage.Parent -}}
