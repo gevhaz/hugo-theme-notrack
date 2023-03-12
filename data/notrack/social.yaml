@@ -509,7 +509,7 @@ rss:
   icon:
     class: fas fa-rss fa-fw
 
-# 064: ORCID
+# 065: ORCID
 orcid:
   weight: 65
   url: https://orcid.org/
