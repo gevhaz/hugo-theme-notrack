@@ -443,7 +443,7 @@ params:
 ```
 
 For all available social icons, see the `data/notrack/social.yaml` file. There
-are 64 of them. Then, to display the links somewhere on your page, use either
+are 65 of them. Then, to display the links somewhere on your page, use either
 `{{< contact-box >}}` or, for an alternative design, use `{{< social >}}`.
 Here is a screenshot with `contact-box` to the right and `social`
 at the bottom:
