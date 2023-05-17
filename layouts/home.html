@@ -22,20 +22,22 @@
             {{ end }}
         {{ end }}
 
-        {{ if and (or $headlessExists $contentExists) $showLatest }}
-            <p class="delimiter">&diams; &diams; &diams;</p>
+        {{/*
+            {{ if and (or $headlessExists $contentExists) $showLatest }}
+                <p class="delimiter">&diams; &diams; &diams;</p>
 
-            {{ $blogLatest := default "Latest Blog Posts" site.Params.blogLatestHeading }}
-            <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
-        {{ end }}
+                {{ $blogLatest := default "Latest Blog Posts" site.Params.blogLatestHeading }}
+                <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
+            {{ end }}
 
-        {{ if $showLatest }}
-            {{ with $blogPages }}
-                {{ range first (default 3 site.Params.nBlogLatest) . }}
-                    {{- partial "blog-entry-summary" . -}}
+            {{ if $showLatest }}
+                {{ with $blogPages }}
+                    {{ range first (default 3 site.Params.nBlogLatest) . }}
+                        {{- partial "blog-entry-summary" . -}}
+                    {{ end }}
                 {{ end }}
             {{ end }}
-        {{ end }}
+        */}}
 
     </main>
 {{ end }}
