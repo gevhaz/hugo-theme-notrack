@@ -1,8 +1,8 @@
 {{ with $.Page.Site.Params.social }}
 {{ $socialMap := $.Page.Site.Data.notrack.social }}
-{{ $width := default "12em" (.Get "width") }}
-{{ $height := default "auto" (.Get "height") }}
-{{ $float := default "right" (.Get "float") }}
+{{ $width := default "12em" (.Params.Get "width") }}
+{{ $height := default "auto" (.Params.Get "height") }}
+{{ $float := default "right" (.Params.Get "float") }}
 <div class="contactbox {{ $float }}" style="width: {{ $width }}; height: {{ $height }}">
     <ul>
     {{- $socialArray := slice -}}
