@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li {
   color: #444;
   font-family: FreeSerif, serif;
-  text-align: justify;
+  text-align: left;
 }
 
 strong {
