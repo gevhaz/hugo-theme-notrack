@@ -1,0 +1,26 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="13">
+            <item index="0" class="java.lang.String" itemvalue="dmaws" />
+            <item index="1" class="java.lang.String" itemvalue="scipy" />
+            <item index="2" class="java.lang.String" itemvalue="bs4" />
+            <item index="3" class="java.lang.String" itemvalue="pymongo" />
+            <item index="4" class="java.lang.String" itemvalue="dmmodel" />
+            <item index="5" class="java.lang.String" itemvalue="pytest" />
+            <item index="6" class="java.lang.String" itemvalue="dmconn" />
+            <item index="7" class="java.lang.String" itemvalue="pandas" />
+            <item index="8" class="java.lang.String" itemvalue="elasticsearch" />
+            <item index="9" class="java.lang.String" itemvalue="dmschema" />
+            <item index="10" class="java.lang.String" itemvalue="lxml" />
+            <item index="11" class="java.lang.String" itemvalue="jsonschema" />
+            <item index="12" class="java.lang.String" itemvalue="dmutils" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
