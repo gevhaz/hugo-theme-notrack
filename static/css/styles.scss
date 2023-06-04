@@ -57,6 +57,7 @@ body {
     font-size: $base-font-size * 1.1;
     line-height: $base-line-height * 1.1;
     font-family: FreeSerif, serif;
+    text-align: left;
 
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
