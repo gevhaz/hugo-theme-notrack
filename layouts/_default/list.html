@@ -25,7 +25,7 @@
 
             {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
                 {{ if or (in $taxonomyName "categ") (in $taxonomyName "tag") }}
-            <li><a href="{{ $taxonomyName | absURL }}">{{ $taxonomyName }}</a></li>
+            <li><a href="{{ $taxonomyName | relURL }}">{{ $taxonomyName }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>
