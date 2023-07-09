@@ -1,14 +1,14 @@
 
 <head>
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | absURL }}">
-    <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | absURL }}">
-    <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | absURL }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | relURL }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | relURL }}">
+    <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | relURL }}">
     {{ with resources.Get "css/userstyles.css" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}">
     {{ end }}
     {{ with .Site.Params.favicon }}
-    <link rel="icon" href="{{ . | absURL }}">
+    <link rel="icon" href="{{ . | relURL }}">
     {{ end }}
     <meta charset="UTF-8">
     <meta name="author" content="{{ .Site.Params.Author }}">
