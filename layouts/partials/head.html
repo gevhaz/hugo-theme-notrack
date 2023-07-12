@@ -3,7 +3,9 @@
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
     <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | relURL }}">
     <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | relURL }}">
-    <link rel="stylesheet" type="text/css" href="{{ "css/styles.css" | relURL }}">
+    {{ $options := dict "transpiler" "libsass" "targetPath" "css/styles.css" }}
+    {{ $style := resources.Get "styles.scss" | toCSS $options | minify | fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
     {{ with resources.Get "css/userstyles.css" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}">
     {{ end }}
