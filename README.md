@@ -34,6 +34,23 @@ theme](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images
 
 # Try it out yourself
 
+## Dependencies
+
+You will need the extended edition of Hugo in order to use this theme. This is
+the edition Hugo's developers recommend for most users. You probably already
+have it, but you can double check with:
+
+```
+$ hugo version
+hugo v0.115.4+extended linux/amd64 BuildDate=unknown
+```
+
+Note the "+extended" after the version number. Information about the standard
+and extended versions may be found within Hugo's [installation
+instructions](https://gohugo.io/installation/).
+
+## Running the example site on localhost
+
 If you want to try out the theme with an example page, do the following:
 
 ```shell
