@@ -3,7 +3,7 @@
         {{ $sort := sort . }}
         {{ $links := apply $sort "partial" "post-category-link" "." }}
         {{ $clean := apply $links "chomp" "." }}
-        {{ delimit $clean ", " }}
+        {{ delimit $clean ", " | safeHTML }}
     </span>
 {{ end }}
 
@@ -12,6 +12,6 @@
         {{ $sort := sort . }}
         {{ $links := apply $sort "partial" "post-tag-link" "." }}
         {{ $clean := apply $links "chomp" "." }}
-        {{ delimit $clean ", " }}
+        {{ delimit $clean ", " | safeHTML }}
     </span>
 {{ end }}
