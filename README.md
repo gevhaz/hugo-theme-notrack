@@ -250,8 +250,8 @@ params:
 ```
 
 An alternative way to create the content for the homepage is to have a headless
-bundle `content/homepage`. The content of the files in this directory will be
-populate the the top of the homepage, like in the Hugo Basic Example.
+bundle `content/homepage`. The content of the files in this directory will
+populate the top of the homepage, like in the Hugo Basic Example.
 
 ## How to create a blog
 
