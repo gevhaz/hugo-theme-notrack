@@ -63,7 +63,7 @@ $ hugo server -D --themesDir ../..
 You can now see the example website in your browser and interact with it. Hugo
 will print instructions for what address to use. Usually it is `http://localhost:1313/`.
 
-# Example site `config`
+# Example site configuration file
 
 Here is a working `config.yaml`:
 
@@ -110,19 +110,19 @@ paginate = 4
 
 | Category          | Shortcode             | Description |
 | :---              | :---                  | :---        |
-| **Contact info**  | contact-box           | Displays contact info set in params.social |
-|                   | social                | Displays contact info set in params.social |
-| **Photo Gallery** | gallery-category      | Container for gallery-photo shortcodes |
-|                   | gallery-modal         | HTML to allow for full page view of gallery photos |
-|                   | gallery-photo         | Include a photo in a gallery |
-|                   | gallery-script        | Script to allow for full page view of gallery photos |
-| **General**       | image                 | Image for use in any page. See example in [How to create a blog](#user-content-how-to-create-a-blog) |
-|                   | video                 | Similar to an ordinary <video> html tag but with a CSS class to make it look good in posts       |
-|                   | rawhtml               | For including raw html without the global unsafe option for Goldmark |
-| **Resume**        | container             | Container for resume shortcodes |
-|                   | resume-entry          | One entry in a resume (e.g. a university degree) |
-|                   | resume-section        | One section in resume (e.g. "Education") |
-|                   | resume-subcategory    | Creates a heading within a section of the resume |
+| **Contact info**  | `contact-box`         | Displays contact info set in `params.social` |
+|                   | `social`              | Displays contact info set in `params.social` |
+| **Photo Gallery** | `gallery-category`    | Container for `gallery-photo` shortcodes |
+|                   | `gallery-modal`       | HTML to allow for full page view of gallery photos |
+|                   | `gallery-photo`       | Include a photo in a gallery |
+|                   | `gallery-script`      | Script to allow for full page view of gallery photos |
+| **General**       | `image`               | Image for use in any page. See example in [How to create a blog](#how-to-create-a-blog) |
+|                   | `video`               | Similar to an ordinary `<video>` HTML tag but with a CSS class to make it look good in posts       |
+|                   | `rawhtml`             | For including raw HTML without the global unsafe option for Goldmark |
+| **Resume**        | `container`           | Container for resume shortcodes |
+|                   | `resume-entry`        | One entry in a resume (e.g. a university degree) |
+|                   | `resume-section`      | One section in resume (e.g. "Education") |
+|                   | `resume-subcategory`  | Creates a heading within a section of the resume |
 
 Most of the shortcodes are explained in more detail in their respective
 sections below. I explain the other two here.
@@ -133,8 +133,8 @@ sections below. I explain the other two here.
 {{< rawhtml >}}<p>A paragraph</p>{{< /rawhtml >}}
 ```
 
-This allows you to use html to create elements that you can't create
-with just markdown without allowing unsafe html in the site `config`.
+This allows you to use HTML to create elements that you can't create
+with just markdown without allowing unsafe HTML in the site configuration file.
 I'm not a security expert, and there might be a good reason why unsafe HTML
 is disabled by default. If you think this shortcode shouldn't be part of
 the theme, feel free to open an issue and say why.
@@ -146,8 +146,8 @@ class that I've added some styling for. Use it like this:
 {{< video src="your_video.mp4" type="video/mp4" preload="auto" >}}
 ```
 
-Your video needs to be in the `static` folder or a subfolder of it such
-as "video" (in which case you'd add the subfolder in the `src`
+Your video needs to be in the `static` folder or a subdirectory of it such
+as "video" (in which case you'd add the subdirectory in the `src`
 parameter.
 
 ## User CSS
@@ -170,7 +170,7 @@ menu:
 ---
 ```
 
-Don't use the site `config` to add menus because then the highlighting
+Don't use the site configuration file to add menus because then the highlighting
 of active tabs might not work (at least not if drop-down menus are involved).
 
 ### How to add a page to drop down menu
@@ -180,9 +180,9 @@ Quick instruction: Set it's `parent` parameter to one of the menus in
 
 Instructions with example:
 
-1.  Create the top-level menu in config.yaml or your equivalent. An
+1.  Create the top-level menu in `config.yaml` or your equivalent. An
     example where the top-level menu doesn't correspond to a real page
-    (url is #) and is just there to hold the drop-down menu:
+    (`url` is #) and is just there to hold the drop-down menu:
 
     ```yaml
     menu:
@@ -237,9 +237,9 @@ params:
 ```
 
 If you don't want to show the latest posts from your blog at the bottom
-of the home page, set `showBlogLatest` to false in your site `config`.
+of the home page, set `showBlogLatest` to false in your site configuration file.
 You may also want to change the number of posts shown (default: 3) and
-the heading above it (default "Latest from the blog") In config.yaml, it
+the heading above it (default "Latest from the blog") In `config.yaml`, it
 would look like this:
 
 ```yaml
@@ -294,7 +294,7 @@ populate the top of the homepage, like in the Hugo Basic Example.
 For those of you who do the third step, there is an option available to
 remove the buttons with links to the archive (if you have an archives
 page, see step 3), tags and category pages from the top of the blog list
-page. Just set the following in your site `config`:
+page. Just set the following in your site configuration file:
 
 ```yaml
 params:
@@ -317,13 +317,13 @@ on that category or tag in any post instead, and you can link to
 You can add images just as for the home page. Available options are those of the
 built in `figure` shortcode of Hugo, and additionally:
 
-| Parameter name   | Allowed Values         |
-| :---             | :---                   |
-| `float`          | right/left             |
-| `frame`          | true/false/leave out   |
-| `wide`           | true/false             |
-| `width`          | e.g. 10em, 50%, 70px   |
-| `height`         | e.g. 10em, 50%, 70px   |
+| Parameter name   | Allowed Values             |
+| :---             | :---                       |
+| `float`          | right/left                 |
+| `frame`          | true/false/leave out       |
+| `wide`           | true/false                 |
+| `width`          | e.g. `10em`, `50%`, `70px` |
+| `height`         | e.g. `10em`, `50%`, `70px` |
 
 A difference from the built in shortcode is that width and height are for the
 outer `<figure>` element. This allows text to wrap around the picture if you set
@@ -341,7 +341,7 @@ can enable it if you want.
 
 Disqus is implemented the [default Hugo
 way](https://gohugo.io/content-management/comments/#add-disqus) so just
-add your Disqus Shortname in the site `config` and all blog posts will
+add your Disqus Shortname in the site configuration file and all blog posts will
 have a comments section.
 
 ## How to create a gallery
@@ -379,7 +379,7 @@ And place corresponding full-size images under `static/img/fullsize`.
 The file names need to be the same as for the thumbnails.
 
 Thumbnails should of course be small so that your page loads fast and
-fullsize should be large enough that they don't look pixelated when
+full-size should be large enough that they don't look pixelated when
 covering the full space of a web browser. One way to resize images is
 with (graphicsmagick)[http://www.graphicsmagick.org/]: `gm mogrify
 -resize 1920x1920 *.jpg`, which will resize all images in the current
@@ -449,8 +449,8 @@ links to your social media or other contact info on the rights side of the page,
 want, some text on the left side of the box, outside the frame. Put this
 text within the shortcode tags.
 
-You decide what social media to include in your site `config` under
-social under params, like this:
+You decide what social media to include in your site configuration file under
+`social` under `params`, like this:
 
 ```yaml
 params:
@@ -476,7 +476,7 @@ parameters defaults to floating to the right, the width defaults to
 
 # How to set a footer
 
-If you want to add a footer to your webpage, you can use the `footer`
+If you want to add a footer to your web page, you can use the `footer`
 key in your configuration, e.g:
 
 ```yaml
@@ -495,9 +495,9 @@ included in the theme files, so you'll homepage will serve the
 resources.
 
 Some of the fonts under `static/fonts` are parts of the project [GNU
-FreeFont](https://www.gnu.org/software/freefont/). They are licenced
+FreeFont](https://www.gnu.org/software/freefont/). They are licensed
 under "GPLv3 or later". Licenses are also supposed to be included in the
-.woff files themselves. Some of the fonts are edited by me to take up
+`.woff` files themselves. Some of the fonts are edited by me to take up
 less space by including fewer characters.
 
 The monospace font in the same directory, used for code in the theme, is
@@ -507,9 +507,9 @@ SIL OFL 1.1
 
 The icons used for the `contact-box` and `social` shortcodes are from
 [Font Awesome](https://github.com/FortAwesome/Font-Awesome) project.
-It's licence is SIL OFL 1.1
+It's license is SIL OFL 1.1
 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML
-comment is included in the contact-box shortcode to show the licence and
+comment is included in the contact-box shortcode to show the license and
 source.
 
 For matching the icons from Font Awesome with names for various social

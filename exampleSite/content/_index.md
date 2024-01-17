@@ -14,7 +14,7 @@ Hello, I'm Hugo Grotius and this is my personal page. I'm a Dutch lawyer and
 diplomat with experience from academia and government, having published a large
 number of books on international law, sometimes even being called the "father"
 of this field of study. I have experience working as a diplomat from serving as
-the Swedish Ambassdor to France. For a more comprehensive list of my experience,
+the Swedish Ambassador to France. For a more comprehensive list of my experience,
 see the [Resume]({{< ref "resume.md" >}}) tab.
 
 After having been wrongfully convicted of treason in the Netherlands and
