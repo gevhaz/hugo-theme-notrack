@@ -12,12 +12,12 @@ menu:
     {{% resume-section title="About Me" %}}
 My career has been a series of ups and downs, starting out as a child
 prodigy, getting involved in religious sectarianism which earned me a
-life sentence, which I fortuantely were able to circumvent, followed by
-presitigous academic and diplomatic roles and finally by barely surving being
+life sentence, which I fortunately were able to circumvent, followed by
+prestigious academic and diplomatic roles and finally by barely surviving being
 shipwrecked.
     {{% /resume-section %}}
     {{< resume-section title="Experience" >}}
-        {{< resume-entry what="Swedish Ambassdor to France"
+        {{< resume-entry what="Swedish Ambassador to France"
                         where="Paris"
                         when="1634–1645" >}}
             <ul>

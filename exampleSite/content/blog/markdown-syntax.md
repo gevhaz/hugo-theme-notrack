@@ -14,7 +14,7 @@ categories = [
     "syntax",
 ]
 series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
+aliases = ["migrate-from-jekyll"]
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -86,6 +86,7 @@ html
 </body>
 </html>
 ```
+
 #### Code block indented with four spaces
 
     <!DOCTYPE html>
@@ -100,6 +101,7 @@ html
     </html>
 
 #### Code block with Hugo's internal highlight shortcode
+
 {{< highlight html >}}
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +135,7 @@ html
 1. First Sub-item
 2. Second Sub-item
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## Other Elements — `abbr`, `sub`, `sup`, `kbd`, `mark`
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
