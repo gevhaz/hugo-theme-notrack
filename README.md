@@ -4,28 +4,28 @@ An original, minimal theme with a focus on self-sufficiency and
 decentralization. By default, Notrack does not rely on any third parties
 to serve your website. The only exception is Disqus comments, which are
 not used by default (see [Adding
-comments](#user-content-adding-comments) below).
+comments](#adding-comments) below).
 
 # Table of contents
 
-* [Notrack](#user-content-notrack)
-* [Table of contents](#user-content-table-of-contents)
-* [Screenshot](#user-content-screenshot)
-* [Example site `config`](#user-content-example-site-config)
-* [Shortcodes](#user-content-shortcodes)
-* [User CSS](#user-content-user-css)
-* [Navigation bar](#user-content-navigation-bar)
-  * [How to add a page to the navigation bar](#user-content-how-to-add-a-page-to-the-navigation-bar)
-  * [How to add a page to drop down menu](#user-content-how-to-add-a-page-to-drop-down-menu)
-* [How tos](#user-content-how-tos)
-  * [How to create a home page](#user-content-how-to-create-a-home-page)
-  * [How to create a blog](#user-content-how-to-create-a-blog)
-    * [Adding comments](#user-content-adding-comments)
-  * [How to create a gallery](#user-content-how-to-create-a-gallery)
-  * [How to create a resume](#user-content-how-to-create-a-resume)
-  * [How to display social links](#user-content-how-to-display-social-links)
-* [Other projects used in this theme](#user-content-other-projects-used-in-this-theme)
-* [Contribution](#user-content-contribution)
+* [Notrack](#notrack)
+* [Table of contents](#table-of-contents)
+* [Screenshot](#screenshot)
+* [Example site `config`](#example-site-config)
+* [Shortcodes](#shortcodes)
+* [User CSS](#user-css)
+* [Navigation bar](#navigation-bar)
+  * [How to add a page to the navigation bar](#how-to-add-a-page-to-the-navigation-bar)
+  * [How to add a page to drop down menu](#how-to-add-a-page-to-drop-down-menu)
+* [How tos](#how-tos)
+  * [How to create a home page](#how-to-create-a-home-page)
+  * [How to create a blog](#how-to-create-a-blog)
+    * [Adding comments](#adding-comments)
+  * [How to create a gallery](#how-to-create-a-gallery)
+  * [How to create a resume](#how-to-create-a-resume)
+  * [How to display social links](#how-to-display-social-links)
+* [Other projects used in this theme](#other-projects-used-in-this-theme)
+* [Contribution](#contribution)
 
 # Screenshot
 
@@ -223,7 +223,7 @@ alt="Picture of me" >}}
 
 `frame="true"` adds a frame around the picture. You can also add a caption. See
 further instructions in [How to create a
-blog](#user-content-how-to-create-a-blog).
+blog](#how-to-create-a-blog).
 
 At this point you should also set the title for the web site, your name
 and the text in the header, if you want it to be different from your
