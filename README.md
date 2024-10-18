@@ -2,9 +2,12 @@
 
 An original, minimal theme with a focus on self-sufficiency and
 decentralization. By default, Notrack does not rely on any third parties
-to serve your website. The only exception is Disqus comments, which are
-not used by default (see [Adding
-comments](#adding-comments) below).
+to serve your website.
+
+For backward-compatibility, it is still possible to enable Disqus comments (see
+[Adding comments](#adding-comments) below). However, I advise against it due to
+the privacy issues for your users, see the [Disqus Wikipedia
+article](https://en.wikipedia.org/wiki/Disqus#Criticism,_privacy,_and_security_concerns).
 
 # What it looks like
 
