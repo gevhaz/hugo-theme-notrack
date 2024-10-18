@@ -6,27 +6,6 @@ to serve your website. The only exception is Disqus comments, which are
 not used by default (see [Adding
 comments](#adding-comments) below).
 
-# Table of contents
-
-* [Notrack](#notrack)
-* [Table of contents](#table-of-contents)
-* [Screenshot](#screenshot)
-* [Example site `config`](#example-site-config)
-* [Shortcodes](#shortcodes)
-* [User CSS](#user-css)
-* [Navigation bar](#navigation-bar)
-  * [How to add a page to the navigation bar](#how-to-add-a-page-to-the-navigation-bar)
-  * [How to add a page to drop down menu](#how-to-add-a-page-to-drop-down-menu)
-* [How tos](#how-tos)
-  * [How to create a home page](#how-to-create-a-home-page)
-  * [How to create a blog](#how-to-create-a-blog)
-    * [Adding comments](#adding-comments)
-  * [How to create a gallery](#how-to-create-a-gallery)
-  * [How to create a resume](#how-to-create-a-resume)
-  * [How to display social links](#how-to-display-social-links)
-* [Other projects used in this theme](#other-projects-used-in-this-theme)
-* [Contribution](#contribution)
-
 # Screenshot
 
 ![Screenshot of the
