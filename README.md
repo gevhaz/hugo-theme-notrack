@@ -6,10 +6,12 @@ to serve your website. The only exception is Disqus comments, which are
 not used by default (see [Adding
 comments](#adding-comments) below).
 
-# Screenshot
+# What it looks like
 
 ![Screenshot of the
 theme](https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/screenshot.png)
+
+Demo site: <https://gevhaz.github.io>
 
 # Try it out yourself
 
