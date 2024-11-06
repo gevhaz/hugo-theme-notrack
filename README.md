@@ -56,28 +56,27 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Lawyer Hugo Grotius"
 theme = "notrack"
-newContentEditor = "nvim"
-mainSections = ["blog"]
-# disqusShortname = "example"
-paginate = 4
+pagination.pagerSize = 4  # Posts per page, e.g. in the blog
 
 [params]
   author = "Hugo de Groot"
   siteHeading = "Hugo Grotius" # defaults to author
-  favicon = "hugo_grotius.png" # Adds a small icon next to the page title in a tab
-  showBlogLatest = true
-  mainSections = ["blog"]
-  showTaxonomyLinks = false
-  nBlogLatest = 4 # number of blog post om the home page
-  blogLatestHeading = "My writing"
-  footer = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+  favicon = "hugo_grotius.png" # The small icon shown in browser tabs
+  showTaxonomyLinks = false  # Show e.g. a "Category" button at top of blog page
+
+  # You can choose to display a summary of your blog on the home page. Below are
+  # the settings relevant for that.
+  showBlogLatest = true  # Whether to show it or not
+  mainSections = ["blog"]  # Section name of your blog (folder name)
+  blogLatestHeading = "My writing"  # Heading above blog summary
+  nBlogLatest = 4  # Number of blog post in summary
 
   [params.social]
     github = "example"
     linkedin = "example"
     email = "example@example.com"
     mastodon = "example"
-    medium = "example"
+    rss = "yes"  # Value doesn't matter - it will always link to your blog RSS
     keybase = "example"
 
 [taxonomies]
