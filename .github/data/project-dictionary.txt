@@ -14,9 +14,11 @@ Notrack
 OFL
 Oxelstierna
 Parision
+README
 SIL
 Vimeo
 YouTube
+acknowledgements
 backticks
 blockquote
 blockquotes
