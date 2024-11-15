@@ -365,7 +365,7 @@ The file names need to be the same as for the thumbnails.
 Thumbnails should of course be small so that your page loads fast and
 full-size should be large enough that they don't look pixelated when
 covering the full space of a web browser. One way to resize images is
-with (graphicsmagick)[http://www.graphicsmagick.org/]: `gm mogrify
+with [GraphicsMagick](http://www.graphicsmagick.org/): `gm mogrify
 -resize 1920x1920 *.jpg`, which will resize all images in the current
 folder to a maximum width/height of 1920 pixels (while maintaining the
 aspect ratio).

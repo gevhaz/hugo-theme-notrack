@@ -6,6 +6,7 @@ Ecole
 FreeFont
 GPLv
 Gopherfest
+GraphicsMagick
 Hollandish
 LoveIt
 Mononoki
