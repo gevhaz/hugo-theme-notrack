@@ -92,7 +92,8 @@ theme = 'notrack'
 
 [params]
 author = '<Your name>'
-siteHeading = '<the text that goes at the top of your webpage>'  # optional, defaults to author
+# optional, defaults to author:
+siteHeading = '<the text that goes at the top of your webpage>'
 ```
 
 Now you are ready to add the first content to the web page. Create the home
@@ -125,7 +126,8 @@ or deploy it somewhere according to the instructions form Hugo:
 
 You can further extend the home page:
 
-- Add an [image](#the-image-shortcode) (for example like in the demonstration web page)
+- Add an [image](#the-image-shortcode) (for example like in the demonstration
+  web page)
 - Add a [footer](#how-to-set-a-footer) (that will be shown on all pages)
 
 #### How to create a blog
@@ -189,7 +191,9 @@ There is nothing special about the About Me page, but the theme supplies a
 couple of shortcodes that can be useful if you want to display social links like
 in the demonstration site:
 
-<img src="https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png" width="40%" alt="Example of social link shortcodes">
+<img
+src="https://raw.githubusercontent.com/gevhaz/hugo-theme-notrack/master/images/social-links.png"
+width="40%" alt="Example of social link shortcodes">
 
 To prepare for using one of the shortcodes, configure your social media user
 names like this in the site configuration:
@@ -201,7 +205,7 @@ email = '<email address>'
 ```
 
 For all available social icons, see the
-[`data/notrack/social.yaml`](https://github.com/gevhaz/hugo-theme-notrack/blob/topic/improve-intro-instruction/data/notrack/social.yaml)
+[`data/notrack/social.yaml`](https://github.com/gevhaz/hugo-theme-notrack/blob/master/data/notrack/social.yaml)
 file. There are 65 of them.
 
 Then, create a new page, for example like this:
@@ -277,7 +281,6 @@ $ hugo new tags/_index.md
 
 The only needed content is a menu definition in the front matter, like this:
 
-
 ```toml
 [menu.main]
 parent = 'blog'
@@ -345,21 +348,21 @@ all the shortcodes in a table, and show how to use the non-trivial ones.
 
 #### Shortcodes provided by Notrack
 
-| Category          | Shortcode             | Description |
-| :---              | :---                  | :---        |
-| **Contact info**  | `contact-box`         | Displays contact info set in `params.social` |
-|                   | `social`              | Displays contact info set in `params.social` |
-| **Photo Gallery** | `gallery-category`    | Container for `gallery-photo` shortcodes |
-|                   | `gallery-modal`       | HTML to allow for full page view of gallery photos |
-|                   | `gallery-photo`       | Include a photo in a gallery |
-|                   | `gallery-script`      | Script to allow for full page view of gallery photos |
-| **General**       | `image`               | Image for use in any page. See example in [How to create a blog](#how-to-create-a-blog) |
-|                   | `video`               | Similar to an ordinary `<video>` HTML tag but with a CSS class to make it look good in posts       |
-|                   | `rawhtml`             | For including raw HTML without the global unsafe option for Goldmark |
-| **Resume**        | `container`           | Container for resume shortcodes |
-|                   | `resume-entry`        | One entry in a resume (e.g. a university degree) |
-|                   | `resume-section`      | One section in resume (e.g. "Education") |
-|                   | `resume-subcategory`  | Creates a heading within a section of the resume |
+| Category          | Shortcode            | Description |
+| :---              | :---                 | :---        |
+| **Contact info**  | `contact-box`        | Displays contact info set in `params.social` |
+|                   | `social`             | Displays contact info set in `params.social` |
+| **Photo Gallery** | `gallery-category`   | Container for `gallery-photo` shortcodes |
+|                   | `gallery-modal`      | HTML to allow for full page view of gallery photos |
+|                   | `gallery-photo`      | Include a photo in a gallery |
+|                   | `gallery-script`     | Script to allow for full page view of gallery photos |
+| **General**       | `image`              | More advanced version of figure |
+|                   | `video`              | Similar to an ordinary `<video>` HTML tag but with a CSS class to make it look good in posts       |
+|                   | `rawhtml`            | For including raw HTML without the global unsafe option for Goldmark |
+| **Resume**        | `container`          | Container for resume shortcodes |
+|                   | `resume-entry`       | One entry in a resume (e.g. a university degree) |
+|                   | `resume-section`     | One section in resume (e.g. "Education") |
+|                   | `resume-subcategory` | Creates a heading within a section of the resume |
 
 #### The raw HTML shortcode
 
@@ -410,7 +413,13 @@ the full width of the page.
 Here is an example of how to use it to add a picture to the home page:
 
 ```go
-{{<image float="right" width="11em" frame="true" caption="Picture of me" src="img/portrait.jpg" >}}
+{{<image
+    float="right"
+    width="11em"
+    frame="true"
+    caption="Picture of me"
+    src="img/portrait.jpg"
+>}}
 ```
 
 Make sure the `src` value points to an existing picture. In this case it
@@ -486,10 +495,10 @@ aspect ratio).
 
 There are some shortcodes that can help you create a resume. These are:
 
-* `container`
-* `resume-section`
-* `resume-category`
-* `resume-entry`
+- `container`
+- `resume-section`
+- `resume-category`
+- `resume-entry`
 
 `Container` just creates a `<div>` element with a specific class.
 `resume-section` needs a title which will be shown to the left of it's content
@@ -604,7 +613,10 @@ your configuration, e.g:
 
 ```toml
 [params]
-footer = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+footer = """\
+  This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 \
+  International License.\
+  """
 ```
 
 This will add a HTML <footer> element with a <span> element with your text in
@@ -680,16 +692,16 @@ to make a pull request.
 
 ## FAQ
 
-**Q: How do I update the theme?**
+### Q: How do I update the theme?
 
 `cd` to it and do a `git pull`.
 
-**Q: I would like to change the CSS styling of the site looks**
+### Q: I would like to change the CSS styling of the site looks
 
 You can add your own CSS by creating a file `assets/css/userstyles.css`. The
 theme will automatically pick it up.
 
-**Q: My pages don't show up on the site**
+### Q: My pages don't show up on the site
 
 Have you removed `draft = true`? Have you [added the page to a
 menu](#how-to-add-a-page-to-the-navigation-bar)? Also try restarting `hugo
