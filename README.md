@@ -35,8 +35,7 @@ You can also run the demonstration web page on a local server. This is how you
 do it:
 
 ```console
-$ git clone https://github.com/gevhaz/hugo-theme-notrack
-$ mv hugo-theme-notrack notrack
+$ git clone https://github.com/gevhaz/hugo-theme-notrack notrack
 $ cd notrack/exampleSite/
 $ hugo server -D --themesDir ../..
 ```
