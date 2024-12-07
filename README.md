@@ -100,7 +100,7 @@ Now you are ready to add the first content to the web page. Create the home
 page, which is the first page users see:
 
 ```console
-$ hugo new _index.html
+$ hugo new _index.md
 ```
 
 This could contain a short introduction of what is on the website or of
