@@ -44,7 +44,7 @@ You can them see the example website in your browser and interact with it. Hugo
 will print instructions for what address to use. Usually it is
 `http://localhost:1313/`.
 
-## How to write a website from scrath with Notrack
+## How to write a website from scratch with Notrack
 
 There are two ways to get started with this theme – the bottom-up approach and
 the top-down approach. The top-down approach is to just clone the example site
@@ -67,7 +67,7 @@ shortcodes in any page as well).
 
 #### How to create a home page
 
-First, create a new hugo project in a directory of your choice:
+First, create a new Hugo project in a directory of your choice:
 
 ```console
 $ hugo new site <my-webpage>
