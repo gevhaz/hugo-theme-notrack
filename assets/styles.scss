@@ -130,9 +130,14 @@ strong {
 }
 
 em {
-    font-style: normal;
     font-family: FreeSerif, serif;
     font-style: italic;
+}
+
+em strong {
+    font-style: italic;
+    font-family: FreeSerif, serif;
+    font-weight: bold;
 }
 
 kbd, code {
