@@ -150,9 +150,10 @@ kbd, code {
 pre {
     background-color: $codeblock-background;
     padding: 0.5em;
+    overflow: auto;
+    
     code {
         background-color: transparent;
-        white-space: preserve;
     }
 }
 
