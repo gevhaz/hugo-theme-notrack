@@ -1,1 +1,3 @@
-<a class="blog-taxonomy-info" href="/tags/{{ . | urlize }}">{{ . }}</a>
+{{- $page_basename := urlize . -}}
+{{- $relative_page_url := printf "tags/%s" $page_basename | relURL }}
+<a class="blog-taxonomy-info" href="{{ $relative_page_url }}">{{ . }}</a>
