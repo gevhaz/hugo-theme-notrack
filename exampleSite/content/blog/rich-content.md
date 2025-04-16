@@ -9,7 +9,7 @@ tags = [
 ]
 +++
 
-Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a [Privacy Configuration](https://gohugo.io/about/hugo-and-gdpr/) and a set of Simple Shortcodes that enable static and JavaScript free versions of various social media embeds.
+Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes) for rich content, along with a Privacy Configuration and a set of Simple Shortcodes that enable static and JavaScript free versions of various social media embeds.
 <!--more-->
 ---
 
