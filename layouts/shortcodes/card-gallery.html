@@ -1,0 +1,6 @@
+{{- $class := .Get "class" -}}
+{{- $style := .Get "style" -}}
+
+<ul class="card-gallery {{$class}}" {{with $style}}style="{{.}}"{{end}} >
+    {{ .Inner }}
+</ul>
