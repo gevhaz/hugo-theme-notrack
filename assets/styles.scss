@@ -17,6 +17,9 @@ $medium-light-text: #4f4a5f;
 $code-background: #f3f3f3;
 $codeblock-background: #f6f8fa;
 $code-text: #f8f8f2;
+$sans-font: FreeSans, sans-serif;
+$serif-font: FreeSerif, serif;
+$base-font: {{ default "$serif-font" .Site.Params.baseFont }};
 
 // Breakpoints
 $bp-mini: 28em; // 288px
@@ -56,7 +59,7 @@ body {
     overflow-y: scroll;
     font-size: $base-font-size * 1.1;
     line-height: $base-line-height * 1.1;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
 
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
@@ -105,13 +108,13 @@ main {
 }
 
 a {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     color: $midnight-blue;
     text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-weight: bold;
     font-style: normal;
     color: $heading-gray;
@@ -119,24 +122,24 @@ h1, h2, h3, h4, h5, h6 {
 
 p, li {
     color: $text-color;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     text-align: justify;
 }
 
 strong {
     font-style: normal;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
 }
 
 em {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
 }
 
 em strong {
     font-style: italic;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
 }
 
@@ -158,18 +161,18 @@ pre {
 }
 
 th {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
     color: $text-color;
 }
 
 td {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     color: $text-color;
 }
 
 .footnotes ol li {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-size: 0.8em;
 }
 
@@ -293,7 +296,7 @@ nav li {
 nav a {
     color: $text-color;
     padding: .25em .63em;
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-size: 1.2em;
     display: block;
 }
@@ -357,7 +360,7 @@ nav li:hover {
 .myname a {
     color: black;
     text-decoration: none;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
     font-weight: bold;
 }
@@ -394,7 +397,7 @@ nav li:hover {
 
     a {
         color: $heading-gray;
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
     }
 }
 
@@ -409,7 +412,7 @@ nav li:hover {
 }
 
 em.taxonomy-emph {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-style: oblique;
 }
 
@@ -449,7 +452,7 @@ em.taxonomy-emph {
 
 .pagination {
     list-style-type: none;
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     display: flex;
     justify-content: center;
     margin: 1em;
@@ -513,7 +516,7 @@ em.taxonomy-emph {
     }
 
     ul, ol {
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
         margin-top: 0;
     }
     li {
@@ -547,7 +550,7 @@ em.taxonomy-emph {
     }
 
     p, ul, ol, li {
-        font-family: FreeSerif, serif;
+        font-family: $base-font;
         color: $light-text;
         text-align: left;
         font-size: 0.9em;
@@ -555,7 +558,7 @@ em.taxonomy-emph {
 }
 
 p.resume-subcategory {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-size: 1.4em;
     text-decoration: underline;
     padding: 0 0 .3em 0;
@@ -589,12 +592,32 @@ p.resume-subcategory {
                 white-space: nowrap;
                 color: #3f444d;
                 font-size: 1em;
-                font-family: FreeSans, sans-serif;
+                font-family: $sans-font;
 
                 i {
                     font-size: 2em;
                     vertical-align: middle;
                 }
+            }
+        }
+    }
+}
+
+.soc-footer {
+    justify-content: flex-end;
+    ul {
+        width: 100%;
+        margin:0;
+        li {
+            padding-top: 0;
+            padding-bottom: 0;
+            a {
+                i {
+                    font-size: .9em;
+                }
+            }
+            p {
+                margin: 0;
             }
         }
     }
@@ -624,7 +647,7 @@ p.resume-subcategory {
 
 
     a {
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
         font-weight: bold;
         font-size: 1em;
         color: $contactlinks-text-color;
@@ -664,13 +687,14 @@ p.resume-subcategory {
 // General
 
 blockquote {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
+    font-style: italic;
     font-size: .9em;
     color: $text-color;
 }
 
 cite {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
 }
 
