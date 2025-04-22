@@ -61,6 +61,11 @@ body {
     line-height: $base-line-height * 1.1;
     font-family: $base-font;
 
+    /* Force middle section to fill the screen so footer is lined up with the
+       bottom of the window even if the page is short. Thank you ChatGPT :) */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Top, middle, bottom */
+
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
         line-height: $base-line-height*1.2;
@@ -840,9 +845,11 @@ cite {
     cursor: pointer;
 }
 
+/* Footer */
+
 footer {
-    position: fixed;
-    width: 100vw;
+    margin-top: 1em;
+    border-top: 1px solid #eee;
     color: #444;
     font-size: .8em;
     padding-left: 1em;
@@ -850,5 +857,10 @@ footer {
     padding-bottom: .1em;
     bottom: 0;
     left: 0;
-    background-color: #f7f7f7;
+    background-color: $code-background;
+
+    p {
+        font-size: .8em;
+        margin:.1em;
+    }
 }
