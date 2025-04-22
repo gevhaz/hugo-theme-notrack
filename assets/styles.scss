@@ -126,10 +126,18 @@ h1, h2, h3, h4, h5, h6 {
     text-align: {{ default "initial" .Site.Params.titleAlign }}
 }
 
-p, li {
+ul {
+    list-style-type: square;
+}
+
+p, li, dt, dd {
     color: $text-color;
     font-family: $base-font;
     text-align: justify;
+}
+
+dt {
+    font-weight: bold
 }
 
 strong {
