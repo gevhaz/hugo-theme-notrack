@@ -91,24 +91,25 @@ main {
     padding: 1em 1em;
     background-color: white;
 
+
     @media #{$mq-small} {
-        margin: 0 15%;
+        margin: 0 1%;
     }
 
     @media #{$mq-medium} {
-        margin: 0 17%;
+        margin: 0 5%;
     }
 
     @media #{$mq-large} {
-        margin: 0 21%;
+        margin: 0 15%;
     }
 
     @media #{$mq-xlarge} {
-        margin: 0 24%;
+        margin: 0 20%;
     }
 
     @media #{$mq-xxlarge} {
-        margin: 0 27%;
+        margin: 0 25%;
     }
 }
 
@@ -189,7 +190,7 @@ figure.image-shortcode {
     @media #{$mq-mini-reverse} {
         width: 100% !important;
     }
-
+    height: 100%;
 }
 
 figure.wide {
@@ -242,6 +243,16 @@ figure.frame {
 
 }
 
+
+img.photo {
+    object-fit:contain;
+    border-style:solid;
+    min-width:10%;
+    padding:3px;
+}
+
+
+
 figcaption {
     font-size: 0.8em;
     padding: 0;
@@ -251,7 +262,7 @@ figcaption {
     p {
         margin-top: 0em;
         color: #666674;
-        text-align: left;
+        text-align: justified;
     }
     h4 {
         margin: 0.3em 0;
@@ -844,6 +855,93 @@ cite {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Card gallery */
+
+.card-gallery {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 1em;
+}
+
+.gallery-card {
+    flex-basis: 100%;
+    padding: .2em;
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        //min-width: 100%;
+        max-height: 100%;
+        //object-fit: cover;
+        //vertical-align: bottom;
+        border-width: 1px;
+        border-color: #bbb;
+    }
+
+    img:hover {
+        opacity: 0.7;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+}
+
+%card-frame {
+    background-color: #f7f7f7;
+    border: 1px solid #bbb;
+    padding: 0.5em;
+    margin-left: 1em;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    padding-top: 1em;
+
+    &:hover {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    }
+
+    figcaption {
+
+        border-bottom: none;
+
+        line-height: $base-line-height * 1.5;
+
+        /* Fill all the space to the bottom */
+        flex:1;
+
+        h4 {
+            text-align: center;
+            font-size: 1.9em;
+            margin-bottom: .5em;
+        }
+    }
+}
+
+// Block frames use an inner flex - suitable for larger bits of text and a
+// 'follow' arrow anchored to the bottom of the card.
+figure.block-frame {
+    @extend %card-frame;
+    display:flex;
+    flex-direction:column;
+
+    figcaption {
+        display:flex;
+        flex-direction:column;
+    }
+}
+
+figure.round-frame {
+    @extend %card-frame;
+    border-radius: 1em;
+    margin-bottom:-1em;
+}
+
 
 /* Footer */
 

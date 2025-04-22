@@ -1,0 +1,12 @@
+{{/* '-> Find out more' style links */}}
+
+{{- $url := .Get "url" | relURL -}}
+{{- $text := or (.Get "text") ("Find out more") -}}
+{{- $pad :=  or (.Get "pad") ("2") -}}
+
+<div style="flex:1;"></div>
+<div>
+  <p style="text-align:right; font-size:0.9em;">
+    <a href={{ $url }}>&rarr; {{$text}} </a>
+  </p>
+</div>
