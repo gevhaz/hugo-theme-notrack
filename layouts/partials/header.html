@@ -1,7 +1,13 @@
 
 <header class="page-header">
     <div class="myname"> 
-        <h2><a href="{{ default .Site.Home .Site.BaseURL }}">{{ default .Site.Params.Author .Site.Params.siteHeading }}</a></h2> 
+      <h2><a href="{{ default .Site.Home .Site.BaseURL }}">
+          {{ if .Site.Params.Logo }}
+          <img src={{.Site.Params.Logo | relURL}} style="height:1em;"/>
+          {{ else }}
+          {{ default .Site.Params.Author .Site.Params.siteHeading }}
+          {{end}}
+      </a></h2>
     </div>
     <nav>
         <ul class="navbar">
