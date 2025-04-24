@@ -954,6 +954,21 @@ figure.round-frame {
 }
 
 
+/* SVG Container */
+
+div.goat {
+    font-size: initial;
+    border: 1px solid #bbb;
+    padding: 0.5em;
+    border-radius: 1em;
+
+}
+
+svg {
+    stroke-opacity:80%;
+    fill-opacity:80%;
+}
+
 /* Footer */
 
 footer {
