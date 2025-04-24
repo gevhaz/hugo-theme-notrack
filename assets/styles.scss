@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ul {
-    list-style-type: square;
+    list-style-type: {{ default "none" .Site.Params.bulletStyle }};
 }
 
 p, li, dt, dd {
@@ -537,7 +537,7 @@ em.taxonomy-emph {
     }
 
     ul {
-        list-style-type: "– ";
+        list-style-type: {{ default "\"– \"" .Site.Params.bulletStyle }};
     }
 
     ul, ol {
