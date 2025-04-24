@@ -519,6 +519,7 @@ em.taxonomy-emph {
     h4 {
         margin: 0 0.5em 0 0;
         font-size: 1.3em;
+        text-align: left;
     }
 }
 
@@ -558,10 +559,11 @@ em.taxonomy-emph {
         text-align: left;
         font-size: 1.0em;
         color: $text-color;
+        margin-bottom: .5em;
     }
 
     .resume-entry-data {
-        font-family: FreeSans, serif;
+        font-family: $sans-font;
         text-align: left;
         font-size: 0.8em;
         color: $very-light-text;
@@ -569,7 +571,7 @@ em.taxonomy-emph {
     }
 
     .resume-inner {
-        line-height: 1;
+        //line-height: 1;
         margin-top: 0.2em;
         margin-left: 0.9rem;
     }
