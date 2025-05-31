@@ -55,8 +55,6 @@ jobs:
           HUGO_ENV: production
         run: |
           set -x
-          pwd
-          ls
           hugo \
             --minify \
             --baseURL grotius.example.com \
@@ -64,3 +62,90 @@ jobs:
             --themesDir ../../ \
             --printUnusedTemplates \
         working-directory: ./exampleSite
+
+  visual-diff:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.102.3
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Build master branch version
+        run: |
+          git checkout master
+          hugo -d public-master \
+            --theme hugo-theme-notrack/ \
+            --themesDir ../../
+        working-directory: ./exampleSite
+      - name: Build pull request version
+        run: |
+          git checkout ${{ github.head_ref }}
+          hugo -d public-pr \
+            --theme hugo-theme-notrack/ \
+            --themesDir ../../
+        working-directory: ./exampleSite
+      - name: Install playwright and its dependencies
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install
+      - name: Serve both versions and take screenshots
+        run: |
+          npx http-server ./exampleSite/public-master -p 8080 &
+          npx http-server ./exampleSite/public-pr -p 8081 &
+          sleep 5
+
+          # home
+          npx playwright screenshot http://localhost:8080 master-home.png
+          npx playwright screenshot http://localhost:8081 pr-home.png
+
+          # blog markdown test page
+          npx playwright screenshot http://localhost:8080/blog/2019/03/markdown-syntax-guide/ master-markdown.png
+          npx playwright screenshot http://localhost:8081/blog/2019/03/markdown-syntax-guide/ pr-markdown.png
+
+          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
+          for page in "${subpages[@]}"; do
+            npx playwright screenshot http://localhost:8080/resume master-${page}.png
+            npx playwright screenshot http://localhost:8081/resume pr-${page}.png
+          done
+      - name: Compare screenshots
+        id: diff
+        run: |
+          mkdir diffs
+          has_any_changes=false
+          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
+          screenshots=("${subpages[@]}" "home" "markdown")
+          for screenshot in "${screenshots[@]}"; do
+          echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
+            if npx pixelmatch master-${screenshot}.png pr-${screenshot}.png diffs/${screenshot}.png 0.1; then
+              echo 'No changes detected'
+            else
+              echo 'Changes detected'
+              has_any_changes=true
+            fi
+            echo "has_changes=${has_any_changes}" >> $GITHUB_OUTPUT
+          done
+      - name: Upload diff images
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visuals-diffs
+          path: diffs/
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        if: steps.diff.outputs.has_changes == 'true'
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ Visual changes detected! Check artifacts for diffs.'
+            })
