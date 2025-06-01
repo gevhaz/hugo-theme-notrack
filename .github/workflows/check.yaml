@@ -112,8 +112,8 @@ jobs:
 
           subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
           for page in "${subpages[@]}"; do
-            npx playwright screenshot http://localhost:8080/resume master-${page}.png
-            npx playwright screenshot http://localhost:8081/resume pr-${page}.png
+            npx playwright screenshot --full-page http://localhost:8080/${page} master-${page}.png
+            npx playwright screenshot --full-page http://localhost:8081/${page} pr-${page}.png
           done
       - name: Compare screenshots
         id: diff
