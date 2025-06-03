@@ -1,0 +1,50 @@
+{{- $class := .Get "class" -}}
+{{- $frame := .Get "frame" -}}
+{{- $float := .Get "float" -}}
+{{- $wide := .Get "wide" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $src  := cond (.Get "img") (.Get "img" | relURL) ("") -}}
+{{- $alt  :=  or ( .Get "alt" ) ( .Get "src" | markdownify | plainify ) -}}
+{{- $link :=  cond (.Get "link") (.Get "link" | relURL) ("") -}}
+{{- $target := .Get "target" -}}
+{{- $rel := .Get "rel" -}}
+{{- $title := .Get "title" | markdownify -}}
+{{- $caption := .Get "caption" | markdownify -}}
+{{- $imwidth := .Get "imwidth" | default "100%" -}}
+{{- $imheight := .Get "imheight" | default "100%" -}}
+{{- $imclass := .Get "imclass" -}}
+{{- $imstyle := .Get "imstyle" -}}
+
+<li class="gallery-card">
+    <figure class="image-shortcode {{- with $class }} {{.}} {{end -}}
+            {{- with $wide  }} wide{{ end -}}
+            {{- with $frame }} {{. -}}-frame{{ end -}}
+            {{- with $float }}{{ .}}{{ end -}}"
+            style="{{- with .Get "style" }}{{ . | safeCSS }}{{ end -}}
+                   {{- with $width }}width: {{ . }};{{ end -}}
+                   {{- with $height }}height: {{ . }};{{ end -}}
+                   ">
+        {{- with $link}}
+        <a href="{{.}}"
+               {{- with $target}}target="{{.}}"{{end -}}
+               {{- with $rel}}rel="{{.}}"{{end -}}>
+        {{- end}}
+        {{- with $src}}
+        <img src="{{.}}" {{- with $alt }} alt="{{.}}" {{end -}}
+               {{- with $imclass}} class="{{.}}" {{end -}}
+               style="{{- with $imwidth }}width: {{ . }};{{ end -}}
+                      {{- with $imheight }}height: {{ . }};{{ end -}}
+                      {{- with $imstyle }}{{ . | safeCSS }}{{end -}}"/>
+        {{- end -}}
+        {{- if $link }}
+        </a>
+        {{- end -}}
+        {{- if or $title $caption}}
+        <figcaption>
+             {{ with $title -}}<h4>{{.}}</h4>{{- end}}
+             {{ with $caption -}}{{. -}}{{- end}}
+        </figcaption>
+        {{end}}
+    </figure>
+</li>

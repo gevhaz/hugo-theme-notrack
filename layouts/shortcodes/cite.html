@@ -1,0 +1,14 @@
+{{/* Generates a right-aligned cite tag */}}
+
+{{- $person := .Get "person" -}}
+{{- $position := .Get "position" -}}
+{{- $org := .Get "org" -}}
+{{- $url := .Get "url" -}}
+
+<p style="text-align:right; font-size:0.9em;"><cite>&mdash; {{ $person }},
+    {{ with $position }} {{ $position}} {{end}}
+    <br>
+    {{ with $url }} <a href={{.}}> {{end}}
+      {{ $org }}
+    {{ with $url }} </a> {{end}}
+</cite></p>
