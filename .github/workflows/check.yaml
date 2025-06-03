@@ -91,6 +91,11 @@ jobs:
             --theme hugo-theme-notrack/ \
             --themesDir ../../
         working-directory: ./exampleSite
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          which magick | echo "magick doesn't exist"
+          which identify | echo "identify doesn't exist"
       - name: Install playwright and its dependencies
         run: |
           npm init -y
@@ -123,8 +128,15 @@ jobs:
           subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
           screenshots=("${subpages[@]}" "home" "markdown")
           for screenshot in "${screenshots[@]}"; do
-          echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
-            if npx pixelmatch master-${screenshot}.png pr-${screenshot}.png diffs/${screenshot}.png 0.1; then
+            echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
+            # Make them the same height so pixelmatch doesn't fail
+            HEIGHT_PR=$(magick identify -format "%h" "pr-${screenshot}.png")
+            HEIGHT_MASTER=$(magick identify -format "%h" "master-${screenshot}.png")
+            MAX_HEIGHT=$(HEIGHT_PR > HEIGHT_MASTER : HEIGHT_PR ? HEIGHT_MASTER)
+            magick "pr-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "pr-${screenshot}.png"
+            magick "master-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "master-${screenshot}.png"
+            # Compare them
+            if npx pixelmatch "master-${screenshot}.png" "pr-${screenshot}.png" "diffs/${screenshot}.png" 0.1; then
               echo 'No changes detected'
             else
               echo 'Changes detected'
