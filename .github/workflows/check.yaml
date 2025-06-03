@@ -91,17 +91,21 @@ jobs:
             --theme hugo-theme-notrack/ \
             --themesDir ../../
         working-directory: ./exampleSite
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
       - name: Install playwright and its dependencies
         run: |
           npm init -y
           npm install playwright
           npx playwright install
-      - name: Serve both versions and take screenshots
+      - name: Serve both versions and wait for them to be ready
         run: |
           npx http-server ./exampleSite/public-master -p 8080 &
           npx http-server ./exampleSite/public-pr -p 8081 &
-          sleep 5
+          sleep 15
 
+      - name: Take screenshots of various pages on version with and without new changes
+        run: |
           # home
           npx playwright screenshot http://localhost:8080 master-home.png
           npx playwright screenshot http://localhost:8081 pr-home.png
@@ -115,6 +119,18 @@ jobs:
             npx playwright screenshot --full-page http://localhost:8080/${page} master-${page}.png
             npx playwright screenshot --full-page http://localhost:8081/${page} pr-${page}.png
           done
+      - name: Equalize screenshots size
+        run: |
+          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
+          screenshots=("${subpages[@]}" "home" "markdown")
+          for screenshot in "${screenshots[@]}"; do
+            echo "Equalize height of screenshots pr-${screenshot}.png and master-${screenshot}.png..."
+            HEIGHT_PR=$(identify-im6.q16 -format "%h" "pr-${screenshot}.png")
+            HEIGHT_MASTER=$(identify-im6.q16 -format "%h" "master-${screenshot}.png")
+            MAX_HEIGHT=$((HEIGHT_PR > HEIGHT_MASTER ? HEIGHT_PR : HEIGHT_MASTER))
+            convert-im6.q16 "pr-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "pr-${screenshot}.png"
+            convert-im6.q16 "master-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "master-${screenshot}.png"
+          done
       - name: Compare screenshots
         id: diff
         run: |
@@ -123,8 +139,8 @@ jobs:
           subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
           screenshots=("${subpages[@]}" "home" "markdown")
           for screenshot in "${screenshots[@]}"; do
-          echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
-            if npx pixelmatch master-${screenshot}.png pr-${screenshot}.png diffs/${screenshot}.png 0.1; then
+            echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
+            if npx pixelmatch "master-${screenshot}.png" "pr-${screenshot}.png" "diffs/${screenshot}.png" 0.1; then
               echo 'No changes detected'
             else
               echo 'Changes detected'
