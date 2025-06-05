@@ -1,5 +1,7 @@
 {{ with .Params.Categories }}
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Categories:
+    <span class="blog-taxonomy-info">
+        {{ if not ($.Params.Tags) }} &nbsp; | &nbsp; {{ end }}
+        {{ i18n "categories" | default "Categories" }}:
         {{ $sort := sort . }}
         {{ $links := apply $sort "partial" "post-category-link" "." }}
         {{ $clean := apply $links "chomp" "." }}
@@ -8,7 +10,9 @@
 {{ end }}
 
 {{ with .Params.Tags }}
-    <span class="blog-taxonomy-info"> &nbsp; | &nbsp; Tags: 
+    <span class="blog-taxonomy-info">
+        {{ if $.Params.Categories }} &nbsp; | &nbsp; {{ end }}
+        {{ i18n "tags" | default "Tags" }}:
         {{ $sort := sort . }}
         {{ $links := apply $sort "partial" "post-tag-link" "." }}
         {{ $clean := apply $links "chomp" "." }}

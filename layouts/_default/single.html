@@ -7,10 +7,18 @@
             <h1 class="page-title">{{ .Title }}</h1>
             {{ end }}
 
-            {{- /* Show post information if it's a post, otherwise just the content */ -}}
             {{ if in site.Params.mainSections .Page.Section }}
-                <p class="blog-post-info">Posted: <time>{{ .Date.Format "2006-01-02" }}</time>
-                {{ partial "blog-taxonomy-info" . }}</p>
+                <p class="blog-post-info">
+                    {{ i18n "postedOn" }}:
+                    <time>
+                        {{ if eq .Site.Language.Lang "de" }}
+                            {{ .Date.Day }}. {{ index site.Data.months_de (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                        {{ else }}
+                            {{ .Date.Format "January 2, 2006" }}
+                        {{ end }}
+                    </time>
+                    {{ partial "blog-taxonomy-info" . }}
+                </p>
 
                 <div class="blog-post-content">
                 {{ .Content }}
