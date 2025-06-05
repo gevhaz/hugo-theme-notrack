@@ -11,8 +11,10 @@
                 <p class="blog-post-info">
                     {{ i18n "postedOn" }}:
                     <time>
+                        <!-- add your date localisation here and edit the data/month_(yourlang).yaml to match the month names of your language-->
                         {{ if eq .Site.Language.Lang "de" }}
                             {{ .Date.Day }}. {{ index site.Data.months_de (printf "%d" .Date.Month) }} {{ .Date.Year }}
+                        <!-- end of date localisation  -->
                         {{ else }}
                             {{ .Date.Format "January 2, 2006" }}
                         {{ end }}
