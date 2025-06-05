@@ -1,18 +1,39 @@
+{{ $src := .Get "src" }}
+{{ $dither := .Get "dither" | default "false" }}
+{{ $processedSrc := "" }}
+
+{{ if .Get "src" }}
+  {{ $img := resources.Get $src }}
+  {{ if and $img (eq $dither "true") }}
+    {{ $opts := dict "colors" (slice "222" "808080" "ddd") }}
+    {{ $filters := slice
+      (images.Process "resize 800x")
+      (images.Grayscale)
+      (images.Dither $opts)
+      (images.Process "png")
+    }}
+    {{ $processed := $img | images.Filter $filters }}
+    {{ if $processed }}
+      {{ $processedSrc = $processed.RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 <figure class="image-shortcode{{ with .Get "class" }} {{ . }}{{ end }}
          {{- with .Get "wide" }}{{- if eq . "true" }} wide{{ end -}}{{ end -}}
          {{- with .Get "frame" }}{{- if eq . "true" }} frame{{ end -}}{{ end -}}
-         {{- with .Get "float" }} {{ . }}{{ end -}}" 
+         {{- with .Get "float" }} {{ . }}{{ end -}}"
          style="
          {{- with .Get "width" }}width: {{ . }};{{ end -}}
          {{- with .Get "height" }}height: {{ . }};{{ end -}}">
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end }}
-    <img src="{{ .Get "src" | relURL }}"
+    <img src="{{ if $processedSrc }}{{ $processedSrc }}{{ else }}{{ $src | relURL }}{{ end }}"
          {{- if or (.Get "alt") (.Get "caption") }}
-         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
+         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify | plainify }}{{ end }}"
          {{- end -}}
-    /> <!-- Closing img tag -->
+    />
     {{- if .Get "link" }}</a>{{ end -}}
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
         <figcaption>

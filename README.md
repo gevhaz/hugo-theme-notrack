@@ -402,6 +402,7 @@ Hugo's default `figure` shortcode. The following extra options are provided:
 | `wide`           | true/false                 |
 | `width`          | e.g. `10em`, `50%`, `70px` |
 | `height`         | e.g. `10em`, `50%`, `70px` |
+| `dither`         | true/false                 |
 
 You can also use all the options for the
 [`figure`](https://gohugo.io/content-management/shortcodes/#figure) shortcode.
@@ -416,13 +417,22 @@ Here is an example of how to use it to add a picture to the home page:
     float="right"
     width="11em"
     frame="true"
+    dither="false"
     caption="Picture of me"
     src="img/portrait.jpg"
 >}}
 ```
 
 Make sure the `src` value points to an existing picture. In this case it
-should be in `static/img/portrait.jpg`.
+should be in `assets/img/portrait.jpg`.
+
+##### Dithering
+Dithering is an old technique, wich reduces the colors of an image. For this theme it will render the images in three colors of grey. This way the images are smaller in file-size, while keeping their dimensions. Dithered pictures look like the images in old newspapers.  
+
+> [!IMPORTANT]
+> The dithering wont work, if you place your images in `static`. You must place them in `assets`!  
+
+Just add the parameter `dither="true"` to your image shortcode and your images will be dithered automatically. Default is `false`.
 
 #### The contact-box shortcode
 
@@ -620,6 +630,48 @@ footer = """\
 
 This will add a HTML <footer> element with a <span> element with your text in
 it.
+
+#### How to add internationalisation
+
+First you have to add your translation in the directory `i18n` if it isn't already there. You can copy the English and change the content and file name to match your language. 
+
+Now you can set your locale and different parameters for each in `hugo.toml` like this:
+```
+DefaultContentLanguage = 'en'
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageCode = 'en'
+    languageName = 'English'
+    timeZone = 'America/New_York'
+    title = 'Mytitle'
+    weight = 2
+    disabled = true
+    [languages.en.params]
+      author = 'Jon'
+      siteHeading = 'My Site heading'
+      subtitle = 'This is my site'
+      mainSections = ['blog']
+      favicon = 'favicon.ico'
+  [languages.de]
+    languageCode = 'de'
+    languageName = 'Deutsch'
+    timeZone = 'Europe/Berlin'
+    title = 'Meine Überschrift'
+    weight = 1
+    disabled = false
+    [languages.de.params]
+      author = 'Hans'
+      siteHeading = 'Meine Überschrift'
+      subtitle = 'Das ist meine Seite'
+      mainSections = ['blog']
+      favicon = 'favicon.ico'
+```
+
+When you add a new page or post, the file name has to be `mypost.de.md`
+ for German or `mypost.en.md`for an English post. See the [Hugo manual](https://gohugo.io/content-management/multilingual/) for more information.
+
 
 #### How to disable or customize home page blog summary
 

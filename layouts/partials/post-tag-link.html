@@ -1,3 +1,7 @@
 {{- $page_basename := urlize . -}}
-{{- $relative_page_url := printf "tags/%s" $page_basename | relURL }}
-<a class="blog-taxonomy-info" href="{{ $relative_page_url }}">{{ . }}</a>
+{{- $relative_page_url := printf "/tags/%s/" $page_basename | relLangURL -}}
+<a class="blog-taxonomy-info" href="{{ $relative_page_url }}"
+   aria-label="{{ i18n "viewAllWithTag" | default "View all posts with tag" }} {{ . | safeHTML }}"
+   title="{{ i18n "viewAllWithTag" | default "View all posts with tag" }} {{ . | safeHTML }}">
+    {{ . }}
+</a>

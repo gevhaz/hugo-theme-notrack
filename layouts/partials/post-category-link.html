@@ -1,3 +1,7 @@
 {{- $page_basename := urlize . -}}
-{{- $relative_page_url := printf "categories/%s" $page_basename | relURL }}
-<a class="blog-taxonomy-info" href="{{ $relative_page_url }}">{{ . }}</a>
+{{- $relative_page_url := printf "/categories/%s/" $page_basename | relLangURL -}}
+<a class="blog-taxonomy-info" href="{{ $relative_page_url }}"
+   aria-label="{{ i18n "viewAllInCategory" | default "View all posts in category" }} {{ . | safeHTML }}"
+   title="{{ i18n "viewAllInCategory" | default "View all posts in category" }} {{ . | safeHTML }}">
+    {{ . }}
+</a>
