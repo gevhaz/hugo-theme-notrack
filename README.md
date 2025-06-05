@@ -429,9 +429,9 @@ should be in `assets/img/portrait.jpg`.
 ##### Dithering
 Dithering is an old technique, wich reduces the colors of an image. For this theme it will render the images in three colors of grey. This way the images are smaller in file-size, while keeping their dimensions. Dithered pictures look like the images in old newspapers.  
 
-**Important:** The dithering wont work, if you place your images in `static`. You must place them in `assets`!  
+[!IMPORTANT] The dithering wont work, if you place your images in `static`. You must place them in `assets`!  
 
-Just add the parameter `dither="true"` to your image shortcode and your images will be dithered automatically.  
+Just add the parameter `dither="true"` to your image shortcode and your images will be dithered automatically. Default is `false`.
 
 #### The contact-box shortcode
 
