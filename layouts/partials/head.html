@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | relURL }}">
     <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | relURL }}">
     {{ $options := dict "transpiler" "libsass" "targetPath" "css/styles.css" }}
-    {{ $style := resources.Get "styles.scss" | toCSS $options | minify | fingerprint }}
+    {{ $style := resources.Get "styles.scss" | resources.ExecuteAsTemplate "styles.scss" . | toCSS $options | minify | fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
     {{ with resources.Get "css/userstyles.css" }}
     <link rel="stylesheet" type="text/css" href="{{ .Permalink }}">
