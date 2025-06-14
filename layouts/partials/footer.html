@@ -1,3 +1,22 @@
+{{- $showCopyright := .Site.Params.Footer.showCopyright | default true -}}
+{{- $logo := .Site.Params.Footer.logo -}}
+{{- $showSocials := .Site.Params.Footer.showSocials -}}
+
+{{ if .Site.Params.Footer }}
 <footer>
-    <span>{{ .Site.Params.Footer }}</span>
+  <div class="social soc-footer">
+    <ul>
+      <li style="padding:1px; flex-grow:100;">
+        {{ with $logo }}
+        <img src="{{.|relURL}}" style="height:1.3em;"/>
+        {{end}}
+        {{ if $showCopyright }}
+        <p>Copyright (C) {{ now.Format "2006"}} {{.Site.Params.Author}}. All rights reserved. <br> All trademarks, logos and brand names are the property of their respective owners.</p>
+        {{ end }}
+      </li>
+      {{if $showSocials}} {{partial "social.html" .}} {{end}}
+    </ul>
+  </div>
+  <p>{{ .Site.Params.Footer.text | markdownify }}</p>
 </footer>
+{{ end  }}

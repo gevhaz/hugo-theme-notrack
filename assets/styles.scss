@@ -17,6 +17,9 @@ $medium-light-text: #4f4a5f;
 $code-background: #f3f3f3;
 $codeblock-background: #f6f8fa;
 $code-text: #f8f8f2;
+$sans-font: FreeSans, sans-serif;
+$serif-font: FreeSerif, serif;
+$base-font: {{ default "$serif-font" .Site.Params.baseFont }};
 
 // Breakpoints
 $bp-mini: 28em; // 288px
@@ -56,7 +59,12 @@ body {
     overflow-y: scroll;
     font-size: $base-font-size * 1.1;
     line-height: $base-line-height * 1.1;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
+
+    /* Force middle section to fill the screen so footer is lined up with the
+       bottom of the window even if the page is short. Thank you ChatGPT :) */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Top, middle, bottom */
 
     @media #{$mq-medium} {
         font-size: $base-font-size*1.2;
@@ -105,38 +113,47 @@ main {
 }
 
 a {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     color: $midnight-blue;
     text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-weight: bold;
     font-style: normal;
     color: $heading-gray;
+    text-align: {{ default "initial" .Site.Params.titleAlign }}
 }
 
-p, li {
+ul {
+    list-style-type: {{ default "none" .Site.Params.bulletStyle }};
+}
+
+p, li, dt, dd {
     color: $text-color;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     text-align: justify;
+}
+
+dt {
+    font-weight: bold
 }
 
 strong {
     font-style: normal;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
 }
 
 em {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
 }
 
 em strong {
     font-style: italic;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
 }
 
@@ -158,18 +175,18 @@ pre {
 }
 
 th {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-weight: bold;
     color: $text-color;
 }
 
 td {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     color: $text-color;
 }
 
 .footnotes ol li {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-size: 0.8em;
 }
 
@@ -293,7 +310,7 @@ nav li {
 nav a {
     color: $text-color;
     padding: .25em .63em;
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-size: 1.2em;
     display: block;
 }
@@ -357,7 +374,7 @@ nav li:hover {
 .myname a {
     color: black;
     text-decoration: none;
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
     font-weight: bold;
 }
@@ -377,7 +394,6 @@ nav li:hover {
 
 #latest-blog-home {
     text-align: center;
-    font-size: 2em;
 }
 
 .delimiter {
@@ -390,11 +406,12 @@ nav li:hover {
 .blog-post-title {
     margin-bottom: 0.2em;
     padding-bottom: 0;
-    font-size: 1.6em;
+    text-align: left;
+
 
     a {
         color: $heading-gray;
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
     }
 }
 
@@ -409,7 +426,7 @@ nav li:hover {
 }
 
 em.taxonomy-emph {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-style: oblique;
 }
 
@@ -449,7 +466,7 @@ em.taxonomy-emph {
 
 .pagination {
     list-style-type: none;
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     display: flex;
     justify-content: center;
     margin: 1em;
@@ -491,6 +508,7 @@ em.taxonomy-emph {
     h4 {
         margin: 0 0.5em 0 0;
         font-size: 1.3em;
+        text-align: left;
     }
 }
 
@@ -509,11 +527,11 @@ em.taxonomy-emph {
     }
 
     ul {
-        list-style-type: "– ";
+        list-style-type: {{ default "\"– \"" .Site.Params.bulletStyle }};
     }
 
     ul, ol {
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
         margin-top: 0;
     }
     li {
@@ -530,10 +548,11 @@ em.taxonomy-emph {
         text-align: left;
         font-size: 1.0em;
         color: $text-color;
+        margin-bottom: .5em;
     }
 
     .resume-entry-data {
-        font-family: FreeSans, serif;
+        font-family: $sans-font;
         text-align: left;
         font-size: 0.8em;
         color: $very-light-text;
@@ -541,13 +560,13 @@ em.taxonomy-emph {
     }
 
     .resume-inner {
-        line-height: 1;
+        //line-height: 1;
         margin-top: 0.2em;
         margin-left: 0.9rem;
     }
 
     p, ul, ol, li {
-        font-family: FreeSerif, serif;
+        font-family: $base-font;
         color: $light-text;
         text-align: left;
         font-size: 0.9em;
@@ -555,7 +574,7 @@ em.taxonomy-emph {
 }
 
 p.resume-subcategory {
-    font-family: FreeSans, sans-serif;
+    font-family: $sans-font;
     font-size: 1.4em;
     text-decoration: underline;
     padding: 0 0 .3em 0;
@@ -589,12 +608,32 @@ p.resume-subcategory {
                 white-space: nowrap;
                 color: #3f444d;
                 font-size: 1em;
-                font-family: FreeSans, sans-serif;
+                font-family: $sans-font;
 
                 i {
                     font-size: 2em;
                     vertical-align: middle;
                 }
+            }
+        }
+    }
+}
+
+.soc-footer {
+    justify-content: flex-end;
+    ul {
+        width: 100%;
+        margin:0;
+        li {
+            padding-top: 0;
+            padding-bottom: 0;
+            a {
+                i {
+                    font-size: .9em;
+                }
+            }
+            p {
+                margin: 0;
             }
         }
     }
@@ -624,7 +663,7 @@ p.resume-subcategory {
 
 
     a {
-        font-family: FreeSans, sans-serif;
+        font-family: $sans-font;
         font-weight: bold;
         font-size: 1em;
         color: $contactlinks-text-color;
@@ -664,13 +703,14 @@ p.resume-subcategory {
 // General
 
 blockquote {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
+    font-style: italic;
     font-size: .9em;
     color: $text-color;
 }
 
 cite {
-    font-family: FreeSerif, serif;
+    font-family: $base-font;
     font-style: italic;
 }
 
@@ -816,9 +856,11 @@ cite {
     cursor: pointer;
 }
 
+/* Footer */
+
 footer {
-    position: fixed;
-    width: 100vw;
+    margin-top: 1em;
+    border-top: 1px solid #eee;
     color: #444;
     font-size: .8em;
     padding-left: 1em;
@@ -826,5 +868,10 @@ footer {
     padding-bottom: .1em;
     bottom: 0;
     left: 0;
-    background-color: #f7f7f7;
+    background-color: $code-background;
+
+    p {
+        font-size: .8em;
+        margin:.1em;
+    }
 }

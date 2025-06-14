@@ -9,7 +9,7 @@ github:
 # 002: LinkedIn
 linkedin:
   weight: 2
-  prefix: https://linkedin.com/in/
+  prefix: https://linkedin.com/
   title: LinkedIn
   icon:
     class: fab fa-linkedin fa-fw
