@@ -9,24 +9,22 @@
         {{ if $contentExists }}
             {{ .Content }}
         {{ else }}
-            {{ with .Site.GetPage "/homepage" }}
-            {{ $headlessExists = true }}
-            <div class="headless-homepage">
-                {{ range .Resources }}
-                    <h2>
-                    {{ .Title }}
-                    </h2>
-                    <p>{{ .Content }}</p>
-                {{ end }}
-            </div>
+            {{ with .Site.GetPage (printf "/%s/homepage" .Language.Lang) }}
+                {{ $headlessExists = true }}
+                <div class="headless-homepage">
+                    {{ range .Resources }}
+                        <h2>{{ .Title }}</h2>
+                        <p>{{ .Content }}</p>
+                    {{ end }}
+                </div>
             {{ end }}
         {{ end }}
 
         {{ if and (or $headlessExists $contentExists) $showLatest }}
-            <p class="delimiter">&diams; &diams; &diams;</p>
-
-            {{ $blogLatest := default "Latest Blog Posts" site.Params.blogLatestHeading }}
-            <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
+            <p class="delimiter" aria-hidden="true">&diams; &diams; &diams;</p>
+            <h2 id="latest-blog-home">
+                {{ i18n "latestPosts" | default (site.Params.blogLatestHeading | default "Latest Blog Posts") }}
+            </h2>
         {{ end }}
 
         {{ if $showLatest }}
@@ -36,6 +34,5 @@
                 {{ end }}
             {{ end }}
         {{ end }}
-
     </main>
 {{ end }}

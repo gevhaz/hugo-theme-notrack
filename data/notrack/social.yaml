@@ -441,7 +441,7 @@ researchgate:
 # 056: Mastodon
 mastodon:
   weight: 56
-  prefix: https://mastodon.social/
+  prefix: https://
   title: Mastodon
   icon:
     class: fab fa-mastodon fa-fw
