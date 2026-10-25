@@ -5,10 +5,13 @@ theme = "notrack"
 pagination.pagerSize = 4  # Posts per page, e.g. in the blog
 
 [params]
-author = "Hugo de Groot"
 siteHeading = "Hugo Grotius" # defaults to author
 favicon = "hugo_grotius.png" # The small icon shown in browser tabs
 showTaxonomyLinks = false  # Show e.g. a "Category" button at top of blog page
+
+[params.author]
+name = "Hugo de Groot"
+email = "hugo@example.org"
 
 # You can choose to display a summary of your blog on the home page. Below are
 # the settings relevant for that.
