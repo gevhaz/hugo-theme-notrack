@@ -1,0 +1,13 @@
+{{- /* Returns the URL of the blog feed, i.e. the feed of the first section in
+       mainSections. Falls back to the site-wide feed. */ -}}
+{{- $page := site.Home -}}
+{{- with site.Params.mainSections -}}
+    {{- with site.GetPage (index . 0) -}}
+        {{- $page = . -}}
+    {{- end -}}
+{{- end -}}
+{{- $url := "" -}}
+{{- with $page.OutputFormats.Get "rss" -}}
+    {{- $url = .RelPermalink -}}
+{{- end -}}
+{{- return $url -}}

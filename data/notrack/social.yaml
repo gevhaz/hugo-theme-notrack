@@ -504,7 +504,7 @@ email:
 # 064: RSS
 rss:
   weight: 64
-  rss: index.xml
+  rss: true
   title: RSS
   icon:
     class: fas fa-rss fa-fw
