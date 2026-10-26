@@ -9,16 +9,16 @@ siteHeading = "Hugo Grotius" # defaults to author
 favicon = "hugo_grotius.png" # The small icon shown in browser tabs
 showTaxonomyLinks = false  # Show e.g. a "Category" button at top of blog page
 
-[params.author]
-name = "Hugo de Groot"
-email = "hugo@example.org"
-
 # You can choose to display a summary of your blog on the home page. Below are
 # the settings relevant for that.
 showBlogLatest = true  # Whether to show it or not
 mainSections = ["blog"]  # Section name of your blog (folder name)
 blogLatestHeading = "My writing"  # Heading above blog summary
 nBlogLatest = 4  # Number of blog post in summary
+
+[params.author]
+name = "Hugo de Groot"
+email = "hugo@example.org"
 
 [params.social]
 github = "example"
