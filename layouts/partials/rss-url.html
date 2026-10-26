@@ -1,5 +1,5 @@
 {{- /* Returns the URL of the blog feed, i.e. the feed of the first section in
-       mainSections. Falls back to the site-wide feed. */ -}}
+       mainSections, or of the home page if that section does not exist. */ -}}
 {{- $page := site.Home -}}
 {{- with site.Params.mainSections -}}
     {{- with site.GetPage (index . 0) -}}
