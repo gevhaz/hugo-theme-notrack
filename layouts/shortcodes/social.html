@@ -20,10 +20,7 @@
                 {{- else if .url -}}
                 <li><a href="{{- .url -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
                 {{- else if .rss -}}
-                {{- $url := partial "rss-url.html" . -}}
-                {{- if $url -}}
-                <li><a href="{{- $url -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
-                {{- end -}}
+                <li><a href="{{- partial "rss-url.html" . -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
                 {{- end -}}
             {{- end -}}
         </ul>
