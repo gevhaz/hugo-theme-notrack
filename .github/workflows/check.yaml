@@ -17,9 +17,9 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Run linkspector
-        uses: umbrelladocs/action-linkspector@v1.3.3
+        uses: umbrelladocs/action-linkspector@v1.5.5
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v7
       - name: Run mdl
         uses: actionshub/markdownlint@main
         with:
@@ -46,7 +46,7 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           submodules: recursive
       - name: Build with Hugo
@@ -73,7 +73,7 @@ jobs:
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
@@ -149,13 +149,13 @@ jobs:
             echo "has_changes=${has_any_changes}" >> $GITHUB_OUTPUT
           done
       - name: Upload diff images
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: visuals-diffs
           path: diffs/
       - name: Comment on PR
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         if: steps.diff.outputs.has_changes == 'true'
         with:
           script: |
