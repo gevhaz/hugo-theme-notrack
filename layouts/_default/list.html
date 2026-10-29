@@ -10,7 +10,7 @@
             {{ $archivesExists := false }}
             {{ $archivesPageTitle := "" }}
             {{ $archivesPagePermalink := "" }}
-            {{ range .Site.AllPages }}
+            {{ range .Site.Pages }}
                 {{ if eq .Layout "archives" }}
                     {{ $archivesExists = true }}
                     {{ $archivesPagePermalink = .Permalink }}
