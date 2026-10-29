@@ -85,7 +85,7 @@ sure it looks something like this:
 
 ```toml
 baseURL = '<URL where you plan to publicize your web page>'
-languageCode = '<language code for language the website uses, e.g. en-us>'
+locale = '<locale of the language the website uses, e.g. en-US>'
 title = '<My New Hugo Site>'
 theme = 'notrack'
 

@@ -1,5 +1,5 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Lawyer Hugo Grotius"
 theme = "notrack"
 pagination.pagerSize = 4  # Posts per page, e.g. in the blog
