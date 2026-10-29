@@ -1,5 +1,5 @@
 {{ with $.Page.Site.Params.social }}
-{{ $socialMap := $.Page.Site.Data.notrack.social }}
+{{ $socialMap := hugo.Data.notrack.social }}
 {{ $width := default "12em" (.Params.Get "width") }}
 {{ $height := default "auto" (.Params.Get "height") }}
 {{ $float := default "right" (.Params.Get "float") }}
