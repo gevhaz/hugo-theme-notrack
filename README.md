@@ -205,7 +205,8 @@ email = '<email address>'
 
 For all available social icons, see the
 [`data/notrack/social.yaml`](https://github.com/gevhaz/hugo-theme-notrack/blob/master/data/notrack/social.yaml)
-file. There are 65 of them. Only set `rss` if your site generates feeds.
+file. There are 65 of them. Only add `rss` to `[params.social]` if your site
+generates feeds.
 
 Then, create a new page, for example like this:
 
