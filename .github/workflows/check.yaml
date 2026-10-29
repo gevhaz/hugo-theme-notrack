@@ -24,7 +24,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review
           filter_mode: nofilter
-          fail_on_error: true
+          fail_level: any
 
   markdownlint:
     runs-on: ubuntu-latest
