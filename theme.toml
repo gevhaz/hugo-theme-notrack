@@ -5,7 +5,7 @@ description = "A libre hugo personal webpage theme without reliance on third par
 homepage = "https://github.com/gevhaz/hugo-theme-notrack"
 tags = ["minimal", "personal", "responsive", "libre", "flexbox"]
 features = ["gallery", "blog", "resume", "drop-down menu"]
-min_version = "0.70.0"
+min_version = "0.158.0"
 
 [author]
   name = "Simon Bengtsson"
