@@ -261,6 +261,10 @@ your site configuration:
 showTaxonomyLinks = false
 ```
 
+The buttons show the titles of the tags and categories pages. To change them,
+e.g. to translate them, set `title` in the front matter of `tags/_index.md` and
+`categories/_index.md`.
+
 You might instead want to have a
 [drop-down](#how-to-add-a-page-to-drop-down-menu) menu that links to tags and
 categories, like this:
