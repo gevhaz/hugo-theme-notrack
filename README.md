@@ -435,7 +435,8 @@ and `height`. This is similar to the `image` shortcode. `Float` makes
 text wrap around the box (can be `right` or `left`), and the other two
 naturally set the dimensions of the `<div>`, using inline CSS. The
 parameters defaults to floating to the right, the width defaults to
-`12em`, and the height defaults to `auto`.
+`12em`, and the height defaults to `auto`. If the width is too small to fit
+the links, the box grows to fit them.
 
 #### The social shortcode
 
