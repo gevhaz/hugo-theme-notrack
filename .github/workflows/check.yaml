@@ -9,7 +9,7 @@ jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: gevhaz/word-warden@v1.0.0
+      - uses: gevhaz/word-warden@v1.1.0
         with:
           preprocessing_script: .github/scripts/preprocess-for-spellchecking.sed
           files: "**/!(tempora-maxime|lorem|id-modi|LICENSE).md"
