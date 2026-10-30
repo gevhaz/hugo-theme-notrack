@@ -650,6 +650,23 @@ way](https://gohugo.io/content-management/comments/#add-disqus) so just add your
 Disqus Shortname in the site configuration file and all blog posts will have a
 comments section.
 
+#### How to change the date format
+
+Blog posts show the date they were posted, e.g. "2026-03-05". To show it in
+another format, set `dateFormat` in your site configuration:
+
+```toml
+[params]
+dateFormat = ':date_long'
+```
+
+The value can be a predefined format, such as `:date_long` ("March 5, 2026") or
+`:date_medium` ("Mar 5, 2026"), or a layout like `2 January 2006`. See Hugo's
+documentation of [time.Format](https://gohugo.io/functions/time/format/) for
+all options. Predefined formats and the names of months and weekdays follow the
+`locale` of your site, so with `locale = 'de-DE'`, `:date_long` gives
+`5. März 2026`.
+
 #### How to translate the theme's text
 
 The text that the theme adds to pages, such as "Posted:" and "Read more...", is
