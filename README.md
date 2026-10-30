@@ -9,18 +9,13 @@ navigate (upper right corner of rendered README).
 
 ## Dependencies
 
-You will need the extended edition of Hugo in order to use this theme. This is
-the edition Hugo's developers recommend for most users. You probably already
-have it, but you can double check with:
+You need Hugo 0.158.0 or newer. Any edition works, so the standard one is
+enough. You can check which version you have with:
 
 ```console
 $ hugo version
-hugo v0.115.4+extended linux/amd64 BuildDate=unknown
+hugo v0.169.0 linux/amd64 BuildDate=unknown
 ```
-
-Note the "+extended" after the version number. Information about the standard
-and extended versions may be found within Hugo's [installation
-instructions](https://gohugo.io/installation/).
 
 ## Demonstration web page
 
