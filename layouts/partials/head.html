@@ -1,7 +1,6 @@
 
 <head>
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ "css/fonts.css" | relURL }}">
     <link rel="stylesheet" type="text/css" href="{{ "css/fontawesome.css" | relURL }}">
     {{ $style := resources.Get "styles.css" | fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
