@@ -15,6 +15,26 @@
   hand, and no check notices when it isn't. Prefer saying less to
   saying something that can go stale.
 
+## Helper scripts
+
+These are scripts that support the project rather than ship with the
+theme, e.g. the checks that CI runs.
+
+- Keep them short enough to understand in one read. That matters more
+  than style checkers, program structure or covering every case, so
+  leave out `main()`, argument parsing and the like unless the script
+  needs them.
+- Look for a simple model of the problem before handling cases one by
+  one. For example, read both sides of a comparison into the same form
+  and print what differs, so that every kind of mismatch shows up the
+  same way.
+- Prefer plain string operations to regular expressions. If one is
+  needed, keep it to one and say in a comment what it matches.
+- Use Python, or Bash when a pipeline of tools like `find`, `sort` and
+  `diff` makes the script much simpler and still easy to read.
+- It still has to work. Try it on inputs that should fail, not only on
+  the files as they are.
+
 ## Spellcheck
 
 - Keep the words in `.github/data/project-dictionary.txt` sorted
