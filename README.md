@@ -80,6 +80,7 @@ sure it looks something like this:
 
 ```toml
 baseURL = '<URL where you plan to publicize your web page>'
+defaultContentLanguage = '<language the website uses, e.g. en>'
 locale = '<locale of the language the website uses, e.g. en-US>'
 title = '<My New Hugo Site>'
 theme = 'notrack'
@@ -259,6 +260,10 @@ your site configuration:
 [params]
 showTaxonomyLinks = false
 ```
+
+The buttons show the titles of the tags and categories pages. To change them,
+e.g. to translate them, set `title` in the front matter of `tags/_index.md` and
+`categories/_index.md`.
 
 You might instead want to have a
 [drop-down](#how-to-add-a-page-to-drop-down-menu) menu that links to tags and
@@ -644,6 +649,26 @@ Disqus is implemented the [default Hugo
 way](https://gohugo.io/content-management/comments/#add-disqus) so just add your
 Disqus Shortname in the site configuration file and all blog posts will have a
 comments section.
+
+#### How to translate the theme's text
+
+The text that the theme adds to pages, such as "Posted:" and "Read more...", is
+in English. If your site is in another language, copy
+[`i18n/en.yaml`](i18n/en.yaml) from the theme to the `i18n` folder of your site
+and name it after the `defaultContentLanguage` in your site configuration. For
+example, with `defaultContentLanguage = 'de'`, the file should be
+`i18n/de.yaml`. Then replace the English text with your own.
+
+Any text you leave out will stay in English. You can see which texts on your
+pages are still missing a translation by building your site with
+`hugo --printI18nWarnings`.
+
+If you only want to change some of the English texts, create `i18n/en.yaml` in
+your site with just those keys.
+
+If you have set a heading with `blogLatestHeading`, that will be shown instead
+of the translation. The same goes for the link to the archive page, which always
+shows the title of the archive page if it has one.
 
 ## Acknowledgements and attributions
 

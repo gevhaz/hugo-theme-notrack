@@ -1,5 +1,5 @@
 {{ define "main" }}
     <main>
-        <p>404: not found</p>
+        <p>{{ i18n "pageNotFound" | default "404: not found" }}</p>
     </main>
 {{ end }}

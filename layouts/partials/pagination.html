@@ -3,13 +3,13 @@
 <ul class="pagination">
     {{ with $pag.First }}
     <li class="page-item">
-        <a href="{{ .URL }}" class="page-link" aria-label="First"><span
+        <a href="{{ .URL }}" class="page-link" aria-label="{{ i18n "paginationFirst" | default "First" }}"><span
                 aria-hidden="true">&laquo;</span></a>
     </li>
     {{ end }}
     <li class="page-item{{ if not $pag.HasPrev }} disabled{{ end }}">
     <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }}
-        class="page-link" aria-label="Previous"><span aria-hidden="true">&lsaquo;</span></a>
+        class="page-link" aria-label="{{ i18n "paginationPrevious" | default "Previous" }}"><span aria-hidden="true">&lsaquo;</span></a>
     </li>
     {{ $ellipsed := false }}
     {{ $shouldEllipse := false }}
@@ -32,11 +32,11 @@
     {{ end }}
     <li class="page-item{{ if not $pag.HasNext }} disabled{{ end }}">
     <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }}
-        class="page-link" aria-label="Next"><span aria-hidden="true">&rsaquo;</span></a>
+        class="page-link" aria-label="{{ i18n "paginationNext" | default "Next" }}"><span aria-hidden="true">&rsaquo;</span></a>
     </li>
     {{ with $pag.Last }}
     <li class="page-item">
-        <a href="{{ .URL }}" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;</span></a>
+        <a href="{{ .URL }}" class="page-link" aria-label="{{ i18n "paginationLast" | default "Last" }}"><span aria-hidden="true">&raquo;</span></a>
     </li>
     {{ end }}
 </ul>

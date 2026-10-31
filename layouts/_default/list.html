@@ -20,12 +20,12 @@
                 {{ end }}
             {{ end }}
             {{ if $archivesExists }}
-            <li><a href="{{ $archivesPagePermalink }}">{{ default "Archives" $archivesPageTitle }}</a></li>
+            <li><a href="{{ $archivesPagePermalink }}">{{ $archivesPageTitle | default (i18n "archives" | default "Archives") }}</a></li>
             {{ end }}
 
             {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
                 {{ if or (in $taxonomyName "categ") (in $taxonomyName "tag") }}
-            <li><a href="{{ $taxonomyName | relURL }}">{{ $taxonomyName }}</a></li>
+            <li><a href="{{ $taxonomyName | relURL }}">{{ with site.GetPage $taxonomyName }}{{ .LinkTitle }}{{ else }}{{ $taxonomyName }}{{ end }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>
