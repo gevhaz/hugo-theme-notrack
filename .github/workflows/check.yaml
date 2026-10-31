@@ -36,6 +36,14 @@ jobs:
         with:
           filesToIgnoreRegex: "(exampleSite/content/|archetypes).*"
 
+  i18n:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+      - name: Check that template fallbacks match i18n/en.yaml
+        run: .github/scripts/check-i18n-fallbacks.py
+
   build:
     runs-on: ubuntu-latest
     env:
