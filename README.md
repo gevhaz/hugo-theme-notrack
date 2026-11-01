@@ -657,12 +657,12 @@ all options. Predefined formats and the names of months and weekdays follow the
 
 #### How to translate the theme's text
 
-The text that the theme adds to pages, such as "Posted:" and "Read more...", is
-in English. If your site is in another language, copy
-[`i18n/en.yaml`](i18n/en.yaml) from the theme to the `i18n` folder of your site
-and name it after the `defaultContentLanguage` in your site configuration. For
-example, with `defaultContentLanguage = 'de'`, the file should be
-`i18n/de.yaml`. Then replace the English text with your own.
+The theme supports English and the languages you find listed in
+[`i18n/`](i18n/). To set a language other than English, set e.g.
+`defaultContentLanguage = 'de'`. If your language is not supported, you can
+write your own translation by copying [`i18n/en.yaml`](i18n/en.yaml) from the
+theme to the `i18n/` folder on your site and name it after the
+`defaultContentLanguage` you wish to use.
 
 Any text you leave out will stay in English. You can see which texts on your
 pages are still missing a translation by building your site with
