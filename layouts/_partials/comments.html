@@ -1,0 +1,10 @@
+{{- /* Renders the comments below a blog post, with the post as context.
+It renders nothing, so that the theme loads nothing from third parties.
+Override it in your site's layouts/_partials/comments.html to add
+comments, e.g. with {{ partial "disqus.html" . }}. */ -}}
+
+{{- /* Sites that set a Disqus shortname used to get Disqus comments
+without overriding this partial. */ -}}
+{{- with site.Config.Services.Disqus.Shortname -}}
+  {{- warnf `Notrack no longer adds Disqus comments by itself. To keep them, create layouts/_partials/comments.html in your site containing {{ partial "disqus.html" . }}` -}}
+{{- end -}}

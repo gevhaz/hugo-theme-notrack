@@ -640,15 +640,24 @@ nBlogLatest = 6
 
 #### Adding comments to blog
 
-For backward-compatibility, it is still possible to enable Disqus comments.
-However, I advise against it due to the privacy issues for your users, see the
-[Disqus Wikipedia
-article](https://en.wikipedia.org/wiki/Disqus#Criticism,_privacy,_and_security_concerns).
+The theme doesn't add comments to blog posts, since comment systems either load
+resources from third parties or need a server of their own. If you want
+comments, create `layouts/_partials/comments.html` in your site. It is included
+below every blog post, with the post as its context.
 
-Disqus is implemented the [default Hugo
-way](https://gohugo.io/content-management/comments/#add-disqus) so just add your
-Disqus Shortname in the site configuration file and all blog posts will have a
-comments section.
+For example, you can use [Hugo's Disqus
+support](https://gohugo.io/content-management/comments/#add-disqus) by putting
+this in the file and setting your Disqus shortname in your site configuration:
+
+```go-html-template
+{{ partial "disqus.html" . }}
+```
+
+However, I advise against Disqus due to the privacy issues for your users, see
+the [Disqus Wikipedia
+article](https://en.wikipedia.org/wiki/Disqus#Criticism,_privacy,_and_security_concerns).
+A comment system that you host yourself keeps your readers' data on your own
+server.
 
 #### How to change the date format
 
