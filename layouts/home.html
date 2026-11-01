@@ -2,7 +2,7 @@
     <main>
         {{ $contentExists := gt (len .Content) 0 }}
         {{ $blogPages := where .Site.RegularPages.ByDate.Reverse ".Type" "in" .Site.Params.mainSections }}
-        {{ $blogPages = where $blogPages ".Params.draft" "!=" true }}
+        {{ $blogPages = where $blogPages "Draft" false }}
         {{ $showLatest := and (default true site.Params.showBlogLatest) $blogPages }}
         {{ $headlessExists := false }}
 
