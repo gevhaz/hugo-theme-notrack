@@ -15,7 +15,7 @@
                 <div class="blog-post-content">
                 {{ .Content }}
                 </div>
-                {{ template "_internal/disqus.html" . }}
+                {{ partial "disqus.html" . }}
             {{ else }}
                 {{ .Content }}
             {{ end }}
