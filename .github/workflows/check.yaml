@@ -104,7 +104,7 @@ jobs:
       - name: Install playwright and its dependencies
         run: |
           npm init -y
-          npm install playwright
+          npm install playwright http-server
           npx playwright install
       - name: Serve both versions and wait for them to be ready
         run: |
