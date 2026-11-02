@@ -1,28 +1,15 @@
-{{ with $.Page.Site.Params.social }}
-{{ $socialMap := hugo.Data.notrack.social }}
+{{- /* Renders a framed list of links to the sites in
+       site.Params.social, or nothing if there are none. The optional
+       parameters float ("right" or "left", default "right"), width
+       (default "12em") and height (default "auto") place and size the
+       frame, e.g. {{< contact-box float="left" width="15em" >}}. */ -}}
+{{ with site.Params.social }}
 {{ $width := default "12em" ($.Get "width") }}
 {{ $height := default "auto" ($.Get "height") }}
 {{ $float := default "right" ($.Get "float") }}
 <div class="contactbox {{ $float }}" style="width: {{ $width }}; height: {{ $height }}">
     <ul>
-    {{- $socialArray := slice -}}
-    {{ range $website, $user := $.Site.Params.social }}
-        {{- $social := $website | lower | index $socialMap | default dict -}}
-        {{- $social := dict "user" $user | merge $social -}}
-        {{- $socialArray = $socialArray | append $social -}}
-    {{ end }}
-
-    {{ range sort $socialArray "weight" -}}
-        {{- if .prefix -}}
-        <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
-        {{- else if .template -}}
-        <li><a href="{{- printf .template .user -}}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
-        {{- else if .url -}}
-        <li><a href="{{- .url -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
-        {{- else if .rss -}}
-        <li><a href="{{- partial "rss-url.html" . -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
-        {{- end -}}
-    {{- end -}}
+    {{ partial "social-links.html" . }}
     </ul>
     {{ printf "<!-- Icons are from Awesome Font, licenced under SIL OFL 1.1 (https://scripts.sil.org/OFL) -->" | safeHTML }}
 </div>
