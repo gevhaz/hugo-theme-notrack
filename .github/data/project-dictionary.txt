@@ -1,7 +1,6 @@
 personal_ws-1.1 en 1000 utf-8
 Axel
 CDNs
-Disqus
 Ecole
 FreeFont
 GPLv
@@ -35,7 +34,6 @@ pensionary
 pixelated
 shortcode
 shortcodes
-shortname
 strikethrough
 subdirectory
 tos
