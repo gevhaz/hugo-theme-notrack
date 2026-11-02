@@ -692,9 +692,10 @@ The monospace font in the same directory, used for code in the theme, is
 1.1 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
 
 The icons used for the `contact-box` and `social` shortcodes are from [Font
-Awesome](https://github.com/FortAwesome/Font-Awesome) project. It's license is
-SIL OFL 1.1 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)). A HTML
-comment is included in the contact-box shortcode to show the license and source.
+Awesome](https://github.com/FortAwesome/Font-Awesome) project. The icons are
+licensed under CC BY 4.0, the fonts under SIL OFL 1.1 and the code under the MIT
+license, as described in `static/fontawesome/LICENSE.txt`. A HTML comment is
+included in the contact-box shortcode to show the license and source.
 
 For matching the icons from Font Awesome with names for various social
 networking services, I use the
