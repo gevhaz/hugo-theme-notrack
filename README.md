@@ -638,18 +638,6 @@ blogLatestHeading = 'Latests posts'
 nBlogLatest = 6
 ```
 
-#### Adding comments to blog
-
-For backward-compatibility, it is still possible to enable Disqus comments.
-However, I advise against it due to the privacy issues for your users, see the
-[Disqus Wikipedia
-article](https://en.wikipedia.org/wiki/Disqus#Criticism,_privacy,_and_security_concerns).
-
-Disqus is implemented the [default Hugo
-way](https://gohugo.io/content-management/comments/#add-disqus) so just add your
-Disqus Shortname in the site configuration file and all blog posts will have a
-comments section.
-
 #### How to change the date format
 
 Blog posts show the date they were posted, e.g. "2026-03-05". To show it in
