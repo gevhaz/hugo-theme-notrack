@@ -156,7 +156,7 @@ stackoverflow:
   prefix: https://stackoverflow.com/users/
   title: Stack Overflow
   icon:
-    class: fab fa-codepen fa-fw
+    class: fab fa-stack-overflow fa-fw
 
 # 021: 微博
 weibo:
@@ -512,7 +512,7 @@ rss:
 # 065: ORCID
 orcid:
   weight: 65
-  url: https://orcid.org/
+  prefix: https://orcid.org/
   title: ORCID
   icon:
-    class: fas fa-orcid fa-fw
+    class: fab fa-orcid fa-fw
