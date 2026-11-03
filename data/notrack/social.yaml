@@ -493,3 +493,219 @@ orcid:
   title: ORCID
   icon:
     class: fab fa-orcid
+
+# 066: Pixelfed
+pixelfed:
+  weight: 66
+  instance: /%v
+  title: Pixelfed
+  icon:
+    class: fab fa-pixelfed
+
+# 067: PeerTube
+peertube:
+  weight: 67
+  instance: /a/%v
+  title: PeerTube
+  icon:
+    class: fab fa-fediverse
+
+# 068: Lemmy
+lemmy:
+  weight: 68
+  instance: /u/%v
+  title: Lemmy
+  icon:
+    class: fab fa-fediverse
+
+# 069: Other fediverse servers with profiles at /@user, e.g. Misskey
+fediverse:
+  weight: 69
+  instance: /@%v
+  title: Fediverse
+  icon:
+    class: fab fa-fediverse
+
+# 070: Bluesky
+bluesky:
+  weight: 70
+  prefix: https://bsky.app/profile/
+  title: Bluesky
+  icon:
+    class: fab fa-bluesky
+
+# 071: Threads
+threads:
+  weight: 71
+  prefix: https://www.threads.com/@
+  title: Threads
+  icon:
+    class: fab fa-threads
+
+# 072: Codeberg
+codeberg:
+  weight: 72
+  prefix: https://codeberg.org/
+  title: Codeberg
+  icon:
+    class: fab fa-codeberg
+
+# 073: Forgejo
+forgejo:
+  weight: 73
+  instance: /%v
+  title: Forgejo
+  icon:
+    class: fab fa-forgejo
+
+# 074: npm
+npm:
+  weight: 74
+  prefix: https://www.npmjs.com/~
+  title: npm
+  icon:
+    class: fab fa-npm
+
+# 075: PyPI
+pypi:
+  weight: 75
+  prefix: https://pypi.org/user/
+  title: PyPI
+  icon:
+    class: fab fa-python
+
+# 076: Docker Hub
+dockerhub:
+  weight: 76
+  prefix: https://hub.docker.com/u/
+  title: Docker Hub
+  icon:
+    class: fab fa-docker
+
+# 077: LeetCode
+leetcode:
+  weight: 77
+  prefix: https://leetcode.com/u/
+  title: LeetCode
+  icon:
+    class: fab fa-leetcode
+
+# 078: StoryGraph
+storygraph:
+  weight: 78
+  prefix: https://app.thestorygraph.com/profile/
+  title: StoryGraph
+  icon:
+    class: fas fa-book-open
+
+# 079: Letterboxd
+letterboxd:
+  weight: 79
+  prefix: https://letterboxd.com/
+  title: Letterboxd
+  icon:
+    class: fab fa-letterboxd
+
+# 080: YouTube handle
+youtube:
+  weight: 80
+  prefix: https://www.youtube.com/@
+  title: YouTube
+  icon:
+    class: fab fa-youtube
+
+# 081: TikTok
+tiktok:
+  weight: 81
+  prefix: https://www.tiktok.com/@
+  title: TikTok
+  icon:
+    class: fab fa-tiktok
+
+# 082: Vimeo
+vimeo:
+  weight: 82
+  prefix: https://vimeo.com/
+  title: Vimeo
+  icon:
+    class: fab fa-vimeo-v
+
+# 083: Unsplash
+unsplash:
+  weight: 83
+  prefix: https://unsplash.com/@
+  title: Unsplash
+  icon:
+    class: fab fa-unsplash
+
+# 084: Mixcloud
+mixcloud:
+  weight: 84
+  prefix: https://www.mixcloud.com/
+  title: Mixcloud
+  icon:
+    class: fab fa-mixcloud
+
+# 085: Substack
+substack:
+  weight: 85
+  template: https://%v.substack.com/
+  title: Substack
+  icon:
+    class: fab fa-substack
+
+# 086: itch.io
+itchio:
+  weight: 86
+  template: https://%v.itch.io/
+  title: itch.io
+  icon:
+    class: fab fa-itch-io
+
+# 087: Ko-fi
+kofi:
+  weight: 87
+  prefix: https://ko-fi.com/
+  title: Ko-fi
+  icon:
+    class: fab fa-ko-fi
+
+# 088: OpenStreetMap
+openstreetmap:
+  weight: 88
+  prefix: https://www.openstreetmap.org/user/
+  title: OpenStreetMap
+  icon:
+    class: fab fa-openstreetmap
+
+# 089: arXiv
+arxiv:
+  weight: 89
+  prefix: https://arxiv.org/a/
+  title: arXiv
+  icon:
+    class: fas fa-file-lines
+
+# 090: Semantic Scholar
+semanticscholar:
+  weight: 90
+  prefix: https://www.semanticscholar.org/author/
+  title: Semantic Scholar
+  icon:
+    class: fas fa-magnifying-glass
+
+# 091: Hugging Face
+huggingface:
+  weight: 91
+  prefix: https://huggingface.co/
+  title: Hugging Face
+  icon:
+    class: fab fa-hugging-face
+
+# 092: Kaggle
+kaggle:
+  weight: 92
+  prefix: https://www.kaggle.com/
+  title: Kaggle
+  icon:
+    class: fab fa-kaggle
