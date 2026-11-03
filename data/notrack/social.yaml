@@ -270,14 +270,6 @@ lastfm:
   icon:
     class: fab fa-lastfm fa-fw
 
-# 035: Foursquare
-foursquare:
-  weight: 35
-  prefix: https://foursquare.com/
-  title: Foursquare
-  icon:
-    class: fab fa-foursquare fa-fw
-
 # 036: Hacker News
 hackernews:
   weight: 36
@@ -325,14 +317,6 @@ strava:
   title: Strava
   icon:
     class: fab fa-strava fa-fw
-
-# 042: Skype
-skype:
-  weight: 42
-  template: "skype:"
-  title: Skype
-  icon:
-    class: fab fa-skype fa-fw
 
 # 043: WhatsApp
 whatsapp:
@@ -413,14 +397,6 @@ wordpress:
   title: WordPress
   icon:
     class: fab fa-wordpress fa-fw
-
-# 053: Vine
-vine:
-  weight: 53
-  prefix: https://vine.co/
-  title: Vine
-  icon:
-    class: fab fa-vine fa-fw
 
 # 054: Google Scholar
 googlescholar:
