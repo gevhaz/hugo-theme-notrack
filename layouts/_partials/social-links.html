@@ -13,7 +13,9 @@
     {{- if .prefix -}}
     <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
     {{- else if .template -}}
-    <li><a href="{{- printf .template .user -}}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    {{- /* safeURL keeps schemes like xmpp: that Go's templates would
+           otherwise replace with #ZgotmplZ. */ -}}
+    <li><a href="{{- printf .template .user | safeURL -}}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
     {{- else if .url -}}
     <li><a href="{{- .url -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
     {{- else if .rss -}}
