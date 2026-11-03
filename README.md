@@ -206,12 +206,16 @@ Hugo does unless you set `disableKinds = ['RSS']`. To change the icon of a site
 or add a site that's missing, see [How to change or add social
 sites](#how-to-change-or-add-social-sites).
 
-For Mastodon and Gitea, give your full handle, including the server:
+For sites where you choose the server, i.e. Mastodon, Pixelfed, PeerTube,
+Lemmy, Gitea and Forgejo, give your full handle, including the server:
 
 ```toml
 [params.social]
 mastodon = '@<user name>@mastodon.social'
 ```
+
+For other software in the fediverse that has profiles at `/@<user name>`, such
+as Misskey or GoToSocial, use `fediverse`.
 
 Then, create a new page, for example like this:
 
