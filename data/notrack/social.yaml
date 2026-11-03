@@ -353,7 +353,7 @@ angellist:
 # 047: SlideShare
 slideshare:
   weight: 47
-  prefix: https://slideshare.com/
+  prefix: https://www.slideshare.net/
   title: SlideShare
   icon:
     class: fab fa-slideshare fa-fw
@@ -361,7 +361,7 @@ slideshare:
 # 048: JSFiddle
 jsfiddle:
   weight: 48
-  prefix: https://jsfiddle.com/
+  prefix: https://jsfiddle.net/user/
   title: JSFiddle
   icon:
     class: fab fa-jsfiddle fa-fw
@@ -401,7 +401,7 @@ wordpress:
 # 054: Google Scholar
 googlescholar:
   weight: 54
-  template: https://scholar.google.com/citations?%v
+  prefix: https://scholar.google.com/citations?user=
   title: Google Scholar
   icon:
     class: fab fa-google-scholar fa-fw
