@@ -1,13 +1,16 @@
 {{- /* Renders an <li> with a link and an icon for each site in
        site.Params.social, ordered by the weights in
        data/notrack/social.yaml. Sites that aren't in that file are left
-       out. */ -}}
+       out with a warning. */ -}}
 {{- $socialMap := hugo.Data.notrack.social -}}
 {{- $socialArray := slice -}}
 {{- range $website, $user := site.Params.social -}}
-    {{- $social := $website | lower | index $socialMap | default dict -}}
-    {{- $social = dict "user" $user "website" $website | merge $social -}}
-    {{- $socialArray = $socialArray | append $social -}}
+    {{- with $website | lower | index $socialMap -}}
+        {{- $social := dict "user" $user "website" $website | merge . -}}
+        {{- $socialArray = $socialArray | append $social -}}
+    {{- else -}}
+        {{- warnf "notrack: params.social.%s isn't a site in data/notrack/social.yaml, so it isn't shown" $website -}}
+    {{- end -}}
 {{- end -}}
 {{- range sort $socialArray "weight" -}}
     {{- if .instance -}}
