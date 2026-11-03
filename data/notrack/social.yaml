@@ -14,13 +14,13 @@ linkedin:
   icon:
     class: fab fa-linkedin
 
-# 003: Twitter
+# 003: X, formerly Twitter
 twitter:
   weight: 3
-  prefix: https://twitter.com/
-  title: Twitter
+  prefix: https://x.com/
+  title: X
   icon:
-    class: fab fa-twitter
+    class: fab fa-x-twitter
 
 # 004: Instagram
 instagram:
@@ -342,13 +342,13 @@ douban:
   icon:
     class: fas fa-film
 
-# 046: Angellist
+# 046: Wellfound, formerly AngelList Talent
 angellist:
   weight: 46
-  prefix: https://angel.co/
-  title: Angellist
+  prefix: https://wellfound.com/u/
+  title: Wellfound
   icon:
-    class: fab fa-angellist
+    class: fas fa-briefcase
 
 # 047: SlideShare
 slideshare:
