@@ -332,7 +332,7 @@ zhihu:
   prefix: https://www.zhihu.com/people/
   title: 知乎
   icon:
-    simpleicons: zhihu
+    class: fab fa-zhihu fa-fw
 
 # 045: 豆瓣
 douban:
@@ -340,7 +340,7 @@ douban:
   prefix: https://www.douban.com/people/
   title: 豆瓣
   icon:
-    simpleicons: douban
+    class: fas fa-film fa-fw
 
 # 046: Angellist
 angellist:
@@ -404,7 +404,7 @@ googlescholar:
   template: https://scholar.google.com/citations?%v
   title: Google Scholar
   icon:
-    simpleicons: googlescholar
+    class: fab fa-google-scholar fa-fw
 
 # 055: ResearchGate
 researchgate:
@@ -428,7 +428,7 @@ thingiverse:
   prefix: https://www.thingiverse.com/
   title: Thingiverse
   icon:
-    src: svg/icons/thingiverse.svg
+    class: fas fa-cube fa-fw
 
 # 058: Dev.To
 devto:
@@ -451,7 +451,7 @@ xmpp:
   template: xmpp:%v
   title: XMPP
   icon:
-    simpleicons: xmpp
+    class: fab fa-xmpp fa-fw
 
 # 061: Matrix
 matrix:
@@ -459,7 +459,7 @@ matrix:
   prefix: https://matrix.to/#/
   title: Matrix
   icon:
-    simpleicons: matrix
+    class: fab fa-matrix fa-fw
 
 # 062: bilibili
 bilibili:
@@ -467,7 +467,7 @@ bilibili:
   prefix: https://space.bilibili.com/
   title: bilibili
   icon:
-    src: svg/icons/bilibili.svg
+    class: fab fa-bilibili fa-fw
 
 # 063: Email
 email:
