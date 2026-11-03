@@ -4,6 +4,7 @@ CDNs
 Ecole
 FreeFont
 GPLv
+Gitea
 Gopherfest
 GraphicsMagick
 Hollandish

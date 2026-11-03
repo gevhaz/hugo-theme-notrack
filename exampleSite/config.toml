@@ -24,7 +24,7 @@ email = "hugo@example.org"
 github = "example"
 linkedin = "example"
 email = "example@example.com"
-mastodon = "example"
+mastodon = "@example@mastodon.social"
 rss = "yes"  # Value doesn't matter - it will always link to your blog RSS
 keybase = "example"
 

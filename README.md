@@ -204,6 +204,13 @@ For all available social icons, see the
 file. Only add `rss` to `[params.social]` if your site generates feeds, which
 Hugo does unless you set `disableKinds = ['RSS']`.
 
+For Mastodon and Gitea, give your full handle, including the server:
+
+```toml
+[params.social]
+mastodon = '@<user name>@mastodon.social'
+```
+
 Then, create a new page, for example like this:
 
 ```console

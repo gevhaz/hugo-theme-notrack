@@ -6,11 +6,21 @@
 {{- $socialArray := slice -}}
 {{- range $website, $user := site.Params.social -}}
     {{- $social := $website | lower | index $socialMap | default dict -}}
-    {{- $social = dict "user" $user | merge $social -}}
+    {{- $social = dict "user" $user "website" $website | merge $social -}}
     {{- $socialArray = $socialArray | append $social -}}
 {{- end -}}
 {{- range sort $socialArray "weight" -}}
-    {{- if .prefix -}}
+    {{- if .instance -}}
+    {{- /* The user is on a server of their choice, given as a handle
+           like @user@example.org, and instance is the path of the
+           profile on that server. */ -}}
+    {{- $handle := split (strings.TrimPrefix "@" .user) "@" -}}
+    {{- if not (and (eq (len $handle) 2) (index $handle 0) (index $handle 1)) -}}
+        {{- errorf "notrack: params.social.%s must be a full handle with the server, like \"@user@example.org\", not %q" .website .user -}}
+    {{- end -}}
+    {{- $href := printf "https://%s%s" (index $handle 1) (printf .instance (index $handle 0)) -}}
+    <li><a href="{{ $href }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    {{- else if .prefix -}}
     <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
     {{- else if .template -}}
     {{- /* safeURL keeps schemes like xmpp: that Go's templates would
