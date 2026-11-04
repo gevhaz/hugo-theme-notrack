@@ -1,0 +1,5 @@
+{{- /* Returns the name in params.author, which is either the name itself or a
+       table with a name and an optional email. Returns "" when it isn't set. */ -}}
+{{- $author := site.Params.author -}}
+{{- if reflect.IsMap $author }}{{ $author = $author.name }}{{ end -}}
+{{- return (default "" $author) -}}

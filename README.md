@@ -86,9 +86,14 @@ title = '<My New Hugo Site>'
 theme = 'notrack'
 
 [params]
-author = '<Your name>'
-# optional, defaults to author:
+# optional, defaults to the author's name:
 siteHeading = '<the text that goes at the top of your webpage>'
+
+# keep this after the other keys under [params]:
+[params.author]
+name = '<Your name>'
+# optional, shown in RSS feeds:
+email = '<Your email address>'
 ```
 
 Now you are ready to add the first content to the web page. Create the home
