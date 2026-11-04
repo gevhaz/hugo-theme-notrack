@@ -202,7 +202,9 @@ email = '<email address>'
 For all available social icons, see the
 [`data/notrack/social.yaml`](https://github.com/gevhaz/hugo-theme-notrack/blob/master/data/notrack/social.yaml)
 file. Only add `rss` to `[params.social]` if your site generates feeds, which
-Hugo does unless you set `disableKinds = ['RSS']`.
+Hugo does unless you set `disableKinds = ['RSS']`. To change the icon of a site
+or add a site that's missing, see [How to change or add social
+sites](#how-to-change-or-add-social-sites).
 
 For Mastodon and Gitea, give your full handle, including the server:
 
@@ -681,6 +683,59 @@ your site with just those keys.
 If you have set a heading with `blogLatestHeading`, that will be shown instead
 of the translation. The same goes for the link to the archive page, which always
 shows the title of the archive page if it has one.
+
+#### How to change or add social sites
+
+The sites that the `social` and `contact-box` shortcodes can link to are defined
+in [`data/notrack/social.yaml`](data/notrack/social.yaml). To change one of them
+or add one, create `data/notrack/social.yaml` in your site with just the sites
+you want to change or add. Hugo merges it with the theme's file. For example,
+this shows GitHub with a different icon and adds Chess.com:
+
+```yaml
+github:
+  weight: 1
+  prefix: https://github.com/
+  title: GitHub
+  icon:
+    class: fa-brands fa-github
+
+chess:
+  weight: 100
+  prefix: https://www.chess.com/member/
+  title: Chess.com
+  icon:
+    class: fa-solid fa-chess-knight
+```
+
+Then use the new key in your configuration as usual:
+
+```toml
+[params.social]
+chess = '<your user name>'
+```
+
+A site in your file replaces the theme's site with the same key as a whole, so
+copy all of its fields, not only the one you change.
+
+Every site has a `weight`, a `title` and an icon, and one of `prefix`,
+`template` and `instance`, which build the link:
+
+- `weight`: The position among the links, where lower comes first.
+- `title`: The text of the link.
+- `icon.class`: The classes of an icon from Font Awesome Free 7, which comes
+  with the theme. Search for an icon on the [Font Awesome
+  website](https://fontawesome.com/icons), limited to free icons, and copy the
+  classes from the code it shows, e.g. `fa-solid fa-chess-knight`.
+  `fas` and `fab`, as in the theme's file, are short for `fa-solid` and
+  `fa-brands`.
+- `prefix`: The start of the link, which your value from `[params.social]` is
+  added to.
+- `template`: The link with `%v` where your value goes, for when it goes in
+  the middle, e.g. `https://%v.example.org/`.
+- `instance`: For a site where users choose the server, like Mastodon, the
+  path of a profile on the server, e.g. `/@%v`. The value in
+  `[params.social]` is then a full handle like `@user@example.org`.
 
 ## Acknowledgements and attributions
 

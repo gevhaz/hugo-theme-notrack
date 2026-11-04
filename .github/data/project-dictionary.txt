@@ -23,6 +23,7 @@ backticks
 blockquote
 blockquotes
 boxsocial
+com
 de
 endnotes
 fn
