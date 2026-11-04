@@ -62,18 +62,10 @@ gitlab:
   icon:
     class: fab fa-gitlab
 
-# 009: YouTube Legacy
-youtubelegacy:
+# 009: YouTube handle
+youtube:
   weight: 9
-  prefix: https://www.youtube.com/user/
-  title: YouTube
-  icon:
-    class: fab fa-youtube
-
-# 010: YouTube Custom
-youtubecustom:
-  weight: 10
-  prefix: https://www.youtube.com/c/
+  prefix: https://www.youtube.com/@
   title: YouTube
   icon:
     class: fab fa-youtube
@@ -605,14 +597,6 @@ letterboxd:
   title: Letterboxd
   icon:
     class: fab fa-letterboxd
-
-# 080: YouTube handle
-youtube:
-  weight: 80
-  prefix: https://www.youtube.com/@
-  title: YouTube
-  icon:
-    class: fab fa-youtube
 
 # 081: TikTok
 tiktok:
