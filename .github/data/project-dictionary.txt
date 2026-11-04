@@ -1,6 +1,9 @@
 personal_ws-1.1 en 1000 utf-8
 Axel
 CDNs
+Changelog
+Codeberg
+Disqus
 Ecole
 Forgejo
 FreeFont
@@ -20,15 +23,19 @@ Oxelstierna
 Parision
 PeerTube
 Pixelfed
+PyPI
 README
+RSS
 SIL
 Vimeo
 YouTube
 acknowledgements
+arXiv
 backticks
 blockquote
 blockquotes
 boxsocial
+changelog
 com
 de
 endnotes
