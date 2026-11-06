@@ -105,8 +105,9 @@ document.onkeydown = event => {
   }
 };
 
-// Close modal when it is clicked
-modal.addEventListener('click', closeModal, false);
+// Close modal when it is clicked, but not at the end of a mouse drag,
+// which also ends in a click
+modal.addEventListener('click', event => { if (!dragged(event)) closeModal(); }, false);
 
 
 // SWITCH IMAGE BY SWIPING OR MOUSE DRAG
@@ -119,15 +120,15 @@ let x0 = null;
 
 lock = event => { x0 = unify(event).clientX };
 
-move = event => {
-  if (x0 || x0 === 0) {
-    let dx = unify(event).clientX - x0;
-    sign = Math.sign(dx);
+// How far the pointer has moved since it went down on the modal
+distance = event => unify(event).clientX - x0;
 
-    switch (sign) {
-      case -1: changeModalImage('ArrowRight'); break;
-      case  1: changeModalImage('ArrowLeft'); break;
-    }
+// Whether it moved far enough to count as a swipe or drag, not a click
+dragged = event => x0 !== null && Math.abs(distance(event)) >= 10;
+
+move = event => {
+  if (dragged(event)) {
+    changeModalImage(distance(event) < 0 ? 'ArrowRight' : 'ArrowLeft');
   }
 };
 
