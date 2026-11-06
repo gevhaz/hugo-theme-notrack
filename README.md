@@ -129,6 +129,57 @@ You can further extend the home page:
 - Add an [image](#the-image-shortcode) (for example like in the demonstration
   web page)
 - Add a [footer](#how-to-set-a-footer) (that will be shown on all pages)
+- [Split it into parts](#how-to-split-the-home-page-into-parts), each written
+  in a file of its own
+
+#### How to split the home page into parts
+
+If your home page has several parts with their own headings, for example "About
+me" and "What I work on", you can write each part in a file of its own instead
+of putting everything in `content/_index.md`. Each file is then shorter to
+edit, and you can change the order of the parts without moving text around.
+
+Create a folder called `homepage` in your `content` folder, with a file called
+`index.md` and one file for each part:
+
+```text
+content/
+├── _index.md
+└── homepage/
+    ├── index.md
+    ├── about.md
+    └── work.md
+```
+
+`index.md` tells Hugo that the folder isn't a page of its own, only content for
+other pages to use (Hugo calls this a headless bundle). It needs nothing but
+this:
+
+```markdown
++++
+headless = true
++++
+```
+
+Each of the other files is one part. Its `title` becomes the heading of the
+part, and its `weight` decides the order of the parts, lowest first:
+
+```markdown
++++
+title = 'About me'
+weight = 1
++++
+
+A few words about me.
+```
+
+The parts are only used if `content/_index.md` has no text below its front
+matter. If you write text there, the home page shows that text instead. The
+[latest blog posts](#how-to-disable-or-customize-home-page-blog-summary) are
+shown below the parts as usual.
+
+To show an image in a part, put the image in the `static` folder and add it with
+the [`image` shortcode](#the-image-shortcode), as on any other page.
 
 #### How to create a blog
 
