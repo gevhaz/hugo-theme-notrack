@@ -35,7 +35,7 @@ $ cd notrack/exampleSite/
 $ hugo server -D --themesDir ../..
 ```
 
-You can them see the example website in your browser and interact with it. Hugo
+You can then see the example website in your browser and interact with it. Hugo
 will print instructions for what address to use. Usually it is
 `http://localhost:1313/`.
 
@@ -55,7 +55,7 @@ page](#how-to-create-a-home-page) is mandatory, but the
 [gallery](#how-to-create-a-gallery-page) and [resume](#how-to-create-a-resume)
 are all optional.
 
-This section deals with creating minimal version of each type of page the
+This section deals with creating a minimal version of each type of page the
 theme supports. In the next section we will deal with adding custom content to
 the pages using shortcodes (but you can of course use the default Hugo
 shortcodes in any page as well).
@@ -72,7 +72,7 @@ $ git submodule add https://github.com/gevhaz/hugo-theme-notrack.git themes/notr
 ```
 
 > [!NOTE]
-> I use angle brackets ('<' and '>') to indicate a placeholder. You should put
+> I use angle brackets ('<' and '>') to indicate a placeholder. You should
 > replace it with your own value.
 
 Your project should already have a file called `hugo.toml`. Open it and make
@@ -121,7 +121,7 @@ Now you have a working website. You can run it locally with:
 $ hugo server
 ```
 
-or deploy it somewhere according to the instructions form Hugo:
+or deploy it somewhere according to the instructions from Hugo:
 <https://gohugo.io/hosting-and-deployment/>
 
 You can further extend the home page:
@@ -505,7 +505,7 @@ There are some shortcodes that can help you create a resume. These are:
 - `resume-entry`
 
 `Container` just creates a `<div>` element with a specific class.
-`resume-section` needs a title which will be shown to the left of it's content
+`resume-section` needs a title which will be shown to the left of its content
 (if it can fit on the screen, otherwise it's on top). Within this, you put one
 or more `resume-entry` shortcodes. This shortcode takes the three parameters
 `what`, `where` and `when` (see example usage below). It also takes raw HTML
@@ -567,7 +567,7 @@ a [drop-down menu](#how-to-add-a-page-to-drop-down-menu) of its own.
 
 #### How to add a page to drop-down menu
 
-This theme has a navigation bar at the the top of all pages, with buttons like
+This theme has a navigation bar at the top of all pages, with buttons like
 "Home", "Blog", "About me", etc. depending on how you configure it. You can make
 it so you get a drop-down menu when hovering over a button. An example is the
 "Blog" button in the demonstration website.
@@ -629,7 +629,7 @@ it.
 
 #### How to disable or customize home page blog summary
 
-By default, the theme provides a summaries of the three latest blog posts on the
+By default, the theme provides summaries of the three latest blog posts on the
 home page if you have a blog. If you don't want that, set `showBlogLatest` to
 false in your site configuration file. You may also want to change the number of
 posts shown and the heading above it (default "Latest Blog Posts"). In
@@ -638,7 +638,7 @@ posts shown and the heading above it (default "Latest Blog Posts"). In
 ```toml
 [params]
 showBlogLatest = true
-blogLatestHeading = 'Latests posts'
+blogLatestHeading = 'Latest posts'
 nBlogLatest = 6
 ```
 
@@ -739,7 +739,7 @@ Every site has a `weight`, a `title` and an icon, and one of `prefix`,
 
 The theme does not secretly download any resources from other websites or CDNs.
 It does, however, make use of a few other projects. These are included in the
-theme files, so you'll homepage will serve the resources.
+theme files, so your homepage will serve the resources.
 
 Some of the fonts under `static/fonts` are parts of the project [GNU
 FreeFont](https://www.gnu.org/software/freefont/). They are licensed under
