@@ -34,6 +34,13 @@ getSurroundingIndices = img => {
 // Image currently shown in modal
 let currentImage; 
 
+// After image is loaded, show image and text and hide loader
+modalImg.addEventListener('load', () => {
+  captionText.style.display = 'block';
+  modalImg.style.display = 'block';
+  loader.style.display = 'none';
+});
+
 openModal = img => {
   // Get the image and insert it inside the modal - use 
   // its "alt" text as a caption
@@ -46,14 +53,6 @@ openModal = img => {
   loader.style.display = 'block';
   modalImg.style.display = 'none';
   captionText.style.display = 'none';
-
-  // After image is loaded, show image and text and hide loader
-  modalImg.addEventListener('load', () => {
-    console.log("loaded image");
-    captionText.style.display = 'block';
-    modalImg.style.display = 'block';
-    loader.style.display = 'none';
-  });
 
   // Preload for faster display of images
   const indices = getSurroundingIndices(currentImage);
