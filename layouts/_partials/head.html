@@ -6,7 +6,7 @@
     {{ $style := resources.Get "styles.css" | fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
     {{ with resources.Get "css/userstyles.css" }}
-    <link rel="stylesheet" type="text/css" href="{{ .Permalink }}">
+    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
     {{ end }}
     {{ with .Site.Params.favicon }}
     <link rel="icon" href="{{ . | relURL }}">
