@@ -81,3 +81,6 @@ theme, e.g. the checks that CI runs.
   few sentences.
 - Write in prose. Use headings only when the description is long enough
   that a reader needs to skip to a part.
+- Give each commit that changes how the site looks a pull request of
+  its own, so that a visual change can be reviewed and merged on its
+  own.
