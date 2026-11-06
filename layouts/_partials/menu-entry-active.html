@@ -1,0 +1,13 @@
+{{- /* Returns whether .page is the page of the menu entry .entry or a page
+       below it, e.g. a post in the blog section. Every page is below the
+       home page, so the home page's entry is only active on the home page
+       itself. */ -}}
+{{- $active := .page.IsMenuCurrent "main" .entry -}}
+{{- /* Inside with, the dot is the entry's page, so the page that was
+       passed in is reached from the top through $. */ -}}
+{{- with .entry.Page -}}
+    {{- if not .IsHome -}}
+        {{- $active = or $active ($.page.IsDescendant .) -}}
+    {{- end -}}
+{{- end -}}
+{{- return $active -}}

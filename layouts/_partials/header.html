@@ -5,59 +5,43 @@
     </div>
     <nav>
         <ul class="navbar">
-        {{- /* info about current page */ -}}
-            {{- $currentPage := . -}}
-            {{- $currentPagesParent := $currentPage.Parent -}}
-            {{- $currentPageInTags := eq $currentPage.Section "tags" -}}
-            {{- $currentPageInCategories := eq $currentPage.Section "categories" -}}
-            {{- $currentPageNotHome := ne $currentPage.IsHome true -}}
+        {{- /* The navigation bar is a list of tabs, with a sub-list in
+               each tab that has a drop-down. It's built from the main
+               menu, site.Menus.main, whose entries come from the front
+               matter of pages and from the site configuration. The outer
+               loop makes a tab for each top-level entry, and the inner
+               loops go over the entries in its drop-down: first to find
+               out whether one of them is active, then to make their links.
 
-        {{- range .Site.Menus.main -}}
+               menu-entry-active.html compares an entry with the current
+               page. The entry is active, which gives it the activetab
+               class that highlights it, on its own page and on the pages
+               below it, e.g. Blog on every post. A tab with a drop-down is
+               also active when one of its entries is, e.g. Blog on the
+               archive page if Archive is in its drop-down.
+
+               $page keeps the current page, since range sets the dot to
+               each menu entry in turn. */ -}}
+        {{- $page := . -}}
+        {{- range site.Menus.main -}}
+            {{- $active := partial "menu-entry-active.html" (dict "page" $page "entry" .) -}}
             {{- if .HasChildren -}}
-
-            {{- /* info about current menu */ -}}
-                {{- $currentMenusPage := .Page -}}
-
-                {{- $currentMenuHasTags := false -}}
-                {{- $currentMenuHasCategories := false -}}
                 {{- range .Children -}}
-                    {{- $childMenuSection := .Page.Section -}}
-                    {{- if eq $childMenuSection "categories" -}}{{- $currentMenuHasCategories = true -}}{{- end -}}
-                    {{- if eq $childMenuSection "tags" -}}{{- $currentMenuHasTags = true -}}{{- end -}}
-                {{- end -}}
-
-            {{- /* comparison of current menu and current page */ -}}
-                {{- $active := eq $currentMenusPage $currentPagesParent -}}
-                {{- $active = and $active $currentPageNotHome -}}
-                {{- $active = or $active (and $currentMenuHasTags $currentPageInTags) -}}
-                {{- $active = or $active (and $currentMenuHasCategories $currentPageInCategories) }}
-            <li class="dropdown {{ if or $active ($currentPage.IsMenuCurrent "main" . ) ($currentPage.HasMenuCurrent "main" .)}}activetab{{ end }}">
-                <a href ="{{ .URL }}">
+                    {{- $active = or $active (partial "menu-entry-active.html" (dict "page" $page "entry" .)) -}}
+                {{- end }}
+            <li class="dropdown{{ if $active }} activetab{{ end }}">
+                <a href="{{ .URL }}">
                     {{- .Pre }}
                     <span>{{ .Name }}</span>
                 </a>
-                <div class=sub-menu>
+                <div class="sub-menu">
                 {{- range .Children }}
-                    {{- $currentMenuSection := .Page.Section }}
-                    {{- $active := and $currentPageInTags (eq $currentMenuSection "tags") }}
-                    {{- $active = or $active (and $currentPageInCategories (eq $currentMenuSection "categories") ) }}
-                    {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
-                    <a class="{{- if $active -}}activetab{{- end -}}" href="{{- .URL -}}">{{ .Name }}</a>
+                    <a class="{{ if partial "menu-entry-active.html" (dict "page" $page "entry" .) }}activetab{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
                 {{- end }}
                 </div>
             </li>
-            {{- else -}}
-                {{- $currentMenusPage := .Page }}
-                {{- $currentMenuInMainSections := false }}
-                {{- with $currentMenusPage }}
-                    {{- $currentMenuInMainSections = in site.Params.mainSections .Type }}
-                {{- end }}
-
-                {{- $active := eq $currentMenusPage $currentPagesParent }}
-                {{- $active = and $active (eq $currentPage.RelPermalink .URL ) }}
-                {{- $active = or $active (eq $currentPage.Title .Name ) }}
-                {{- $active = or $active ($currentPage.IsMenuCurrent "main" . ) }}
-            <li class="{{- if $active -}} activetab {{- end -}}">
+            {{- else }}
+            <li class="{{ if $active }}activetab{{ end }}">
                 <a href="{{ .URL }}">
                     {{- .Pre }}
                     <span>{{ .Name }}</span>
