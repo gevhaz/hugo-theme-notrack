@@ -673,6 +673,9 @@ all options. Predefined formats and the names of months and weekdays follow the
 `locale` of your site, so with `locale = 'de-DE'`, `:date_long` gives
 `5. März 2026`.
 
+The archive page uses `dateFormat` too. Without it, the archive shows only the
+day and month, e.g. "5/3", since the posts are grouped by year.
+
 #### How to translate the theme's text
 
 The theme supports English and the languages you find listed in
