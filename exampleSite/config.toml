@@ -33,6 +33,7 @@ year = "year"
 month = "month"
 tags = "tags"
 categories = "categories"
+series = "series"
 
 [permalinks]
   blog = "/blog/:year/:month/:slug"
