@@ -1,17 +1,25 @@
-{{ with .Params.Categories }}
+{{- /* Renders the page's categories and tags as links to their pages,
+       sorted by name, e.g. "Tags: css, html". A taxonomy the site doesn't
+       have is left out. */ -}}
+
+{{- /* .GetTerms gives the pages of the page's categories or tags, e.g.
+       /tags/css/ for the tag "css". On such a page, .Data.Term is the
+       name as written in front matter, e.g. "css". */ -}}
+{{ with .GetTerms "categories" }}
     <span class="blog-taxonomy-info"> &nbsp; | &nbsp; {{ i18n "categories" | default "Categories:" }}
-        {{ $sort := sort . }}
-        {{ $links := apply $sort "partial" "post-category-link" "." }}
-        {{ $clean := apply $links "chomp" "." }}
-        {{ delimit $clean ", " | safeHTML }}
+        {{ range $position, $category := sort . ".Data.Term" }}
+            {{- /* A comma before every link but the first */ -}}
+            {{- if gt $position 0 }}, {{ end -}}
+            <a class="blog-taxonomy-info" href="{{ $category.RelPermalink }}">{{ $category.Data.Term }}</a>
+        {{- end }}
     </span>
 {{ end }}
 
-{{ with .Params.Tags }}
+{{ with .GetTerms "tags" }}
     <span class="blog-taxonomy-info"> &nbsp; | &nbsp; {{ i18n "tags" | default "Tags:" }}
-        {{ $sort := sort . }}
-        {{ $links := apply $sort "partial" "post-tag-link" "." }}
-        {{ $clean := apply $links "chomp" "." }}
-        {{ delimit $clean ", " | safeHTML }}
+        {{ range $position, $tag := sort . ".Data.Term" }}
+            {{- if gt $position 0 }}, {{ end -}}
+            <a class="blog-taxonomy-info" href="{{ $tag.RelPermalink }}">{{ $tag.Data.Term }}</a>
+        {{- end }}
     </span>
 {{ end }}
