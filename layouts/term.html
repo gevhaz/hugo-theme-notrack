@@ -5,6 +5,8 @@
     <h1 class="page-title">{{ i18n "categoryTitle" . | default (printf "Category: %s" .Title) }}</h1>
     {{ else if or (eq .Data.Plural "tags") (eq .Data.Singular "tag") }}
     <h1 class="page-title">{{ i18n "tagTitle" . | default (printf "Tag: %s" .Title) }}</h1>
+    {{ else }}
+    <h1 class="page-title">{{ .Title }}</h1>
     {{ end }}
 
     {{- if .Pages -}}
