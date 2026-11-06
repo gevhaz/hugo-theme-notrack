@@ -440,9 +440,10 @@ class that I've added some styling for. Use it like this:
 {{< video src="your_video.mp4" type="video/mp4" preload="auto" >}}
 ```
 
-Your video needs to be in the `static` folder or a subdirectory of it such
-as "video" (in which case you'd add the subdirectory in the `src`
-parameter.
+Put your video next to the page, in a [page
+bundle](https://gohugo.io/content-management/page-bundles/), or in the
+`static` folder. For a video in a subdirectory of `static`, such as `video`,
+add the subdirectory to `src`, e.g. `src="video/your_video.mp4"`.
 
 #### The image shortcode
 

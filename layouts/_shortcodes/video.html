@@ -1,5 +1,10 @@
+{{- /* Renders a <video> with controls. src is a resource of the page, or
+       else a path in static/, e.g.
+       {{< video src="video/clip.mp4" type="video/mp4" preload="auto" >}} */ -}}
+{{- $src := .Get "src" -}}
+{{- with .Page.Resources.Get $src }}{{ $src = .RelPermalink }}{{ else }}{{ $src = $src | relURL }}{{ end -}}
 <video class="video-shortcode" preload="{{ .Get "preload" }}" controls>
-    <source src="{{ .Get "src" }}" type="{{ .Get "type" }}">
+    <source src="{{ $src }}" type="{{ .Get "type" }}">
     There should have been a video here but your browser does not seem
     to support it.
 </video>
