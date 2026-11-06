@@ -39,7 +39,7 @@ openModal = img => {
   // its "alt" text as a caption
   currentImage = img;
   modalImg.src = currentImage.src.replace("thumbnails", "fullsize");
-  captionText.innerHTML = img.alt;
+  captionText.textContent = img.alt;
 
   // While loading, show loader and hide image and text
   modal.style.display = 'block';
