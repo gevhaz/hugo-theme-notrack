@@ -364,7 +364,7 @@ all the shortcodes in a table, and show how to use the non-trivial ones.
 | **Resume**        | `container`          | Container for resume shortcodes |
 |                   | `resume-entry`       | One entry in a resume (e.g. a university degree) |
 |                   | `resume-section`     | One section in resume (e.g. "Education") |
-|                   | `resume-subcategory` | Creates a heading within a section of the resume |
+|                   | `resume-category`    | Creates a heading within a section of the resume |
 
 #### The raw HTML shortcode
 
@@ -406,8 +406,10 @@ Hugo's default `figure` shortcode. The following extra options are provided:
 | `width`          | e.g. `10em`, `50%`, `70px` |
 | `height`         | e.g. `10em`, `50%`, `70px` |
 
-You can also use all the options for the
-[`figure`](https://gohugo.io/content-management/shortcodes/#figure) shortcode.
+You can also use these options of the
+[`figure`](https://gohugo.io/content-management/shortcodes/#figure) shortcode:
+`src`, `alt`, `caption`, `title`, `link`, `target`, `rel`, `attr`, `attrlink`
+and `class`.
 
 Setting the `float` makes text wrap around the image, instead of it taking up
 the full width of the page.
@@ -430,9 +432,8 @@ should be in `static/img/portrait.jpg`.
 #### The contact-box shortcode
 
 The `contact-box` shortcode creates a frame with links to your social media or
-other contact info on the rights side of the page, and, if you want, some text
-on the left side of the box, outside the frame. Put this text within the
-shortcode tags.
+other contact info. The frame floats to the right side of the page, so the text
+that follows it in the page wraps around it.
 
 What social media links are present in the frame is decided by the `social` key
 of your site configuration. See [here](#how-to-add-an-about-me-page).
@@ -560,8 +561,9 @@ name = 'About me'
 weight = 90
 ```
 
-Don't use the site configuration file to add menus because then the highlighting
-of active tabs might not work (at least not if drop-down menus are involved).
+Add pages to the navigation bar in their own front matter like this. You only
+need the site configuration for an entry that has no page, like the button for
+a [drop-down menu](#how-to-add-a-page-to-drop-down-menu) of its own.
 
 #### How to add a page to drop-down menu
 
@@ -630,7 +632,7 @@ it.
 By default, the theme provides a summaries of the three latest blog posts on the
 home page if you have a blog. If you don't want that, set `showBlogLatest` to
 false in your site configuration file. You may also want to change the number of
-posts shown and the heading above it (default "Latest from the blog") In
+posts shown and the heading above it (default "Latest Blog Posts"). In
 `hugo.toml`, it would look like this:
 
 ```toml
