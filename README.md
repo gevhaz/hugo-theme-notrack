@@ -313,23 +313,7 @@ The procedure is exactly the same for categories.
 
 #### How to create an archive page
 
-You can add an Archive page that lists all blog posts by year and month. Do this
-by adding a `[taxonomies]` section to your site configuration:
-
-```toml
-[taxonomies]
-year = "year"
-month = "month"
-tags = "tags"
-categories = "categories"
-```
-
-> [!NOTE]
-> The `tags` and `categories` taxonomies are enabled by default but will be
-> disabled when you add a taxonomies section to your site configuration unless
-> you specifically add them.
-
-Then add an archive page:
+You can add an Archive page that lists all blog posts by year:
 
 ```console
 $ hugo new archive/_index.md
