@@ -8,7 +8,7 @@
     {{ end }}
 
     {{- if .Pages -}}
-        {{- $pages := (where .Pages ".Draft" false) -}}
+        {{- $pages := .Pages -}}
 
         {{- with .Site.Params.list.paginate | default .Site.Params.paginate -}}
             {{- $pages = $.Paginate $pages . -}}
