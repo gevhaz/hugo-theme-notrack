@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main>
-    <h1>{{ i18n "allTerms" . | default (printf "All %s" .Title) }}</h1>
+    <h1 class="page-title">{{ i18n "allTerms" . | default (printf "All %s" .Title) }}</h1>
 
     <ul>
         {{ range .Data.Terms.Alphabetical }}

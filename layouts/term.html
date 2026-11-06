@@ -2,9 +2,9 @@
 <main>
     {{- /* Hardcoded values for identifying whether we're looking at a tag or category */ -}}
     {{ if or (eq .Data.Plural "categories") (eq .Data.Singular "category") }}
-    <h1>{{ i18n "categoryTitle" . | default (printf "Category: %s" .Title) }}</h1>
+    <h1 class="page-title">{{ i18n "categoryTitle" . | default (printf "Category: %s" .Title) }}</h1>
     {{ else if or (eq .Data.Plural "tags") (eq .Data.Singular "tag") }}
-    <h1>{{ i18n "tagTitle" . | default (printf "Tag: %s" .Title) }}</h1>
+    <h1 class="page-title">{{ i18n "tagTitle" . | default (printf "Tag: %s" .Title) }}</h1>
     {{ end }}
 
     {{- if .Pages -}}
@@ -17,9 +17,7 @@
         {{- end -}}
 
         {{- range $pages.Pages -}}
-            <article class="archive-item">
-                {{ partial "blog-entry-summary.html" . }}
-            </article>
+            {{ partial "blog-entry-summary.html" . }}
         {{- end -}}
 
         {{ partial "pagination.html" . }}
