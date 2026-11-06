@@ -40,6 +40,12 @@ theme, e.g. the checks that CI runs.
 - Keep the words in `.github/data/project-dictionary.txt` sorted
   alphabetically, with uppercase before lowercase.
 
+## Changelog
+
+- `CHANGELOG.md` is for users of the theme. Add to it only major
+  additions and changes that break existing sites, not fixes or smaller
+  changes, which the git log already has.
+
 ## Writing
 
 - Write pull request descriptions and commit messages for a reader who
