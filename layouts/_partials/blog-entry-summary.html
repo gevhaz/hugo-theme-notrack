@@ -3,8 +3,8 @@
 
     <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
     {{ partial "blog-taxonomy-info" . }}</p>
-    <p>
+    <div>
         {{- .Summary -}}
         <span> <a href="{{ .Permalink }}">{{ i18n "readMore" | default "Read more..." }}</a></span>
-    </p>
+    </div>
 </article>
