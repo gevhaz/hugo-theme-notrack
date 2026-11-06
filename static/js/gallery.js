@@ -18,13 +18,13 @@ imgs.forEach((img, i) => {
   img.addEventListener('click', e => { openModal(e.target); });
 });
 
-preloadModalImage = index => {
+const preloadModalImage = index => {
   let loadingImg = new Image();
   loadingImg.src = imgs[index].src.replace("thumbnails", "fullsize");
 }
 
 // Returns indices of current and surrounding images
-getSurroundingIndices = img => {
+const getSurroundingIndices = img => {
   let i = parseInt(img.dataset.index);
   let prevIndex = i != 0 ? (i - 1) % imgs.length : imgs.length - 1;
   let nextIndex = (i + 1) % imgs.length;
@@ -41,7 +41,7 @@ modalImg.addEventListener('load', () => {
   loader.style.display = 'none';
 });
 
-openModal = img => {
+const openModal = img => {
   // Get the image and insert it inside the modal - use 
   // its "alt" text as a caption
   currentImage = img;
@@ -60,7 +60,7 @@ openModal = img => {
   preloadModalImage(indices.prev);
 };
 
-closeModal = () => {
+const closeModal = () => {
   modal.style.display = "none";
   modalImg.src = "";
 
@@ -73,7 +73,7 @@ closeModal = () => {
   }
 };
 
-changeModalImage = direction => {
+const changeModalImage = direction => {
   if (modal.style.display == "block") {
     const indices = getSurroundingIndices(currentImage);
     switch (direction) {
@@ -112,20 +112,20 @@ modal.addEventListener('click', event => { if (!dragged(event)) closeModal(); },
 // SWITCH IMAGE BY SWIPING OR MOUSE DRAG
 
 // Unify touch and click cases
-unify = e => { return e.changedTouches ? e.changedTouches[0] : e };
+const unify = e => { return e.changedTouches ? e.changedTouches[0] : e };
 
 // Where swipe or mousedown starts
 let x0 = null;
 
-lock = event => { x0 = unify(event).clientX };
+const lock = event => { x0 = unify(event).clientX };
 
 // How far the pointer has moved since it went down on the modal
-distance = event => unify(event).clientX - x0;
+const distance = event => unify(event).clientX - x0;
 
 // Whether it moved far enough to count as a swipe or drag, not a click
-dragged = event => x0 !== null && Math.abs(distance(event)) >= 10;
+const dragged = event => x0 !== null && Math.abs(distance(event)) >= 10;
 
-move = event => {
+const move = event => {
   if (dragged(event)) {
     changeModalImage(distance(event) < 0 ? 'ArrowRight' : 'ArrowLeft');
   }
