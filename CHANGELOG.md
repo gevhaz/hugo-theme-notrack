@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- `params.logo` shows a logo before the heading at the top of every page, or
+  instead of it with `logoOnly`.
+
 ## [1.4.0] - 2026-11-07
 
 ### Added
