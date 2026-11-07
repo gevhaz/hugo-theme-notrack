@@ -373,6 +373,7 @@ nav li:hover {
 
 .dropdown .sub-menu {
     display: none;
+    padding: 0;
     position: absolute;
     background-color: #f9f9f9;
     color: var(--text-color);
@@ -391,6 +392,13 @@ nav li:hover {
 .sub-menu a:hover {
     background-color: var(--tab-active-color);
     color: white;
+}
+
+/* Entries in the drop-down are below each other, not tabs */
+.sub-menu li {
+    float: none;
+    display: block;
+    border-width: 0;
 }
 
 .sub-menu a {
