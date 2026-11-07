@@ -452,6 +452,13 @@ nav li:hover {
     }
 }
 
+/* Text above a list of post summaries, lined up with their sides */
+.list-intro {
+    @media (min-width: 28em) {
+        margin: 0 2em;
+    }
+}
+
 #latest-blog-home {
     text-align: center;
     font-size: 2em;

@@ -210,6 +210,10 @@ weight = 5
 +++
 ```
 
+Any text you write below the front matter, e.g. a few words on what you write
+about, is shown above the list of posts. The same goes for the `_index.md` of
+the archive and of the tags and categories pages.
+
 Under `[params]` in your `hugo.toml`, add:
 
 ```toml
