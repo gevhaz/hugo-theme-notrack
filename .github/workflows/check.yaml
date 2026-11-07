@@ -134,8 +134,12 @@ jobs:
             path=${page#*=}
             # Fail on a page that doesn't exist, rather than compare two 404s
             curl --fail --silent --show-error --output /dev/null "http://localhost:8081$path"
-            npx playwright screenshot --full-page "http://localhost:8080$path" "master-$name.png"
-            npx playwright screenshot --full-page "http://localhost:8081$path" "pr-$name.png"
+            # A desktop and a phone, which is narrower than the theme's 28em breakpoint
+            for size in 1280,720 375,667; do
+              width=${size%,*}
+              npx playwright screenshot --full-page --viewport-size "$size" "http://localhost:8080$path" "master-$name-$width.png"
+              npx playwright screenshot --full-page --viewport-size "$size" "http://localhost:8081$path" "pr-$name-$width.png"
+            done
           done
       - name: Equalize screenshots size
         run: |
