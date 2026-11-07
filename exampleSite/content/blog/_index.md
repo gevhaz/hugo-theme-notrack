@@ -9,3 +9,5 @@ menu:
 ---
 
 
+I write about international law, the occasional escape from prison and,
+above all, lorem ipsum.
