@@ -17,6 +17,11 @@ GROUPS = {
     "latin-ext": "U+0100-036F, U+1E00-1EFF",
     "greek": "U+0370-03FF, U+1F00-1FFF",
     "cyrillic": "U+0400-052F",
+    "armenian": "U+0530-058F",
+    "hebrew": "U+0590-05FF",
+    "georgian": "U+10A0-10FF",
+    # Only FreeSerif has Thai, so FreeSans gets no Thai file.
+    "thai": "U+0E00-0E7F",
     # Arrows, mathematical operators and shapes
     "symbols": "U+2100-27FF",
 }
