@@ -1,9 +1,9 @@
 
 <head>
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
-    <link rel="preload" href="{{ "fonts/FreeSerif-small.woff" | relURL }}" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ "fonts/FreeSerif-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="{{ "fontawesome/css/all.min.css" | relURL }}">
-    {{ $style := resources.Get "styles.css" | fingerprint }}
+    {{ $style := slice (resources.Get "fonts.css") (resources.Get "styles.css") | resources.Concat "styles.css" | fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.RelPermalink }}">
     {{ with resources.Get "css/userstyles.css" }}
     <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}">
