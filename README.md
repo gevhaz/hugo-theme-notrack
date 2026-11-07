@@ -88,6 +88,10 @@ theme = 'notrack'
 [params]
 # optional, defaults to the author's name:
 siteHeading = '<the text that goes at the top of your webpage>'
+# optional, an image in your static/ folder, shown before the heading:
+logo = '<path to an image, e.g. img/logo.png>'
+# optional, set to true to show the logo without the heading:
+logoOnly = false
 
 # keep this after the other keys under [params]:
 [params.author]

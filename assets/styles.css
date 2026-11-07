@@ -434,6 +434,15 @@ nav li:hover {
     margin: 0;
 }
 
+.myname img {
+    height: 1.2em;
+    vertical-align: middle;
+}
+
+.myname img + span {
+    margin-left: .3em;
+}
+
 /* HOME */
 
 .blog-post-summary {
