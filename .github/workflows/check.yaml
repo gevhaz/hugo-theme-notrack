@@ -75,6 +75,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.169.0
+      # The pages to compare, each as <screenshot name>=<path>
+      PAGES: |
+        home=/
+        markdown=/blog/2019/03/markdown-syntax-guide/
+        resume=/resume/
+        blog=/blog/
+        hugo-gallery=/hugo-gallery/
+        contact=/contact/
+        categories=/categories/
     steps:
       - name: Install Hugo CLI
         run: |
@@ -114,48 +123,41 @@ jobs:
 
       - name: Take screenshots of various pages on version with and without new changes
         run: |
-          # home
-          npx playwright screenshot http://localhost:8080 master-home.png
-          npx playwright screenshot http://localhost:8081 pr-home.png
-
-          # blog markdown test page
-          npx playwright screenshot http://localhost:8080/blog/2019/03/markdown-syntax-guide/ master-markdown.png
-          npx playwright screenshot http://localhost:8081/blog/2019/03/markdown-syntax-guide/ pr-markdown.png
-
-          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
-          for page in "${subpages[@]}"; do
-            npx playwright screenshot --full-page http://localhost:8080/${page} master-${page}.png
-            npx playwright screenshot --full-page http://localhost:8081/${page} pr-${page}.png
+          for page in $PAGES; do
+            name=${page%%=*}
+            path=${page#*=}
+            # Fail on a page that doesn't exist, rather than compare two 404s
+            curl --fail --silent --show-error --output /dev/null "http://localhost:8081$path"
+            npx playwright screenshot --full-page "http://localhost:8080$path" "master-$name.png"
+            npx playwright screenshot --full-page "http://localhost:8081$path" "pr-$name.png"
           done
       - name: Equalize screenshots size
         run: |
-          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
-          screenshots=("${subpages[@]}" "home" "markdown")
-          for screenshot in "${screenshots[@]}"; do
-            echo "Equalize height of screenshots pr-${screenshot}.png and master-${screenshot}.png..."
-            HEIGHT_PR=$(identify-im6.q16 -format "%h" "pr-${screenshot}.png")
-            HEIGHT_MASTER=$(identify-im6.q16 -format "%h" "master-${screenshot}.png")
+          for pr in pr-*.png; do
+            master=master-${pr#pr-}
+            echo "Equalize height of screenshots $pr and $master..."
+            HEIGHT_PR=$(identify-im6.q16 -format "%h" "$pr")
+            HEIGHT_MASTER=$(identify-im6.q16 -format "%h" "$master")
             MAX_HEIGHT=$((HEIGHT_PR > HEIGHT_MASTER ? HEIGHT_PR : HEIGHT_MASTER))
-            convert-im6.q16 "pr-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "pr-${screenshot}.png"
-            convert-im6.q16 "master-${screenshot}.png" -background white -extent x${MAX_HEIGHT} "master-${screenshot}.png"
+            convert-im6.q16 "$pr" -background white -extent x${MAX_HEIGHT} "$pr"
+            convert-im6.q16 "$master" -background white -extent x${MAX_HEIGHT} "$master"
           done
       - name: Compare screenshots
         id: diff
         run: |
           mkdir diffs
           has_any_changes=false
-          subpages=("resume" "blog" "hugo-gallery" "contact" "categories")
-          screenshots=("${subpages[@]}" "home" "markdown")
-          for screenshot in "${screenshots[@]}"; do
-            echo "Comparing files pr-${screenshot}.png and master-${screenshot}.png..."
-            if npx pixelmatch "master-${screenshot}.png" "pr-${screenshot}.png" "diffs/${screenshot}.png" 0.1; then
+          for pr in pr-*.png; do
+            screenshot=${pr#pr-}
+            echo "Comparing files $pr and master-$screenshot..."
+            if npx pixelmatch "master-$screenshot" "$pr" "diffs/$screenshot" 0.1; then
               echo 'No changes detected'
             else
               echo 'Changes detected'
               has_any_changes=true
             fi
-            echo "has_changes=${has_any_changes}" >> $GITHUB_OUTPUT
           done
+          echo "has_changes=${has_any_changes}" >> $GITHUB_OUTPUT
       - name: Upload diff images
         uses: actions/upload-artifact@v7
         if: always()
