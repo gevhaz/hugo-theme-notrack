@@ -45,11 +45,11 @@
                     {{- .Pre }}
                     <span>{{ .Name }}</span>
                 </a>
-                <div class="sub-menu">
+                <ul class="sub-menu">
                 {{- range .Children }}
-                    <a class="{{ if partial "menu-entry-active.html" (dict "page" $page "entry" .) }}activetab{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                    <li><a class="{{ if partial "menu-entry-active.html" (dict "page" $page "entry" .) }}activetab{{ end }}" href="{{ .URL }}">{{ .Name }}</a></li>
                 {{- end }}
-                </div>
+                </ul>
             </li>
             {{- else }}
             <li class="{{ if $active }}activetab{{ end }}">
