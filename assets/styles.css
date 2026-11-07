@@ -384,7 +384,9 @@ nav li:hover {
     z-index: 1;
 }
 
-.dropdown:hover .sub-menu {
+/* focus-within opens it for someone who moves through the links with
+   the keyboard, as they would otherwise skip the hidden entries */
+.dropdown:hover .sub-menu, .dropdown:focus-within .sub-menu {
     display: block;
 }
 
