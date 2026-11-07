@@ -2,6 +2,9 @@
 <html lang="{{ site.Language.Locale }}">
     {{- partial "head.html" . -}}
     <body>
+        {{- /* Hidden until focused, so that a keyboard user can skip the
+               navigation bar with the first press of Tab */}}
+        <a class="skip-link" href="#content">{{ i18n "skipToContent" | default "Skip to content" }}</a>
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}
