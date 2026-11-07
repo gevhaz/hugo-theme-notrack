@@ -12,10 +12,15 @@ var span = document.getElementsByClassName("close")[0];
 // Array of all images in gallery
 const imgs = [...document.querySelectorAll('.gallery-photo > img')];
 
-// Add index and event listener to all gallery images
+// Number the images and put each in a button that opens it, so that it
+// can also be reached and opened with the keyboard
 imgs.forEach((img, i) => {
   img.dataset.index = i;
-  img.addEventListener('click', e => { openModal(e.target); });
+  const button = document.createElement('button');
+  button.type = 'button';
+  img.replaceWith(button);
+  button.append(img);
+  button.addEventListener('click', () => { openModal(img); });
 });
 
 const preloadModalImage = index => {
