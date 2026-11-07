@@ -17,3 +17,5 @@ paginationLast: "Last"
 # Not shown, but read out by screen readers for the button that closes a
 # gallery image
 close: "Close"
+# Shown only to someone who moves through the page with the keyboard
+skipToContent: "Skip to content"

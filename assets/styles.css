@@ -331,6 +331,22 @@ figcaption {
     margin-bottom: 0.5em;
 }
 
+/* Out of view until it has keyboard focus */
+.skip-link {
+    position: absolute;
+    left: -100vw;
+    z-index: 2;
+    padding: .5em 1em;
+    background-color: white;
+    border: 1px solid var(--text-color);
+    font-family: FreeSans, sans-serif;
+
+    &:focus {
+        left: 1em;
+        top: 1em;
+    }
+}
+
 /* NAVBAR */
 
 header nav {
