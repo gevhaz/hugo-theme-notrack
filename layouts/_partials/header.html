@@ -8,11 +8,17 @@
                alt text instead. */ -}}
         {{- $text := default (partial "author-name.html" .) site.Params.siteHeading -}}
         {{- $logo := site.Params.logo -}}
-        {{- $showText := not (and $logo site.Params.logoOnly) }}
-        <h2><a href="{{ site.Home.RelPermalink }}">
+        {{- $showText := not (and $logo site.Params.logoOnly) -}}
+        {{- /* Other pages have their title as their top-level heading, so
+               the site's name is only a heading on the home page. */ -}}
+        {{- if .IsHome }}
+        <h1>{{ else }}
+        <p>{{ end -}}
+        <a href="{{ site.Home.RelPermalink }}">
             {{- with $logo }}<img src="{{ . | relURL }}" alt="{{ if not $showText }}{{ $text }}{{ end }}">{{ end -}}
             {{- if $showText }}<span>{{ $text }}</span>{{ end -}}
-        </a></h2>
+        </a>
+        {{- if .IsHome }}</h1>{{ else }}</p>{{ end }}
     </div>
     <nav>
         <ul class="navbar">

@@ -430,8 +430,10 @@ nav li:hover {
     font-weight: bold;
 }
 
-.myname h2 {
+.myname h1, .myname p {
     margin: 0;
+    font-size: 1.5em;
+    text-align: inherit;
 }
 
 .myname img {
