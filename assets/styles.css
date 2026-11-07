@@ -313,10 +313,11 @@ figcaption {
         color: #666674;
         text-align: left;
     }
-    & h4 {
+    & .figure-title {
         margin: 0.3em 0;
         color: var(--text-color);
-        text-align: left;
+        font-family: FreeSans, sans-serif;
+        font-weight: bold;
     }
 }
 
@@ -517,6 +518,8 @@ em.taxonomy-emph {
     & h2 { font-size: 1.3em; }
     & h3 { font-size: 1.2em; }
     & h4 { font-size: 1.1em; }
+    /* An image's title, the size of an h4 */
+    & .figure-title { font-size: 1.1em; }
 }
 
 .taxonomy-links ul {
