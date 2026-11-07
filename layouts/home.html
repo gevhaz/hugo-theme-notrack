@@ -11,7 +11,9 @@
             {{ with .Site.GetPage "/homepage" }}
             {{ $headlessExists = true }}
             <div class="headless-homepage">
-                {{ range .Resources }}
+                {{- /* Only the bundle's content files are parts of the page,
+                       not other files in it such as images. */ -}}
+                {{ range .Resources.ByType "page" }}
                     <h2>
                     {{ .Title }}
                     </h2>
