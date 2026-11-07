@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-11-07
+
 ### Added
 
 - German translation.
@@ -67,7 +69,8 @@
 
 There is no changelog for this release and the ones before it.
 
-[Unreleased]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/gevhaz/hugo-theme-notrack/compare/v1.0.0...v1.1.0
