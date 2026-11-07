@@ -84,6 +84,12 @@ jobs:
         hugo-gallery=/hugo-gallery/
         contact=/contact/
         categories=/categories/
+        tag=/tags/latin/
+        series-term=/series/themes-guide/
+        archive=/archive/
+        blog-page-2=/blog/page/2/
+        image-post=/blog/2020/06/picture-shortcode-test/
+        not-found=/404.html
     steps:
       - name: Install Hugo CLI
         run: |
