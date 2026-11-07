@@ -610,14 +610,14 @@ em.taxonomy-emph {
     margin: 0 0 1em 0;
 
     & .what {
-        font-family: FreeSans, serif;
+        font-family: FreeSans, sans-serif;
         text-align: left;
         font-size: 1.0em;
         color: var(--text-color);
     }
 
     & .resume-entry-data {
-        font-family: FreeSans, serif;
+        font-family: FreeSans, sans-serif;
         text-align: left;
         font-size: 0.8em;
         color: var(--very-light-text);
