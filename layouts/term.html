@@ -9,9 +9,7 @@
     <h1 class="page-title">{{ .Title }}</h1>
     {{ end }}
 
-    {{ with .Content }}
-    <div class="list-intro">{{ . }}</div>
-    {{ end }}
+    {{ .Content }}
 
     {{- if .Pages -}}
         {{- $pages := .Pages -}}

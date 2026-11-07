@@ -448,14 +448,7 @@ nav li:hover {
 .blog-post-summary {
     margin: 0;
     @media (min-width: 28em) {
-        margin: 2em;
-    }
-}
-
-/* Text above a list of post summaries, lined up with their sides */
-.list-intro {
-    @media (min-width: 28em) {
-        margin: 0 2em;
+        margin: 2em 0;
     }
 }
 

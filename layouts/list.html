@@ -34,9 +34,7 @@
     </div>
     {{ end }}
 
-    {{ with .Content }}
-    <div class="list-intro">{{ . }}</div>
-    {{ end }}
+    {{ .Content }}
 
     {{- if .Pages -}}
         {{- $pages := .Pages -}}
