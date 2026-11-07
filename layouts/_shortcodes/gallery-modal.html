@@ -1,8 +1,8 @@
-<!-- Modal for gallery images -->
-<div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img">
+{{- /* Renders the dialog that gallery-script shows full-size gallery
+       images in. It's only shown by gallery-script, so use them together. */ -}}
+<dialog id="myModal" class="modal" aria-labelledby="caption">
+    <button type="button" class="close" aria-label="{{ i18n "close" | default "Close" }}">&times;</button>
+    <img class="modal-content" id="modal-img" alt="">
     <div id="caption"></div>
     <div id="loader"></div>
-</div>
-
+</dialog>
