@@ -8,6 +8,15 @@
   instead of it with `logoOnly`.
 - Text in the `_index.md` of the blog, the archive and the tags and categories
   pages is shown above the list.
+- The theme's fonts cover Latin beyond Western European languages, Greek,
+  Cyrillic, Armenian, Georgian, Hebrew and Thai. A page downloads only the
+  parts it uses. See "Fonts" in the README.
+
+### Breaking
+
+- The font files under `static/fonts` are replaced by smaller ones with other
+  names, e.g. `FreeSerif-latin.woff2`. A site whose own CSS refers to one of
+  the old files has to host a copy of it.
 
 ## [1.4.0] - 2026-11-07
 

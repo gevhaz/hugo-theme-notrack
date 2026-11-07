@@ -674,6 +674,40 @@ parent = 'other'
 name = 'My links'
 ```
 
+### Fonts
+
+Notrack sets text in FreeSerif, and headings, the navigation bar and a few
+labels in FreeSans. Both are from [GNU
+FreeFont](https://www.gnu.org/software/freefont/), a project to give free
+software free fonts for as many of the world's writing systems as possible.
+Notrack uses them because they are free software, like the theme itself. They
+grew out of versions of the classic PostScript fonts that URW++ released under
+the GPL, which is why FreeSerif looks much like Times and FreeSans like
+Helvetica. Code is set in Mononoki.
+
+The theme's fonts cover these writing systems, in regular, bold and italic:
+
+- Latin, for every European language that uses it, and Vietnamese
+- Greek
+- Cyrillic, e.g. Russian, Ukrainian, Bulgarian and Serbian
+- Armenian, Georgian and Hebrew
+- Thai, except in headings and other text in FreeSans
+
+Characters in other writing systems, e.g. Arabic, Devanagari, Tamil, Chinese or
+Japanese, are drawn with the fonts on the visitor's device. A browser
+downloads only the parts of the fonts that a page uses, so a page in English
+downloads nothing for Greek.
+
+To use the fonts in your own CSS, e.g. in `assets/css/userstyles.css`, refer to
+them by name. Bold and italic text in them is drawn with their real bold and
+italic faces.
+
+```css
+.note {
+    font-family: FreeSans, sans-serif;
+}
+```
+
 ### Other site configuration
 
 #### How to set a footer
@@ -823,13 +857,14 @@ The theme does not secretly download any resources from other websites or CDNs.
 It does, however, make use of a few other projects. These are included in the
 theme files, so your homepage will serve the resources.
 
-Some of the fonts under `static/fonts` are parts of the project [GNU
+FreeSerif and FreeSans are from [GNU
 FreeFont](https://www.gnu.org/software/freefont/). They are licensed under
-"GPLv3 or later". Licenses are also supposed to be included in the `.woff` files
-themselves. Some of the fonts are edited by me to take up less space by
-including fewer characters.
+"GPLv3 or later", with an exception for documents that embed them. The full
+fonts are in `font-sources`, and the files under `static/fonts` that your site
+serves are subsets of them, made by `.github/scripts/subset-fonts.py`. Each
+file keeps the copyright and license notice of the font.
 
-The monospace font in the same directory, used for code in the theme, is
+The monospace font under `static/fonts`, used for code in the theme, is
 [Mononoki](https://github.com/madmalik/mononoki). It is licensed under SIL OFL
 1.1 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
 
