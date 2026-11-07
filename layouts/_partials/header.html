@@ -29,7 +29,9 @@
                class that highlights it, on its own page and on the pages
                below it, e.g. Blog on every post. A tab with a drop-down is
                also active when one of its entries is, e.g. Blog on the
-               archive page if Archive is in its drop-down.
+               archive page if Archive is in its drop-down. The highlight
+               is only seen, so the link to the current page itself also
+               gets aria-current for screen readers.
 
                $page keeps the current page, since range sets the dot to
                each menu entry in turn. */ -}}
@@ -41,19 +43,19 @@
                     {{- $active = or $active (partial "menu-entry-active.html" (dict "page" $page "entry" .)) -}}
                 {{- end }}
             <li class="dropdown{{ if $active }} activetab{{ end }}">
-                <a href="{{ .URL }}">
+                <a href="{{ .URL }}"{{ if $page.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>
                     {{- .Pre }}
                     <span>{{ .Name }}</span>
                 </a>
-                <div class="sub-menu">
+                <ul class="sub-menu">
                 {{- range .Children }}
-                    <a class="{{ if partial "menu-entry-active.html" (dict "page" $page "entry" .) }}activetab{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                    <li><a class="{{ if partial "menu-entry-active.html" (dict "page" $page "entry" .) }}activetab{{ end }}" href="{{ .URL }}"{{ if $page.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
                 {{- end }}
-                </div>
+                </ul>
             </li>
             {{- else }}
             <li class="{{ if $active }}activetab{{ end }}">
-                <a href="{{ .URL }}">
+                <a href="{{ .URL }}"{{ if $page.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>
                     {{- .Pre }}
                     <span>{{ .Name }}</span>
                 </a>
