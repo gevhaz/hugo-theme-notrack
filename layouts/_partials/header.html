@@ -1,7 +1,7 @@
 
 <header class="page-header">
     <div class="myname"> 
-        {{- /* The heading is a logo, a text or both. The text names the
+        {{- /* The site's name is a logo, a text or both. The text names the
                site in every case: without logoOnly it's shown, and the
                logo's alt text is empty so that screen readers don't read
                the name twice. With logoOnly and a logo, it's the logo's
@@ -9,10 +9,10 @@
         {{- $text := default (partial "author-name.html" .) site.Params.siteHeading -}}
         {{- $logo := site.Params.logo -}}
         {{- $showText := not (and $logo site.Params.logoOnly) }}
-        <h2><a href="{{ site.Home.RelPermalink }}">
+        <p><a href="{{ site.Home.RelPermalink }}">
             {{- with $logo }}<img src="{{ . | relURL }}" alt="{{ if not $showText }}{{ $text }}{{ end }}">{{ end -}}
             {{- if $showText }}<span>{{ $text }}</span>{{ end -}}
-        </a></h2>
+        </a></p>
     </div>
     <nav>
         <ul class="navbar">
