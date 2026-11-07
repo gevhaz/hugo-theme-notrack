@@ -23,17 +23,22 @@
             {{ end }}
         {{ end }}
 
+        {{- /* The posts' titles are under the site's name in the header,
+               which is the h1, or under the heading above them if there
+               is one. */ -}}
+        {{ $level := 2 }}
         {{ if and (or $headlessExists $contentExists) $showLatest }}
             <p class="delimiter">&diams; &diams; &diams;</p>
 
             {{ $blogLatest := site.Params.blogLatestHeading | default (i18n "latestBlogPosts" | default "Latest Blog Posts") }}
             <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
+            {{ $level = 3 }}
         {{ end }}
 
         {{ if $showLatest }}
             {{ with $blogPages }}
                 {{ range first (default 3 site.Params.nBlogLatest) . }}
-                    {{- partial "blog-entry-summary" . -}}
+                    {{- partial "blog-entry-summary" (dict "page" . "level" $level) -}}
                 {{ end }}
             {{ end }}
         {{ end }}

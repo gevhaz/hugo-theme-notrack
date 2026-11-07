@@ -1,5 +1,10 @@
+{{- /* Renders a summary of the post .page with its title as a heading of
+       level .level, e.g. (dict "page" . "level" 2) for an h2 under the
+       h1 of a list page. */ -}}
+{{- $level := .level -}}
+{{- with .page -}}
 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="{{ .Permalink }}">{{.Title}}</a></h3>
+    <h{{ $level }} class="blog-post-title"><a href="{{ .Permalink }}">{{.Title}}</a></h{{ $level }}>
 
     <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
     {{ partial "blog-taxonomy-info" . }}</p>
@@ -8,3 +13,4 @@
         <span> <a href="{{ .Permalink }}">{{ i18n "readMore" | default "Read more..." }}</a></span>
     </div>
 </article>
+{{- end -}}
