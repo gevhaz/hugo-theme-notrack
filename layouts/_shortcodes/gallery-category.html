@@ -1,4 +1,7 @@
 <ul class="gallery-category">
     {{ .Inner }}
-    <li class="gallery-photo"></li>
+    {{- /* An empty item that takes up the rest of the last row, so that
+           the photos in it don't stretch. It's hidden from screen readers,
+           which would otherwise count it as a photo. */}}
+    <li class="gallery-photo" aria-hidden="true"></li>
 </ul>
