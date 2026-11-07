@@ -49,7 +49,7 @@
         {{- end -}}
 
         {{- range $pages.Pages -}}
-            {{ partial "blog-entry-summary.html" . }}
+            {{ partial "blog-entry-summary.html" (dict "page" .) }}
         {{- end -}}
 
         {{ partial "pagination.html" . }}

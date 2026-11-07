@@ -1,5 +1,14 @@
+{{- /* Renders a summary of the post .page with its title as an h2, or as
+       an h3 if .underHeading is true, for a list that has a heading of its
+       own, e.g. (dict "page" . "underHeading" true). */ -}}
+{{- $underHeading := .underHeading -}}
+{{- with .page -}}
 <article class="blog-post-summary">
-    <h3 class="blog-post-title"><a href="{{ .Permalink }}">{{.Title}}</a></h3>
+    {{- if $underHeading }}
+    <h3 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    {{- else }}
+    <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{- end }}
 
     <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
     {{ partial "blog-taxonomy-info" . }}</p>
@@ -8,3 +17,4 @@
         <span> <a href="{{ .Permalink }}">{{ i18n "readMore" | default "Read more..." }}</a></span>
     </div>
 </article>
+{{- end -}}

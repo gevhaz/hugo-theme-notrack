@@ -23,17 +23,21 @@
             {{ end }}
         {{ end }}
 
+        {{- /* The posts' titles are h3 under the heading above them, or h2
+               like the parts of a headless home page if there is none. */ -}}
+        {{ $underHeading := false }}
         {{ if and (or $headlessExists $contentExists) $showLatest }}
             <hr class="delimiter">
 
             {{ $blogLatest := site.Params.blogLatestHeading | default (i18n "latestBlogPosts" | default "Latest Blog Posts") }}
             <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
+            {{ $underHeading = true }}
         {{ end }}
 
         {{ if $showLatest }}
             {{ with $blogPages }}
                 {{ range first (default 3 site.Params.nBlogLatest) . }}
-                    {{- partial "blog-entry-summary" . -}}
+                    {{- partial "blog-entry-summary" (dict "page" . "underHeading" $underHeading) -}}
                 {{ end }}
             {{ end }}
         {{ end }}
