@@ -6,6 +6,8 @@
 
 - `params.logo` shows a logo before the heading at the top of every page, or
   instead of it with `logoOnly`.
+- Text in the `_index.md` of the blog, the archive and the tags and categories
+  pages is shown above the list.
 
 ## [1.4.0] - 2026-11-07
 

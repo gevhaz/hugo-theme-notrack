@@ -2,6 +2,8 @@
 <main>
     <h1 class="page-title">{{ i18n "allTerms" . | default (printf "All %s" .Title) }}</h1>
 
+    {{ .Content }}
+
     <ul>
         {{ range .Data.Terms.Alphabetical }}
                 <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>

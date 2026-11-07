@@ -6,6 +6,8 @@
     <h1 class="page-title">{{ . }}</h1>
     {{- end }}
 
+    {{ .Content }}
+
     {{ with (where site.RegularPages "Type" "in" site.Params.mainSections) }}
         {{- $byyear := .GroupByDate "2006" -}}
 
