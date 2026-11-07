@@ -8,7 +8,8 @@ allTerms: "Alle {{ .Title }}"
 categoryTitle: "Kategorie: {{ .Title }}"
 tagTitle: "Schlagwort: {{ .Title }}"
 pageNotFound: "404: Seite nicht gefunden"
-# Not shown, but read out by screen readers for the buttons below lists of posts
+# Not shown, but read out by screen readers for the page links below lists of posts
+pagination: "Seiten"
 paginationFirst: "Erste Seite"
 paginationPrevious: "Vorherige Seite"
 paginationNext: "Nächste Seite"

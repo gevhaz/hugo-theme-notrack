@@ -332,7 +332,7 @@ figcaption {
 
 /* NAVBAR */
 
-nav {
+header nav {
     display: flex;
     justify-content: flex-end;
     flex-flow: row wrap;
@@ -341,12 +341,12 @@ nav {
     padding-left: 2em;
 }
 
-nav ul {
+header nav ul {
     list-style-type: none;
     margin: 0;
 }
 
-nav li {
+header nav li {
     background-color: inherit;
     float: left;
     cursor: pointer;
@@ -358,7 +358,7 @@ nav li {
     display: inline-block;
 }
 
-nav a {
+header nav a {
     color: var(--text-color);
     padding: .25em .63em;
     font-family: FreeSans, sans-serif;
@@ -366,7 +366,7 @@ nav a {
     display: block;
 }
 
-nav li:hover {
+header nav li:hover {
     border-color: var(--tab-border-color);
 }
 
