@@ -795,6 +795,23 @@ Every site has a `weight`, a `title` and an icon, and one of `prefix`,
   path of a profile on the server, e.g. `/@%v`. The value in
   `[params.social]` is then a full handle like `@user@example.org`.
 
+#### How to change the text size
+
+The default text size is quite large, and will stay that way so that existing
+sites don't change. You can make it smaller by creating
+`assets/css/userstyles.css` in your site and adding:
+
+```css
+:root {
+    --base-font-size: 1em;
+}
+```
+
+The default is `1.1em`. The size you set is roughly the size on phones, where
+body text is 1.1 times it. On wider screens it's larger: 1.2 to 1.3 times on
+laptops and up to 1.6 times on the widest screens. Headings and all other
+text scale with it.
+
 ## Acknowledgements and attributions
 
 The theme does not secretly download any resources from other websites or CDNs.
