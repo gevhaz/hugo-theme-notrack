@@ -22,14 +22,14 @@
         {{- errorf "notrack: params.social.%s must be a full handle with the server, like \"@user@example.org\", not %q" .website .user -}}
     {{- end -}}
     {{- $href := printf "https://%s%s" (index $handle 1) (printf .instance (index $handle 0)) -}}
-    <li><a href="{{ $href }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    <li><a href="{{ $href }}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
     {{- else if .prefix -}}
-    <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
     {{- else if .template -}}
     {{- /* safeURL keeps schemes like xmpp: that Go's templates would
            otherwise replace with #ZgotmplZ. */ -}}
-    <li><a href="{{- printf .template .user | safeURL -}}" rel="me"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    <li><a href="{{- printf .template .user | safeURL -}}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
     {{- else if .rss -}}
-    <li><a href="{{- partial "rss-url.html" . -}}"><i class="{{- .icon.class -}}"></i>{{ .title }}</a></li>
+    <li><a href="{{- partial "rss-url.html" . -}}"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
     {{- end -}}
 {{- end -}}
