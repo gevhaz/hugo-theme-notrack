@@ -486,6 +486,7 @@ hr.delimiter {
 /* BLOG */
 
 .blog-post-title {
+    margin-top: 1em;
     margin-bottom: 0.2em;
     padding-bottom: 0;
     font-size: 1.6em;
