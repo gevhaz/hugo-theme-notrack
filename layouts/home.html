@@ -24,7 +24,7 @@
         {{ end }}
 
         {{ if and (or $headlessExists $contentExists) $showLatest }}
-            <p class="delimiter">&diams; &diams; &diams;</p>
+            <hr class="delimiter">
 
             {{ $blogLatest := site.Params.blogLatestHeading | default (i18n "latestBlogPosts" | default "Latest Blog Posts") }}
             <h2 id="latest-blog-home">{{- $blogLatest -}}</h2>
