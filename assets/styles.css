@@ -621,13 +621,14 @@ em.taxonomy-emph {
         text-align: left;
         font-size: 0.8em;
         color: var(--very-light-text);
-        margin-left: 0.9rem;
+        /* The same indent as .resume-inner, in this smaller font */
+        margin-left: 0.85em;
     }
 
     & .resume-inner {
         line-height: 1;
         margin-top: 0.2em;
-        margin-left: 0.9rem;
+        margin-left: 0.68em;
     }
 
     & p, & ul, & ol, & li {
