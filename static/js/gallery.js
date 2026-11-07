@@ -6,8 +6,8 @@ var modalImg = document.getElementById("modal-img");
 var captionText = document.getElementById("caption");
 var loader = document.getElementById("loader");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// Get the button that closes the modal
+var closeButton = document.getElementsByClassName("close")[0];
 
 // Array of all images in gallery
 const imgs = [...document.querySelectorAll('.gallery-photo > img')];
@@ -51,10 +51,14 @@ const openModal = img => {
   // its "alt" text as a caption
   currentImage = img;
   modalImg.src = currentImage.src.replace("thumbnails", "fullsize");
+  modalImg.alt = img.alt;
   captionText.textContent = img.alt;
 
+  // showModal moves focus into the dialog and makes the rest of the page
+  // unreachable until it's closed
+  if (!modal.open) modal.showModal();
+
   // While loading, show loader and hide image and text
-  modal.style.display = 'block';
   loader.style.display = 'block';
   modalImg.style.display = 'none';
   captionText.style.display = 'none';
@@ -65,8 +69,11 @@ const openModal = img => {
   preloadModalImage(indices.prev);
 };
 
-const closeModal = () => {
-  modal.style.display = "none";
+// Closing the dialog returns focus to the button that opened it
+const closeModal = () => { modal.close(); };
+
+// The dialog also closes by itself on Escape
+modal.addEventListener('close', () => {
   modalImg.src = "";
 
   // Image get selected upon closing on mobile so deselect
@@ -76,10 +83,10 @@ const closeModal = () => {
   if (document.selection) {
     document.selection.empty();
   }
-};
+});
 
 const changeModalImage = direction => {
-  if (modal.style.display == "block") {
+  if (modal.open) {
     const indices = getSurroundingIndices(currentImage);
     switch (direction) {
       case 'ArrowRight':
@@ -95,8 +102,8 @@ const changeModalImage = direction => {
 
 // CLOSING MODAL
 
-// When <span> (x) is clicked, close the modal
-span.onclick = function() {
+// When the button (x) is clicked, close the modal
+closeButton.onclick = function() {
   closeModal();
 };
 

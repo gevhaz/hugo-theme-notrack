@@ -14,3 +14,6 @@ paginationFirst: "Erste Seite"
 paginationPrevious: "Vorherige Seite"
 paginationNext: "Nächste Seite"
 paginationLast: "Letzte Seite"
+# Not shown, but read out by screen readers for the button that closes a
+# gallery image
+close: "Schließen"

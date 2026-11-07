@@ -839,10 +839,13 @@ cite {
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 5vh; /* Location of the box */
+    padding: 5vh 0 0 0; /* Location of the box */
+    margin: 0;
+    border: none;
+    max-width: none;
+    max-height: none;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -850,6 +853,9 @@ cite {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+    /* The modal covers the page itself */
+    &::backdrop { background: none; }
 }
 
 /* Modal Content (image) */
@@ -929,6 +935,11 @@ cite {
 
 /* The Close Button */
 .close {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    line-height: inherit;
     position: absolute;
     top: 2vh;
     right: 3vh;
@@ -938,7 +949,7 @@ cite {
     transition: 0.3s;
 }
 
-.close:hover, .close:focus {
+.close:hover, .close:focus-visible {
     color: var(--close-hover-gray);
     text-decoration: none;
     cursor: pointer;
