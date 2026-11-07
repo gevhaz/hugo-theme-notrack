@@ -464,9 +464,21 @@ nav li:hover {
     font-size: 2em;
 }
 
-.delimiter {
+/* A thematic break shown as three diamonds */
+hr.delimiter {
     font-size: 2em;
     text-align: center;
+    color: var(--text-color);
+    border: none;
+    margin: 1em 0;
+    overflow: visible;
+
+    /* The second, with empty alternative text, is for browsers that
+       support it, so that screen readers don't read out the diamonds. */
+    &::before {
+        content: "\2666  \2666  \2666";
+        content: "\2666  \2666  \2666" / "";
+    }
 }
 
 /* BLOG */
