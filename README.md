@@ -4,6 +4,11 @@ Notrack is an original, minimal theme with a focus on self-sufficiency and
 decentralization. By default, Notrack does not rely on any third parties to
 serve your website.
 
+Notrack also tries to be accessible. Each part of a page is marked up with the
+HTML element that says what it is, so that screen readers can describe the page
+and everything can be used with the keyboard. If something doesn't work for
+you, please open an issue.
+
 The README is long. You can use the automatic table of contents in GitHub to
 navigate (upper right corner of rendered README).
 
