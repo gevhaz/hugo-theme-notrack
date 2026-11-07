@@ -6,6 +6,7 @@ pagination.pagerSize = 4  # Posts per page, e.g. in the blog
 
 [params]
 siteHeading = "Hugo Grotius" # defaults to author
+logo = "hugo_grotius.png" # Shown before the site heading
 favicon = "hugo_grotius.png" # The small icon shown in browser tabs
 showTaxonomyLinks = false  # Show e.g. a "Category" button at top of blog page
 
