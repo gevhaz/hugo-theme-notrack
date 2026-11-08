@@ -146,11 +146,11 @@ jobs:
           for pr in pr-*.png; do
             master=master-${pr#pr-}
             echo "Equalize height of screenshots $pr and $master..."
-            HEIGHT_PR=$(identify-im6.q16 -format "%h" "$pr")
-            HEIGHT_MASTER=$(identify-im6.q16 -format "%h" "$master")
+            HEIGHT_PR=$(identify -format "%h" "$pr")
+            HEIGHT_MASTER=$(identify -format "%h" "$master")
             MAX_HEIGHT=$((HEIGHT_PR > HEIGHT_MASTER ? HEIGHT_PR : HEIGHT_MASTER))
-            convert-im6.q16 "$pr" -background white -extent x${MAX_HEIGHT} "$pr"
-            convert-im6.q16 "$master" -background white -extent x${MAX_HEIGHT} "$master"
+            convert "$pr" -background white -extent x${MAX_HEIGHT} "$pr"
+            convert "$master" -background white -extent x${MAX_HEIGHT} "$master"
           done
       - name: Compare screenshots
         id: diff
