@@ -1,0 +1,13 @@
+{{- /* Renders the icon assets/icons/<name>.svg as an <svg> element in the
+       page, as high as the text around it and in the same color, and hidden
+       from screen readers. The context is the name, e.g.
+       {{ partial "icon.html" "github" }}
+
+       Fails the build if there is no such file. */ -}}
+{{- with resources.Get (printf "icons/%s.svg" .) -}}
+    {{- /* Without the line break that a file may end with, which would be
+           a space between the icon and what follows it */ -}}
+    {{- replace (strings.TrimSpace .Content) "<svg " `<svg class="icon" aria-hidden="true" ` 1 | safeHTML -}}
+{{- else -}}
+    {{- errorf "notrack: there is no icon %q. It would be the file assets/icons/%s.svg in the theme or in your site." . . -}}
+{{- end -}}

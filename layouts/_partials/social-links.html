@@ -13,6 +13,13 @@
     {{- end -}}
 {{- end -}}
 {{- range sort $socialArray "weight" -}}
+    {{- /* The icon used to be Font Awesome classes in icon.class */ -}}
+    {{- $icon := "" -}}
+    {{- if reflect.IsMap .icon -}}
+        {{- errorf "notrack: the icon of %s in data/notrack/social.yaml has to be the name of a file in assets/icons, e.g. \"icon: github\", instead of icon.class. See \"How to change or add social sites\" in the README." .website -}}
+    {{- else -}}
+        {{- $icon = partial "icon.html" .icon -}}
+    {{- end -}}
     {{- if .instance -}}
     {{- /* The user is on a server of their choice, given as a handle
            like @user@example.org, and instance is the path of the
@@ -22,14 +29,14 @@
         {{- errorf "notrack: params.social.%s must be a full handle with the server, like \"@user@example.org\", not %q" .website .user -}}
     {{- end -}}
     {{- $href := printf "https://%s%s" (index $handle 1) (printf .instance (index $handle 0)) -}}
-    <li><a href="{{ $href }}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
+    <li><a href="{{ $href }}" rel="me">{{ $icon }}{{ .title }}</a></li>
     {{- else if .prefix -}}
-    <li><a href="{{- .prefix -}}{{ .user }}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
+    <li><a href="{{- .prefix -}}{{ .user }}" rel="me">{{ $icon }}{{ .title }}</a></li>
     {{- else if .template -}}
     {{- /* safeURL keeps schemes like xmpp: that Go's templates would
            otherwise replace with #ZgotmplZ. */ -}}
-    <li><a href="{{- printf .template .user | safeURL -}}" rel="me"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
+    <li><a href="{{- printf .template .user | safeURL -}}" rel="me">{{ $icon }}{{ .title }}</a></li>
     {{- else if .rss -}}
-    <li><a href="{{- partial "rss-url.html" . -}}"><i class="{{- .icon.class -}}" aria-hidden="true"></i>{{ .title }}</a></li>
+    <li><a href="{{- partial "rss-url.html" . -}}">{{ $icon }}{{ .title }}</a></li>
     {{- end -}}
 {{- end -}}
