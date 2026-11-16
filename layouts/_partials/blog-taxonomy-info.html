@@ -1,6 +1,7 @@
 {{- /* Renders the page's categories and tags as links to their pages,
        sorted by name, e.g. "Tags: css, html". A taxonomy the site doesn't
-       have is left out. */ -}}
+       have is left out. The links have the class p-category, which makes
+       them categories of the h-entry microformat that they are in. */ -}}
 
 {{- /* .GetTerms gives the pages of the page's categories or tags, e.g.
        /tags/css/ for the tag "css". On such a page, .Data.Term is the
@@ -10,7 +11,7 @@
         {{ range $position, $category := sort . ".Data.Term" }}
             {{- /* A comma before every link but the first */ -}}
             {{- if gt $position 0 }}, {{ end -}}
-            <a class="blog-taxonomy-info" href="{{ $category.RelPermalink }}">{{ $category.Data.Term }}</a>
+            <a class="blog-taxonomy-info p-category" href="{{ $category.RelPermalink }}">{{ $category.Data.Term }}</a>
         {{- end }}
     </span>
 {{ end }}
@@ -19,7 +20,7 @@
     <span class="blog-taxonomy-info"> &nbsp; | &nbsp; {{ i18n "tags" | default "Tags:" }}
         {{ range $position, $tag := sort . ".Data.Term" }}
             {{- if gt $position 0 }}, {{ end -}}
-            <a class="blog-taxonomy-info" href="{{ $tag.RelPermalink }}">{{ $tag.Data.Term }}</a>
+            <a class="blog-taxonomy-info p-category" href="{{ $tag.RelPermalink }}">{{ $tag.Data.Term }}</a>
         {{- end }}
     </span>
 {{ end }}

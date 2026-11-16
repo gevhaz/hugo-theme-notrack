@@ -5,14 +5,22 @@
                site in every case: without logoOnly it's shown, and the
                logo's alt text is empty so that screen readers don't read
                the name twice. With logoOnly and a logo, it's the logo's
-               alt text instead. */ -}}
-        {{- $text := default (partial "author-name.html" .) site.Params.siteHeading -}}
+               alt text instead.
+
+               With an author, the name is also the author's h-card, a
+               microformat that tells programs whose site this is: the link
+               gives the home page as the author's address, the logo is the
+               author's picture and, since the text can be something else
+               than the author's name, the name is in an element without
+               text. */ -}}
+        {{- $author := partial "author-name.html" . -}}
+        {{- $text := default $author site.Params.siteHeading -}}
         {{- $logo := site.Params.logo -}}
         {{- $showText := not (and $logo site.Params.logoOnly) }}
-        <p><a href="{{ site.Home.RelPermalink }}">
-            {{- with $logo }}<img src="{{ . | relURL }}" alt="{{ if not $showText }}{{ $text }}{{ end }}">{{ end -}}
+        <p{{ if $author }} class="h-card"{{ end }}><a class="u-url u-uid" href="{{ site.Home.RelPermalink }}">
+            {{- with $logo }}<img class="u-logo u-photo" src="{{ . | relURL }}" alt="{{ if not $showText }}{{ $text }}{{ end }}">{{ end -}}
             {{- if $showText }}<span>{{ $text }}</span>{{ end -}}
-        </a></p>
+        </a>{{ with $author }}<data class="p-name" value="{{ . }}"></data>{{ end }}</p>
     </div>
     <nav>
         <ul class="navbar">

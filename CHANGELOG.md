@@ -11,6 +11,9 @@
 - The theme's fonts cover Latin beyond Western European languages, Greek,
   Cyrillic, Armenian, Georgian, Hebrew and Thai. A page downloads only the
   parts it uses. See "Fonts" in the README.
+- Posts, lists of posts and the author of the site are marked up with
+  microformats, for the tools of the IndieWeb that read pages directly, e.g.
+  feed readers.
 
 ### Breaking
 

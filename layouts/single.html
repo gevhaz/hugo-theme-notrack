@@ -1,18 +1,26 @@
 {{ define "main" }}
     <main>
-        <article>
-            {{ if in site.Params.mainSections .Type }}
-            <h1 class="page-title blog">{{ .Title }}</h1>
+        {{- /* A post is marked up as an h-entry microformat: the classes
+               that start with "p-", "dt-", "e-" and "u-" say what its
+               parts are, for programs that read the page. */}}
+        {{ $isPost := in site.Params.mainSections .Type }}
+        <article{{ if $isPost }} class="h-entry"{{ end }}>
+            {{ if $isPost }}
+            <h1 class="page-title blog p-name">{{ .Title }}</h1>
             {{ else }}
             <h1 class="page-title">{{ .Title }}</h1>
             {{ end }}
 
             {{- /* Show post information if it's a post, otherwise just the content */ -}}
-            {{ if in site.Params.mainSections .Type }}
-                <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
+            {{ if $isPost }}
+                {{- /* The post's address and author aren't shown, so
+                       they are in elements without text. */}}
+                <data class="u-url" value="{{ .Permalink }}"></data>
+                {{- partial "post-author.html" . }}
+                <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time class="dt-published" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
                 {{ partial "blog-taxonomy-info" . }}</p>
 
-                <div class="blog-post-content">
+                <div class="blog-post-content e-content">
                 {{ .Content }}
                 </div>
             {{ else }}

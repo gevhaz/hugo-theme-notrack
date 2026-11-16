@@ -17,6 +17,7 @@ Gopherfest
 GraphicsMagick
 Helvetica
 Hollandish
+IndieWeb
 Lemmy
 LoveIt
 Misskey
@@ -51,6 +52,7 @@ ipsum
 kbd
 localhost
 lorem
+microformats
 monospace
 pensionary
 pixelated

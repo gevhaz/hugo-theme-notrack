@@ -1,0 +1,7 @@
+{{- /* Renders params.author as the author of the post it's placed in, in
+       the h-card microformat, with the home page as the author's address.
+       It's for programs that read the page and shows nothing. Renders
+       nothing if the site has no author. */ -}}
+{{- with partial "author-name.html" . -}}
+<span class="p-author h-card"><data class="p-name" value="{{ . }}"></data><data class="u-url" value="{{ site.Home.Permalink }}"></data></span>
+{{- end -}}
