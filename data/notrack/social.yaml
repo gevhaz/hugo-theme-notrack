@@ -3,693 +3,606 @@ github:
   weight: 1
   prefix: https://github.com/
   title: GitHub
-  icon:
-    class: fab fa-github-alt
+  icon: github-alt
 
 # 002: LinkedIn
 linkedin:
   weight: 2
   prefix: https://linkedin.com/in/
   title: LinkedIn
-  icon:
-    class: fab fa-linkedin
+  icon: linkedin
 
 # 003: X, formerly Twitter
 twitter:
   weight: 3
   prefix: https://x.com/
   title: X
-  icon:
-    class: fab fa-x-twitter
+  icon: x-twitter
 
 # 004: Instagram
 instagram:
   weight: 4
   prefix: https://www.instagram.com/
   title: Instagram
-  icon:
-    class: fab fa-instagram
+  icon: instagram
 
 # 005: facebook
 facebook:
   weight: 5
   prefix: https://facebook.com/
   title: Facebook
-  icon:
-    class: fab fa-facebook
+  icon: facebook
 
 # 006: Telegram
 telegram:
   weight: 6
   prefix: https://t.me/
   title: Telegram
-  icon:
-    class: fab fa-telegram-plane
+  icon: telegram-plane
 
 # 007: Medium
 medium:
   weight: 7
   prefix: https://medium.com/
   title: Medium
-  icon:
-    class: fab fa-medium
+  icon: medium
 
 # 008: GitLab
 gitlab:
   weight: 8
   prefix: https://gitlab.com/
   title: GitLab
-  icon:
-    class: fab fa-gitlab
+  icon: gitlab
 
 # 009: YouTube handle
 youtube:
   weight: 9
   prefix: https://www.youtube.com/@
   title: YouTube
-  icon:
-    class: fab fa-youtube
+  icon: youtube
 
 # 011: YouTube Channel
 youtubechannel:
   weight: 11
   prefix: https://www.youtube.com/channel/
   title: YouTube
-  icon:
-    class: fab fa-youtube
+  icon: youtube
 
 # 012: Tumblr
 tumblr:
   weight: 12
   template: https://%v.tumblr.com/
   title: Tumblr
-  icon:
-    class: fab fa-tumblr
+  icon: tumblr
 
 # 013: Quora
 quora:
   weight: 13
   prefix: https://www.quora.com/profile/
   title: Quora
-  icon:
-    class: fab fa-quora
+  icon: quora
 
 # 014: Keybase
 keybase:
   weight: 14
   prefix: https://keybase.io/
   title: Keybase
-  icon:
-    class: fab fa-keybase
+  icon: keybase
 
 # 015: Pinterest
 pinterest:
   weight: 15
   prefix: https://www.pinterest.com/
   title: Pinterest
-  icon:
-    class: fab fa-pinterest
+  icon: pinterest
 
 # 016: Reddit
 reddit:
   weight: 16
   prefix: https://www.reddit.com/user/
   title: Reddit
-  icon:
-    class: fab fa-reddit
+  icon: reddit
 
 # 017: CodePen
 codepen:
   weight: 17
   prefix: https://codepen.io/
   title: CodePen
-  icon:
-    class: fab fa-codepen
+  icon: codepen
 
 # 018: freeCodeCamp
 freecodecamp:
   weight: 18
   prefix: https://freecodecamp.org/
   title: freeCodeCamp
-  icon:
-    class: fab fa-free-code-camp
+  icon: free-code-camp
 
 # 019: Bitbucket
 bitbucket:
   weight: 19
   prefix: https://bitbucket.org/
   title: Bitbucket
-  icon:
-    class: fab fa-bitbucket
+  icon: bitbucket
 
 # 020: Stack Overflow
 stackoverflow:
   weight: 20
   prefix: https://stackoverflow.com/users/
   title: Stack Overflow
-  icon:
-    class: fab fa-stack-overflow
+  icon: stack-overflow
 
 # 021: 微博
 weibo:
   weight: 21
   prefix: https://weibo.com/
   title: 微博
-  icon:
-    class: fab fa-weibo
+  icon: weibo
 
 # 022: OK.RU
 odnoklassniki:
   weight: 22
   prefix: https://ok.ru/
   title: OK.RU
-  icon:
-    class: fab fa-odnoklassniki
+  icon: odnoklassniki
 
 # 023: VK
 vk:
   weight: 23
   prefix: https://vk.com/
   title: VK
-  icon:
-    class: fab fa-vk
+  icon: vk
 
 # 024: Flickr
 flickr:
   weight: 24
   prefix: https://www.flickr.com/photos/
   title: Flickr
-  icon:
-    class: fab fa-flickr
+  icon: flickr
 
 # 025: Xing
 xing:
   weight: 25
   prefix: https://www.xing.com/profile/
   title: Xing
-  icon:
-    class: fab fa-xing
+  icon: xing
 
 # 026: Snapchat
 snapchat:
   weight: 26
   prefix: https://www.snapchat.com/add/
   title: Snapchat
-  icon:
-    class: fab fa-snapchat
+  icon: snapchat
 
 # 027: SoundCloud
 soundcloud:
   weight: 27
   prefix: https://soundcloud.com/
   title: SoundCloud
-  icon:
-    class: fab fa-soundcloud
+  icon: soundcloud
 
 # 028: Spotify
 spotify:
   weight: 28
   prefix: https://open.spotify.com/user/
   title: Spotify
-  icon:
-    class: fab fa-spotify
+  icon: spotify
 
 # 029: Bandcamp
 bandcamp:
   weight: 29
   template: https://%v.bandcamp.com/
   title: Bandcamp
-  icon:
-    class: fab fa-bandcamp
+  icon: bandcamp
 
 # 030: PayPal
 paypal:
   weight: 30
   prefix: https://paypal.me/
   title: PayPal
-  icon:
-    class: fab fa-paypal
+  icon: paypal
 
 # 031: 500px
 fivehundredpx:
   weight: 31
   prefix: https://500px.com/
   title: 500px
-  icon:
-    class: fab fa-500px
+  icon: 500px
 
 # 032: Mix
 mix:
   weight: 32
   prefix: https://mix.com/
   title: Mix
-  icon:
-    class: fab fa-mix
+  icon: mix
 
 # 033: Goodreads
 goodreads:
   weight: 33
   prefix: https://www.goodreads.com/user/show/
   title: Goodreads
-  icon:
-    class: fab fa-goodreads
+  icon: goodreads
 
 # 034: Last.fm
 lastfm:
   weight: 34
   prefix: https://www.last.fm/user/
   title: Last.fm
-  icon:
-    class: fab fa-lastfm
+  icon: lastfm
 
 # 036: Hacker News
 hackernews:
   weight: 36
   template: https://news.ycombinator.com/user?id=%v
   title: Hacker News
-  icon:
-    class: fab fa-hacker-news
+  icon: hacker-news
 
 # 037: Kickstarter
 kickstarter:
   weight: 37
   prefix: https://kickstarter.com/profile/
   title: Kickstarter
-  icon:
-    class: fab fa-kickstarter
+  icon: kickstarter
 
 # 038: Patreon
 patreon:
   weight: 38
   prefix: https://patreon.com/
   title: Patreon
-  icon:
-    class: fab fa-patreon
+  icon: patreon
 
 # 039: Steam
 steam:
   weight: 39
   prefix: https://steamcommunity.com/id/
   title: Steam
-  icon:
-    class: fab fa-steam
+  icon: steam
 
 # 040: Twitch
 twitch:
   weight: 40
   prefix: https://www.twitch.tv/
   title: Twitch
-  icon:
-    class: fab fa-twitch
+  icon: twitch
 
 # 041: Strava
 strava:
   weight: 41
   prefix: https://www.strava.com/athletes/
   title: Strava
-  icon:
-    class: fab fa-strava
+  icon: strava
 
 # 043: WhatsApp
 whatsapp:
   weight: 43
   prefix: https://wa.me/
   title: WhatsApp
-  icon:
-    class: fab fa-whatsapp
+  icon: whatsapp
 
 # 044: 知乎
 zhihu:
   weight: 44
   prefix: https://www.zhihu.com/people/
   title: 知乎
-  icon:
-    class: fab fa-zhihu
+  icon: zhihu
 
 # 045: 豆瓣
 douban:
   weight: 45
   prefix: https://www.douban.com/people/
   title: 豆瓣
-  icon:
-    class: fas fa-film
+  icon: film
 
 # 046: Wellfound, formerly AngelList Talent
 angellist:
   weight: 46
   prefix: https://wellfound.com/u/
   title: Wellfound
-  icon:
-    class: fas fa-briefcase
+  icon: briefcase
 
 # 047: SlideShare
 slideshare:
   weight: 47
   prefix: https://www.slideshare.net/
   title: SlideShare
-  icon:
-    class: fab fa-slideshare
+  icon: slideshare
 
 # 048: JSFiddle
 jsfiddle:
   weight: 48
   prefix: https://jsfiddle.net/user/
   title: JSFiddle
-  icon:
-    class: fab fa-jsfiddle
+  icon: jsfiddle
 
 # 049: DeviantArt
 deviantart:
   weight: 49
   template: https://%v.deviantart.com/
   title: DeviantArt
-  icon:
-    class: fab fa-deviantart
+  icon: deviantart
 
 # 050: Behance
 behance:
   weight: 50
   prefix: https://behance.net/
   title: Behance
-  icon:
-    class: fab fa-behance
+  icon: behance
 
 # 051: Dribbble
 dribbble:
   weight: 51
   prefix: https://dribbble.com/
   title: Dribbble
-  icon:
-    class: fab fa-dribbble
+  icon: dribbble
 
 # 052: WordPress
 wordpress:
   weight: 52
   template: https://%v.wordpress.com/
   title: WordPress
-  icon:
-    class: fab fa-wordpress
+  icon: wordpress
 
 # 054: Google Scholar
 googlescholar:
   weight: 54
   prefix: https://scholar.google.com/citations?user=
   title: Google Scholar
-  icon:
-    class: fab fa-google-scholar
+  icon: google-scholar
 
 # 055: ResearchGate
 researchgate:
   weight: 55
   prefix: https://www.researchgate.net/profile/
   title: ResearchGate
-  icon:
-    class: fab fa-researchgate
+  icon: researchgate
 
 # 056: Mastodon
 mastodon:
   weight: 56
   instance: /@%v
   title: Mastodon
-  icon:
-    class: fab fa-mastodon
+  icon: mastodon
 
 # 057: Thingiverse
 thingiverse:
   weight: 57
   prefix: https://www.thingiverse.com/
   title: Thingiverse
-  icon:
-    class: fas fa-cube
+  icon: cube
 
 # 058: Dev.To
 devto:
   weight: 58
   prefix: https://dev.to/
   title: Dev.To
-  icon:
-    class: fab fa-dev
+  icon: dev
 
 # 059: Gitea
 gitea:
   weight: 59
   instance: /%v
   title: Gitea
-  icon:
-    class: fab fa-git-alt
+  icon: git-alt
 
 # 060: XMPP
 xmpp:
   weight: 60
   template: xmpp:%v
   title: XMPP
-  icon:
-    class: fab fa-xmpp
+  icon: xmpp
 
 # 061: Matrix
 matrix:
   weight: 61
   prefix: https://matrix.to/#/
   title: Matrix
-  icon:
-    class: fab fa-matrix
+  icon: matrix
 
 # 062: bilibili
 bilibili:
   weight: 62
   prefix: https://space.bilibili.com/
   title: bilibili
-  icon:
-    class: fab fa-bilibili
+  icon: bilibili
 
 # 063: Email
 email:
   weight: 63
   template: mailto:%v
   title: Email
-  icon:
-    class: fas fa-envelope
+  icon: envelope
 
 # 064: RSS
 rss:
   weight: 64
   rss: true
   title: RSS
-  icon:
-    class: fas fa-rss
+  icon: rss
 
 # 065: ORCID
 orcid:
   weight: 65
   prefix: https://orcid.org/
   title: ORCID
-  icon:
-    class: fab fa-orcid
+  icon: orcid
 
 # 066: Pixelfed
 pixelfed:
   weight: 66
   instance: /%v
   title: Pixelfed
-  icon:
-    class: fab fa-pixelfed
+  icon: pixelfed
 
 # 067: PeerTube
 peertube:
   weight: 67
   instance: /a/%v
   title: PeerTube
-  icon:
-    class: fab fa-fediverse
+  icon: fediverse
 
 # 068: Lemmy
 lemmy:
   weight: 68
   instance: /u/%v
   title: Lemmy
-  icon:
-    class: fab fa-fediverse
+  icon: fediverse
 
 # 069: Other fediverse servers with profiles at /@user, e.g. Misskey
 fediverse:
   weight: 69
   instance: /@%v
   title: Fediverse
-  icon:
-    class: fab fa-fediverse
+  icon: fediverse
 
 # 070: Bluesky
 bluesky:
   weight: 70
   prefix: https://bsky.app/profile/
   title: Bluesky
-  icon:
-    class: fab fa-bluesky
+  icon: bluesky
 
 # 071: Threads
 threads:
   weight: 71
   prefix: https://www.threads.com/@
   title: Threads
-  icon:
-    class: fab fa-threads
+  icon: threads
 
 # 072: Codeberg
 codeberg:
   weight: 72
   prefix: https://codeberg.org/
   title: Codeberg
-  icon:
-    class: fab fa-codeberg
+  icon: codeberg
 
 # 073: Forgejo
 forgejo:
   weight: 73
   instance: /%v
   title: Forgejo
-  icon:
-    class: fab fa-forgejo
+  icon: forgejo
 
 # 074: npm
 npm:
   weight: 74
   prefix: https://www.npmjs.com/~
   title: npm
-  icon:
-    class: fab fa-npm
+  icon: npm
 
 # 075: PyPI
 pypi:
   weight: 75
   prefix: https://pypi.org/user/
   title: PyPI
-  icon:
-    class: fab fa-python
+  icon: python
 
 # 076: Docker Hub
 dockerhub:
   weight: 76
   prefix: https://hub.docker.com/u/
   title: Docker Hub
-  icon:
-    class: fab fa-docker
+  icon: docker
 
 # 077: LeetCode
 leetcode:
   weight: 77
   prefix: https://leetcode.com/u/
   title: LeetCode
-  icon:
-    class: fab fa-leetcode
+  icon: leetcode
 
 # 078: StoryGraph
 storygraph:
   weight: 78
   prefix: https://app.thestorygraph.com/profile/
   title: StoryGraph
-  icon:
-    class: fas fa-book-open
+  icon: book-open
 
 # 079: Letterboxd
 letterboxd:
   weight: 79
   prefix: https://letterboxd.com/
   title: Letterboxd
-  icon:
-    class: fab fa-letterboxd
+  icon: letterboxd
 
 # 081: TikTok
 tiktok:
   weight: 81
   prefix: https://www.tiktok.com/@
   title: TikTok
-  icon:
-    class: fab fa-tiktok
+  icon: tiktok
 
 # 082: Vimeo
 vimeo:
   weight: 82
   prefix: https://vimeo.com/
   title: Vimeo
-  icon:
-    class: fab fa-vimeo-v
+  icon: vimeo-v
 
 # 083: Unsplash
 unsplash:
   weight: 83
   prefix: https://unsplash.com/@
   title: Unsplash
-  icon:
-    class: fab fa-unsplash
+  icon: unsplash
 
 # 084: Mixcloud
 mixcloud:
   weight: 84
   prefix: https://www.mixcloud.com/
   title: Mixcloud
-  icon:
-    class: fab fa-mixcloud
+  icon: mixcloud
 
 # 085: Substack
 substack:
   weight: 85
   template: https://%v.substack.com/
   title: Substack
-  icon:
-    class: fab fa-substack
+  icon: substack
 
 # 086: itch.io
 itchio:
   weight: 86
   template: https://%v.itch.io/
   title: itch.io
-  icon:
-    class: fab fa-itch-io
+  icon: itch-io
 
 # 087: Ko-fi
 kofi:
   weight: 87
   prefix: https://ko-fi.com/
   title: Ko-fi
-  icon:
-    class: fab fa-ko-fi
+  icon: ko-fi
 
 # 088: OpenStreetMap
 openstreetmap:
   weight: 88
   prefix: https://www.openstreetmap.org/user/
   title: OpenStreetMap
-  icon:
-    class: fab fa-openstreetmap
+  icon: openstreetmap
 
 # 089: arXiv
 arxiv:
   weight: 89
   prefix: https://arxiv.org/a/
   title: arXiv
-  icon:
-    class: fas fa-file-lines
+  icon: file-lines
 
 # 090: Semantic Scholar
 semanticscholar:
   weight: 90
   prefix: https://www.semanticscholar.org/author/
   title: Semantic Scholar
-  icon:
-    class: fas fa-magnifying-glass
+  icon: magnifying-glass
 
 # 091: Hugging Face
 huggingface:
   weight: 91
   prefix: https://huggingface.co/
   title: Hugging Face
-  icon:
-    class: fab fa-hugging-face
+  icon: hugging-face
 
 # 092: Kaggle
 kaggle:
   weight: 92
   prefix: https://www.kaggle.com/
   title: Kaggle
-  icon:
-    class: fab fa-kaggle
+  icon: kaggle

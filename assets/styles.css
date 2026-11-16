@@ -622,6 +622,16 @@ em.taxonomy-emph {
 
 /* CONTACT */
 
+/* An icon from assets/icons, as high as the text it's in. Every icon gets
+   the same width, that of the widest ones, and is centered in it, so that
+   the texts after icons in a column line up. */
+.icon {
+    height: 1em;
+    width: 1.25em;
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
 #contactinformation {
     display: flex;
     flex-direction: row;
@@ -650,7 +660,7 @@ em.taxonomy-emph {
                 font-size: 1em;
                 font-family: FreeSans, sans-serif;
 
-                & i {
+                & .icon {
                     font-size: 2em;
                     vertical-align: middle;
                 }
@@ -678,7 +688,7 @@ em.taxonomy-emph {
         margin: auto;
     }
 
-    & i {
+    & .icon {
         padding-right: 0.3em;
     }
 

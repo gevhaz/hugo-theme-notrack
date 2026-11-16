@@ -794,15 +794,13 @@ github:
   weight: 1
   prefix: https://github.com/
   title: GitHub
-  icon:
-    class: fa-brands fa-github
+  icon: github
 
 chess:
   weight: 100
   prefix: https://www.chess.com/member/
   title: Chess.com
-  icon:
-    class: fa-solid fa-chess-knight
+  icon: chess-knight
 ```
 
 Then use the new key in your configuration as usual:
@@ -820,12 +818,13 @@ Every site has a `weight`, a `title` and an icon, and one of `prefix`,
 
 - `weight`: The position among the links, where lower comes first.
 - `title`: The text of the link.
-- `icon.class`: The classes of an icon from Font Awesome Free 7, which comes
-  with the theme. Search for an icon on the [Font Awesome
-  website](https://fontawesome.com/icons), limited to free icons, and copy the
-  classes from the code it shows, e.g. `fa-solid fa-chess-knight`.
-  `fas` and `fab`, as in the theme's file, are short for `fa-solid` and
-  `fa-brands`.
+- `icon`: The name of an SVG file in `assets/icons`, without `.svg`. The theme
+  has the icons of its own sites there. For any other icon, as for both sites
+  in the example, put the file in `assets/icons` in your site, e.g.
+  `assets/icons/chess-knight.svg`. You can download the free icons on the
+  [Font Awesome website](https://fontawesome.com/icons) as SVG files, but any
+  SVG file works. The icon is written into the page, as high as the text next
+  to it and, unless the file sets a color, in the color of that text.
 - `prefix`: The start of the link, which your value from `[params.social]` is
   added to.
 - `template`: The link with `%v` where your value goes, for when it goes in
@@ -868,11 +867,12 @@ The monospace font under `static/fonts`, used for code in the theme, is
 [Mononoki](https://github.com/madmalik/mononoki). It is licensed under SIL OFL
 1.1 ([https://scripts.sil.org/OFL](https://scripts.sil.org/OFL)).
 
-The icons used for the `contact-box` and `social` shortcodes are from [Font
-Awesome](https://github.com/FortAwesome/Font-Awesome) project. The icons are
-licensed under CC BY 4.0, the fonts under SIL OFL 1.1 and the code under the MIT
-license, as described in `static/fontawesome/LICENSE.txt`. A HTML comment is
-included in the contact-box shortcode to show the license and source.
+The icons under `assets/icons`, used for the `contact-box` and `social`
+shortcodes, are from the [Font
+Awesome](https://github.com/FortAwesome/Font-Awesome) project. They are
+licensed under CC BY 4.0, as described in `assets/icons/LICENSE.txt`. Each
+file has a comment with the license and source, which is written into your
+pages together with the icon.
 
 For matching the icons from Font Awesome with names for various social
 networking services, I use the

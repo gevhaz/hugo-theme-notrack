@@ -17,6 +17,12 @@
 - The font files under `static/fonts` are replaced by smaller ones with other
   names, e.g. `FreeSerif-latin.woff2`. A site whose own CSS refers to one of
   the old files has to host a copy of it.
+- The icons of the social links are SVG files that are written into the
+  page, and the Font Awesome stylesheet and fonts are no longer part of the
+  theme. In your own `data/notrack/social.yaml`, `icon.class` is replaced by
+  `icon`, the name of a file in `assets/icons`. See "How to change or add
+  social sites" in the README. Font Awesome classes in your own content,
+  e.g. `<i class="fa-solid fa-house">`, no longer show an icon.
 
 ## [1.4.0] - 2026-11-07
 
