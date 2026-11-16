@@ -1,6 +1,9 @@
 
 <head>
     <meta charset="UTF-8">
+    {{- /* Before everything that loads something, since the policy applies
+           only to what comes after it */ -}}
+    {{- partial "content-security-policy.html" . }}
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
     <link rel="preload" href="{{ "fonts/FreeSerif-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="{{ "fontawesome/css/all.min.css" | relURL }}">

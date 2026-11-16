@@ -2,7 +2,8 @@
 
 Notrack is an original, minimal theme with a focus on self-sufficiency and
 decentralization. By default, Notrack does not rely on any third parties to
-serve your website.
+serve your website, and your visitors' browsers [load nothing from other
+sites](#how-to-load-content-from-other-sites) unless you allow it.
 
 Notrack also tries to be accessible. Each part of a page is marked up with the
 HTML element that says what it is, so that screen readers can describe the page
@@ -725,6 +726,41 @@ footer = """\
 
 This will add a HTML <footer> element with a <span> element with your text in
 it.
+
+#### How to load content from other sites
+
+A page of your site can only load what the site itself serves. If a page tries
+to load something from another site, for example an image that you link to
+where it is or a video player from a video site, the browser refuses, so the
+other site never learns of your visitor. Links to other sites work as usual,
+since nothing is loaded until the visitor follows one.
+
+The theme does this with a [Content Security
+Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP) in every
+page. To let a page load something from another site, add the site to the
+front matter of the page, under the kind of content it is:
+
+```toml
+[params.csp]
+img-src = ['https://upload.wikimedia.org']
+frame-src = ['https://video.example.org']
+```
+
+The keys are the
+[directives](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#fetch_directives)
+of a Content Security Policy, e.g. `img-src` for images, `media-src` for sound
+and video, `frame-src` for pages shown inside the page, such as video players,
+and `script-src` for scripts. If something is missing from a page, the console
+of your browser, which opens with F12, says what was refused and which
+directive it belongs to.
+
+This applies to Hugo's own shortcodes too. For example, the `youtube`
+shortcode needs `https://www.youtube.com` in `frame-src`.
+
+What you allow in the front matter of a page applies to that page only, and
+not to the lists that show its summary. To allow something on every page, put
+it under `[params.csp]` in your `hugo.toml` instead. To leave out the policy
+altogether, set `csp = false` under `[params]`.
 
 #### How to disable or customize home page blog summary
 

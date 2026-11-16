@@ -1,5 +1,9 @@
 dirs:
   - .
 useGitIgnore: true
+# linkspector fails on a list of addresses in front matter, as in the
+# content security policy of this post
+excludedFiles:
+  - exampleSite/content/blog/rich-content.md
 ignorePatterns:
   - pattern: '^https://www.gnu.org/software/freefont/$'

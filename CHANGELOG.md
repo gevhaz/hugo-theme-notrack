@@ -11,12 +11,18 @@
 - The theme's fonts cover Latin beyond Western European languages, Greek,
   Cyrillic, Armenian, Georgian, Hebrew and Thai. A page downloads only the
   parts it uses. See "Fonts" in the README.
+- Every page has a Content Security Policy, so that your visitors' browsers
+  load nothing from other sites unless you allow it.
 
 ### Breaking
 
 - The font files under `static/fonts` are replaced by smaller ones with other
   names, e.g. `FreeSerif-latin.woff2`. A site whose own CSS refers to one of
   the old files has to host a copy of it.
+- What a page loads from another site, e.g. an image that is linked to where
+  it is or the player of Hugo's `youtube` shortcode, is no longer shown until
+  you allow the site. See "How to load content from other sites" in the
+  README.
 
 ## [1.4.0] - 2026-11-07
 
