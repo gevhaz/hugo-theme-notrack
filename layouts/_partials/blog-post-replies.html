@@ -1,0 +1,34 @@
+{{- /* Renders links for replying to the post: one that starts an email to
+       params.author.email if replyByEmail is true for the post or, by
+       default, for the site, and one to each address in the post's
+       discussion parameter. Renders nothing if there are neither.
+
+       Fails the build if replyByEmail is true but there is no email
+       address to write to. */ -}}
+{{- $email := "" -}}
+{{- if .Param "replyByEmail" -}}
+    {{- with site.Params.author -}}
+        {{- if reflect.IsMap . }}{{ $email = .email }}{{ end -}}
+    {{- end -}}
+    {{- if not $email -}}
+        {{- errorf "notrack: params.replyByEmail needs an address to reply to in params.author.email" -}}
+    {{- end -}}
+{{- end -}}
+{{- /* discussion is one address or a list of them */ -}}
+{{- $discussions := slice | append (.Params.discussion | default slice) -}}
+{{- if or $email $discussions }}
+<ul class="blog-post-replies">
+    {{- with $email }}
+    {{- /* The subject is the post's title. urlquery writes a space as "+",
+           which email programs show as it is, so it's replaced with the
+           code for a space. */ -}}
+    {{- $subject := replace (printf "Re: %s" $.Title | urlquery) "+" "%20" }}
+    <li><a href="{{ printf "mailto:%s?subject=%s" . $subject | safeURL }}">{{ i18n "replyByEmail" | default "Reply by email" }}</a></li>
+    {{- end }}
+    {{- range $discussions }}
+    {{- /* The link names the site it goes to, e.g. "example.org" */ -}}
+    {{- $host := dict "Host" ((urls.Parse .).Host | strings.TrimPrefix "www.") }}
+    <li><a href="{{ . }}">{{ i18n "discussOn" $host | default (printf "Discuss on %s" $host.Host) }}</a></li>
+    {{- end }}
+</ul>
+{{- end -}}

@@ -10,7 +10,10 @@ in_yaml = set()
 for line in open("i18n/en.yaml"):
     if line.strip() and not line.startswith("#"):
         key, text = line.split(": ", 1)
-        in_yaml.add((key, text.strip().strip('"').replace("{{ .Title }}", "%s")))
+        # A template's fallback has %s where the translation has a variable.
+        for variable in "{{ .Title }}", "{{ .Host }}":
+            text = text.replace(variable, "%s")
+        in_yaml.add((key, text.strip().strip('"')))
 
 in_layouts = set()
 for path in pathlib.Path("layouts").rglob("*.html"):

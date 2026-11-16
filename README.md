@@ -248,6 +248,7 @@ For the blog, you may also be interested in:
 - [How to create tags and categories
   pages](#how-to-create-tags-and-categories-pages)
 - [How to create an archive page](#how-to-create-an-archive-page)
+- [How to let readers reply to posts](#how-to-let-readers-reply-to-posts)
 
 #### How to add an About Me page
 
@@ -725,6 +726,40 @@ footer = """\
 
 This will add a HTML <footer> element with a <span> element with your text in
 it.
+
+#### How to let readers reply to posts
+
+The theme has no comments of its own, but a post can end with links for
+replying to it by email or where it's already being discussed.
+
+To add a link that starts an email to you with the title of the post as its
+subject, turn it on in your `hugo.toml` and make sure that your address is
+set:
+
+```toml
+[params]
+replyByEmail = true
+
+[params.author]
+name = '<Your name>'
+email = '<Your email address>'
+```
+
+Your address is then in the source of every post, where programs that collect
+addresses to send spam to can find it. To leave the link out of a post, set
+`replyByEmail = false` under `[params]` in its front matter.
+
+To link to a place where the post is discussed, e.g. your own post about it on
+Mastodon or a thread on a forum, add the address to the front matter of the
+post:
+
+```toml
+[params]
+discussion = 'https://social.example.org/@you/123456'
+```
+
+The link names the site it goes to, here "Discuss on social.example.org". If
+the post is discussed in several places, give a list of addresses.
 
 #### How to disable or customize home page blog summary
 

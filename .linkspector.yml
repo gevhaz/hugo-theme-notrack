@@ -2,4 +2,6 @@ dirs:
   - .
 useGitIgnore: true
 ignorePatterns:
+  # The made-up address of a discussion in the example site
+  - pattern: '^https://social.example.org/'
   - pattern: '^https://www.gnu.org/software/freefont/$'
