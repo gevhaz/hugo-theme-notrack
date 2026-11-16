@@ -1,0 +1,23 @@
+{{- /* Renders a <meta> with the page's Content Security Policy, which lets
+       the page load only what is in the page itself or comes from the
+       site's own address. The sources in params.csp of the site and of the
+       page are added to it, e.g. in the front matter of a post:
+
+       [params.csp]
+       frame-src = ['https://video.example.org']
+
+       Renders nothing if params.csp of the site is false. */ -}}
+{{- if ne site.Params.csp false -}}
+    {{- /* 'unsafe-inline' and data: are what a page carries in itself, e.g.
+           the style attributes that Hugo writes for aligned table cells.
+           A directive that isn't in the policy falls back to default-src,
+           so a directive that is added starts from the same sources. */ -}}
+    {{- $own := slice "'self'" "'unsafe-inline'" "data:" -}}
+    {{- $policy := dict "default-src" $own -}}
+    {{- range slice site.Params.csp .Params.csp -}}
+        {{- range $directive, $sources := . -}}
+            {{- $policy = merge $policy (dict $directive (index $policy $directive | default $own | append $sources)) -}}
+        {{- end -}}
+    {{- end }}
+    <meta http-equiv="Content-Security-Policy" content="{{ range $directive, $sources := $policy }}{{ $directive }} {{ delimit $sources " " }}; {{ end }}">
+{{- end -}}
