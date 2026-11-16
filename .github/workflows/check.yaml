@@ -44,6 +44,14 @@ jobs:
       - name: Check that template fallbacks match i18n/en.yaml
         run: .github/scripts/check-i18n-fallbacks.py
 
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v7
+      - name: Check that the social links' icons match the files in assets/icons
+        run: .github/scripts/check-icons.sh
+
   build:
     runs-on: ubuntu-latest
     env:
