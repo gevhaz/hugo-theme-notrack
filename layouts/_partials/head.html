@@ -1,5 +1,6 @@
 
 <head>
+    <meta charset="UTF-8">
     <title>{{ .Site.Title }} {{ with .Title }}- {{ . }} {{ end }}</title>
     <link rel="preload" href="{{ "fonts/FreeSerif-latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="{{ "fontawesome/css/all.min.css" | relURL }}">
@@ -11,7 +12,6 @@
     {{ with .Site.Params.favicon }}
     <link rel="icon" href="{{ . | relURL }}">
     {{ end }}
-    <meta charset="UTF-8">
     <meta name="author" content="{{ partial "author-name.html" . }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{ range .AlternativeOutputFormats -}}
