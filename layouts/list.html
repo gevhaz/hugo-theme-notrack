@@ -1,7 +1,9 @@
 {{ define "main" }}
-<main>
+{{- /* The list is an h-feed microformat with the page's title as its name,
+       and the post summaries in it are its entries. */}}
+<main class="h-feed">
 
-    <h1 class="page-title">{{ .Title }}</h1>
+    <h1 class="page-title p-name">{{ .Title }}</h1>
 
     {{ if default true .Site.Params.showTaxonomyLinks }}
     <div class="taxonomy-links">

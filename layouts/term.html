@@ -1,12 +1,14 @@
 {{ define "main" }}
-<main>
+{{- /* The list is an h-feed microformat with the page's heading as its name,
+       and the post summaries in it are its entries. */}}
+<main class="h-feed">
     {{- /* Hardcoded values for identifying whether we're looking at a tag or category */ -}}
     {{ if or (eq .Data.Plural "categories") (eq .Data.Singular "category") }}
-    <h1 class="page-title">{{ i18n "categoryTitle" . | default (printf "Category: %s" .Title) }}</h1>
+    <h1 class="page-title p-name">{{ i18n "categoryTitle" . | default (printf "Category: %s" .Title) }}</h1>
     {{ else if or (eq .Data.Plural "tags") (eq .Data.Singular "tag") }}
-    <h1 class="page-title">{{ i18n "tagTitle" . | default (printf "Tag: %s" .Title) }}</h1>
+    <h1 class="page-title p-name">{{ i18n "tagTitle" . | default (printf "Tag: %s" .Title) }}</h1>
     {{ else }}
-    <h1 class="page-title">{{ .Title }}</h1>
+    <h1 class="page-title p-name">{{ .Title }}</h1>
     {{ end }}
 
     {{ with .Content }}

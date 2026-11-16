@@ -9,6 +9,13 @@ HTML element that says what it is, so that screen readers can describe the page
 and everything can be used with the keyboard. If something doesn't work for
 you, please open an issue.
 
+Posts, lists of posts and you as the author are also marked up with
+[microformats](https://microformats.org/wiki/microformats2), which describe
+them to the tools of the [IndieWeb](https://indieweb.org/), for example feed
+readers that follow a page itself instead of its RSS feed. There is nothing to
+set up. The author is the name in `params.author`, and your logo, if you have
+one, is given as the author's picture.
+
 The README is long. You can use the automatic table of contents in GitHub to
 navigate (upper right corner of rendered README).
 

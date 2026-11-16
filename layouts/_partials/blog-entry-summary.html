@@ -1,19 +1,24 @@
 {{- /* Renders a summary of the post .page with its title as an h2, or as
        an h3 if .underHeading is true, for a list that has a heading of its
-       own, e.g. (dict "page" . "underHeading" true). */ -}}
+       own, e.g. (dict "page" . "underHeading" true).
+
+       The summary is an h-entry microformat, so that a program can read a
+       list of summaries as a feed. */ -}}
 {{- $underHeading := .underHeading -}}
 {{- with .page -}}
-<article class="blog-post-summary">
+<article class="blog-post-summary h-entry">
     {{- if $underHeading }}
-    <h3 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <h3 class="blog-post-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h3>
     {{- else }}
-    <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <h2 class="blog-post-title p-name"><a class="u-url" href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{- end }}
+    {{- partial "post-author.html" . }}
 
-    <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
+    <p class="blog-post-info">{{ i18n "posted" | default "Posted:" }} <time class="dt-published" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format (site.Params.dateFormat | default "2006-01-02") }}</time>
     {{ partial "blog-taxonomy-info" . }}</p>
     <div>
-        {{- .Summary -}}
+        {{- /* In an element of its own, to keep "Read more..." out of it */ -}}
+        <div class="p-summary">{{ .Summary }}</div>
         <span> <a href="{{ .Permalink }}">{{ i18n "readMore" | default "Read more..." }}</a></span>
     </div>
 </article>
