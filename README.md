@@ -3,7 +3,9 @@
 Notrack is an original, minimal theme with a focus on self-sufficiency and
 decentralization. By default, Notrack does not rely on any third parties to
 serve your website, and your visitors' browsers [load nothing from other
-sites](#how-to-load-content-from-other-sites) unless you allow it.
+sites](#how-to-load-content-from-other-sites) unless you allow it. When a
+visitor follows a link to another site, that site isn't told where they came
+from.
 
 Notrack also tries to be accessible. Each part of a page is marked up with the
 HTML element that says what it is, so that screen readers can describe the page
