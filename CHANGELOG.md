@@ -11,6 +11,9 @@
 - The theme's fonts cover Latin beyond Western European languages, Greek,
   Cyrillic, Armenian, Georgian, Hebrew and Thai. A page downloads only the
   parts it uses. See "Fonts" in the README.
+- A post can end with links for replying to it: one that starts an email to
+  you and one to each place where the post is discussed, e.g. on Mastodon.
+  See "How to let readers reply to posts" in the README.
 
 ### Breaking
 

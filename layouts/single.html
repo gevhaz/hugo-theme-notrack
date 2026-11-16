@@ -15,6 +15,7 @@
                 <div class="blog-post-content">
                 {{ .Content }}
                 </div>
+                {{- partial "blog-post-replies.html" . }}
             {{ else }}
                 {{ .Content }}
             {{ end }}

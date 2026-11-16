@@ -17,6 +17,9 @@ mainSections = ["blog"]  # Section name of your blog (folder name)
 blogLatestHeading = "My writing"  # Heading above blog summary
 nBlogLatest = 4  # Number of blog post in summary
 
+# Adds a link below each post that starts an email to the author's address
+replyByEmail = true
+
 [params.author]
 name = "Hugo de Groot"
 email = "hugo@example.org"

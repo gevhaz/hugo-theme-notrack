@@ -475,6 +475,23 @@ em.taxonomy-emph {
     & .figure-title { font-size: 1.1em; }
 }
 
+/* The links for replying to a post, in a row below it */
+.blog-post-replies {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0 0 1em;
+    padding: 0;
+    font-size: 0.8em;
+
+    /* A line between the links, like in the information above the post */
+    & li + li {
+        margin-left: 1em;
+        padding-left: 1em;
+        border-left: 1px solid var(--light-text);
+    }
+}
+
 .taxonomy-links ul {
         list-style-type: none;
         display: flex;
